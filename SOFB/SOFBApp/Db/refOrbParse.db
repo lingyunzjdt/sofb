@@ -1,0 +1,104 @@
+
+record(ao, "$(SR):$(Cell)-SOFB{BPM:1}X:Ref-SP") {
+}
+record(ao, "$(SR):$(Cell)-SOFB{BPM:2}X:Ref-SP") {
+}
+record(ao, "$(SR):$(Cell)-SOFB{BPM:3}X:Ref-SP") {
+}
+record(ao, "$(SR):$(Cell)-SOFB{BPM:4}X:Ref-SP") {
+}
+record(ao, "$(SR):$(Cell)-SOFB{BPM:5}X:Ref-SP") {
+}
+record(ao, "$(SR):$(Cell)-SOFB{BPM:6}X:Ref-SP") {
+}
+
+record(ao, "$(SR):$(Cell)-SOFB{BPM:1}Y:Ref-SP") {
+}
+record(ao, "$(SR):$(Cell)-SOFB{BPM:2}Y:Ref-SP") {
+}
+record(ao, "$(SR):$(Cell)-SOFB{BPM:3}Y:Ref-SP") {
+}
+record(ao, "$(SR):$(Cell)-SOFB{BPM:4}Y:Ref-SP") {
+}
+record(ao, "$(SR):$(Cell)-SOFB{BPM:5}Y:Ref-SP") {
+}
+record(ao, "$(SR):$(Cell)-SOFB{BPM:6}Y:Ref-SP") {
+}
+
+SR-SOFB{BPM}orb:xRef
+
+
+record(aSub, "$(SR):$(Cell)-SOFB{BPM}XY:Ref-aSub") 
+{
+	field(SCAN, "1 second")
+
+	field(SNAM, "cellRefParse")
+
+	field(INPA, "SR-SOFB{BPM}orb:xRef")
+	field(FTA, "FLOAT")
+	field(NOA, "180")
+
+	field(INPB, "SR-SOFB{BPM}orb:yRef")
+	field(FTB, "FLOAT")
+	field(NOB, "180")
+
+	field(INPC, "$(CellIndex)")
+	field(FTC, "CHAR")
+	field(NOC, "1")
+
+	field(INPD, "SR-SOFB{BPM}RefParse-Cmd")
+	field(FTD, "CHAR")
+	field(NOD, "1")
+
+
+	field(OUTA, "$(SR):$(Cell)-SOFB{BPM:1}X:Ref-SP PP")
+	field(NOVA, "1")
+	field(FTVA, "FLOAT")
+
+	field(OUTB, "$(SR):$(Cell)-SOFB{BPM:2}X:Ref-SP PP")
+	field(NOVB, "1")
+	field(FTVB, "FLOAT")
+
+	field(OUTC, "$(SR):$(Cell)-SOFB{BPM:3}X:Ref-SP PP")
+	field(NOVC, "1")
+	field(FTVC, "FLOAT")
+
+	field(OUTD, "$(SR):$(Cell)-SOFB{BPM:4}X:Ref-SP PP")
+	field(NOVD, "1")
+	field(FTVD, "FLOAT")
+
+	field(OUTE, "$(SR):$(Cell)-SOFB{BPM:5}X:Ref-SP PP")
+	field(NOVE, "1")
+	field(FTVE, "FLOAT")
+
+	field(OUTF, "$(SR):$(Cell)-SOFB{BPM:6}X:Ref-SP PP")
+	field(NOVF, "1")
+	field(FTVF, "FLOAT")
+
+
+	field(OUTG, "$(SR):$(Cell)-SOFB{BPM:1}Y:Ref-SP PP")
+	field(NOVG, "1")
+	field(FTVG, "FLOAT")
+
+	field(OUTH, "$(SR):$(Cell)-SOFB{BPM:2}Y:Ref-SP PP")
+	field(NOVH, "1")
+	field(FTVH, "FLOAT")
+
+	field(OUTI, "$(SR):$(Cell)-SOFB{BPM:3}Y:Ref-SP PP")
+	field(NOVI, "1")
+	field(FTVI, "FLOAT")
+
+	field(OUTJ, "$(SR):$(Cell)-SOFB{BPM:4}Y:Ref-SP PP")
+	field(NOVJ, "1")
+	field(FTVJ, "FLOAT")
+
+	field(OUTK, "$(SR):$(Cell)-SOFB{BPM:5}Y:Ref-SP PP")
+	field(NOVK, "1")
+	field(FTVK, "FLOAT")
+
+	field(OUTL, "$(SR):$(Cell)-SOFB{BPM:6}Y:Ref-SP PP")
+	field(NOVL, "1")
+	field(FTVL, "FLOAT")
+}
+
+

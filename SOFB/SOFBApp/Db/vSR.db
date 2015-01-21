@@ -1,0 +1,15 @@
+## Calculate setpoint
+record(ao, "vSR{}StartReg") {
+	field(SCAN, ".1 second")
+	field(FLNK, "vSR:C30-BI{BPM:1}Pos:X-I")
+}
+
+record(calc, "vSR{}EndReg") {
+	field(INPA, "vSR{}EndReg")
+	field(CALC, "A+1")
+}
+
+record(calc, "vSR-SOFB{}EndReg") {
+	field(INPA, "vSR-SOFB{}EndReg")
+	field(CALC, "A+1")
+}

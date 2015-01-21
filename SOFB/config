@@ -1,0 +1,4 @@
+NAME=SOFB
+PORT=5555
+USER=softioc
+HOST=psioc-c01

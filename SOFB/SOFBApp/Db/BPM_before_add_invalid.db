@@ -1,0 +1,245 @@
+#### Since compress record has syn. problem, need to calculate BPM average data: XSOFB, YSOFB: average NSOFB;  XORM, YORM: average NORM on top of NSOFB  ######
+
+#### Add Sum signals
+record(waveform, "$(SR):${CELL}-SOFB{BPM}SumSA") {      	
+    field(NELM, "6")
+    field(FTVL, "FLOAT")	  	
+}
+record(waveform, "$(SR):${CELL}-SOFB{BPM}SumSumSOFB") {      	
+    field(NELM, "6")
+    field(FTVL, "FLOAT")	  	
+}
+record(waveform, "$(SR):${CELL}-SOFB{BPM}SumSumORM") {      	
+    field(NELM, "6")
+    field(FTVL, "FLOAT")	  	
+}
+record(waveform, "$(SR):${CELL}-SOFB{BPM}SumSOFB") {      	
+    field(NELM, "6")
+    field(FTVL, "FLOAT")	  	
+}
+record(waveform, "$(SR):${CELL}-SOFB{BPM}SumORM") {      	
+    field(NELM, "6")
+    field(FTVL, "FLOAT")	  	
+}
+
+
+#### Output PVs ####
+record(waveform, "$(SR):${CELL}-SOFB{BPM}xSA") {      	
+    field(NELM, "6")
+    field(FTVL, "FLOAT")	  	
+}
+record(waveform, "$(SR):${CELL}-SOFB{BPM}xSumSOFB") {      	
+    field(NELM, "6")
+    field(FTVL, "FLOAT")	  	
+}
+record(waveform, "$(SR):${CELL}-SOFB{BPM}xSumORM") {      	
+    field(NELM, "6")
+    field(FTVL, "FLOAT")	  	
+}
+record(waveform, "$(SR):${CELL}-SOFB{BPM}xSOFB") {      	
+    field(NELM, "6")
+    field(FTVL, "FLOAT")	  	
+}
+record(waveform, "$(SR):${CELL}-SOFB{BPM}xORM") {      	
+    field(NELM, "6")
+    field(FTVL, "FLOAT")	  	
+}
+
+record(waveform, "$(SR):${CELL}-SOFB{BPM}ySA") {      	
+    field(NELM, "6")
+    field(FTVL, "FLOAT")	  	
+}
+record(waveform, "$(SR):${CELL}-SOFB{BPM}ySumSOFB") {      	
+    field(NELM, "6")
+    field(FTVL, "FLOAT")	  	
+}
+record(waveform, "$(SR):${CELL}-SOFB{BPM}ySumORM") {      	
+    field(NELM, "6")
+    field(FTVL, "FLOAT")	  	
+}
+record(waveform, "$(SR):${CELL}-SOFB{BPM}ySOFB") {      	
+    field(NELM, "6")
+    field(FTVL, "FLOAT")	  	
+}
+record(waveform, "$(SR):${CELL}-SOFB{BPM}yORM") {      	
+    field(NELM, "6")
+    field(FTVL, "FLOAT")	  	
+}
+
+
+#Scan start:
+record(aSub, "$(SR):${CELL}-SOFB{BPM}bpmX_aSub")
+{
+	field(SNAM, "bpmAverage")
+	field(INPA, "$(SR):${CELL}-BI{BPM:1}Pos:XwUsrOff-Calc")
+	field(FTA,  "FLOAT")	
+	field(NOA,  "1")
+	field(INPB, "$(SR):${CELL}-BI{BPM:2}Pos:XwUsrOff-Calc")
+	field(FTB,  "FLOAT")	
+	field(NOB,  "1")
+	field(INPC, "$(SR):${CELL}-BI{BPM:3}Pos:XwUsrOff-Calc")
+	field(FTC,  "FLOAT")	
+	field(NOC,  "1")
+	field(INPD, "$(SR):${CELL}-BI{BPM:4}Pos:XwUsrOff-Calc")
+	field(FTD,  "FLOAT")	
+	field(NOD,  "1")
+	field(INPE, "$(SR):${CELL}-BI{BPM:5}Pos:XwUsrOff-Calc")
+	field(FTE,  "FLOAT")	
+	field(NOE,  "1")
+	field(INPF, "$(SR):${CELL}-BI{BPM:6}Pos:XwUsrOff-Calc")
+	field(FTF,  "FLOAT")	
+	field(NOF,  "1")
+
+	field(INPG, "$(SR)-SOFB{BPM}NSOFB")
+	field(FTG,  "FLOAT")	
+	field(NOG,  "1")
+	field(INPH, "$(SR)-SOFB{BPM}NORM")
+	field(FTH,  "FLOAT")	
+	field(NOH,  "1")
+	field(INPI, "$(SR)-SOFB{BPM}RESET")
+	field(FTI,  "CHAR")	
+	field(NOI,  "1")
+	field(INPJ, "$(SR)-SOFB{BPM}cycles")
+	field(FTJ,  "FLOAT")	
+	field(NOJ,  "1")
+
+	field(OUTA, "$(SR):${CELL}-SOFB{BPM}xSA PP")
+	field(NOVA, "6")
+	field(FTVA, "FLOAT")
+
+	field(OUTB, "$(SR):${CELL}-SOFB{BPM}xSumSOFB PP")
+	field(NOVB, "6")
+	field(FTVB, "FLOAT")
+
+	field(OUTC, "$(SR):${CELL}-SOFB{BPM}xSumORM PP")
+	field(NOVC, "6")
+	field(FTVC, "FLOAT")
+
+	field(OUTD, "$(SR):${CELL}-SOFB{BPM}xSOFB PP")
+	field(NOVD, "6")
+	field(FTVD, "FLOAT")
+
+	field(OUTE, "$(SR):${CELL}-SOFB{BPM}xORM PP")
+	field(NOVE, "6")
+	field(FTVE, "FLOAT")
+	field(FLNK, "$(SR):${CELL}-SOFB{BPM}bpmY_aSub")
+}
+
+
+record(aSub, "$(SR):${CELL}-SOFB{BPM}bpmY_aSub")
+{
+	field(SNAM, "bpmAverage")
+	field(INPA, "$(SR):${CELL}-BI{BPM:1}Pos:YwUsrOff-Calc")
+	field(FTA,  "FLOAT")	
+	field(NOA,  "1")
+	field(INPB, "$(SR):${CELL}-BI{BPM:2}Pos:YwUsrOff-Calc")
+	field(FTB,  "FLOAT")	
+	field(NOB,  "1")
+	field(INPC, "$(SR):${CELL}-BI{BPM:3}Pos:YwUsrOff-Calc")
+	field(FTC,  "FLOAT")	
+	field(NOC,  "1")
+	field(INPD, "$(SR):${CELL}-BI{BPM:4}Pos:YwUsrOff-Calc")
+	field(FTD,  "FLOAT")	
+	field(NOD,  "1")
+	field(INPE, "$(SR):${CELL}-BI{BPM:5}Pos:YwUsrOff-Calc")
+	field(FTE,  "FLOAT")	
+	field(NOE,  "1")
+	field(INPF, "$(SR):${CELL}-BI{BPM:6}Pos:YwUsrOff-Calc")
+	field(FTF,  "FLOAT")	
+	field(NOF,  "1")
+
+	field(INPG, "$(SR)-SOFB{BPM}NSOFB")
+	field(FTG,  "FLOAT")	
+	field(NOG,  "1")
+	field(INPH, "$(SR)-SOFB{BPM}NORM")
+	field(FTH,  "FLOAT")	
+	field(NOH,  "1")
+	field(INPI, "$(SR)-SOFB{BPM}RESET")
+	field(FTI,  "CHAR")	
+	field(NOI,  "1")
+	field(INPJ, "$(SR)-SOFB{BPM}cycles")
+	field(FTJ,  "FLOAT")	
+	field(NOJ,  "1")
+
+	field(OUTA, "$(SR):${CELL}-SOFB{BPM}ySA PP")
+	field(NOVA, "6")
+	field(FTVA, "FLOAT")
+
+	field(OUTB, "$(SR):${CELL}-SOFB{BPM}ySumSOFB PP")
+	field(NOVB, "6")
+	field(FTVB, "FLOAT")
+
+	field(OUTC, "$(SR):${CELL}-SOFB{BPM}ySumORM PP")
+	field(NOVC, "6")
+	field(FTVC, "FLOAT")
+
+	field(OUTD, "$(SR):${CELL}-SOFB{BPM}ySOFB PP")
+	field(NOVD, "6")
+	field(FTVD, "FLOAT")
+
+	field(OUTE, "$(SR):${CELL}-SOFB{BPM}yORM PP")
+	field(NOVE, "6")
+	field(FTVE, "FLOAT")
+	field(FLNK, "$(SR):${CELL}-SOFB{BPM}bpmSum_aSub")
+}
+
+
+
+
+
+record(aSub, "$(SR):${CELL}-SOFB{BPM}bpmSum_aSub")
+{
+	field(SNAM, "bpmAverage")
+	field(INPA, "$(SR):${CELL}-BI{BPM:1}Ampl:SSA-Calc")
+	field(FTA,  "FLOAT")	
+	field(NOA,  "1")
+	field(INPB, "$(SR):${CELL}-BI{BPM:2}Ampl:SSA-Calc")
+	field(FTB,  "FLOAT")	
+	field(NOB,  "1")
+	field(INPC, "$(SR):${CELL}-BI{BPM:3}Ampl:SSA-Calc")
+	field(FTC,  "FLOAT")	
+	field(NOC,  "1")
+	field(INPD, "$(SR):${CELL}-BI{BPM:4}Ampl:SSA-Calc")
+	field(FTD,  "FLOAT")	
+	field(NOD,  "1")
+	field(INPE, "$(SR):${CELL}-BI{BPM:5}Ampl:SSA-Calc")
+	field(FTE,  "FLOAT")	
+	field(NOE,  "1")
+	field(INPF, "$(SR):${CELL}-BI{BPM:6}Ampl:SSA-Calc")
+	field(FTF,  "FLOAT")	
+	field(NOF,  "1")
+
+	field(INPG, "$(SR)-SOFB{BPM}NSOFB")
+	field(FTG,  "FLOAT")	
+	field(NOG,  "1")
+	field(INPH, "$(SR)-SOFB{BPM}NORM")
+	field(FTH,  "FLOAT")	
+	field(NOH,  "1")
+	field(INPI, "$(SR)-SOFB{BPM}RESET")
+	field(FTI,  "CHAR")	
+	field(NOI,  "1")
+	field(INPJ, "$(SR)-SOFB{BPM}cycles")
+	field(FTJ,  "FLOAT")	
+	field(NOJ,  "1")
+
+	field(OUTA, "$(SR):${CELL}-SOFB{BPM}SumSA PP")
+	field(NOVA, "6")
+	field(FTVA, "FLOAT")
+
+	field(OUTB, "$(SR):${CELL}-SOFB{BPM}SumSumSOFB PP")
+	field(NOVB, "6")
+	field(FTVB, "FLOAT")
+
+	field(OUTC, "$(SR):${CELL}-SOFB{BPM}SumSumORM PP")
+	field(NOVC, "6")
+	field(FTVC, "FLOAT")
+
+	field(OUTD, "$(SR):${CELL}-SOFB{BPM}SumSOFB PP")
+	field(NOVD, "6")
+	field(FTVD, "FLOAT")
+
+	field(OUTE, "$(SR):${CELL}-SOFB{BPM}SumORM PP")
+	field(NOVE, "6")
+	field(FTVE, "FLOAT")
+}
+

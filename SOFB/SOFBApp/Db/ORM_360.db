@@ -1,0 +1,214 @@
+#### Output PVs ####
+#ORM measure start
+record(bo, "$(SR)-SOFB{ORM}ORMStart") {      	
+    field(ZNAM, "Idle")
+    field(ONAM, "Start ORM")
+    field(HIGH, "3")
+}
+
+# $(SR):SOFB{}RV_Calc to 1 to start SVD
+
+#stable reference ORM row
+record(bo, "$(SR)-SOFB{BPM}TakeRefOrb") {      	
+    field(ZNAM, "Idle")
+    field(ONAM, "Take reference orbit")
+    field(HIGH, "5")
+    field(FLNK, "$(SR)-SOFB{BPM}TakeRefOrbCalc")
+}
+
+record(aSub, "$(SR)-SOFB{BPM}TakeRefOrbCalc") {      	
+    field(SNAM, "recordRefOrbit")
+    field(INPA, "$(SR)-SOFB{BPM}TakeRefOrb")       	
+    field(FTA, "CHAR")
+    field(NOA, "1")
+    field(INPB, "$(SR)-SOFB{BPM}sofb:ORM")       	
+    field(FTB, "FLOAT")
+    field(NOB, "360")
+    field(OUTA, "$(SR)-SOFB{BPM}sofb:row0 PP")
+    field(FTVA, "FLOAT")
+    field(NOVA, "360")
+    field(FLNK, "$(SR)-SOFB{BPM}TakeRefOrbXCalc")
+
+}
+
+record(aSub, "$(SR)-SOFB{BPM}TakeRefOrbXCalc") {      	
+    field(SNAM, "recordRefOrbitXY")
+    field(INPA, "$(SR)-SOFB{BPM}TakeRefOrb")       	
+    field(FTA, "CHAR")
+    field(NOA, "1")
+    field(INPB, "$(SR)-SOFB{BPM}orb:xORM")       	
+    field(FTB, "FLOAT")
+    field(NOB, "180")
+    field(OUTA, "$(SR)-SOFB{BPM}orb:xRef PP")
+    field(FTVA, "FLOAT")
+    field(NOVA, "180")
+    field(OUTB, "$(SR)-SOFB{BPM}X:Ref-SP PP")
+    field(FTVB, "FLOAT")
+    field(NOVB, "180")
+    field(FLNK, "$(SR)-SOFB{BPM}TakeRefOrbYCalc")
+}
+
+record(aSub, "$(SR)-SOFB{BPM}TakeRefOrbYCalc") {      	
+    field(SNAM, "recordRefOrbitXY")
+    field(INPA, "$(SR)-SOFB{BPM}TakeRefOrb")       	
+    field(FTA, "CHAR")
+    field(NOA, "1")
+    field(INPB, "$(SR)-SOFB{BPM}orb:yORM")       	
+    field(FTB, "FLOAT")
+    field(NOB, "180")
+    field(OUTA, "$(SR)-SOFB{BPM}orb:yRef PP")
+    field(FTVA, "FLOAT")
+    field(NOVA, "180")
+    field(OUTB, "$(SR)-SOFB{BPM}Y:Ref-SP PP")
+    field(FTVB, "FLOAT")
+    field(NOVB, "180")
+}
+
+record(waveform, "$(SR)-SOFB{BPM}sofb:row0") {      	
+    field(NELM, "360")
+    field(FTVL, "FLOAT")	  	
+}
+
+record(waveform, "$(SR)-SOFB{BPM}sofb:deltaRow") {      	
+    field(NELM, "360")
+    field(FTVL, "FLOAT")	  	
+}
+
+# ORM1 first 
+# Kick strength
+record(ao, "$(SR)-SOFB{BPM}sofb:ORM_Kick") {      	
+}
+
+
+record(ao, "$(SR)-SOFB{BPM}sofb:ORM1_Kick") {      	
+}
+
+#360*360
+record(waveform, "$(SR)-SOFB{BPM}sofb:R") {      	
+    field(NELM, "129600")    
+    field(FTVL, "FLOAT")	  	
+}
+
+record(waveform, "$(SR)-SOFB{BPM}sofb:RV") {      	
+    field(NELM, "129600")    
+    field(FTVL, "FLOAT")	  	
+}
+
+record(waveform, "$(SR)-SOFB{BPM}sofb:R1") {      	
+    field(NELM, "129600")    
+    field(FTVL, "FLOAT")	  	
+}
+
+# ORMq first 
+# Kick strength
+record(ao, "$(SR)-SOFB{BPM}sofb:ORM2_Kick") {      	
+}
+
+#360*360
+record(waveform, "$(SR)-SOFB{BPM}sofb:R2") {      	
+    field(NELM, "129600")    
+    field(FTVL, "FLOAT")	  	
+}
+
+record(waveform, "$(SR)-SOFB{BPM}sofb:R_Delta") {      	
+    field(NELM, "129600")    
+    field(FTVL, "FLOAT")	  	
+}
+
+
+
+
+#### ORM Control 
+record(ao, "$(SR)-SOFB{COR}sofb:ORM_Kick") {      	
+	field(SCAN, "1 second")
+}
+
+record(ao, "$(SR):C30-SOFB{PS:CEND-1}LatchSp") {      	
+}
+
+record(ao, "$(SR):CEND-SOFB{}corSP_aSub") {
+}
+
+record(ao, "$(SR)-SOFB{COR}CorSum") {      	
+}
+
+record(ao, "$(SR)-SOFB{COR}CorLatch") {      	
+}
+
+record(longout, "$(SR)-SOFB{COR}Index") {      	
+}
+
+record(longout, "$(SR)-SOFB{BPM}sofb:R_Width") {      	
+    field(VAL, "360")
+}
+
+record(longout, "$(SR)-SOFB{BPM}sofb:R_Heigt") {      	
+    field(VAL, "360")
+}
+
+record(bo, "$(SR)-SOFB{COR}startORM") {     
+	field(ZNAM, "Idle")
+	field(ONAM, "Start") 	
+}
+
+record(aSub, "$(SR)-SOFB{COR}startORMCalc") {     
+	field(SNAM, "ORMConstruct")
+
+	field(INPA, "$(SR)-SOFB{COR}sofb:ORM_Kick PP")
+	field(FTA, "FLOAT")
+	field(NOA, "1")
+
+	field(INPB, "$(SR)-SOFB{COR}Index")
+	field(FTB, "LONG")
+	field(NOB, "1")
+
+	field(INPC, "$(SR)-SOFB{BPM}sofb:row0")
+	field(FTC, "FLOAT")
+	field(NOC, "360")
+
+	field(INPD, "$(SR)-SOFB{BPM}sofb:ORM")
+	field(FTD, "FLOAT")
+	field(NOD, "360")
+
+	field(INPE, "$(SR)-SOFB{BPM}sofb:R1")
+	field(FTE, "FLOAT")
+	field(NOE, "129600")
+
+	field(INPF, "$(SR)-SOFB{BPM}sofb:ORM1_Kick")
+	field(FTF, "FLOAT")
+	field(NOF, "1")
+
+
+	field(OUTA, "$(SR)-SOFB{BPM}sofb:R PP")
+	field(NOVA, "129600")
+	field(FTVA, "FLOAT")
+
+	field(OUTB, "$(SR)-SOFB{BPM}sofb:deltaRow PP")
+	field(NOVB, "360")
+	field(FTVB, "FLOAT")
+
+	field(OUTC, "$(SR)-SOFB{BPM}sofb:R1 PP")
+	field(FTVC, "FLOAT")
+	field(NOVC, "129600")
+
+	field(OUTD, "$(SR)-SOFB{BPM}sofb:ORM1_Kick PP")
+	field(FTVD, "FLOAT")
+	field(NOVD, "1")
+
+	field(OUTE, "$(SR)-SOFB{BPM}sofb:R2 PP")
+	field(FTVE, "FLOAT")
+	field(NOVE, "129600")
+
+	field(OUTF, "$(SR)-SOFB{BPM}sofb:ORM2_Kick PP")
+	field(FTVF, "FLOAT")
+	field(NOVF, "1")
+
+	field(OUTG, "$(SR)-SOFB{BPM}sofb:R_Delta PP")
+	field(FTVG, "FLOAT")
+	field(NOVG, "129600")
+
+}
+
+
+
+

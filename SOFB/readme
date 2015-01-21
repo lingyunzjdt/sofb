@@ -1,0 +1,6 @@
+#ORM measure start
+caput SR-SOFB{ORM}ORMStart 1
+
+# SVD calculation:
+caput SR:SOFB{}RV_Calc 1
+

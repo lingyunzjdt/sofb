@@ -1,0 +1,23 @@
+#Merge CellX, CellY into $(SR) orbitX, orbitY
+
+record(waveform, "$(SR)-SOFB{BPM}sofb:${DATA}") {
+	field(NELM, "360")
+	field(FTVL, "FLOAT")	  	
+}
+
+record(aSub, "$(SR)-SOFB{BPM}sofb:${DATA}_aSub") 
+{
+	field(SCAN, ".1 second")
+	field(SNAM, "bpmMerge3")
+	field(INPA, "$(SR)-SOFB{BPM}orb:${DATA1}")
+	field(FTA, "FLOAT")
+	field(NOA, "180")
+	field(INPB, "$(SR)-SOFB{BPM}orb:${DATA2}")
+	field(FTB, "FLOAT")
+	field(NOB, "180")
+	field(OUTA, "$(SR)-SOFB{BPM}sofb:${DATA} PP")
+	field(NOVA, "360")
+	field(FTVA, "FLOAT")
+}
+
+

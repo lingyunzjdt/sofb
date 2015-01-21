@@ -1,0 +1,672 @@
+#### Kick the corrector one by one in a cell  ####
+## Start ORM measument: caput $(SR):C01-SOFB{PS:CL1A-1}LatchSp.PROC 1
+## Start SOFB: caput $(SR):C01-SOFB{}corSP_aSub.PROC 1
+
+
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C1)-1}LatchSp") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C1)}I:Sp1-SP")
+      field(CALC, "A")
+      field(OUT,  "$(SR)-SOFB{COR}CorLatch PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C1)-1}CalSum")
+}
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C1)-1}CalSum") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C1)}I:Sp1-SP")
+      field(INPB, "$(SR)-SOFB{COR}sofb:ORM_Kick")
+      field(CALC, "A+B")
+      field(OUT,  "$(SR)-SOFB{COR}CorSum PP")
+      field(FLNK, "$(SR):$(CELL)-MG{PS:$(C1)-1}DelayedKick")
+}
+record(seq, "$(SR):$(CELL)-MG{PS:$(C1)-1}DelayedKick") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_Recover}")   	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C1)}I:Sp1-SP PP")
+	field(FLNK, "$(SR):$(CELL)-MG{PS:$(C1)-1}IndexCal")
+}	
+record(calcout, "$(SR):$(CELL)-MG{PS:$(C1)-1}IndexCal") {
+      field(INPA, "$(SR)-SOFB{COR}Index")
+      field(CALC, "(A>=360)?1:A+1")
+      field(OUT,  "$(SR)-SOFB{COR}Index PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C1)-1}waitORMRdy")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C1)-1}waitORMRdy") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_ORM_Ready}")  	
+	field(LNK1, "$(SR)-SOFB{COR}CorSum PP")
+        field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C1)-1}startORMandDelay")
+}	
+record(fanout, "$(SR):$(CELL)-SOFB{PS:$(C1)-1}startORMandDelay") {
+	field(SELM, "All")
+	field(LNK1, "$(SR)-SOFB{COR}startORMCalc")
+	field(LNK2, "$(SR):$(CELL)-SOFB{PS:$(C1)-1}DelayedRecover")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C1)-1}DelayedRecover") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorLatch")
+	field(DLY1, "${T_ORM_Measure}")  	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C1)}I:Sp1-SP PP")
+	field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C2)-1}LatchSp") 
+}	
+
+
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C2)-1}LatchSp") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C2)}I:Sp1-SP")
+      field(CALC, "A")
+      field(OUT,  "$(SR)-SOFB{COR}CorLatch PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C2)-1}CalSum")
+}
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C2)-1}CalSum") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C2)}I:Sp1-SP")
+      field(INPB, "$(SR)-SOFB{COR}sofb:ORM_Kick")
+      field(CALC, "A+B")
+      field(OUT,  "$(SR)-SOFB{COR}CorSum PP")
+      field(FLNK, "$(SR):$(CELL)-MG{PS:$(C2)-1}DelayedKick")
+}
+record(seq, "$(SR):$(CELL)-MG{PS:$(C2)-1}DelayedKick") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_Recover}")   	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C2)}I:Sp1-SP PP")
+	field(FLNK, "$(SR):$(CELL)-MG{PS:$(C2)-1}IndexCal")
+}	
+record(calcout, "$(SR):$(CELL)-MG{PS:$(C2)-1}IndexCal") {
+      field(INPA, "$(SR)-SOFB{COR}Index")
+      field(CALC, "A+1")
+      field(OUT,  "$(SR)-SOFB{COR}Index PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C2)-1}waitORMRdy")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C2)-1}waitORMRdy") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_ORM_Ready}")  	
+	field(LNK1, "$(SR)-SOFB{COR}CorSum PP")
+        field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C2)-1}startORMandDelay")
+}	
+record(fanout, "$(SR):$(CELL)-SOFB{PS:$(C2)-1}startORMandDelay") {
+	field(SELM, "All")
+	field(LNK1, "$(SR)-SOFB{COR}startORMCalc")
+	field(LNK2, "$(SR):$(CELL)-SOFB{PS:$(C2)-1}DelayedRecover")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C2)-1}DelayedRecover") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorLatch")
+	field(DLY1, "${T_ORM_Measure}")  	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C2)}I:Sp1-SP PP")
+	field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C3)-1}LatchSp") 
+}	
+
+
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C3)-1}LatchSp") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C3)}I:Sp1-SP")
+      field(CALC, "A")
+      field(OUT,  "$(SR)-SOFB{COR}CorLatch PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C3)-1}CalSum")
+}
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C3)-1}CalSum") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C3)}I:Sp1-SP")
+      field(INPB, "$(SR)-SOFB{COR}sofb:ORM_Kick")
+      field(CALC, "A+B")
+      field(OUT,  "$(SR)-SOFB{COR}CorSum PP")
+      field(FLNK, "$(SR):$(CELL)-MG{PS:$(C3)-1}DelayedKick")
+}
+record(seq, "$(SR):$(CELL)-MG{PS:$(C3)-1}DelayedKick") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_Recover}")   	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C3)}I:Sp1-SP PP")
+	field(FLNK, "$(SR):$(CELL)-MG{PS:$(C3)-1}IndexCal")
+}	
+record(calcout, "$(SR):$(CELL)-MG{PS:$(C3)-1}IndexCal") {
+      field(INPA, "$(SR)-SOFB{COR}Index")
+      field(CALC, "A+1")
+      field(OUT,  "$(SR)-SOFB{COR}Index PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C3)-1}waitORMRdy")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C3)-1}waitORMRdy") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_ORM_Ready}")  	
+	field(LNK1, "$(SR)-SOFB{COR}CorSum PP")
+        field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C3)-1}startORMandDelay")
+}	
+record(fanout, "$(SR):$(CELL)-SOFB{PS:$(C3)-1}startORMandDelay") {
+	field(SELM, "All")
+	field(LNK1, "$(SR)-SOFB{COR}startORMCalc")
+	field(LNK2, "$(SR):$(CELL)-SOFB{PS:$(C3)-1}DelayedRecover")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C3)-1}DelayedRecover") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorLatch")
+	field(DLY1, "${T_ORM_Measure}")  	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C3)}I:Sp1-SP PP")
+	field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C4)-1}LatchSp") 
+}	
+
+
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C4)-1}LatchSp") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C4)}I:Sp1-SP")
+      field(CALC, "A")
+      field(OUT,  "$(SR)-SOFB{COR}CorLatch PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C4)-1}CalSum")
+}
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C4)-1}CalSum") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C4)}I:Sp1-SP")
+      field(INPB, "$(SR)-SOFB{COR}sofb:ORM_Kick")
+      field(CALC, "A+B")
+      field(OUT,  "$(SR)-SOFB{COR}CorSum PP")
+      field(FLNK, "$(SR):$(CELL)-MG{PS:$(C4)-1}DelayedKick")
+}
+record(seq, "$(SR):$(CELL)-MG{PS:$(C4)-1}DelayedKick") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_Recover}")   	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C4)}I:Sp1-SP PP")
+	field(FLNK, "$(SR):$(CELL)-MG{PS:$(C4)-1}IndexCal")
+}	
+record(calcout, "$(SR):$(CELL)-MG{PS:$(C4)-1}IndexCal") {
+      field(INPA, "$(SR)-SOFB{COR}Index")
+      field(CALC, "A+1")
+      field(OUT,  "$(SR)-SOFB{COR}Index PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C4)-1}waitORMRdy")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C4)-1}waitORMRdy") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_ORM_Ready}")  	
+	field(LNK1, "$(SR)-SOFB{COR}CorSum PP")
+        field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C4)-1}startORMandDelay")
+}	
+record(fanout, "$(SR):$(CELL)-SOFB{PS:$(C4)-1}startORMandDelay") {
+	field(SELM, "All")
+	field(LNK1, "$(SR)-SOFB{COR}startORMCalc")
+	field(LNK2, "$(SR):$(CELL)-SOFB{PS:$(C4)-1}DelayedRecover")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C4)-1}DelayedRecover") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorLatch")
+	field(DLY1, "${T_ORM_Measure}")  	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C4)}I:Sp1-SP PP")
+	field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C5)-1}LatchSp") 
+}	
+
+
+
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C5)-1}LatchSp") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C5)}I:Sp1-SP")
+      field(CALC, "A")
+      field(OUT,  "$(SR)-SOFB{COR}CorLatch PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C5)-1}CalSum")
+}
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C5)-1}CalSum") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C5)}I:Sp1-SP")
+      field(INPB, "$(SR)-SOFB{COR}sofb:ORM_Kick")
+      field(CALC, "A+B")
+      field(OUT,  "$(SR)-SOFB{COR}CorSum PP")
+      field(FLNK, "$(SR):$(CELL)-MG{PS:$(C5)-1}DelayedKick")
+}
+record(seq, "$(SR):$(CELL)-MG{PS:$(C5)-1}DelayedKick") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_Recover}")   	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C5)}I:Sp1-SP PP")
+	field(FLNK, "$(SR):$(CELL)-MG{PS:$(C5)-1}IndexCal")
+}	
+record(calcout, "$(SR):$(CELL)-MG{PS:$(C5)-1}IndexCal") {
+      field(INPA, "$(SR)-SOFB{COR}Index")
+      field(CALC, "A+1")
+      field(OUT,  "$(SR)-SOFB{COR}Index PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C5)-1}waitORMRdy")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C5)-1}waitORMRdy") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_ORM_Ready}")  	
+	field(LNK1, "$(SR)-SOFB{COR}CorSum PP")
+        field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C5)-1}startORMandDelay")
+}	
+record(fanout, "$(SR):$(CELL)-SOFB{PS:$(C5)-1}startORMandDelay") {
+	field(SELM, "All")
+	field(LNK1, "$(SR)-SOFB{COR}startORMCalc")
+	field(LNK2, "$(SR):$(CELL)-SOFB{PS:$(C5)-1}DelayedRecover")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C5)-1}DelayedRecover") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorLatch")
+	field(DLY1, "${T_ORM_Measure}")  	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C5)}I:Sp1-SP PP")
+	field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C6)-1}LatchSp") 
+}	
+
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C6)-1}LatchSp") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C6)}I:Sp1-SP")
+      field(CALC, "A")
+      field(OUT,  "$(SR)-SOFB{COR}CorLatch PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C6)-1}CalSum")
+}
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C6)-1}CalSum") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C6)}I:Sp1-SP")
+      field(INPB, "$(SR)-SOFB{COR}sofb:ORM_Kick")
+      field(CALC, "A+B")
+      field(OUT,  "$(SR)-SOFB{COR}CorSum PP")
+      field(FLNK, "$(SR):$(CELL)-MG{PS:$(C6)-1}DelayedKick")
+}
+record(seq, "$(SR):$(CELL)-MG{PS:$(C6)-1}DelayedKick") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_Recover}")   	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C6)}I:Sp1-SP PP")
+	field(FLNK, "$(SR):$(CELL)-MG{PS:$(C6)-1}IndexCal")
+}	
+record(calcout, "$(SR):$(CELL)-MG{PS:$(C6)-1}IndexCal") {
+      field(INPA, "$(SR)-SOFB{COR}Index")
+      field(CALC, "A+1")
+      field(OUT,  "$(SR)-SOFB{COR}Index PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C6)-1}waitORMRdy")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C6)-1}waitORMRdy") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_ORM_Ready}")  	
+	field(LNK1, "$(SR)-SOFB{COR}CorSum PP")
+        field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C6)-1}startORMandDelay")
+}	
+record(fanout, "$(SR):$(CELL)-SOFB{PS:$(C6)-1}startORMandDelay") {
+	field(SELM, "All")
+	field(LNK1, "$(SR)-SOFB{COR}startORMCalc")
+	field(LNK2, "$(SR):$(CELL)-SOFB{PS:$(C6)-1}DelayedRecover")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C6)-1}DelayedRecover") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorLatch")
+	field(DLY1, "${T_ORM_Measure}")  	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C6)}I:Sp1-SP PP")
+	field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C1)-2}LatchSp") 
+}	
+
+
+#### 2nd channel
+
+
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C1)-2}LatchSp") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C1)}I:Sp2-SP")
+      field(CALC, "A")
+      field(OUT,  "$(SR)-SOFB{COR}CorLatch PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C1)-2}CalSum")
+}
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C1)-2}CalSum") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C1)}I:Sp2-SP")
+      field(INPB, "$(SR)-SOFB{COR}sofb:ORM_Kick")
+      field(CALC, "A+B")
+      field(OUT,  "$(SR)-SOFB{COR}CorSum PP")
+      field(FLNK, "$(SR):$(CELL)-MG{PS:$(C1)-2}DelayedKick")
+}
+record(seq, "$(SR):$(CELL)-MG{PS:$(C1)-2}DelayedKick") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_Recover}")   	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C1)}I:Sp2-SP PP")
+	field(FLNK, "$(SR):$(CELL)-MG{PS:$(C1)-2}IndexCal")
+}	
+record(calcout, "$(SR):$(CELL)-MG{PS:$(C1)-2}IndexCal") {
+      field(INPA, "$(SR)-SOFB{COR}Index")
+      field(CALC, "A+1")
+      field(OUT,  "$(SR)-SOFB{COR}Index PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C1)-2}waitORMRdy")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C1)-2}waitORMRdy") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_ORM_Ready}")  	
+	field(LNK1, "$(SR)-SOFB{COR}CorSum PP")
+        field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C1)-2}startORMandDelay")
+}	
+record(fanout, "$(SR):$(CELL)-SOFB{PS:$(C1)-2}startORMandDelay") {
+	field(SELM, "All")
+	field(LNK1, "$(SR)-SOFB{COR}startORMCalc")
+	field(LNK2, "$(SR):$(CELL)-SOFB{PS:$(C1)-2}DelayedRecover")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C1)-2}DelayedRecover") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorLatch")
+	field(DLY1, "${T_ORM_Measure}")  	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C1)}I:Sp2-SP PP")
+	field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C2)-2}LatchSp") 
+}	
+
+
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C2)-2}LatchSp") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C2)}I:Sp2-SP")
+      field(CALC, "A")
+      field(OUT,  "$(SR)-SOFB{COR}CorLatch PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C2)-2}CalSum")
+}
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C2)-2}CalSum") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C2)}I:Sp2-SP")
+      field(INPB, "$(SR)-SOFB{COR}sofb:ORM_Kick")
+      field(CALC, "A+B")
+      field(OUT,  "$(SR)-SOFB{COR}CorSum PP")
+      field(FLNK, "$(SR):$(CELL)-MG{PS:$(C2)-2}DelayedKick")
+}
+record(seq, "$(SR):$(CELL)-MG{PS:$(C2)-2}DelayedKick") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_Recover}")   	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C2)}I:Sp2-SP PP")
+	field(FLNK, "$(SR):$(CELL)-MG{PS:$(C2)-2}IndexCal")
+}	
+record(calcout, "$(SR):$(CELL)-MG{PS:$(C2)-2}IndexCal") {
+      field(INPA, "$(SR)-SOFB{COR}Index")
+      field(CALC, "A+1")
+      field(OUT,  "$(SR)-SOFB{COR}Index PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C2)-2}waitORMRdy")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C2)-2}waitORMRdy") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_ORM_Ready}")  	
+	field(LNK1, "$(SR)-SOFB{COR}CorSum PP")
+        field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C2)-2}startORMandDelay")
+}	
+record(fanout, "$(SR):$(CELL)-SOFB{PS:$(C2)-2}startORMandDelay") {
+	field(SELM, "All")
+	field(LNK1, "$(SR)-SOFB{COR}startORMCalc")
+	field(LNK2, "$(SR):$(CELL)-SOFB{PS:$(C2)-2}DelayedRecover")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C2)-2}DelayedRecover") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorLatch")
+	field(DLY1, "${T_ORM_Measure}")  	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C2)}I:Sp2-SP PP")
+	field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C3)-2}LatchSp") 
+}	
+
+
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C3)-2}LatchSp") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C3)}I:Sp2-SP")
+      field(CALC, "A")
+      field(OUT,  "$(SR)-SOFB{COR}CorLatch PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C3)-2}CalSum")
+}
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C3)-2}CalSum") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C3)}I:Sp2-SP")
+      field(INPB, "$(SR)-SOFB{COR}sofb:ORM_Kick")
+      field(CALC, "A+B")
+      field(OUT,  "$(SR)-SOFB{COR}CorSum PP")
+      field(FLNK, "$(SR):$(CELL)-MG{PS:$(C3)-2}DelayedKick")
+}
+record(seq, "$(SR):$(CELL)-MG{PS:$(C3)-2}DelayedKick") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_Recover}")   	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C3)}I:Sp2-SP PP")
+	field(FLNK, "$(SR):$(CELL)-MG{PS:$(C3)-2}IndexCal")
+}	
+record(calcout, "$(SR):$(CELL)-MG{PS:$(C3)-2}IndexCal") {
+      field(INPA, "$(SR)-SOFB{COR}Index")
+      field(CALC, "A+1")
+      field(OUT,  "$(SR)-SOFB{COR}Index PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C3)-2}waitORMRdy")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C3)-2}waitORMRdy") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_ORM_Ready}")  	
+	field(LNK1, "$(SR)-SOFB{COR}CorSum PP")
+        field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C3)-2}startORMandDelay")
+}	
+record(fanout, "$(SR):$(CELL)-SOFB{PS:$(C3)-2}startORMandDelay") {
+	field(SELM, "All")
+	field(LNK1, "$(SR)-SOFB{COR}startORMCalc")
+	field(LNK2, "$(SR):$(CELL)-SOFB{PS:$(C3)-2}DelayedRecover")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C3)-2}DelayedRecover") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorLatch")
+	field(DLY1, "${T_ORM_Measure}")  	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C3)}I:Sp2-SP PP")
+	field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C4)-2}LatchSp") 
+}	
+
+
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C4)-2}LatchSp") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C4)}I:Sp2-SP")
+      field(CALC, "A")
+      field(OUT,  "$(SR)-SOFB{COR}CorLatch PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C4)-2}CalSum")
+}
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C4)-2}CalSum") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C4)}I:Sp2-SP")
+      field(INPB, "$(SR)-SOFB{COR}sofb:ORM_Kick")
+      field(CALC, "A+B")
+      field(OUT,  "$(SR)-SOFB{COR}CorSum PP")
+      field(FLNK, "$(SR):$(CELL)-MG{PS:$(C4)-2}DelayedKick")
+}
+record(seq, "$(SR):$(CELL)-MG{PS:$(C4)-2}DelayedKick") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_Recover}")   	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C4)}I:Sp2-SP PP")
+	field(FLNK, "$(SR):$(CELL)-MG{PS:$(C4)-2}IndexCal")
+}	
+record(calcout, "$(SR):$(CELL)-MG{PS:$(C4)-2}IndexCal") {
+      field(INPA, "$(SR)-SOFB{COR}Index")
+      field(CALC, "A+1")
+      field(OUT,  "$(SR)-SOFB{COR}Index PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C4)-2}waitORMRdy")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C4)-2}waitORMRdy") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_ORM_Ready}")  	
+	field(LNK1, "$(SR)-SOFB{COR}CorSum PP")
+        field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C4)-2}startORMandDelay")
+}	
+record(fanout, "$(SR):$(CELL)-SOFB{PS:$(C4)-2}startORMandDelay") {
+	field(SELM, "All")
+	field(LNK1, "$(SR)-SOFB{COR}startORMCalc")
+	field(LNK2, "$(SR):$(CELL)-SOFB{PS:$(C4)-2}DelayedRecover")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C4)-2}DelayedRecover") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorLatch")
+	field(DLY1, "${T_ORM_Measure}")  	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C4)}I:Sp2-SP PP")
+	field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C5)-2}LatchSp") 
+}	
+
+
+
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C5)-2}LatchSp") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C5)}I:Sp2-SP")
+      field(CALC, "A")
+      field(OUT,  "$(SR)-SOFB{COR}CorLatch PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C5)-2}CalSum")
+}
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C5)-2}CalSum") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C5)}I:Sp2-SP")
+      field(INPB, "$(SR)-SOFB{COR}sofb:ORM_Kick")
+      field(CALC, "A+B")
+      field(OUT,  "$(SR)-SOFB{COR}CorSum PP")
+      field(FLNK, "$(SR):$(CELL)-MG{PS:$(C5)-2}DelayedKick")
+}
+record(seq, "$(SR):$(CELL)-MG{PS:$(C5)-2}DelayedKick") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_Recover}")   	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C5)}I:Sp2-SP PP")
+	field(FLNK, "$(SR):$(CELL)-MG{PS:$(C5)-2}IndexCal")
+}	
+record(calcout, "$(SR):$(CELL)-MG{PS:$(C5)-2}IndexCal") {
+      field(INPA, "$(SR)-SOFB{COR}Index")
+      field(CALC, "A+1")
+      field(OUT,  "$(SR)-SOFB{COR}Index PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C5)-2}waitORMRdy")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C5)-2}waitORMRdy") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_ORM_Ready}")  	
+	field(LNK1, "$(SR)-SOFB{COR}CorSum PP")
+        field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C5)-2}startORMandDelay")
+}	
+record(fanout, "$(SR):$(CELL)-SOFB{PS:$(C5)-2}startORMandDelay") {
+	field(SELM, "All")
+	field(LNK1, "$(SR)-SOFB{COR}startORMCalc")
+	field(LNK2, "$(SR):$(CELL)-SOFB{PS:$(C5)-2}DelayedRecover")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C5)-2}DelayedRecover") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorLatch")
+	field(DLY1, "${T_ORM_Measure}")  	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C5)}I:Sp2-SP PP")
+	field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C6)-2}LatchSp") 
+}	
+
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C6)-2}LatchSp") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C6)}I:Sp2-SP")
+      field(CALC, "A")
+      field(OUT,  "$(SR)-SOFB{COR}CorLatch PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C6)-2}CalSum")
+}
+record(calcout, "$(SR):$(CELL)-SOFB{PS:$(C6)-2}CalSum") {
+      field(INPA, "$(SR):$(CELL)-MG{PS:$(C6)}I:Sp2-SP")
+      field(INPB, "$(SR)-SOFB{COR}sofb:ORM_Kick")
+      field(CALC, "A+B")
+      field(OUT,  "$(SR)-SOFB{COR}CorSum PP")
+      field(FLNK, "$(SR):$(CELL)-MG{PS:$(C6)-2}DelayedKick")
+}
+record(seq, "$(SR):$(CELL)-MG{PS:$(C6)-2}DelayedKick") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_Recover}")   	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C6)}I:Sp2-SP PP")
+	field(FLNK, "$(SR):$(CELL)-MG{PS:$(C6)-2}IndexCal")
+}	
+record(calcout, "$(SR):$(CELL)-MG{PS:$(C6)-2}IndexCal") {
+      field(INPA, "$(SR)-SOFB{COR}Index")
+      field(CALC, "A+1")
+      field(OUT,  "$(SR)-SOFB{COR}Index PP")
+      field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C6)-2}waitORMRdy")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C6)-2}waitORMRdy") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorSum")
+	field(DLY1, "${T_ORM_Ready}")  	
+	field(LNK1, "$(SR)-SOFB{COR}CorSum PP")
+        field(FLNK, "$(SR):$(CELL)-SOFB{PS:$(C6)-2}startORMandDelay")
+}	
+record(fanout, "$(SR):$(CELL)-SOFB{PS:$(C6)-2}startORMandDelay") {
+	field(SELM, "All")
+	field(LNK1, "$(SR)-SOFB{COR}startORMCalc")
+	field(LNK2, "$(SR):$(CELL)-SOFB{PS:$(C6)-2}DelayedRecover")
+}
+record(seq, "$(SR):$(CELL)-SOFB{PS:$(C6)-2}DelayedRecover") {
+	field(SELM, "All")
+	field(DOL1, "$(SR)-SOFB{COR}CorLatch")
+	field(DLY1, "${T_ORM_Measure}")  	
+	field(LNK1, "$(SR):$(CELL)-MG{PS:$(C6)}I:Sp2-SP PP")
+	field(FLNK, "$(SR):$(NEXTCELL)-SOFB{PS:$(NEXTC1)-1}LatchSp") 
+}	
+
+
+
+
+
+
+########## COR SP for each SOFB CYCLE #########################
+record(longout, "$(SR):$(CELL)-SOFB{}CellIndex") {
+	field(VAL, "$(CellIndex)")
+}
+
+record(aSub, "$(SR):$(CELL)-SOFB{}corSP_aSub") 
+{
+	field(SNAM, "corSP")
+
+	field(INPA, "$(SR):$(CELL)-MG{PS:$(C1)}Sp1Valid_")
+	field(FTA, "FLOAT")
+	field(NOA, "1")
+	field(INPB, "$(SR):$(CELL)-MG{PS:$(C2)}Sp1Valid_")
+	field(FTB, "FLOAT")
+	field(NOB, "1")
+	field(INPC, "$(SR):$(CELL)-MG{PS:$(C2)}Sp1Valid_")
+	field(FTC, "FLOAT")
+	field(NOC, "1")
+	field(INPD, "$(SR):$(CELL)-MG{PS:$(C3)}Sp1Valid_")
+	field(FTD, "FLOAT")
+	field(NOD, "1")
+	field(INPE, "$(SR):$(CELL)-MG{PS:$(C4)}Sp1Valid_")
+	field(FTE, "FLOAT")
+	field(NOE, "1")
+	field(INPF, "$(SR):$(CELL)-MG{PS:$(C5)}Sp1Valid_")
+	field(FTF, "FLOAT")
+	field(NOF, "1")
+
+	field(INPG, "$(SR):$(CELL)-MG{PS:$(C1)}Sp2Valid_")
+	field(FTG, "FLOAT")
+	field(NOG, "1")
+	field(INPH, "$(SR):$(CELL)-MG{PS:$(C2)}Sp2Valid_")
+	field(FTH, "FLOAT")
+	field(NOH, "1")
+	field(INPI, "$(SR):$(CELL)-MG{PS:$(C2)}Sp2Valid_")
+	field(FTI, "FLOAT")
+	field(NOI, "1")
+	field(INPJ, "$(SR):$(CELL)-MG{PS:$(C3)}Sp2Valid_")
+	field(FTJ, "FLOAT")
+	field(NOJ, "1")
+	field(INPK, "$(SR):$(CELL)-MG{PS:$(C4)}Sp2Valid_")
+	field(FTK, "FLOAT")
+	field(NOK, "1")
+	field(INPL, "$(SR):$(CELL)-MG{PS:$(C5)}Sp2Valid_")
+	field(FTL, "FLOAT")
+	field(NOL, "1")
+
+	field(INPM, "$(SR)-SOFB{}deltaSP")
+	field(FTM, "FLOAT")
+	field(NOM, "360")
+
+	field(INPN, "$(SR):$(CELL)-SOFB{}CellIndex")
+	field(FTN, "LONG")
+	field(NON, "1")
+
+	field(OUTA, "$(SR):$(CELL)-MG{PS:$(C1)}Sp1Valid_ PP")
+	field(NOVA, "1")
+	field(FTVA, "FLOAT")
+	field(OUTB, "$(SR):$(CELL)-MG{PS:$(C2)}Sp1Valid_ PP")
+	field(NOVB, "1")
+	field(FTVB, "FLOAT")
+	field(OUTC, "$(SR):$(CELL)-MG{PS:$(C3)}Sp1Valid_ PP")
+	field(NOVC, "1")
+	field(FTVC, "FLOAT")
+	field(OUTD, "$(SR):$(CELL)-MG{PS:$(C4)}Sp1Valid_ PP")
+	field(NOVD, "1")
+	field(FTVD, "FLOAT")
+	field(OUTE, "$(SR):$(CELL)-MG{PS:$(C5)}Sp1Valid_ PP")
+	field(NOVE, "1")
+	field(FTVE, "FLOAT")
+	field(OUTF, "$(SR):$(CELL)-MG{PS:$(C6)}Sp1Valid_ PP")
+	field(NOVF, "1")
+	field(FTVF, "FLOAT")
+
+	field(OUTG, "$(SR):$(CELL)-MG{PS:$(C1)}Sp2Valid_ PP")
+	field(NOVG, "1")
+	field(FTVG, "FLOAT")
+	field(OUTH, "$(SR):$(CELL)-MG{PS:$(C2)}Sp2Valid_ PP")
+	field(NOVH, "1")
+	field(FTVH, "FLOAT")
+	field(OUTI, "$(SR):$(CELL)-MG{PS:$(C3)}Sp2Valid_ PP")
+	field(NOVI, "1")
+	field(FTVI, "FLOAT")
+	field(OUTJ, "$(SR):$(CELL)-MG{PS:$(C4)}Sp2Valid_ PP")
+	field(NOVJ, "1")
+	field(FTVJ, "FLOAT")
+	field(OUTK, "$(SR):$(CELL)-MG{PS:$(C5)}Sp2Valid_ PP")
+	field(NOVK, "1")
+	field(FTVK, "FLOAT")
+	field(OUTL, "$(SR):$(CELL)-MG{PS:$(C6)}Sp2Valid_ PP")
+	field(NOVL, "1")
+	field(FTVL, "FLOAT")
+
+	field(FLNK, "$(SR):$(NEXTCELL)-SOFB{}corSP_aSub") 	
+}
+

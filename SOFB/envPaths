@@ -1,0 +1,4 @@
+epicsEnvSet("ARCH","linux-x86")
+epicsEnvSet("IOC","iocSOFB")
+epicsEnvSet("TOP","/direct/psioc/SOFB")
+epicsEnvSet("EPICS_BASE","/usr/lib/epics")
