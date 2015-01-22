@@ -1,0 +1,170 @@
+# Cell 03
+record(bo, "$(SR):C03-SOFB{BPM:7}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+record(bo, "$(SR):C03-SOFB{BPM:8}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+
+# Cell 05
+record(bo, "$(SR):C05-SOFB{BPM:7}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+record(bo, "$(SR):C05-SOFB{BPM:8}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+record(bo, "$(SR):C05-SOFB{BPM:9}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+
+# Cell 08
+record(bo, "$(SR):C08-SOFB{BPM:7}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+record(bo, "$(SR):C08-SOFB{BPM:8}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+
+# Cell 10
+record(bo, "$(SR):C10-SOFB{BPM:7}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+record(bo, "$(SR):C10-SOFB{BPM:8}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+
+# Cell 11
+record(bo, "$(SR):C11-SOFB{BPM:7}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+record(bo, "$(SR):C11-SOFB{BPM:8}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+
+# Cell 18
+record(bo, "$(SR):C18-SOFB{BPM:7}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+record(bo, "$(SR):C18-SOFB{BPM:8}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+
+# Cell 23
+record(bo, "$(SR):C23-SOFB{BPM:7}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+record(bo, "$(SR):C23-SOFB{BPM:8}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+record(bo, "$(SR):C23-SOFB{BPM:9}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+
+# Cell 28
+record(bo, "$(SR):C28-SOFB{BPM:7}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+record(bo, "$(SR):C28-SOFB{BPM:8}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+
+record(aSub, "$(SR):C03-SOFB{IDBPM}invalid_aSub")
+{
+	field(SNAM, "invalidMerge")
+	field(SCAN, "1 second")
+	field(INPA, "$(SR):C03-SOFB{BPM:7}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+	field(INPA, "$(SR):C03-SOFB{BPM:8}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+	field(INPA, "$(SR):C05-SOFB{BPM:7}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+	field(INPA, "$(SR):C05-SOFB{BPM:8}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+	field(INPA, "$(SR):C05-SOFB{BPM:9}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+	field(INPA, "$(SR):C08-SOFB{BPM:7}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+
+	field(OUTA, "$(SR):C03-SOFB{IDBPM}invalid PP")
+	field(NOVA, "6")
+	field(FTVA, "CHAR")
+}
+record(aSub, "$(SR):C08-SOFB{IDBPM}invalid_aSub")
+{
+	field(SNAM, "invalidMerge")
+	field(SCAN, "1 second")
+	field(INPA, "$(SR):C08-SOFB{BPM:8}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+	field(INPA, "$(SR):C10-SOFB{BPM:7}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+	field(INPA, "$(SR):C10-SOFB{BPM:8}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+	field(INPA, "$(SR):C11-SOFB{BPM:7}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+	field(INPA, "$(SR):C11-SOFB{BPM:8}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+	field(INPA, "$(SR):C18-SOFB{BPM:7}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+
+	field(OUTA, "$(SR):C08-SOFB{IDBPM}invalid PP")
+	field(NOVA, "6")
+	field(FTVA, "CHAR")
+}
+
+record(aSub, "$(SR):C18-SOFB{IDBPM}invalid_aSub")
+{
+	field(SNAM, "invalidMerge")
+	field(SCAN, "1 second")
+	field(INPA, "$(SR):C18-SOFB{BPM:8}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+	field(INPA, "$(SR):C23-SOFB{BPM:7}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+	field(INPA, "$(SR):C23-SOFB{BPM:8}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+	field(INPA, "$(SR):C23-SOFB{BPM:9}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+	field(INPA, "$(SR):C28-SOFB{BPM:7}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+	field(INPA, "$(SR):C28-SOFB{BPM:8}invalid PP")
+	field(FTA,  "CHAR")	
+	field(NOA,  "1")
+
+	field(OUTA, "$(SR):C18-SOFB{IDBPM}invalid PP")
+	field(NOVA, "6")
+	field(FTVA, "CHAR")
+}
