@@ -515,6 +515,24 @@ static long invalidMerge1(aSubRecord *pasub)
 	return 0;	
 }
 
+static long invalidMergeID(aSubRecord *pasub)
+{
+
+	char  *inputPtr[3];
+	char   *vaptr;
+
+	inputPtr[0] = pasub->a;
+	inputPtr[1] = pasub->b;
+	inputPtr[2] = pasub->c;
+	vaptr = (char *)pasub->vala;
+	int i;
+	for (i=0; i<3; i++) {
+		memcpy(vaptr, inputPtr[i],6*sizeof(char));
+		vaptr += 6;  
+	}
+	return 0;	
+}
+
 static long invalidMerge2(aSubRecord *pasub)
 {
 
@@ -552,13 +570,15 @@ static long bpmMerge3(aSubRecord *pasub)
 static long bpmMerge2(aSubRecord *pasub)
 {
 
-	float  *inputPtr[2];
+	float  *inputPtr[3];
 	float   *vaptr;
 
 	float   *vbptr;
 
 	inputPtr[0] = pasub->a;
 	inputPtr[1] = pasub->b;
+	inputPtr[2] = pasub->c; // ID BPM data
+	
 	vaptr = (float *)pasub->vala;
 	vbptr = (float *)pasub->valb;
 	int i;
@@ -566,6 +586,9 @@ static long bpmMerge2(aSubRecord *pasub)
 		memcpy(vaptr, inputPtr[i],90*sizeof(float));
 		vaptr += 90;  
 	}
+
+	memcpy(vaptr, inputPtr[2],18*sizeof(float));
+	vaptr += 18;  
 
 //April 25: to shift the orbit following Lattice design: C30:1-6 is the first
 //Last 6 values from C30:
@@ -576,6 +599,10 @@ static long bpmMerge2(aSubRecord *pasub)
 	vbptr += 90;  
 //Last step: the remaining 84 values of the 2nd segment
 	memcpy(vbptr, inputPtr[1],84*sizeof(float));
+	vbptr += 84;  
+	// ID BPM data
+	memcpy(vbptr, inputPtr[2],18*sizeof(float));
+	vbptr += 18;
 
 	return 0;	
 }
@@ -604,6 +631,24 @@ static long bpmMerge1(aSubRecord *pasub)
 	vaptr = (float *)pasub->vala;
 	int i;
 	for (i=0; i<15; i++) {
+		memcpy(vaptr, inputPtr[i],6*sizeof(float));
+		vaptr += 6;  
+	}
+	return 0;	
+}
+
+static long bpmMergeID(aSubRecord *pasub)
+{
+
+	float  *inputPtr[3];
+	float   *vaptr;
+
+	inputPtr[0] = pasub->a;
+	inputPtr[1] = pasub->b;
+	inputPtr[2] = pasub->c;
+	vaptr = (float *)pasub->vala;
+	int i;
+	for (i=0; i<3; i++) {
 		memcpy(vaptr, inputPtr[i],6*sizeof(float));
 		vaptr += 6;  
 	}
@@ -818,9 +863,11 @@ epicsRegisterFunction(bpmAverage);
 epicsRegisterFunction(bpmMerge1);
 epicsRegisterFunction(bpmMerge2);
 epicsRegisterFunction(bpmMerge3);
+epicsRegisterFunction(bpmMergeID);
 epicsRegisterFunction(invalidMerge);
 epicsRegisterFunction(invalidMerge1);
 epicsRegisterFunction(invalidMerge2);
+epicsRegisterFunction(invalidMergeID);
 epicsRegisterFunction(pidSP);
 epicsRegisterFunction(corSP);
 epicsRegisterFunction(recordRefOrbit);

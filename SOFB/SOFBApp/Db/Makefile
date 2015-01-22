@@ -6,6 +6,7 @@ DB += BPM.db
 DB += COR.db
 DB += InvalidInCell.db
 DB += Cell_Merge.db
+DB += Cell_Merge_BPM.db
 DB += BPM_Cycle.db
 DB += Orb_Merge.db
 DB += ORM.db
@@ -13,6 +14,8 @@ DB += SOFB_SP.db
 DB += CorSP.db
 DB += CorSP_Merger.db
 DB += SR.db
+DB += IDBPM.db
+DB += InvalidIDBPMInCell.db
 
 #DB += vBPM.template
 #DB += vCOR.template

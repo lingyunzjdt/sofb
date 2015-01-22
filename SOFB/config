@@ -1,4 +1,4 @@
-NAME=SOFB
+NAME=ioc_sofb
 PORT=5555
 USER=softioc
-HOST=psioc-c01
+HOST=phyioc01
