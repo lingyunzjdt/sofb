@@ -296,7 +296,7 @@ static long pidSP(aSubRecord *pasub)
 			for(j=0;j< (rowLength-1);j++) {
 				//remove "zero" position -- disabled BPM
 				if(orb[j]==0) {
-					printf("j=%d bad BPM data\n\r",j);
+                                    /* printf("E:BPM%d, ",j); */
 					deltaSP[i] += 0; }
 				else 
 				deltaSP[i] += (orbRef[j]-orb[j])*rvRow[j];	

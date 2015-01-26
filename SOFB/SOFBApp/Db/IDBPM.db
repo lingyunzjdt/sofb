@@ -11,70 +11,70 @@
 # SR:C05-BI{BPM:9}Pos:XwUsrOff-Calc
 # SR:C08-BI{BPM:7}Pos:XwUsrOff-Calc
 
-record(waveform, "$(SR):C03-SOFB{IDBPM}SumSA") {      	
+record(waveform, "$(SR):C03-SOFB2{IDBPM}SumSA") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C03-SOFB{IDBPM}SumSumSOFB") {      	
+record(waveform, "$(SR):C03-SOFB2{IDBPM}SumSumSOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C03-SOFB{IDBPM}SumSumORM") {      	
+record(waveform, "$(SR):C03-SOFB2{IDBPM}SumSumORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C03-SOFB{IDBPM}SumSOFB") {      	
+record(waveform, "$(SR):C03-SOFB2{IDBPM}SumSOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C03-SOFB{IDBPM}SumORM") {      	
+record(waveform, "$(SR):C03-SOFB2{IDBPM}SumORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
 #### Output PVs ####
-record(waveform, "$(SR):C03-SOFB{IDBPM}xSA") {      	
+record(waveform, "$(SR):C03-SOFB2{IDBPM}xSA") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C03-SOFB{IDBPM}xSumSOFB") {      	
+record(waveform, "$(SR):C03-SOFB2{IDBPM}xSumSOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C03-SOFB{IDBPM}xSumORM") {      	
+record(waveform, "$(SR):C03-SOFB2{IDBPM}xSumORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C03-SOFB{IDBPM}xSOFB") {      	
+record(waveform, "$(SR):C03-SOFB2{IDBPM}xSOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C03-SOFB{IDBPM}xORM") {      	
+record(waveform, "$(SR):C03-SOFB2{IDBPM}xORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C03-SOFB{IDBPM}ySA") {      	
+record(waveform, "$(SR):C03-SOFB2{IDBPM}ySA") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C03-SOFB{IDBPM}ySumSOFB") {      	
+record(waveform, "$(SR):C03-SOFB2{IDBPM}ySumSOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C03-SOFB{IDBPM}ySumORM") {      	
+record(waveform, "$(SR):C03-SOFB2{IDBPM}ySumORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C03-SOFB{IDBPM}ySOFB") {      	
+record(waveform, "$(SR):C03-SOFB2{IDBPM}ySOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C03-SOFB{IDBPM}yORM") {      	
+record(waveform, "$(SR):C03-SOFB2{IDBPM}yORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
 
 #Scan start:
-record(aSub, "$(SR):C03-SOFB{IDBPM}bpmX_aSub")
+record(aSub, "$(SR):C03-SOFB2{IDBPM}bpmX_aSub")
 {
 	field(SNAM, "bpmAverage")
 	field(INPA, "$(SR):C03-BI{BPM:7}Pos:XwUsrOff-Calc")
@@ -96,16 +96,16 @@ record(aSub, "$(SR):C03-SOFB{IDBPM}bpmX_aSub")
 	field(FTF,  "FLOAT")	
 	field(NOF,  "1")
 
-	field(INPG, "$(SR)-SOFB{BPM}NSOFB")
+	field(INPG, "$(SR)-SOFB2{BPM}NSOFB")
 	field(FTG,  "FLOAT")	
 	field(NOG,  "1")
-	field(INPH, "$(SR)-SOFB{BPM}NORM")
+	field(INPH, "$(SR)-SOFB2{BPM}NORM")
 	field(FTH,  "FLOAT")	
 	field(NOH,  "1")
-	field(INPI, "$(SR)-SOFB{BPM}RESET")
+	field(INPI, "$(SR)-SOFB2{BPM}RESET")
 	field(FTI,  "CHAR")	
 	field(NOI,  "1")
-	field(INPJ, "$(SR)-SOFB{BPM}cycles")
+	field(INPJ, "$(SR)-SOFB2{BPM}cycles")
 	field(FTJ,  "FLOAT")	
 	field(NOJ,  "1")
 
@@ -122,28 +122,28 @@ record(aSub, "$(SR):C03-SOFB{IDBPM}bpmX_aSub")
 	field(INPP, "$(SR):C08-BI{BPM:7}Enbl:XOC-Cmd")
 	field(FTP,  "CHAR")	
 
-	field(OUTA, "$(SR):C03-SOFB{IDBPM}xSA PP")
+	field(OUTA, "$(SR):C03-SOFB2{IDBPM}xSA PP")
 	field(NOVA, "6")
 	field(FTVA, "FLOAT")
 
-	field(OUTB, "$(SR):C03-SOFB{IDBPM}xSumSOFB PP")
+	field(OUTB, "$(SR):C03-SOFB2{IDBPM}xSumSOFB PP")
 	field(NOVB, "6")
 	field(FTVB, "FLOAT")
 
-	field(OUTC, "$(SR):C03-SOFB{IDBPM}xSumORM PP")
+	field(OUTC, "$(SR):C03-SOFB2{IDBPM}xSumORM PP")
 	field(NOVC, "6")
 	field(FTVC, "FLOAT")
 
-	field(OUTD, "$(SR):C03-SOFB{IDBPM}xSOFB PP")
+	field(OUTD, "$(SR):C03-SOFB2{IDBPM}xSOFB PP")
 	field(NOVD, "6")
 	field(FTVD, "FLOAT")
 
-	field(OUTE, "$(SR):C03-SOFB{IDBPM}xORM PP")
+	field(OUTE, "$(SR):C03-SOFB2{IDBPM}xORM PP")
 	field(NOVE, "6")
 	field(FTVE, "FLOAT")
-	field(FLNK, "$(SR):C03-SOFB{IDBPM}bpmY_aSub")
+	field(FLNK, "$(SR):C03-SOFB2{IDBPM}bpmY_aSub")
 }
-record(aSub, "$(SR):C03-SOFB{IDBPM}bpmY_aSub")
+record(aSub, "$(SR):C03-SOFB2{IDBPM}bpmY_aSub")
 {
 	field(SNAM, "bpmAverage")
 	field(INPA, "$(SR):C03-BI{BPM:7}Pos:YwUsrOff-Calc")
@@ -165,16 +165,16 @@ record(aSub, "$(SR):C03-SOFB{IDBPM}bpmY_aSub")
 	field(FTF,  "FLOAT")	
 	field(NOF,  "1")
 
-	field(INPG, "$(SR)-SOFB{BPM}NSOFB")
+	field(INPG, "$(SR)-SOFB2{BPM}NSOFB")
 	field(FTG,  "FLOAT")	
 	field(NOG,  "1")
-	field(INPH, "$(SR)-SOFB{BPM}NORM")
+	field(INPH, "$(SR)-SOFB2{BPM}NORM")
 	field(FTH,  "FLOAT")	
 	field(NOH,  "1")
-	field(INPI, "$(SR)-SOFB{BPM}RESET")
+	field(INPI, "$(SR)-SOFB2{BPM}RESET")
 	field(FTI,  "CHAR")	
 	field(NOI,  "1")
-	field(INPJ, "$(SR)-SOFB{BPM}cycles")
+	field(INPJ, "$(SR)-SOFB2{BPM}cycles")
 	field(FTJ,  "FLOAT")	
 	field(NOJ,  "1")
 
@@ -191,28 +191,28 @@ record(aSub, "$(SR):C03-SOFB{IDBPM}bpmY_aSub")
 	field(INPP, "$(SR):C08-BI{BPM:7}Enbl:XOC-Cmd")
 	field(FTP,  "CHAR")	
 
-	field(OUTA, "$(SR):C03-SOFB{IDBPM}ySA PP")
+	field(OUTA, "$(SR):C03-SOFB2{IDBPM}ySA PP")
 	field(NOVA, "6")
 	field(FTVA, "FLOAT")
 
-	field(OUTB, "$(SR):C03-SOFB{IDBPM}ySumSOFB PP")
+	field(OUTB, "$(SR):C03-SOFB2{IDBPM}ySumSOFB PP")
 	field(NOVB, "6")
 	field(FTVB, "FLOAT")
 
-	field(OUTC, "$(SR):C03-SOFB{IDBPM}ySumORM PP")
+	field(OUTC, "$(SR):C03-SOFB2{IDBPM}ySumORM PP")
 	field(NOVC, "6")
 	field(FTVC, "FLOAT")
 
-	field(OUTD, "$(SR):C03-SOFB{IDBPM}ySOFB PP")
+	field(OUTD, "$(SR):C03-SOFB2{IDBPM}ySOFB PP")
 	field(NOVD, "6")
 	field(FTVD, "FLOAT")
 
-	field(OUTE, "$(SR):C03-SOFB{IDBPM}yORM PP")
+	field(OUTE, "$(SR):C03-SOFB2{IDBPM}yORM PP")
 	field(NOVE, "6")
 	field(FTVE, "FLOAT")
-	field(FLNK, "$(SR):C03-SOFB{IDBPM}bpmSum_aSub")
+	field(FLNK, "$(SR):C03-SOFB2{IDBPM}bpmSum_aSub")
 }
-record(aSub, "$(SR):C03-SOFB{IDBPM}bpmSum_aSub")
+record(aSub, "$(SR):C03-SOFB2{IDBPM}bpmSum_aSub")
 {
 	field(SNAM, "bpmAverage")
 	field(INPA, "$(SR):C03-BI{BPM:7}Ampl:SSA-Calc")
@@ -234,36 +234,36 @@ record(aSub, "$(SR):C03-SOFB{IDBPM}bpmSum_aSub")
 	field(FTF,  "FLOAT")	
 	field(NOF,  "1")
 
-	field(INPG, "$(SR)-SOFB{BPM}NSOFB")
+	field(INPG, "$(SR)-SOFB2{BPM}NSOFB")
 	field(FTG,  "FLOAT")	
 	field(NOG,  "1")
-	field(INPH, "$(SR)-SOFB{BPM}NORM")
+	field(INPH, "$(SR)-SOFB2{BPM}NORM")
 	field(FTH,  "FLOAT")	
 	field(NOH,  "1")
-	field(INPI, "$(SR)-SOFB{BPM}RESET")
+	field(INPI, "$(SR)-SOFB2{BPM}RESET")
 	field(FTI,  "CHAR")	
 	field(NOI,  "1")
-	field(INPJ, "$(SR)-SOFB{BPM}cycles")
+	field(INPJ, "$(SR)-SOFB2{BPM}cycles")
 	field(FTJ,  "FLOAT")	
 	field(NOJ,  "1")
 
-	field(OUTA, "$(SR):C03-SOFB{IDBPM}SumSA PP")
+	field(OUTA, "$(SR):C03-SOFB2{IDBPM}SumSA PP")
 	field(NOVA, "6")
 	field(FTVA, "FLOAT")
 
-	field(OUTB, "$(SR):C03-SOFB{IDBPM}SumSumSOFB PP")
+	field(OUTB, "$(SR):C03-SOFB2{IDBPM}SumSumSOFB PP")
 	field(NOVB, "6")
 	field(FTVB, "FLOAT")
 
-	field(OUTC, "$(SR):C03-SOFB{IDBPM}SumSumORM PP")
+	field(OUTC, "$(SR):C03-SOFB2{IDBPM}SumSumORM PP")
 	field(NOVC, "6")
 	field(FTVC, "FLOAT")
 
-	field(OUTD, "$(SR):C03-SOFB{IDBPM}SumSOFB PP")
+	field(OUTD, "$(SR):C03-SOFB2{IDBPM}SumSOFB PP")
 	field(NOVD, "6")
 	field(FTVD, "FLOAT")
 
-	field(OUTE, "$(SR):C03-SOFB{IDBPM}SumORM PP")
+	field(OUTE, "$(SR):C03-SOFB2{IDBPM}SumORM PP")
 	field(NOVE, "6")
 	field(FTVE, "FLOAT")
 }
@@ -277,70 +277,70 @@ record(aSub, "$(SR):C03-SOFB{IDBPM}bpmSum_aSub")
 # SR:C11-BI{BPM:8}Pos:XwUsrOff-Calc
 # SR:C18-BI{BPM:7}Pos:XwUsrOff-Calc
 
-record(waveform, "$(SR):C08-SOFB{IDBPM}SumSA") {      	
+record(waveform, "$(SR):C08-SOFB2{IDBPM}SumSA") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C08-SOFB{IDBPM}SumSumSOFB") {      	
+record(waveform, "$(SR):C08-SOFB2{IDBPM}SumSumSOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C08-SOFB{IDBPM}SumSumORM") {      	
+record(waveform, "$(SR):C08-SOFB2{IDBPM}SumSumORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C08-SOFB{IDBPM}SumSOFB") {      	
+record(waveform, "$(SR):C08-SOFB2{IDBPM}SumSOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C08-SOFB{IDBPM}SumORM") {      	
+record(waveform, "$(SR):C08-SOFB2{IDBPM}SumORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
 #### Output PVs ####
-record(waveform, "$(SR):C08-SOFB{IDBPM}xSA") {      	
+record(waveform, "$(SR):C08-SOFB2{IDBPM}xSA") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C08-SOFB{IDBPM}xSumSOFB") {      	
+record(waveform, "$(SR):C08-SOFB2{IDBPM}xSumSOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C08-SOFB{IDBPM}xSumORM") {      	
+record(waveform, "$(SR):C08-SOFB2{IDBPM}xSumORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C08-SOFB{IDBPM}xSOFB") {      	
+record(waveform, "$(SR):C08-SOFB2{IDBPM}xSOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C08-SOFB{IDBPM}xORM") {      	
+record(waveform, "$(SR):C08-SOFB2{IDBPM}xORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C08-SOFB{IDBPM}ySA") {      	
+record(waveform, "$(SR):C08-SOFB2{IDBPM}ySA") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C08-SOFB{IDBPM}ySumSOFB") {      	
+record(waveform, "$(SR):C08-SOFB2{IDBPM}ySumSOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C08-SOFB{IDBPM}ySumORM") {      	
+record(waveform, "$(SR):C08-SOFB2{IDBPM}ySumORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C08-SOFB{IDBPM}ySOFB") {      	
+record(waveform, "$(SR):C08-SOFB2{IDBPM}ySOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C08-SOFB{IDBPM}yORM") {      	
+record(waveform, "$(SR):C08-SOFB2{IDBPM}yORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
 
 #Scan start:
-record(aSub, "$(SR):C08-SOFB{IDBPM}bpmX_aSub")
+record(aSub, "$(SR):C08-SOFB2{IDBPM}bpmX_aSub")
 {
 	field(SNAM, "bpmAverage")
 	field(INPA, "$(SR):C08-BI{BPM:8}Pos:XwUsrOff-Calc")
@@ -362,16 +362,16 @@ record(aSub, "$(SR):C08-SOFB{IDBPM}bpmX_aSub")
 	field(FTF,  "FLOAT")	
 	field(NOF,  "1")
 
-	field(INPG, "$(SR)-SOFB{BPM}NSOFB")
+	field(INPG, "$(SR)-SOFB2{BPM}NSOFB")
 	field(FTG,  "FLOAT")	
 	field(NOG,  "1")
-	field(INPH, "$(SR)-SOFB{BPM}NORM")
+	field(INPH, "$(SR)-SOFB2{BPM}NORM")
 	field(FTH,  "FLOAT")	
 	field(NOH,  "1")
-	field(INPI, "$(SR)-SOFB{BPM}RESET")
+	field(INPI, "$(SR)-SOFB2{BPM}RESET")
 	field(FTI,  "CHAR")	
 	field(NOI,  "1")
-	field(INPJ, "$(SR)-SOFB{BPM}cycles")
+	field(INPJ, "$(SR)-SOFB2{BPM}cycles")
 	field(FTJ,  "FLOAT")	
 	field(NOJ,  "1")
 
@@ -388,28 +388,28 @@ record(aSub, "$(SR):C08-SOFB{IDBPM}bpmX_aSub")
 	field(INPP, "$(SR):C18-BI{BPM:7}Enbl:XOC-Cmd")
 	field(FTP,  "CHAR")	
 
-	field(OUTA, "$(SR):C08-SOFB{IDBPM}xSA PP")
+	field(OUTA, "$(SR):C08-SOFB2{IDBPM}xSA PP")
 	field(NOVA, "6")
 	field(FTVA, "FLOAT")
 
-	field(OUTB, "$(SR):C08-SOFB{IDBPM}xSumSOFB PP")
+	field(OUTB, "$(SR):C08-SOFB2{IDBPM}xSumSOFB PP")
 	field(NOVB, "6")
 	field(FTVB, "FLOAT")
 
-	field(OUTC, "$(SR):C08-SOFB{IDBPM}xSumORM PP")
+	field(OUTC, "$(SR):C08-SOFB2{IDBPM}xSumORM PP")
 	field(NOVC, "6")
 	field(FTVC, "FLOAT")
 
-	field(OUTD, "$(SR):C08-SOFB{IDBPM}xSOFB PP")
+	field(OUTD, "$(SR):C08-SOFB2{IDBPM}xSOFB PP")
 	field(NOVD, "6")
 	field(FTVD, "FLOAT")
 
-	field(OUTE, "$(SR):C08-SOFB{IDBPM}xORM PP")
+	field(OUTE, "$(SR):C08-SOFB2{IDBPM}xORM PP")
 	field(NOVE, "6")
 	field(FTVE, "FLOAT")
-	field(FLNK, "$(SR):C08-SOFB{IDBPM}bpmY_aSub")
+	field(FLNK, "$(SR):C08-SOFB2{IDBPM}bpmY_aSub")
 }
-record(aSub, "$(SR):C08-SOFB{IDBPM}bpmY_aSub")
+record(aSub, "$(SR):C08-SOFB2{IDBPM}bpmY_aSub")
 {
 	field(SNAM, "bpmAverage")
 	field(INPA, "$(SR):C08-BI{BPM:8}Pos:YwUsrOff-Calc")
@@ -431,16 +431,16 @@ record(aSub, "$(SR):C08-SOFB{IDBPM}bpmY_aSub")
 	field(FTF,  "FLOAT")	
 	field(NOF,  "1")
 
-	field(INPG, "$(SR)-SOFB{BPM}NSOFB")
+	field(INPG, "$(SR)-SOFB2{BPM}NSOFB")
 	field(FTG,  "FLOAT")	
 	field(NOG,  "1")
-	field(INPH, "$(SR)-SOFB{BPM}NORM")
+	field(INPH, "$(SR)-SOFB2{BPM}NORM")
 	field(FTH,  "FLOAT")	
 	field(NOH,  "1")
-	field(INPI, "$(SR)-SOFB{BPM}RESET")
+	field(INPI, "$(SR)-SOFB2{BPM}RESET")
 	field(FTI,  "CHAR")	
 	field(NOI,  "1")
-	field(INPJ, "$(SR)-SOFB{BPM}cycles")
+	field(INPJ, "$(SR)-SOFB2{BPM}cycles")
 	field(FTJ,  "FLOAT")	
 	field(NOJ,  "1")
 
@@ -457,28 +457,28 @@ record(aSub, "$(SR):C08-SOFB{IDBPM}bpmY_aSub")
 	field(INPP, "$(SR):C18-BI{BPM:7}Enbl:XOC-Cmd")
 	field(FTP,  "CHAR")	
 
-	field(OUTA, "$(SR):C08-SOFB{IDBPM}ySA PP")
+	field(OUTA, "$(SR):C08-SOFB2{IDBPM}ySA PP")
 	field(NOVA, "6")
 	field(FTVA, "FLOAT")
 
-	field(OUTB, "$(SR):C08-SOFB{IDBPM}ySumSOFB PP")
+	field(OUTB, "$(SR):C08-SOFB2{IDBPM}ySumSOFB PP")
 	field(NOVB, "6")
 	field(FTVB, "FLOAT")
 
-	field(OUTC, "$(SR):C08-SOFB{IDBPM}ySumORM PP")
+	field(OUTC, "$(SR):C08-SOFB2{IDBPM}ySumORM PP")
 	field(NOVC, "6")
 	field(FTVC, "FLOAT")
 
-	field(OUTD, "$(SR):C08-SOFB{IDBPM}ySOFB PP")
+	field(OUTD, "$(SR):C08-SOFB2{IDBPM}ySOFB PP")
 	field(NOVD, "6")
 	field(FTVD, "FLOAT")
 
-	field(OUTE, "$(SR):C08-SOFB{IDBPM}yORM PP")
+	field(OUTE, "$(SR):C08-SOFB2{IDBPM}yORM PP")
 	field(NOVE, "6")
 	field(FTVE, "FLOAT")
-	field(FLNK, "$(SR):C08-SOFB{IDBPM}bpmSum_aSub")
+	field(FLNK, "$(SR):C08-SOFB2{IDBPM}bpmSum_aSub")
 }
-record(aSub, "$(SR):C08-SOFB{IDBPM}bpmSum_aSub")
+record(aSub, "$(SR):C08-SOFB2{IDBPM}bpmSum_aSub")
 {
 	field(SNAM, "bpmAverage")
 	field(INPA, "$(SR):C08-BI{BPM:8}Ampl:SSA-Calc")
@@ -500,36 +500,36 @@ record(aSub, "$(SR):C08-SOFB{IDBPM}bpmSum_aSub")
 	field(FTF,  "FLOAT")	
 	field(NOF,  "1")
 
-	field(INPG, "$(SR)-SOFB{BPM}NSOFB")
+	field(INPG, "$(SR)-SOFB2{BPM}NSOFB")
 	field(FTG,  "FLOAT")	
 	field(NOG,  "1")
-	field(INPH, "$(SR)-SOFB{BPM}NORM")
+	field(INPH, "$(SR)-SOFB2{BPM}NORM")
 	field(FTH,  "FLOAT")	
 	field(NOH,  "1")
-	field(INPI, "$(SR)-SOFB{BPM}RESET")
+	field(INPI, "$(SR)-SOFB2{BPM}RESET")
 	field(FTI,  "CHAR")	
 	field(NOI,  "1")
-	field(INPJ, "$(SR)-SOFB{BPM}cycles")
+	field(INPJ, "$(SR)-SOFB2{BPM}cycles")
 	field(FTJ,  "FLOAT")	
 	field(NOJ,  "1")
 
-	field(OUTA, "$(SR):C08-SOFB{IDBPM}SumSA PP")
+	field(OUTA, "$(SR):C08-SOFB2{IDBPM}SumSA PP")
 	field(NOVA, "6")
 	field(FTVA, "FLOAT")
 
-	field(OUTB, "$(SR):C08-SOFB{IDBPM}SumSumSOFB PP")
+	field(OUTB, "$(SR):C08-SOFB2{IDBPM}SumSumSOFB PP")
 	field(NOVB, "6")
 	field(FTVB, "FLOAT")
 
-	field(OUTC, "$(SR):C08-SOFB{IDBPM}SumSumORM PP")
+	field(OUTC, "$(SR):C08-SOFB2{IDBPM}SumSumORM PP")
 	field(NOVC, "6")
 	field(FTVC, "FLOAT")
 
-	field(OUTD, "$(SR):C08-SOFB{IDBPM}SumSOFB PP")
+	field(OUTD, "$(SR):C08-SOFB2{IDBPM}SumSOFB PP")
 	field(NOVD, "6")
 	field(FTVD, "FLOAT")
 
-	field(OUTE, "$(SR):C08-SOFB{IDBPM}SumORM PP")
+	field(OUTE, "$(SR):C08-SOFB2{IDBPM}SumORM PP")
 	field(NOVE, "6")
 	field(FTVE, "FLOAT")
 }
@@ -542,70 +542,70 @@ record(aSub, "$(SR):C08-SOFB{IDBPM}bpmSum_aSub")
 # SR:C28-BI{BPM:7}Pos:XwUsrOff-Calc
 # SR:C28-BI{BPM:8}Pos:XwUsrOff-Calc
 
-record(waveform, "$(SR):C18-SOFB{IDBPM}SumSA") {      	
+record(waveform, "$(SR):C18-SOFB2{IDBPM}SumSA") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C18-SOFB{IDBPM}SumSumSOFB") {      	
+record(waveform, "$(SR):C18-SOFB2{IDBPM}SumSumSOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C18-SOFB{IDBPM}SumSumORM") {      	
+record(waveform, "$(SR):C18-SOFB2{IDBPM}SumSumORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C18-SOFB{IDBPM}SumSOFB") {      	
+record(waveform, "$(SR):C18-SOFB2{IDBPM}SumSOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C18-SOFB{IDBPM}SumORM") {      	
+record(waveform, "$(SR):C18-SOFB2{IDBPM}SumORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
 #### Output PVs ####
-record(waveform, "$(SR):C18-SOFB{IDBPM}xSA") {      	
+record(waveform, "$(SR):C18-SOFB2{IDBPM}xSA") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C18-SOFB{IDBPM}xSumSOFB") {      	
+record(waveform, "$(SR):C18-SOFB2{IDBPM}xSumSOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C18-SOFB{IDBPM}xSumORM") {      	
+record(waveform, "$(SR):C18-SOFB2{IDBPM}xSumORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C18-SOFB{IDBPM}xSOFB") {      	
+record(waveform, "$(SR):C18-SOFB2{IDBPM}xSOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C18-SOFB{IDBPM}xORM") {      	
+record(waveform, "$(SR):C18-SOFB2{IDBPM}xORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C18-SOFB{IDBPM}ySA") {      	
+record(waveform, "$(SR):C18-SOFB2{IDBPM}ySA") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C18-SOFB{IDBPM}ySumSOFB") {      	
+record(waveform, "$(SR):C18-SOFB2{IDBPM}ySumSOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C18-SOFB{IDBPM}ySumORM") {      	
+record(waveform, "$(SR):C18-SOFB2{IDBPM}ySumORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C18-SOFB{IDBPM}ySOFB") {      	
+record(waveform, "$(SR):C18-SOFB2{IDBPM}ySOFB") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
-record(waveform, "$(SR):C18-SOFB{IDBPM}yORM") {      	
+record(waveform, "$(SR):C18-SOFB2{IDBPM}yORM") {      	
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
 
 #Scan start:
-record(aSub, "$(SR):C18-SOFB{IDBPM}bpmX_aSub")
+record(aSub, "$(SR):C18-SOFB2{IDBPM}bpmX_aSub")
 {
 	field(SNAM, "bpmAverage")
 	field(INPA, "$(SR):C18-BI{BPM:8}Pos:XwUsrOff-Calc")
@@ -627,16 +627,16 @@ record(aSub, "$(SR):C18-SOFB{IDBPM}bpmX_aSub")
 	field(FTF,  "FLOAT")	
 	field(NOF,  "1")
 
-	field(INPG, "$(SR)-SOFB{BPM}NSOFB")
+	field(INPG, "$(SR)-SOFB2{BPM}NSOFB")
 	field(FTG,  "FLOAT")	
 	field(NOG,  "1")
-	field(INPH, "$(SR)-SOFB{BPM}NORM")
+	field(INPH, "$(SR)-SOFB2{BPM}NORM")
 	field(FTH,  "FLOAT")	
 	field(NOH,  "1")
-	field(INPI, "$(SR)-SOFB{BPM}RESET")
+	field(INPI, "$(SR)-SOFB2{BPM}RESET")
 	field(FTI,  "CHAR")	
 	field(NOI,  "1")
-	field(INPJ, "$(SR)-SOFB{BPM}cycles")
+	field(INPJ, "$(SR)-SOFB2{BPM}cycles")
 	field(FTJ,  "FLOAT")	
 	field(NOJ,  "1")
 
@@ -653,28 +653,28 @@ record(aSub, "$(SR):C18-SOFB{IDBPM}bpmX_aSub")
 	field(INPP, "$(SR):C28-BI{BPM:8}Enbl:XOC-Cmd")
 	field(FTP,  "CHAR")	
 
-	field(OUTA, "$(SR):C18-SOFB{IDBPM}xSA PP")
+	field(OUTA, "$(SR):C18-SOFB2{IDBPM}xSA PP")
 	field(NOVA, "6")
 	field(FTVA, "FLOAT")
 
-	field(OUTB, "$(SR):C18-SOFB{IDBPM}xSumSOFB PP")
+	field(OUTB, "$(SR):C18-SOFB2{IDBPM}xSumSOFB PP")
 	field(NOVB, "6")
 	field(FTVB, "FLOAT")
 
-	field(OUTC, "$(SR):C18-SOFB{IDBPM}xSumORM PP")
+	field(OUTC, "$(SR):C18-SOFB2{IDBPM}xSumORM PP")
 	field(NOVC, "6")
 	field(FTVC, "FLOAT")
 
-	field(OUTD, "$(SR):C18-SOFB{IDBPM}xSOFB PP")
+	field(OUTD, "$(SR):C18-SOFB2{IDBPM}xSOFB PP")
 	field(NOVD, "6")
 	field(FTVD, "FLOAT")
 
-	field(OUTE, "$(SR):C18-SOFB{IDBPM}xORM PP")
+	field(OUTE, "$(SR):C18-SOFB2{IDBPM}xORM PP")
 	field(NOVE, "6")
 	field(FTVE, "FLOAT")
-	field(FLNK, "$(SR):C18-SOFB{IDBPM}bpmY_aSub")
+	field(FLNK, "$(SR):C18-SOFB2{IDBPM}bpmY_aSub")
 }
-record(aSub, "$(SR):C18-SOFB{IDBPM}bpmY_aSub")
+record(aSub, "$(SR):C18-SOFB2{IDBPM}bpmY_aSub")
 {
 	field(SNAM, "bpmAverage")
 	field(INPA, "$(SR):C18-BI{BPM:8}Pos:YwUsrOff-Calc")
@@ -696,16 +696,16 @@ record(aSub, "$(SR):C18-SOFB{IDBPM}bpmY_aSub")
 	field(FTF,  "FLOAT")	
 	field(NOF,  "1")
 
-	field(INPG, "$(SR)-SOFB{BPM}NSOFB")
+	field(INPG, "$(SR)-SOFB2{BPM}NSOFB")
 	field(FTG,  "FLOAT")	
 	field(NOG,  "1")
-	field(INPH, "$(SR)-SOFB{BPM}NORM")
+	field(INPH, "$(SR)-SOFB2{BPM}NORM")
 	field(FTH,  "FLOAT")	
 	field(NOH,  "1")
-	field(INPI, "$(SR)-SOFB{BPM}RESET")
+	field(INPI, "$(SR)-SOFB2{BPM}RESET")
 	field(FTI,  "CHAR")	
 	field(NOI,  "1")
-	field(INPJ, "$(SR)-SOFB{BPM}cycles")
+	field(INPJ, "$(SR)-SOFB2{BPM}cycles")
 	field(FTJ,  "FLOAT")	
 	field(NOJ,  "1")
 
@@ -722,28 +722,28 @@ record(aSub, "$(SR):C18-SOFB{IDBPM}bpmY_aSub")
 	field(INPP, "$(SR):C28-BI{BPM:8}Enbl:XOC-Cmd")
 	field(FTP,  "CHAR")	
 
-	field(OUTA, "$(SR):C18-SOFB{IDBPM}ySA PP")
+	field(OUTA, "$(SR):C18-SOFB2{IDBPM}ySA PP")
 	field(NOVA, "6")
 	field(FTVA, "FLOAT")
 
-	field(OUTB, "$(SR):C18-SOFB{IDBPM}ySumSOFB PP")
+	field(OUTB, "$(SR):C18-SOFB2{IDBPM}ySumSOFB PP")
 	field(NOVB, "6")
 	field(FTVB, "FLOAT")
 
-	field(OUTC, "$(SR):C18-SOFB{IDBPM}ySumORM PP")
+	field(OUTC, "$(SR):C18-SOFB2{IDBPM}ySumORM PP")
 	field(NOVC, "6")
 	field(FTVC, "FLOAT")
 
-	field(OUTD, "$(SR):C18-SOFB{IDBPM}ySOFB PP")
+	field(OUTD, "$(SR):C18-SOFB2{IDBPM}ySOFB PP")
 	field(NOVD, "6")
 	field(FTVD, "FLOAT")
 
-	field(OUTE, "$(SR):C18-SOFB{IDBPM}yORM PP")
+	field(OUTE, "$(SR):C18-SOFB2{IDBPM}yORM PP")
 	field(NOVE, "6")
 	field(FTVE, "FLOAT")
-	field(FLNK, "$(SR):C18-SOFB{IDBPM}bpmSum_aSub")
+	field(FLNK, "$(SR):C18-SOFB2{IDBPM}bpmSum_aSub")
 }
-record(aSub, "$(SR):C18-SOFB{IDBPM}bpmSum_aSub")
+record(aSub, "$(SR):C18-SOFB2{IDBPM}bpmSum_aSub")
 {
 	field(SNAM, "bpmAverage")
 	field(INPA, "$(SR):C18-BI{BPM:8}Ampl:SSA-Calc")
@@ -765,36 +765,36 @@ record(aSub, "$(SR):C18-SOFB{IDBPM}bpmSum_aSub")
 	field(FTF,  "FLOAT")	
 	field(NOF,  "1")
 
-	field(INPG, "$(SR)-SOFB{BPM}NSOFB")
+	field(INPG, "$(SR)-SOFB2{BPM}NSOFB")
 	field(FTG,  "FLOAT")	
 	field(NOG,  "1")
-	field(INPH, "$(SR)-SOFB{BPM}NORM")
+	field(INPH, "$(SR)-SOFB2{BPM}NORM")
 	field(FTH,  "FLOAT")	
 	field(NOH,  "1")
-	field(INPI, "$(SR)-SOFB{BPM}RESET")
+	field(INPI, "$(SR)-SOFB2{BPM}RESET")
 	field(FTI,  "CHAR")	
 	field(NOI,  "1")
-	field(INPJ, "$(SR)-SOFB{BPM}cycles")
+	field(INPJ, "$(SR)-SOFB2{BPM}cycles")
 	field(FTJ,  "FLOAT")	
 	field(NOJ,  "1")
 
-	field(OUTA, "$(SR):C18-SOFB{IDBPM}SumSA PP")
+	field(OUTA, "$(SR):C18-SOFB2{IDBPM}SumSA PP")
 	field(NOVA, "6")
 	field(FTVA, "FLOAT")
 
-	field(OUTB, "$(SR):C18-SOFB{IDBPM}SumSumSOFB PP")
+	field(OUTB, "$(SR):C18-SOFB2{IDBPM}SumSumSOFB PP")
 	field(NOVB, "6")
 	field(FTVB, "FLOAT")
 
-	field(OUTC, "$(SR):C18-SOFB{IDBPM}SumSumORM PP")
+	field(OUTC, "$(SR):C18-SOFB2{IDBPM}SumSumORM PP")
 	field(NOVC, "6")
 	field(FTVC, "FLOAT")
 
-	field(OUTD, "$(SR):C18-SOFB{IDBPM}SumSOFB PP")
+	field(OUTD, "$(SR):C18-SOFB2{IDBPM}SumSOFB PP")
 	field(NOVD, "6")
 	field(FTVD, "FLOAT")
 
-	field(OUTE, "$(SR):C18-SOFB{IDBPM}SumORM PP")
+	field(OUTE, "$(SR):C18-SOFB2{IDBPM}SumORM PP")
 	field(NOVE, "6")
 	field(FTVE, "FLOAT")
 }

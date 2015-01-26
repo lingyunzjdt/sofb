@@ -1,122 +1,122 @@
-record(bo, "$(SR):${CELL}-SOFB{BPM:1}invalid") {      	
+record(bo, "$(SR):${CELL}-SOFB2{BPM:1}invalid") {      	
 	field(ZNAM, "valid")
 	field(ONAM, "invalid")	
 }
-record(bo, "$(SR):${CELL}-SOFB{BPM:2}invalid") {      	
-	field(ZNAM, "valid")
-	field(ONAM, "invalid")	
-}
-
-record(bo, "$(SR):${CELL}-SOFB{BPM:3}invalid") {      	
+record(bo, "$(SR):${CELL}-SOFB2{BPM:2}invalid") {      	
 	field(ZNAM, "valid")
 	field(ONAM, "invalid")	
 }
 
-record(bo, "$(SR):${CELL}-SOFB{BPM:4}invalid") {      	
+record(bo, "$(SR):${CELL}-SOFB2{BPM:3}invalid") {      	
 	field(ZNAM, "valid")
 	field(ONAM, "invalid")	
 }
 
-record(bo, "$(SR):${CELL}-SOFB{BPM:5}invalid") {      	
+record(bo, "$(SR):${CELL}-SOFB2{BPM:4}invalid") {      	
 	field(ZNAM, "valid")
 	field(ONAM, "invalid")	
 }
 
-record(bo, "$(SR):${CELL}-SOFB{BPM:6}invalid") {      	
+record(bo, "$(SR):${CELL}-SOFB2{BPM:5}invalid") {      	
 	field(ZNAM, "valid")
 	field(ONAM, "invalid")	
 }
 
-record(waveform, "$(SR):${CELL}-SOFB{BPM}invalid") {      	
+record(bo, "$(SR):${CELL}-SOFB2{BPM:6}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+
+record(waveform, "$(SR):${CELL}-SOFB2{BPM}invalid") {      	
     field(NELM, "6")
     field(FTVL, "CHAR")	  	
 }
 
-record(aSub, "$(SR):${CELL}-SOFB{BPM}invalid_aSub")
+record(aSub, "$(SR):${CELL}-SOFB2{BPM}invalid_aSub")
 {
 	field(SNAM, "invalidMerge")
 	field(SCAN, "1 second")
-	field(INPA, "$(SR):${CELL}-SOFB{BPM:1}invalid PP")
+	field(INPA, "$(SR):${CELL}-SOFB2{BPM:1}invalid PP")
 	field(FTA,  "CHAR")	
 	field(NOA,  "1")
-	field(INPB, "$(SR):${CELL}-SOFB{BPM:2}invalid PP")
+	field(INPB, "$(SR):${CELL}-SOFB2{BPM:2}invalid PP")
 	field(FTB,  "CHAR")	
 	field(NOB,  "1")
-	field(INPC, "$(SR):${CELL}-SOFB{BPM:3}invalid PP")
+	field(INPC, "$(SR):${CELL}-SOFB2{BPM:3}invalid PP")
 	field(FTC,  "CHAR")	
 	field(NOC,  "1")
-	field(INPD, "$(SR):${CELL}-SOFB{BPM:4}invalid PP")
+	field(INPD, "$(SR):${CELL}-SOFB2{BPM:4}invalid PP")
 	field(FTD,  "CHAR")	
 	field(NOD,  "1")
-	field(INPE, "$(SR):${CELL}-SOFB{BPM:5}invalid PP")
+	field(INPE, "$(SR):${CELL}-SOFB2{BPM:5}invalid PP")
 	field(FTE,  "CHAR")	
 	field(NOE,  "1")
-	field(INPF, "$(SR):${CELL}-SOFB{BPM:6}invalid PP")
+	field(INPF, "$(SR):${CELL}-SOFB2{BPM:6}invalid PP")
 	field(FTF,  "CHAR")	
 	field(NOF,  "1")
-	field(OUTA, "$(SR):${CELL}-SOFB{BPM}invalid PP")
+	field(OUTA, "$(SR):${CELL}-SOFB2{BPM}invalid PP")
 	field(NOVA, "6")
 	field(FTVA, "CHAR")
 }
 
 
-record(bo, "$(SR):${CELL}-SOFB{COR:1}invalid") {      	
+record(bo, "$(SR):${CELL}-SOFB2{COR:1}invalid") {      	
 	field(ZNAM, "valid")
 	field(ONAM, "invalid")	
 }
-record(bo, "$(SR):${CELL}-SOFB{COR:2}invalid") {      	
-	field(ZNAM, "valid")
-	field(ONAM, "invalid")	
-}
-
-record(bo, "$(SR):${CELL}-SOFB{COR:3}invalid") {      	
+record(bo, "$(SR):${CELL}-SOFB2{COR:2}invalid") {      	
 	field(ZNAM, "valid")
 	field(ONAM, "invalid")	
 }
 
-record(bo, "$(SR):${CELL}-SOFB{COR:4}invalid") {      	
+record(bo, "$(SR):${CELL}-SOFB2{COR:3}invalid") {      	
 	field(ZNAM, "valid")
 	field(ONAM, "invalid")	
 }
 
-record(bo, "$(SR):${CELL}-SOFB{COR:5}invalid") {      	
+record(bo, "$(SR):${CELL}-SOFB2{COR:4}invalid") {      	
 	field(ZNAM, "valid")
 	field(ONAM, "invalid")	
 }
 
-record(bo, "$(SR):${CELL}-SOFB{COR:6}invalid") {      	
+record(bo, "$(SR):${CELL}-SOFB2{COR:5}invalid") {      	
 	field(ZNAM, "valid")
 	field(ONAM, "invalid")	
 }
 
-record(waveform, "$(SR):${CELL}-SOFB{COR}invalid") {      	
+record(bo, "$(SR):${CELL}-SOFB2{COR:6}invalid") {      	
+	field(ZNAM, "valid")
+	field(ONAM, "invalid")	
+}
+
+record(waveform, "$(SR):${CELL}-SOFB2{COR}invalid") {      	
     field(NELM, "6")
     field(FTVL, "CHAR")	  	
 }
 
-record(aSub, "$(SR):${CELL}-SOFB{COR}invalid_aSub")
+record(aSub, "$(SR):${CELL}-SOFB2{COR}invalid_aSub")
 {
 	field(SNAM, "invalidMerge")
 	field(SCAN, "1 second")
-	field(INPA, "$(SR):${CELL}-SOFB{COR:1}invalid PP")
+	field(INPA, "$(SR):${CELL}-SOFB2{COR:1}invalid PP")
 	field(FTA,  "CHAR")	
 	field(NOA,  "1")
-	field(INPB, "$(SR):${CELL}-SOFB{COR:2}invalid PP")
+	field(INPB, "$(SR):${CELL}-SOFB2{COR:2}invalid PP")
 	field(FTB,  "CHAR")	
 	field(NOB,  "1")
-	field(INPC, "$(SR):${CELL}-SOFB{COR:3}invalid PP")
+	field(INPC, "$(SR):${CELL}-SOFB2{COR:3}invalid PP")
 	field(FTC,  "CHAR")	
 	field(NOC,  "1")
-	field(INPD, "$(SR):${CELL}-SOFB{COR:4}invalid PP")
+	field(INPD, "$(SR):${CELL}-SOFB2{COR:4}invalid PP")
 	field(FTD,  "CHAR")	
 	field(NOD,  "1")
-	field(INPE, "$(SR):${CELL}-SOFB{COR:5}invalid PP")
+	field(INPE, "$(SR):${CELL}-SOFB2{COR:5}invalid PP")
 	field(FTE,  "CHAR")	
 	field(NOE,  "1")
-	field(INPF, "$(SR):${CELL}-SOFB{COR:6}invalid PP")
+	field(INPF, "$(SR):${CELL}-SOFB2{COR:6}invalid PP")
 	field(FTF,  "CHAR")	
 	field(NOF,  "1")
-	field(OUTA, "$(SR):${CELL}-SOFB{COR}invalid PP")
+	field(OUTA, "$(SR):${CELL}-SOFB2{COR}invalid PP")
 	field(NOVA, "6")
 	field(FTVA, "CHAR")
 }

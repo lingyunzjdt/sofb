@@ -1,15 +1,15 @@
 ## Calculate setpoint
-record(ao, "SR{}StartReg") {
-	field(SCAN, ".1 second")
-	field(FLNK, "SR:C30-BI{BPM:1}Pos:XwUsrOff-Calc")
-}
+#record(ao, "SR{}StartReg") {
+#	field(SCAN, ".1 second")
+#	field(FLNK, "SR:C30-BI{BPM:1}Pos:XwUsrOff-Calc")
+#}
 
-record(calc, "SR{}EndReg") {
-	field(INPA, "SR{}EndReg")
-	field(CALC, "A+1")
-}
+#record(calc, "SR{}EndReg") {
+#	field(INPA, "SR{}EndReg")
+#	field(CALC, "A+1")
+#}
 
-record(calc, "SR-SOFB{}EndReg") {
-	field(INPA, "SR-SOFB{}EndReg")
+record(calc, "SR-SOFB2{}EndReg") {
+	field(INPA, "SR-SOFB2{}EndReg")
 	field(CALC, "A+1")
 }

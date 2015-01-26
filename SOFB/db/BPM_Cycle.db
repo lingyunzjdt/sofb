@@ -1,97 +1,97 @@
 #### Since compress record has syn. problem, need to calculate BPM average data: XSOFB, YSOFB: average NSOFB;  XORM, YORM: average NORM on top of NSOFB  ######
 #### Global #####
-record(ao, "$(SR)-SOFB{BPM}NSOFB") {      	
+record(ao, "$(SR)-SOFB2{BPM}NSOFB") {      	
 #	field(VAL, "20")
 	field(VAL, "1")
 }
-record(ao, "$(SR)-SOFB{BPM}NORM") {      	
+record(ao, "$(SR)-SOFB2{BPM}NORM") {      	
 #	field(VAL, "10")
 	field(VAL, "1")
 }
 
 
 #### Global #####
-record(bo, "$(SR)-SOFB{BPM}orbDoneSOFB") {      	
+record(bo, "$(SR)-SOFB2{BPM}orbDoneSOFB") {      	
 }
-record(bo, "$(SR)-SOFB{BPM}orbDoneORM") {      	
+record(bo, "$(SR)-SOFB2{BPM}orbDoneORM") {      	
 }
 
 ### Global scan start ####
-record(bo, "$(SR)-SOFB{BPM}RESET") {      	
+record(bo, "$(SR)-SOFB2{BPM}RESET") {      	
 	field(HIGH, "1.0")
 	field(ZNAM, "Idle")
 	field(ONAM, "Reset")
 }
 
-record(calcout, "$(SR)-SOFB{BPM}cycleCalc") {      	
+record(calcout, "$(SR)-SOFB2{BPM}cycleCalc") {      	
 	field(SCAN, ".1 second")
-	field(INPA, "$(SR)-SOFB{BPM}RESET")
-	field(INPB, "$(SR)-SOFB{BPM}NSOFB")
-	field(INPC, "$(SR)-SOFB{BPM}NORM")
-	field(INPD, "$(SR)-SOFB{BPM}cycles")
-	field(OUT,  "$(SR)-SOFB{BPM}cycles")
+	field(INPA, "$(SR)-SOFB2{BPM}RESET")
+	field(INPB, "$(SR)-SOFB2{BPM}NSOFB")
+	field(INPC, "$(SR)-SOFB2{BPM}NORM")
+	field(INPD, "$(SR)-SOFB2{BPM}cycles")
+	field(OUT,  "$(SR)-SOFB2{BPM}cycles")
 	field(CALC, "((A>0)||((D-B*C+1)==0))?0:(D+1)")
-	field(FLNK, "$(SR)-SOFB{BPM}cycles")
+	field(FLNK, "$(SR)-SOFB2{BPM}cycles")
 }
-record(ao, "$(SR)-SOFB{BPM}cycles") {      	
-	field(FLNK, "$(SR)-SOFB{BPM}StartAll")
-}
-
-record(fanout, "$(SR)-SOFB{BPM}StartAll") {      	
-	field(SELM, "All")
-	field(LNK1, "$(SR)-SOFB{BPM}StartP1")
-	field(LNK2, "$(SR)-SOFB{BPM}StartP2")
-	field(LNK3, "$(SR)-SOFB{BPM}StartP3")
-	field(LNK4, "$(SR)-SOFB{BPM}StartP4")
-	field(LNK5, "$(SR)-SOFB{BPM}StartP5")
+record(ao, "$(SR)-SOFB2{BPM}cycles") {      	
+	field(FLNK, "$(SR)-SOFB2{BPM}StartAll")
 }
 
-record(fanout, "$(SR)-SOFB{BPM}StartP1") {      	
+record(fanout, "$(SR)-SOFB2{BPM}StartAll") {      	
 	field(SELM, "All")
-	field(LNK1, "$(SR):C23-SOFB{BPM}bpmX_aSub")
-	field(LNK2, "$(SR):C24-SOFB{BPM}bpmX_aSub")
-	field(LNK3, "$(SR):C25-SOFB{BPM}bpmX_aSub")
-	field(LNK4, "$(SR):C26-SOFB{BPM}bpmX_aSub")
-	field(LNK5, "$(SR):C27-SOFB{BPM}bpmX_aSub")
-	field(LNK6, "$(SR):C28-SOFB{BPM}bpmX_aSub")
+	field(LNK1, "$(SR)-SOFB2{BPM}StartP1")
+	field(LNK2, "$(SR)-SOFB2{BPM}StartP2")
+	field(LNK3, "$(SR)-SOFB2{BPM}StartP3")
+	field(LNK4, "$(SR)-SOFB2{BPM}StartP4")
+	field(LNK5, "$(SR)-SOFB2{BPM}StartP5")
 }
 
-record(fanout, "$(SR)-SOFB{BPM}StartP2") {      	
+record(fanout, "$(SR)-SOFB2{BPM}StartP1") {      	
 	field(SELM, "All")
-	field(LNK1, "$(SR):C29-SOFB{BPM}bpmX_aSub")
-	field(LNK2, "$(SR):C30-SOFB{BPM}bpmX_aSub")
-	field(LNK3, "$(SR):C01-SOFB{BPM}bpmX_aSub")
-	field(LNK4, "$(SR):C02-SOFB{BPM}bpmX_aSub")
-	field(LNK5, "$(SR):C03-SOFB{BPM}bpmX_aSub")
-	field(LNK6, "$(SR):C04-SOFB{BPM}bpmX_aSub")
+	field(LNK1, "$(SR):C23-SOFB2{BPM}bpmX_aSub")
+	field(LNK2, "$(SR):C24-SOFB2{BPM}bpmX_aSub")
+	field(LNK3, "$(SR):C25-SOFB2{BPM}bpmX_aSub")
+	field(LNK4, "$(SR):C26-SOFB2{BPM}bpmX_aSub")
+	field(LNK5, "$(SR):C27-SOFB2{BPM}bpmX_aSub")
+	field(LNK6, "$(SR):C28-SOFB2{BPM}bpmX_aSub")
 }
 
-record(fanout, "$(SR)-SOFB{BPM}StartP3") {      	
+record(fanout, "$(SR)-SOFB2{BPM}StartP2") {      	
 	field(SELM, "All")
-	field(LNK1, "$(SR):C05-SOFB{BPM}bpmX_aSub")
-	field(LNK2, "$(SR):C06-SOFB{BPM}bpmX_aSub")
-	field(LNK3, "$(SR):C07-SOFB{BPM}bpmX_aSub")
-	field(LNK4, "$(SR):C08-SOFB{BPM}bpmX_aSub")
-	field(LNK5, "$(SR):C09-SOFB{BPM}bpmX_aSub")
-	field(LNK6, "$(SR):C10-SOFB{BPM}bpmX_aSub")
+	field(LNK1, "$(SR):C29-SOFB2{BPM}bpmX_aSub")
+	field(LNK2, "$(SR):C30-SOFB2{BPM}bpmX_aSub")
+	field(LNK3, "$(SR):C01-SOFB2{BPM}bpmX_aSub")
+	field(LNK4, "$(SR):C02-SOFB2{BPM}bpmX_aSub")
+	field(LNK5, "$(SR):C03-SOFB2{BPM}bpmX_aSub")
+	field(LNK6, "$(SR):C04-SOFB2{BPM}bpmX_aSub")
 }
 
-record(fanout, "$(SR)-SOFB{BPM}StartP4") {      	
+record(fanout, "$(SR)-SOFB2{BPM}StartP3") {      	
 	field(SELM, "All")
-	field(LNK1, "$(SR):C11-SOFB{BPM}bpmX_aSub")
-	field(LNK2, "$(SR):C12-SOFB{BPM}bpmX_aSub")
-	field(LNK3, "$(SR):C13-SOFB{BPM}bpmX_aSub")
-	field(LNK4, "$(SR):C14-SOFB{BPM}bpmX_aSub")
-	field(LNK5, "$(SR):C15-SOFB{BPM}bpmX_aSub")
-	field(LNK6, "$(SR):C16-SOFB{BPM}bpmX_aSub")
+	field(LNK1, "$(SR):C05-SOFB2{BPM}bpmX_aSub")
+	field(LNK2, "$(SR):C06-SOFB2{BPM}bpmX_aSub")
+	field(LNK3, "$(SR):C07-SOFB2{BPM}bpmX_aSub")
+	field(LNK4, "$(SR):C08-SOFB2{BPM}bpmX_aSub")
+	field(LNK5, "$(SR):C09-SOFB2{BPM}bpmX_aSub")
+	field(LNK6, "$(SR):C10-SOFB2{BPM}bpmX_aSub")
 }
 
-record(fanout, "$(SR)-SOFB{BPM}StartP5") {      	
+record(fanout, "$(SR)-SOFB2{BPM}StartP4") {      	
 	field(SELM, "All")
-	field(LNK1, "$(SR):C17-SOFB{BPM}bpmX_aSub")
-	field(LNK2, "$(SR):C18-SOFB{BPM}bpmX_aSub")
-	field(LNK3, "$(SR):C19-SOFB{BPM}bpmX_aSub")
-	field(LNK4, "$(SR):C20-SOFB{BPM}bpmX_aSub")
-	field(LNK5, "$(SR):C21-SOFB{BPM}bpmX_aSub")
-	field(LNK6, "$(SR):C22-SOFB{BPM}bpmX_aSub")
+	field(LNK1, "$(SR):C11-SOFB2{BPM}bpmX_aSub")
+	field(LNK2, "$(SR):C12-SOFB2{BPM}bpmX_aSub")
+	field(LNK3, "$(SR):C13-SOFB2{BPM}bpmX_aSub")
+	field(LNK4, "$(SR):C14-SOFB2{BPM}bpmX_aSub")
+	field(LNK5, "$(SR):C15-SOFB2{BPM}bpmX_aSub")
+	field(LNK6, "$(SR):C16-SOFB2{BPM}bpmX_aSub")
+}
+
+record(fanout, "$(SR)-SOFB2{BPM}StartP5") {      	
+	field(SELM, "All")
+	field(LNK1, "$(SR):C17-SOFB2{BPM}bpmX_aSub")
+	field(LNK2, "$(SR):C18-SOFB2{BPM}bpmX_aSub")
+	field(LNK3, "$(SR):C19-SOFB2{BPM}bpmX_aSub")
+	field(LNK4, "$(SR):C20-SOFB2{BPM}bpmX_aSub")
+	field(LNK5, "$(SR):C21-SOFB2{BPM}bpmX_aSub")
+	field(LNK6, "$(SR):C22-SOFB2{BPM}bpmX_aSub")
 }

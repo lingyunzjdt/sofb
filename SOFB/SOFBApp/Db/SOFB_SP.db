@@ -1,187 +1,187 @@
 #Oct 21, 2014:   Add DCCT limit to disable SOFB.   When current is small, can't turn on SOFB
-record(calcout, "$(SR)-SOFB{}DCCTEnable_Calcout") {
+record(calcout, "$(SR)-SOFB2{}DCCTEnable_Calcout") {
       field(SCAN, ".1 second")
       field(INPA, "SR:C03-BI{DCCT:1}I:Total-I")
-      field(INPB, "$(SR)-SOFB{}Enable")
+      field(INPB, "$(SR)-SOFB2{}Enable")
       field(CALC, "(A<0.1)?0:B")
-      field(OUT,  "$(SR)-SOFB{}Enable PP")
+      field(OUT,  "$(SR)-SOFB2{}Enable PP")
 }
 
 
 ## Calculate setpoint
-record(bo, "$(SR)-SOFB{}pidRst") {
+record(bo, "$(SR)-SOFB2{}pidRst") {
 	field(ZNAM, "Idle")
 	field(ONAM, "Rst Sum")
 }
 
-record(bo, "$(SR)-SOFB{}Enable") {
+record(bo, "$(SR)-SOFB2{}Enable") {
 	field(ZNAM, "SOFB Disable")
 	field(ONAM, "SOFB Enable")
 }
 
-record(bo, "$(SR)-SOFB{}ManuSet") {
+record(bo, "$(SR)-SOFB2{}ManuSet") {
 	field(ZNAM, "SOFB deltaSP")
 	field(ONAM, "Manual deltaSP")
 }
 
-record(ao, "$(SR)-SOFB{}Kp") {
+record(ao, "$(SR)-SOFB2{}Kp") {
 #	field(VAL, "1")
 }
 
-record(ao, "$(SR)-SOFB{}Ki") {
+record(ao, "$(SR)-SOFB2{}Ki") {
 #	field(VAL, "1")
 }
 
-record(ao, "$(SR)-SOFB{}Kd") {
+record(ao, "$(SR)-SOFB2{}Kd") {
 #	field(VAL, "1")
 }
 
-record(waveform, "$(SR)-SOFB{BPM}orb:xRef") {
+record(waveform, "$(SR)-SOFB2{BPM}orb:xRef") {
 	field(NELM, "180")
 	field(FTVL, "FLOAT")	  	
 }
 
-record(waveform, "$(SR)-SOFB{BPM}orb:yRef") {
+record(waveform, "$(SR)-SOFB2{BPM}orb:yRef") {
 	field(NELM, "180")
 	field(FTVL, "FLOAT")	  	
 }
 
 #Shift Ref orbit: C30:1-6, C01:1-6, C29:1-6
-record(waveform, "$(SR)-SOFB{BPM}X:Ref-SP") {
+record(waveform, "$(SR)-SOFB2{BPM}X:Ref-SP") {
 	field(NELM, "180")
 	field(FTVL, "FLOAT")	  	
 }
 
-record(waveform, "$(SR)-SOFB{BPM}Y:Ref-SP") {
+record(waveform, "$(SR)-SOFB2{BPM}Y:Ref-SP") {
 	field(NELM, "180")
 	field(FTVL, "FLOAT")	  	
 }
 
 
-record(waveform, "$(SR)-SOFB{}deltaSP") {
+record(waveform, "$(SR)-SOFB2{}deltaSP") {
 	field(NELM, "360")
 	field(FTVL, "FLOAT")	  	
 }
 
-record(waveform, "$(SR)-SOFB{}SP") {
+record(waveform, "$(SR)-SOFB2{}SP") {
 	field(NELM, "360")
 	field(FTVL, "FLOAT")	  	
 }
 
-record(waveform, "$(SR)-SOFB{}deltaSum") {
+record(waveform, "$(SR)-SOFB2{}deltaSum") {
 	field(NELM, "360")
 	field(FTVL, "FLOAT")	  	
 }
 
-record(waveform, "$(SR)-SOFB{}deltaDiff") {
+record(waveform, "$(SR)-SOFB2{}deltaDiff") {
 	field(NELM, "360")
 	field(FTVL, "FLOAT")	  	
 }
 
-record(aSub, "$(SR)-SOFB{}sofb:pid_aSub") 
+record(aSub, "$(SR)-SOFB2{}sofb:pid_aSub") 
 {
 #	field(SCAN, "1 second")
 	field(SNAM, "pidSP")
-	field(INPA, "$(SR)-SOFB{BPM}sofb:RV")
+	field(INPA, "$(SR)-SOFB2{BPM}sofb:RV")
 	field(FTA, "FLOAT")
 	field(NOA, "129960")
 
-	field(INPB, "$(SR)-SOFB{BPM}orb:xSOFB")
+	field(INPB, "$(SR)-SOFB2{BPM}orb:xSOFB")
 	field(FTB, "FLOAT")
 	field(NOB, "180")
-	field(INPC, "$(SR)-SOFB{BPM}orb:ySOFB CP")  #must be CP
+	field(INPC, "$(SR)-SOFB2{BPM}orb:ySOFB CP")  #must be CP
 	field(FTC, "FLOAT")
 	field(NOC, "180")
 
-	field(INPD, "$(SR)-SOFB{BPM}orb:xRef")
+	field(INPD, "$(SR)-SOFB2{BPM}orb:xRef")
 	field(FTD, "FLOAT")
 	field(NOD, "180")
-	field(INPE, "$(SR)-SOFB{BPM}orb:yRef")
+	field(INPE, "$(SR)-SOFB2{BPM}orb:yRef")
 	field(FTE, "FLOAT")
 	field(NOE, "180")
 
-	field(INPF, "$(SR)-SOFB{}pidRst")
+	field(INPF, "$(SR)-SOFB2{}pidRst")
 	field(FTF, "CHAR")
 	field(NOF, "1")
 
-	field(INPG, "$(SR)-SOFB{}Kp")
+	field(INPG, "$(SR)-SOFB2{}Kp")
 	field(FTG, "FLOAT")
 	field(NOG, "1")
-	field(INPH, "$(SR)-SOFB{}Ki")
+	field(INPH, "$(SR)-SOFB2{}Ki")
 	field(FTH, "FLOAT")
 	field(NOH, "1")
-	field(INPI, "$(SR)-SOFB{}Kd")
+	field(INPI, "$(SR)-SOFB2{}Kd")
 	field(FTI, "FLOAT")
 	field(NOI, "1")
 
-	field(INPJ, "$(SR)-SOFB{}Enable")
+	field(INPJ, "$(SR)-SOFB2{}Enable")
 	field(FTJ, "CHAR")
 	field(NOJ, "1")
 
-	field(INPK, "$(SR)-SOFB{}ManuSet")
+	field(INPK, "$(SR)-SOFB2{}ManuSet")
 	field(FTK, "CHAR")
 	field(NOK, "1")
 
-	field(INPL, "$(SR)-SOFB{}deltaSP")
+	field(INPL, "$(SR)-SOFB2{}deltaSP")
 	field(FTL, "FLOAT")
 	field(NOL, "360")
 
-	field(INPM, "$(SR)-SOFB{}SP")
+	field(INPM, "$(SR)-SOFB2{}SP")
 	field(FTM, "FLOAT")
 	field(NOM, "360")
 
-	field(INPN, "$(SR)-SOFB{}sofb:pid_I_Decay")
+	field(INPN, "$(SR)-SOFB2{}sofb:pid_I_Decay")
 	field(FTN, "FLOAT")
 	field(NON, "1")
 
-	field(OUTA, "$(SR)-SOFB{}deltaSP PP")
+	field(OUTA, "$(SR)-SOFB2{}deltaSP PP")
 	field(NOVA, "360")
 	field(FTVA, "FLOAT")
 
-	field(OUTB, "$(SR)-SOFB{BPM}sofb:deltaRow PP")
+	field(OUTB, "$(SR)-SOFB2{BPM}sofb:deltaRow PP")
 	field(NOVB, "360")
 	field(FTVB, "FLOAT")
 
-	field(OUTC, "$(SR)-SOFB{BPM}X:RMSDelta-I PP")
+	field(OUTC, "$(SR)-SOFB2{BPM}X:RMSDelta-I PP")
 	field(NOVC, "1")
 	field(FTVC, "FLOAT")	
 
-	field(OUTD, "$(SR)-SOFB{BPM}Y:RMSDelta-I PP")
+	field(OUTD, "$(SR)-SOFB2{BPM}Y:RMSDelta-I PP")
 	field(NOVD, "1")
 	field(FTVD, "FLOAT")
 
-	field(OUTE, "$(SR)-SOFB{BPM}sofb:deltaXY-RMS PP")
+	field(OUTE, "$(SR)-SOFB2{BPM}sofb:deltaXY-RMS PP")
 	field(NOVE, "1")
 	field(FTVE, "FLOAT")
 
-	field(OUTF, "$(SR)-SOFB{}SP PP")
+	field(OUTF, "$(SR)-SOFB2{}SP PP")
 	field(NOVF, "360")
 	field(FTVF, "FLOAT")
 
-	field(OUTG, "$(SR)-SOFB{}deltaSum PP")
+	field(OUTG, "$(SR)-SOFB2{}deltaSum PP")
 	field(NOVG, "360")
 	field(FTVG, "FLOAT")
 
-	field(OUTH, "$(SR)-SOFB{}deltaDiff PP")
+	field(OUTH, "$(SR)-SOFB2{}deltaDiff PP")
 	field(NOVH, "360")
 	field(FTVH, "FLOAT")
 
-	field(FLNK,"$(SR):C01-SOFB{}corSP_aSub")
+#	field(FLNK,"$(SR):C01-SOFB2{}corSP_aSub")
 }
 
-record(ao, "$(SR)-SOFB{BPM}X:RMSDelta-I") {
+record(ao, "$(SR)-SOFB2{BPM}X:RMSDelta-I") {
 	field(DESC, "RMS of X orbit delta")
 }
 
-record(ao, "$(SR)-SOFB{BPM}Y:RMSDelta-I") {
+record(ao, "$(SR)-SOFB2{BPM}Y:RMSDelta-I") {
 	field(DESC, "RMS of Y orbit delta")
 }
 
-record(ao, "$(SR)-SOFB{BPM}sofb:deltaXY-RMS") {
+record(ao, "$(SR)-SOFB2{BPM}sofb:deltaXY-RMS") {
 	field(DESC, "RMS of X Y orbit delta")
 }
 
-record(ao, "$(SR)-SOFB{}sofb:pid_I_Decay") {
+record(ao, "$(SR)-SOFB2{}sofb:pid_I_Decay") {
 	field(VAL, "0.5")
 }
 
