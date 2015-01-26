@@ -1,11 +1,11 @@
 #### Since compress record has syn. problem, need to calculate BPM average data: XSOFB, YSOFB: average NSOFB;  XORM, YORM: average NORM on top of NSOFB  ######
 
 #### Add Sum signals
-record(waveform, "$(SR):${CELL}-SOFB{BPM}SumSA") {      	
+record(waveform, "$(SR):${CELL}-SOFB{BPM}SumSA") {
     field(NELM, "6")
-    field(FTVL, "FLOAT")	  	
+    field(FTVL, "FLOAT")
 }
-record(waveform, "$(SR):${CELL}-SOFB{BPM}SumSumSOFB") {      	
+record(waveform, "$(SR):${CELL}-SOFB{BPM}SumSumSOFB") {
     field(NELM, "6")
     field(FTVL, "FLOAT")	  	
 }
