@@ -86,7 +86,7 @@ def build_flnk(rlst):
         ret.append([ri for ri in r] + [flnk,])
     return ret
 
-def build_record_merge(rlist, wfm,
+def build_record_merge(rlist, wfm, iroot,
                        FTVL="FLOAT", SNAM="mergePvs", SCAN=".1 second"):
     #the first record must be the root
     recs = []
@@ -96,7 +96,7 @@ def build_record_merge(rlist, wfm,
         lvl, idx, n, subs = r
         # the result waveform
         pvwfm = "{0}_{1}_{2}_wfm".format(wfm, lvl, idx)
-        if i == 0:
+        if i == iroot:
             pvwfm = wfm
         recs.append(["waveform", pvwfm, {"NELM": "%d" % n, "FTVL": FTVL}])
         # the asub record
@@ -118,6 +118,44 @@ def build_record_merge(rlist, wfm,
     # recs[0][1] = wfm
     recs.append(["bo", "{0}:status".format(wfm),
                  {"VAL": "1", "ZNAM": "Idle", "ONAM": "Running"}])
+    recs.append(["calcout", "{0}:timer_".format(wfm),
+                 {"SCAN": SCAN, "INPA": "{0}:status".format(wfm),
+                  "CALC": "A>0?1:0", "OUT": flnk + " PP",
+                  "OOPT": "When Non-zero", "DOPT": "Use CALC"}])
+    return recs
+
+def build_record_split(rlist, wfm, iroot,
+                       FTVL="FLOAT", SNAM="splitPvs", SCAN=".1 second"):
+    #the first record must be the root
+    recs = []
+    asubr = []
+    flnk = None
+    for i,r in enumerate(rlst):
+        lvl, idx, n, subs = r
+        # the result waveform
+        pvwfm = "{0}_{1}_{2}_wfm".format(wfm, lvl, idx)
+        if i == iroot or iroot % len(rlst) == i:
+            pvwfm = wfm
+        recs.append(["waveform", pvwfm, {"NELM": "%d" % n, "FTVL": FTVL}])
+        # the asub record
+        rsub = {"SNAM": SNAM, "INPA": pvwfm,
+                "FTA": FTVL, "NOA": "%d" % n}
+        for j,sub in enumerate(subs):
+            ir = chr(ord('A') + j)
+            pv = sub[0]
+            if len(sub) == 3:
+                pv = "{0}_{1}_{2}_wfm".format(wfm, sub[0], sub[1])
+                
+            rsub["OUT%s" % ir] = pv
+            rsub["FTV%s" % ir ] = FTVL
+            rsub["NOV%s" % ir ] = "%d" % sub[-1]
+        if flnk:
+            rsub["FLNK"] = flnk
+        recs.append(["aSub", "{0}_{1}_{2}_asub".format(wfm, r[0], r[1]), rsub])
+        flnk = recs[-1][1]
+    # recs[0][1] = wfm
+    recs.append(["bo", "{0}:status".format(wfm),
+                 {"VAL": "0", "ZNAM": "Idle", "ONAM": "Running"}])
     recs.append(["calcout", "{0}:timer_".format(wfm),
                  {"SCAN": SCAN, "INPA": "{0}:status".format(wfm),
                   "CALC": "A>0?1:0", "OUT": flnk + " PP",
@@ -203,11 +241,16 @@ if __name__ == "__main__":
         #output_tree(stree, 0)
     print "Clean Tree:"
     output_tree(stree, 0)
-    rlst = sorted(flat_tree(stree), reverse=True)
-    
-    if rlst[0][1] != 0 or rlst[0][2] != len(nodes):
-        raise RuntimeError("tree root is wrong!: {0}".format(rlst[0]))
-    rlst = build_record_merge(rlst, pvsum)
+    if False:
+        rlst = sorted(flat_tree(stree), reverse=True)
+        if rlst[0][1] != 0 or rlst[0][2] != len(nodes):
+            raise RuntimeError("tree root is wrong!: {0}".format(rlst[0]))
+        #rlst = build_record_merge(rlst, pvsum, 0)
+    else:
+        rlst = sorted(flat_tree(stree), reverse=False)
+        if rlst[-1][1] != 0 or rlst[-1][2] != len(nodes):
+            raise RuntimeError("tree root is wrong!: {0}".format(rlst[-1]))
+        rlst = build_record_split(rlst, pvsum, -1)
     #rlst = build_flnk(rlst)
     
     mlen = 0
