@@ -1,12 +1,12 @@
 ## Generated from List of PVs.
 ## Lingyun Yang <lyyang@bnl.gov>, 01-29-2015 12:11:17
 ##
-record(waveform, "SR:APHLA{SOFB}Orb:Y-I") {
+record(waveform, "SR:APHLA:SOFB{BPM}Y0-I") {
    field(FTVL, "DOUBLE")
    field(NELM, "198")
 }
 
-record(aSub, "SR:APHLA{SOFB}Orb:Y-I_2_0_asub_") {
+record(aSub, "SR:APHLA:SOFB{BPM}Y0-I_2_0_asub_") {
    field(FTA, "DOUBLE")
    field(FTB, "DOUBLE")
    field(FTC, "DOUBLE")
@@ -24,16 +24,16 @@ record(aSub, "SR:APHLA{SOFB}Orb:Y-I_2_0_asub_") {
    field(FTVE, "DOUBLE")
    field(FTVF, "DOUBLE")
    field(FTVG, "DOUBLE")
-   field(INPA, "SR:APHLA{SOFB}Orb:Y-I_1_0_wfm_")
-   field(INPB, "SR:APHLA{SOFB}Orb:Y-I_1_1_wfm_")
-   field(INPC, "SR:APHLA{SOFB}Orb:Y-I_1_2_wfm_")
-   field(INPD, "SR:APHLA{SOFB}Orb:Y-I_1_3_wfm_")
-   field(INPE, "SR:APHLA{SOFB}Orb:Y-I_1_4_wfm_")
-   field(INPF, "SR:APHLA{SOFB}Orb:Y-I_1_5_wfm_")
-   field(INPG, "SR:APHLA{SOFB}Orb:Y-I_1_6_wfm_")
-   field(INPH, "SR:APHLA{SOFB}Orb:Y-I_1_7_wfm_")
-   field(INPI, "SR:APHLA{SOFB}Orb:Y-I_1_8_wfm_")
-   field(INPJ, "SR:APHLA{SOFB}Orb:Y-I_1_9_wfm_")
+   field(INPA, "SR:APHLA:SOFB{BPM}Y0-I_1_0_wfm_")
+   field(INPB, "SR:APHLA:SOFB{BPM}Y0-I_1_1_wfm_")
+   field(INPC, "SR:APHLA:SOFB{BPM}Y0-I_1_2_wfm_")
+   field(INPD, "SR:APHLA:SOFB{BPM}Y0-I_1_3_wfm_")
+   field(INPE, "SR:APHLA:SOFB{BPM}Y0-I_1_4_wfm_")
+   field(INPF, "SR:APHLA:SOFB{BPM}Y0-I_1_5_wfm_")
+   field(INPG, "SR:APHLA:SOFB{BPM}Y0-I_1_6_wfm_")
+   field(INPH, "SR:APHLA:SOFB{BPM}Y0-I_1_7_wfm_")
+   field(INPI, "SR:APHLA:SOFB{BPM}Y0-I_1_8_wfm_")
+   field(INPJ, "SR:APHLA:SOFB{BPM}Y0-I_1_9_wfm_")
    field(NOA, "20")
    field(NOB, "20")
    field(NOC, "20")
@@ -51,23 +51,23 @@ record(aSub, "SR:APHLA{SOFB}Orb:Y-I_2_0_asub_") {
    field(NOVE, "1")
    field(NOVF, "1")
    field(NOVG, "1")
-   field(OUTA, "SR:APHLA{SOFB}Orb:Y-I PP")
-   field(OUTB, "SR:APHLA{SOFB}Orb:Y0avg-I PP")
-   field(OUTC, "SR:APHLA{SOFB}Orb:Y0rms-I PP")
-   field(OUTD, "SR:APHLA{SOFB}Orb:Y0min-I PP")
-   field(OUTE, "SR:APHLA{SOFB}Orb:Y0max-I PP")
-   field(OUTF, "SR:APHLA{SOFB}Orb:Y0std-I PP")
-   field(OUTG, "SR:APHLA{SOFB}Orb:Y0var-I PP")
+   field(OUTA, "SR:APHLA:SOFB{BPM}Y0-I PP")
+   field(OUTB, "SR:APHLA:SOFB{BPM}Y0avg-I PP")
+   field(OUTC, "SR:APHLA:SOFB{BPM}Y0rms-I PP")
+   field(OUTD, "SR:APHLA:SOFB{BPM}Y0min-I PP")
+   field(OUTE, "SR:APHLA:SOFB{BPM}Y0max-I PP")
+   field(OUTF, "SR:APHLA:SOFB{BPM}Y0std-I PP")
+   field(OUTG, "SR:APHLA:SOFB{BPM}Y0var-I PP")
    field(SNAM, "mergePvs")
 }
 
-record(waveform, "SR:APHLA{SOFB}Orb:Y-I_1_9_wfm_") {
+record(waveform, "SR:APHLA:SOFB{BPM}Y0-I_1_9_wfm_") {
    field(FTVL, "DOUBLE")
    field(NELM, "18")
 }
 
-record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_9_asub_") {
-   field(FLNK, "SR:APHLA{SOFB}Orb:Y-I_2_0_asub_")
+record(aSub, "SR:APHLA:SOFB{BPM}Y0-I_1_9_asub_") {
+   field(FLNK, "SR:APHLA:SOFB{BPM}Y0-I_2_0_asub_")
    field(FTA, "DOUBLE")
    field(FTB, "DOUBLE")
    field(FTC, "DOUBLE")
@@ -124,17 +124,17 @@ record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_9_asub_") {
    field(NOQ, "1")
    field(NOR, "1")
    field(NOVA, "18")
-   field(OUTA, "SR:APHLA{SOFB}Orb:Y-I_1_9_wfm_ PP")
+   field(OUTA, "SR:APHLA:SOFB{BPM}Y0-I_1_9_wfm_ PP")
    field(SNAM, "mergePvs")
 }
 
-record(waveform, "SR:APHLA{SOFB}Orb:Y-I_1_8_wfm_") {
+record(waveform, "SR:APHLA:SOFB{BPM}Y0-I_1_8_wfm_") {
    field(FTVL, "DOUBLE")
    field(NELM, "20")
 }
 
-record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_8_asub_") {
-   field(FLNK, "SR:APHLA{SOFB}Orb:Y-I_1_9_asub_")
+record(aSub, "SR:APHLA:SOFB{BPM}Y0-I_1_8_asub_") {
+   field(FLNK, "SR:APHLA:SOFB{BPM}Y0-I_1_9_asub_")
    field(FTA, "DOUBLE")
    field(FTB, "DOUBLE")
    field(FTC, "DOUBLE")
@@ -197,17 +197,17 @@ record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_8_asub_") {
    field(NOS, "1")
    field(NOT, "1")
    field(NOVA, "20")
-   field(OUTA, "SR:APHLA{SOFB}Orb:Y-I_1_8_wfm_ PP")
+   field(OUTA, "SR:APHLA:SOFB{BPM}Y0-I_1_8_wfm_ PP")
    field(SNAM, "mergePvs")
 }
 
-record(waveform, "SR:APHLA{SOFB}Orb:Y-I_1_7_wfm_") {
+record(waveform, "SR:APHLA:SOFB{BPM}Y0-I_1_7_wfm_") {
    field(FTVL, "DOUBLE")
    field(NELM, "20")
 }
 
-record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_7_asub_") {
-   field(FLNK, "SR:APHLA{SOFB}Orb:Y-I_1_8_asub_")
+record(aSub, "SR:APHLA:SOFB{BPM}Y0-I_1_7_asub_") {
+   field(FLNK, "SR:APHLA:SOFB{BPM}Y0-I_1_8_asub_")
    field(FTA, "DOUBLE")
    field(FTB, "DOUBLE")
    field(FTC, "DOUBLE")
@@ -270,17 +270,17 @@ record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_7_asub_") {
    field(NOS, "1")
    field(NOT, "1")
    field(NOVA, "20")
-   field(OUTA, "SR:APHLA{SOFB}Orb:Y-I_1_7_wfm_ PP")
+   field(OUTA, "SR:APHLA:SOFB{BPM}Y0-I_1_7_wfm_ PP")
    field(SNAM, "mergePvs")
 }
 
-record(waveform, "SR:APHLA{SOFB}Orb:Y-I_1_6_wfm_") {
+record(waveform, "SR:APHLA:SOFB{BPM}Y0-I_1_6_wfm_") {
    field(FTVL, "DOUBLE")
    field(NELM, "20")
 }
 
-record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_6_asub_") {
-   field(FLNK, "SR:APHLA{SOFB}Orb:Y-I_1_7_asub_")
+record(aSub, "SR:APHLA:SOFB{BPM}Y0-I_1_6_asub_") {
+   field(FLNK, "SR:APHLA:SOFB{BPM}Y0-I_1_7_asub_")
    field(FTA, "DOUBLE")
    field(FTB, "DOUBLE")
    field(FTC, "DOUBLE")
@@ -343,17 +343,17 @@ record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_6_asub_") {
    field(NOS, "1")
    field(NOT, "1")
    field(NOVA, "20")
-   field(OUTA, "SR:APHLA{SOFB}Orb:Y-I_1_6_wfm_ PP")
+   field(OUTA, "SR:APHLA:SOFB{BPM}Y0-I_1_6_wfm_ PP")
    field(SNAM, "mergePvs")
 }
 
-record(waveform, "SR:APHLA{SOFB}Orb:Y-I_1_5_wfm_") {
+record(waveform, "SR:APHLA:SOFB{BPM}Y0-I_1_5_wfm_") {
    field(FTVL, "DOUBLE")
    field(NELM, "20")
 }
 
-record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_5_asub_") {
-   field(FLNK, "SR:APHLA{SOFB}Orb:Y-I_1_6_asub_")
+record(aSub, "SR:APHLA:SOFB{BPM}Y0-I_1_5_asub_") {
+   field(FLNK, "SR:APHLA:SOFB{BPM}Y0-I_1_6_asub_")
    field(FTA, "DOUBLE")
    field(FTB, "DOUBLE")
    field(FTC, "DOUBLE")
@@ -416,17 +416,17 @@ record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_5_asub_") {
    field(NOS, "1")
    field(NOT, "1")
    field(NOVA, "20")
-   field(OUTA, "SR:APHLA{SOFB}Orb:Y-I_1_5_wfm_ PP")
+   field(OUTA, "SR:APHLA:SOFB{BPM}Y0-I_1_5_wfm_ PP")
    field(SNAM, "mergePvs")
 }
 
-record(waveform, "SR:APHLA{SOFB}Orb:Y-I_1_4_wfm_") {
+record(waveform, "SR:APHLA:SOFB{BPM}Y0-I_1_4_wfm_") {
    field(FTVL, "DOUBLE")
    field(NELM, "20")
 }
 
-record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_4_asub_") {
-   field(FLNK, "SR:APHLA{SOFB}Orb:Y-I_1_5_asub_")
+record(aSub, "SR:APHLA:SOFB{BPM}Y0-I_1_4_asub_") {
+   field(FLNK, "SR:APHLA:SOFB{BPM}Y0-I_1_5_asub_")
    field(FTA, "DOUBLE")
    field(FTB, "DOUBLE")
    field(FTC, "DOUBLE")
@@ -489,17 +489,17 @@ record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_4_asub_") {
    field(NOS, "1")
    field(NOT, "1")
    field(NOVA, "20")
-   field(OUTA, "SR:APHLA{SOFB}Orb:Y-I_1_4_wfm_ PP")
+   field(OUTA, "SR:APHLA:SOFB{BPM}Y0-I_1_4_wfm_ PP")
    field(SNAM, "mergePvs")
 }
 
-record(waveform, "SR:APHLA{SOFB}Orb:Y-I_1_3_wfm_") {
+record(waveform, "SR:APHLA:SOFB{BPM}Y0-I_1_3_wfm_") {
    field(FTVL, "DOUBLE")
    field(NELM, "20")
 }
 
-record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_3_asub_") {
-   field(FLNK, "SR:APHLA{SOFB}Orb:Y-I_1_4_asub_")
+record(aSub, "SR:APHLA:SOFB{BPM}Y0-I_1_3_asub_") {
+   field(FLNK, "SR:APHLA:SOFB{BPM}Y0-I_1_4_asub_")
    field(FTA, "DOUBLE")
    field(FTB, "DOUBLE")
    field(FTC, "DOUBLE")
@@ -562,17 +562,17 @@ record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_3_asub_") {
    field(NOS, "1")
    field(NOT, "1")
    field(NOVA, "20")
-   field(OUTA, "SR:APHLA{SOFB}Orb:Y-I_1_3_wfm_ PP")
+   field(OUTA, "SR:APHLA:SOFB{BPM}Y0-I_1_3_wfm_ PP")
    field(SNAM, "mergePvs")
 }
 
-record(waveform, "SR:APHLA{SOFB}Orb:Y-I_1_2_wfm_") {
+record(waveform, "SR:APHLA:SOFB{BPM}Y0-I_1_2_wfm_") {
    field(FTVL, "DOUBLE")
    field(NELM, "20")
 }
 
-record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_2_asub_") {
-   field(FLNK, "SR:APHLA{SOFB}Orb:Y-I_1_3_asub_")
+record(aSub, "SR:APHLA:SOFB{BPM}Y0-I_1_2_asub_") {
+   field(FLNK, "SR:APHLA:SOFB{BPM}Y0-I_1_3_asub_")
    field(FTA, "DOUBLE")
    field(FTB, "DOUBLE")
    field(FTC, "DOUBLE")
@@ -635,17 +635,17 @@ record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_2_asub_") {
    field(NOS, "1")
    field(NOT, "1")
    field(NOVA, "20")
-   field(OUTA, "SR:APHLA{SOFB}Orb:Y-I_1_2_wfm_ PP")
+   field(OUTA, "SR:APHLA:SOFB{BPM}Y0-I_1_2_wfm_ PP")
    field(SNAM, "mergePvs")
 }
 
-record(waveform, "SR:APHLA{SOFB}Orb:Y-I_1_1_wfm_") {
+record(waveform, "SR:APHLA:SOFB{BPM}Y0-I_1_1_wfm_") {
    field(FTVL, "DOUBLE")
    field(NELM, "20")
 }
 
-record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_1_asub_") {
-   field(FLNK, "SR:APHLA{SOFB}Orb:Y-I_1_2_asub_")
+record(aSub, "SR:APHLA:SOFB{BPM}Y0-I_1_1_asub_") {
+   field(FLNK, "SR:APHLA:SOFB{BPM}Y0-I_1_2_asub_")
    field(FTA, "DOUBLE")
    field(FTB, "DOUBLE")
    field(FTC, "DOUBLE")
@@ -708,17 +708,17 @@ record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_1_asub_") {
    field(NOS, "1")
    field(NOT, "1")
    field(NOVA, "20")
-   field(OUTA, "SR:APHLA{SOFB}Orb:Y-I_1_1_wfm_ PP")
+   field(OUTA, "SR:APHLA:SOFB{BPM}Y0-I_1_1_wfm_ PP")
    field(SNAM, "mergePvs")
 }
 
-record(waveform, "SR:APHLA{SOFB}Orb:Y-I_1_0_wfm_") {
+record(waveform, "SR:APHLA:SOFB{BPM}Y0-I_1_0_wfm_") {
    field(FTVL, "DOUBLE")
    field(NELM, "20")
 }
 
-record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_0_asub_") {
-   field(FLNK, "SR:APHLA{SOFB}Orb:Y-I_1_1_asub_")
+record(aSub, "SR:APHLA:SOFB{BPM}Y0-I_1_0_asub_") {
+   field(FLNK, "SR:APHLA:SOFB{BPM}Y0-I_1_1_asub_")
    field(FTA, "DOUBLE")
    field(FTB, "DOUBLE")
    field(FTC, "DOUBLE")
@@ -781,40 +781,40 @@ record(aSub, "SR:APHLA{SOFB}Orb:Y-I_1_0_asub_") {
    field(NOS, "1")
    field(NOT, "1")
    field(NOVA, "20")
-   field(OUTA, "SR:APHLA{SOFB}Orb:Y-I_1_0_wfm_ PP")
+   field(OUTA, "SR:APHLA:SOFB{BPM}Y0-I_1_0_wfm_ PP")
    field(SNAM, "mergePvs")
 }
 
-record(ao, "SR:APHLA{SOFB}Orb:Y0avg-I") {
+record(ao, "SR:APHLA:SOFB{BPM}Y0avg-I") {
 }
 
-record(ao, "SR:APHLA{SOFB}Orb:Y0rms-I") {
+record(ao, "SR:APHLA:SOFB{BPM}Y0rms-I") {
 }
 
-record(ao, "SR:APHLA{SOFB}Orb:Y0min-I") {
+record(ao, "SR:APHLA:SOFB{BPM}Y0min-I") {
 }
 
-record(ao, "SR:APHLA{SOFB}Orb:Y0max-I") {
+record(ao, "SR:APHLA:SOFB{BPM}Y0max-I") {
 }
 
-record(ao, "SR:APHLA{SOFB}Orb:Y0std-I") {
+record(ao, "SR:APHLA:SOFB{BPM}Y0std-I") {
 }
 
-record(ao, "SR:APHLA{SOFB}Orb:Y0var-I") {
+record(ao, "SR:APHLA:SOFB{BPM}Y0var-I") {
 }
 
-record(bo, "SR:APHLA{SOFB}Orb:Y-I:status") {
+record(bo, "SR:APHLA:SOFB{BPM}Y0-I:status") {
    field(ONAM, "Running")
    field(VAL, "1")
    field(ZNAM, "Idle")
 }
 
-record(calcout, "SR:APHLA{SOFB}Orb:Y-I:timer_") {
+record(calcout, "SR:APHLA:SOFB{BPM}Y0-I:timer_") {
    field(CALC, "A>0?1:0")
    field(DOPT, "Use CALC")
-   field(INPA, "SR:APHLA{SOFB}Orb:Y-I:status")
+   field(INPA, "SR:APHLA:SOFB{BPM}Y0-I:status")
    field(OOPT, "When Non-zero")
-   field(OUT, "SR:APHLA{SOFB}Orb:Y-I_1_0_asub_ PP")
+   field(OUT, "SR:APHLA:SOFB{BPM}Y0-I_1_0_asub_ PP")
    field(SCAN, ".1 second")
 }
 

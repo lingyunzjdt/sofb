@@ -11,6 +11,11 @@ include $(TOP)/configure/CONFIG
 # Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
 DB += bpmx0.db bpmy0.db bpmx.db bpmy.db
+# correctors
+DB += corx_sp_merge.db cory_sp_merge.db
+DB += corx_rb_merge.db cory_rb_merge.db
+DB += corx_sel.db cory_sel.db
+DB += corx_sp_split.db cory_sp_split.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add

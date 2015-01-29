@@ -18,6 +18,15 @@ dbLoadRecords("db/bpmx.db", "")
 dbLoadRecords("db/bpmy0.db", "")
 dbLoadRecords("db/bpmy.db", "")
 
+dbLoadRecords("db/corx_sp_merge.db", "")
+dbLoadRecords("db/cory_sp_merge.db", "")
+dbLoadRecords("db/corx_rb_merge.db", "")
+dbLoadRecords("db/cory_rb_merge.db", "")
+dbLoadRecords("db/corx_sel.db", "")
+dbLoadRecords("db/cory_sel.db", "")
+dbLoadRecords("db/corx_sp_split.db", "")
+dbLoadRecords("db/cory_sp_split.db", "")
+
 iocInit()
 
 ## Start any sequence programs

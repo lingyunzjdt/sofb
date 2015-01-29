@@ -148,6 +148,7 @@ def build_record_split(rlist, wfm, iroot,
         if i == iroot or iroot % len(rlst) == i:
             pvwfm = wfm
         recs.append(["waveform", pvwfm, {"NELM": "%d" % n, "FTVL": FTVL}])
+
         # the asub record
         rsub = {"SNAM": SNAM, "INPA": pvwfm,
                 "FTA": FTVL, "NOA": "%d" % n}
@@ -157,24 +158,28 @@ def build_record_split(rlist, wfm, iroot,
             if len(sub) == 3:
                 pv = "{0}_{1}_{2}_wfm".format(wfm, sub[0], sub[1])
                 
-            rsub["OUT%s" % ir] = pv
+            rsub["OUT%s" % ir] = "%s PP" % pv
             rsub["FTV%s" % ir ] = FTVL
             rsub["NOV%s" % ir ] = "%d" % sub[-1]
         if flnk:
             rsub["FLNK"] = flnk
         recs.append(["aSub", "{0}_{1}_{2}_asub".format(wfm, r[0], r[1]), rsub])
+        if i == iroot or iroot % len(rlst) == i:
+            # forward FLNK to its asub
+            print "Setting flnk= %s for pv=%s" % (recs[-1][1], recs[-2][1])
+            recs[-2][2]["FLNK"] = recs[-1][1]
         flnk = recs[-1][1]
     # recs[0][1] = wfm
-    recs.append(["bo", "{0}:status".format(wfm),
-                 {"VAL": "0", "ZNAM": "Idle", "ONAM": "Running"}])
-    recs.append(["calcout", "{0}:timer_".format(wfm),
-                 {"SCAN": SCAN, "INPA": "{0}:status".format(wfm),
-                  "CALC": "A>0?1:0", "OUT": flnk + " PP",
-                  "OOPT": "When Non-zero", "DOPT": "Use CALC"}])
+    #recs.append(["bo", "{0}:status".format(wfm),
+    #             {"VAL": "0", "ZNAM": "Idle", "ONAM": "Running"}])
+    #recs.append(["calcout", "{0}:timer_".format(wfm),
+    #             {"SCAN": SCAN, "INPA": "{0}:status".format(wfm),
+    #              "CALC": "A>0?1:0", "OUT": flnk + " PP",
+    #              "OOPT": "When Non-zero", "DOPT": "Use CALC"}])
     return recs
 
-def write_db(dbf, recs):
-    f = open(dbf, 'w')
+def write_db(dbf, recs, fmode = "w"):
+    f = open(dbf, fmode)
     f.write("## Generated from List of PVs.\n")
     f.write("## Lingyun Yang <lyyang@bnl.gov>, %s\n" % \
             datetime.now().strftime("%m-%d-%Y %H:%M:%S"))
@@ -188,6 +193,7 @@ def write_db(dbf, recs):
     f.close()
 
 
+    
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print "Usage: python %s inputpvs.txt" % sys.argv[0]
@@ -229,4 +235,10 @@ if __name__ == "__main__":
     #    #mlen = max(len(r[0]), mlen)
     #output_db("test.db", rlst, snam="mergePvs", scan=".1 second")
     #print "Max length:", mlen
-    write_db("test.db", recs)
+    write_db("test.db", recs, fmode="w")
+    #
+    # in case the sub pvs are new, need to create them as new record
+    #inprecs = [["bo", pv, {"VAL": "1", "ONAM": "Used in aphla",
+    #                       "ZNAM": "Not used in aphla"}]
+    #           for pv in allpvs[-ntot:]]
+    #write_db("test.db", inprecs, fmode="a")
