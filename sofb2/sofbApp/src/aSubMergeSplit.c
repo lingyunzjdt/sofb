@@ -86,4 +86,51 @@ finish:
     return 0;
 }
 
+#define SPLIT_INP(pval, dblk, val, sz)                  \
+    if (dblk.type == CONSTANT) goto finish;             \
+    memcpy(val, pval, sz * sizeof(float));          \
+    pval += sz
+
+static long splitPvs(aSubRecord *pasub)
+{
+    float *pval = (float *)pasub->a;
+
+    fprintf(stderr, "%d %f %f %f\n", pasub->noa, pval[0], pval[1], pval[2]);
+    /*
+    if (pasub->inpa.type == CONSTANT) goto finish;
+    memcpy(pval, pasub->a, pasub->noa * sizeof(float));
+    pval += pasub->noa;
+    */
+    SPLIT_INP(pval, pasub->outa, pasub->vala, pasub->nova);
+    SPLIT_INP(pval, pasub->outb, pasub->valb, pasub->novb);
+    SPLIT_INP(pval, pasub->outc, pasub->valc, pasub->novc);
+    SPLIT_INP(pval, pasub->outd, pasub->vald, pasub->novd);
+    SPLIT_INP(pval, pasub->oute, pasub->vale, pasub->nove);
+    SPLIT_INP(pval, pasub->outf, pasub->valf, pasub->novf);
+    SPLIT_INP(pval, pasub->outg, pasub->valg, pasub->novg);
+    SPLIT_INP(pval, pasub->outh, pasub->valh, pasub->novh);
+    SPLIT_INP(pval, pasub->outi, pasub->vali, pasub->novi);
+    SPLIT_INP(pval, pasub->outj, pasub->valj, pasub->novj);
+    SPLIT_INP(pval, pasub->outk, pasub->valk, pasub->novk);
+    SPLIT_INP(pval, pasub->outl, pasub->vall, pasub->novl);
+    SPLIT_INP(pval, pasub->outm, pasub->valm, pasub->novm);
+    SPLIT_INP(pval, pasub->outn, pasub->valn, pasub->novn);
+    SPLIT_INP(pval, pasub->outo, pasub->valo, pasub->novo);
+    SPLIT_INP(pval, pasub->outp, pasub->valp, pasub->novp);
+    SPLIT_INP(pval, pasub->outq, pasub->valq, pasub->novq);
+    SPLIT_INP(pval, pasub->outr, pasub->valr, pasub->novr);
+    SPLIT_INP(pval, pasub->outs, pasub->vals, pasub->novs);
+    SPLIT_INP(pval, pasub->outt, pasub->valt, pasub->novt);
+    SPLIT_INP(pval, pasub->outu, pasub->valu, pasub->novu);
+
+finish:
+    fprintf(stderr, "%d: %f %f %f\n", pasub->nova, ((float*)pasub->vala)[0],
+            ((float*)pasub->vala)[1], ((float*)pasub->vala)[2]);
+
+    fprintf(stderr, "%d: %f\n", pasub->novb, *(float*)pasub->valb);
+    fprintf(stderr, "%d: %f\n", pasub->novc, *(float*)pasub->valc);
+    return 0;
+}
+
 epicsRegisterFunction(mergePvs);
+epicsRegisterFunction(splitPvs);
