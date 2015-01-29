@@ -8,7 +8,7 @@ def build_tree(sl, n, level = 1):
     # format the node name
     if len(sl) <= n:
         ntot = sum([si[2] for si in sl])
-        return [level, 0, ntot, sl]
+        return [level, 0, ntot, sl], 1
     # more
     grp = []
     for i,s in enumerate(sl):
@@ -18,7 +18,8 @@ def build_tree(sl, n, level = 1):
             # append and update count
             grp[-1][-1].append(s)
             grp[-1][-2] += s[-2]
-    return build_tree(grp, n, level + 1)
+    subtree, height = build_tree(grp, n, level + 1)
+    return subtree, height + 1
 
 def output_tree(sl, level = 0):
     # leaf
@@ -86,36 +87,45 @@ def build_flnk(rlst):
         ret.append([ri for ri in r] + [flnk,])
     return ret
 
-def build_record_merge(rlist, wfm, iroot,
-                       FTVL="FLOAT", SNAM="mergePvs", SCAN=".1 second"):
+def build_record_merge(rlist, pvsum, iroot,
+                       FTVL="DOUBLE", SNAM="mergePvs", SCAN=".1 second"):
     #the first record must be the root
     recs = []
     asubr = []
     flnk = None
+    wfm = pvsum["waveform"]
     for i,r in enumerate(rlst):
         lvl, idx, n, subs = r
         # the result waveform
-        pvwfm = "{0}_{1}_{2}_wfm".format(wfm, lvl, idx)
+        pvwfm = "{0}_{1}_{2}_wfm_".format(wfm, lvl, idx)
         if i == iroot:
             pvwfm = wfm
         recs.append(["waveform", pvwfm, {"NELM": "%d" % n, "FTVL": FTVL}])
         # the asub record
         rsub = {"SNAM": SNAM, "OUTA": pvwfm + " PP",
                 "FTVA": FTVL, "NOVA": "%d" % n}
+        if i == iroot:
+            for j,pv in enumerate(pvsum["stat"]):
+                ir = chr(ord('B') + j)
+                rsub["OUT%s" % ir] = "%s PP" % pv
+                rsub["FTV%s" % ir] = FTVL
+                rsub["NOV%s" % ir] = "1"
         for j,sub in enumerate(subs):
             ir = chr(ord('A') + j)
             pv = sub[0]
             if len(sub) == 3:
-                pv = "{0}_{1}_{2}_wfm".format(wfm, sub[0], sub[1])
+                pv = "{0}_{1}_{2}_wfm_".format(wfm, sub[0], sub[1])
                 
             rsub["INP%s" % ir] = pv
             rsub["FT%s" % ir ] = FTVL
             rsub["NO%s" % ir ] = "%d" % sub[-1]
         if flnk:
             rsub["FLNK"] = flnk
-        recs.append(["aSub", "{0}_{1}_{2}_asub".format(wfm, r[0], r[1]), rsub])
+        recs.append(["aSub", "{0}_{1}_{2}_asub_".format(wfm, r[0], r[1]), rsub])
         flnk = recs[-1][1]
     # recs[0][1] = wfm
+    for pv in pvsum["stat"]:
+        recs.append(["ao", pv, {}])
     recs.append(["bo", "{0}:status".format(wfm),
                  {"VAL": "1", "ZNAM": "Idle", "ONAM": "Running"}])
     recs.append(["calcout", "{0}:timer_".format(wfm),
@@ -125,11 +135,12 @@ def build_record_merge(rlist, wfm, iroot,
     return recs
 
 def build_record_split(rlist, wfm, iroot,
-                       FTVL="FLOAT", SNAM="splitPvs", SCAN=".1 second"):
+                       FTVL="DOUBLE", SNAM="splitPvs", SCAN=".1 second"):
     #the first record must be the root
     recs = []
     asubr = []
     flnk = None
+    wfm = pvsum["waveform"]
     for i,r in enumerate(rlst):
         lvl, idx, n, subs = r
         # the result waveform
@@ -176,60 +187,19 @@ def write_db(dbf, recs):
         f.write('}\n\n')
     f.close()
 
-TMPL_WFM = """
-record(waveform, "%(pv)s") {
-    field(NELM, "%(nelm)d")
-    field(FTVL, "FLOAT")
-}
-
-"""
-
-TMPL_ASUB_HEAD = """
-record(aSub, "%(pv)s") {
-    field(SNAM, "%(snam)s")
-"""
-TMPL_ASUB_INP = """
-    field(INP%(i)s, "%(pvi)s")
-    field(FT%(i)s,  "%(fti)s")
-    field(NO%(i)s,  "%(noi)s")"""
-TMPL_ASUB_OUT = """
-    field(OUT%(i)s, "%(pvi)s PP")
-    field(FTV%(i)s,  "%(fti)s")
-    field(NOV%(i)s,  "%(noi)s")"""
-
-def output_list_db(output, rlst,
-                   snam = "_merge", fti="FLOAT", scan = ".1 second"):
-    # output record list to output file
-    f = open(output, "w")
-    f.write("## Generated from List of PVs.\n")
-    f.write("## Lingyun Yang <lyyang@bnl.gov>, %s\n" % \
-            datetime.now().strftime("%m-%d-%Y %H:%M:%S"))
-    f.write("##\n")
-    for r in rlst:
-        asub, nelm, subs, flnk = r
-        wfm = asub.replace("_subtree_", "_wfm_")
-        f.write(TMPL_WFM % {"nelm": nelm, "pv": wfm})
-        f.write(TMPL_ASUB_HEAD % {"pv": asub, "snam": snam})
-        for i,(pvi, noi) in enumerate(subs):
-            ir = chr(ord('A') + i)
-            f.write(TMPL_ASUB_INP % {
-                "i": ir, "pvi": pvi, "noi": noi, "fti": fti})
-        f.write(TMPL_ASUB_OUT % {
-            "i": "A", "pvi": wfm, "noi": nelm, "fti": fti})
-        if flnk:
-            f.write('\n    field(FLNK, "%s")' % flnk)
-        f.write("\n}\n")
-    f.close()
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print "Usage: python %s inputpvs.txt" % sys.argv[0]
 
-    allpvs = [s.strip() for s in open(sys.argv[1]).readlines()]
-    pvsum, nelem = allpvs[0].split()
-    nodes = [[pvi, 0, 1, []] for pvi in allpvs[1:]][:13]
+    allpvs = [s.strip() for s in open(sys.argv[-1]).readlines()]
+    pvres, ntot, nelem = allpvs[0].split()
+    ntot = int(ntot)
+    nelem = int(nelem)
+    pvsum = {"waveform": pvres, "stat": allpvs[1:-ntot]}
+    nodes = [[pvi, 0, 1, []] for pvi in allpvs[-ntot:]]
     print "Building aSub for %d pvs into %s" % (len(nodes), pvsum)
-    stree = build_tree(nodes, int(nelem), 1)
+    stree, height = build_tree(nodes, int(nelem), 1)
 
     #print stree
     output_tree(stree, 0)
@@ -239,24 +209,24 @@ if __name__ == "__main__":
     while move_up_sl(stree, 0):
         continue
         #output_tree(stree, 0)
-    print "Clean Tree:"
+    print "Clean Tree: height= %d" % height
     output_tree(stree, 0)
-    if False:
+    if "--merge" in sys.argv:
         rlst = sorted(flat_tree(stree), reverse=True)
         if rlst[0][1] != 0 or rlst[0][2] != len(nodes):
             raise RuntimeError("tree root is wrong!: {0}".format(rlst[0]))
-        #rlst = build_record_merge(rlst, pvsum, 0)
-    else:
+        recs = build_record_merge(rlst, pvsum, 0)
+    elif "--split" in sys.argv:
         rlst = sorted(flat_tree(stree), reverse=False)
         if rlst[-1][1] != 0 or rlst[-1][2] != len(nodes):
             raise RuntimeError("tree root is wrong!: {0}".format(rlst[-1]))
-        rlst = build_record_split(rlst, pvsum, -1)
+        recs = build_record_split(rlst, pvsum, -1)
     #rlst = build_flnk(rlst)
-    
-    mlen = 0
-    for r in rlst:
-        print r
-        #mlen = max(len(r[0]), mlen)
+    # add statistics
+    #mlen = 0
+    #for r in rlst:
+    #    print r
+    #    #mlen = max(len(r[0]), mlen)
     #output_db("test.db", rlst, snam="mergePvs", scan=".1 second")
     #print "Max length:", mlen
-    write_db("test.db", rlst)
+    write_db("test.db", recs)

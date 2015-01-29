@@ -13,7 +13,10 @@ sofb_registerRecordDeviceDriver(pdbbase)
 
 ## Load record instances
 dbLoadRecords("db/sofb.db","user=lyyang")
+dbLoadRecords("db/bpmx0.db", "")
 dbLoadRecords("db/bpmx.db", "")
+dbLoadRecords("db/bpmy0.db", "")
+dbLoadRecords("db/bpmy.db", "")
 
 iocInit()
 

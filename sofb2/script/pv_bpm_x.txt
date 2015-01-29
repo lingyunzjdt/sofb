@@ -1,4 +1,10 @@
-SR:APHLA{SOFB}Orb:XwUsrOff-Calc
+SR:APHLA{SOFB}Orb:XwUsrOff-Calc 198 20
+SR:APHLA{SOFB}Orb:XwUsrOffavg-Calc
+SR:APHLA{SOFB}Orb:XwUsrOffrms-Calc
+SR:APHLA{SOFB}Orb:XwUsrOffmin-Calc
+SR:APHLA{SOFB}Orb:XwUsrOffmax-Calc
+SR:APHLA{SOFB}Orb:XwUsrOffstd-Calc
+SR:APHLA{SOFB}Orb:XwUsrOffvar-Calc
 SR:C30-BI{BPM:1}Pos:XwUsrOff-Calc
 SR:C30-BI{BPM:2}Pos:XwUsrOff-Calc
 SR:C30-BI{BPM:3}Pos:XwUsrOff-Calc
