@@ -1,11 +1,12 @@
-#!../../bin/linux-x86_64/sofb
+#!/epics/iocs/srSOFB2/sofb2/bin/linux-x86_64/sofb
 
 ## You may have to change sofb to something else
 ## everywhere it appears in this file
 
-< envPaths
+< /epics/iocs/srSOFB2/sofb2/iocBoot/iocsofb/envPaths
 
 cd ${TOP}
+cd /direct/phy_iocs/srSOFB2/sofb2
 
 ## Register all support components
 dbLoadDatabase("dbd/sofb.dbd",0,0)
@@ -18,6 +19,9 @@ dbLoadRecords("db/bpmx.db", "")
 dbLoadRecords("db/bpmy0.db", "")
 dbLoadRecords("db/bpmy.db", "")
 
+dbLoadRecords("db/bpmx_sel.db", "")
+dbLoadRecords("db/bpmy_sel.db", "")
+
 dbLoadRecords("db/corx_sp_merge.db", "")
 dbLoadRecords("db/cory_sp_merge.db", "")
 dbLoadRecords("db/corx_rb_merge.db", "")
@@ -26,6 +30,9 @@ dbLoadRecords("db/corx_sel.db", "")
 dbLoadRecords("db/cory_sel.db", "")
 dbLoadRecords("db/corx_sp_split.db", "")
 dbLoadRecords("db/cory_sp_split.db", "")
+
+dbLoadRecords("db/orm.db", "")
+
 
 iocInit()
 

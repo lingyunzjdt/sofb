@@ -88,17 +88,22 @@ finish:
 
 #define SPLIT_INP(pval, dblk, val, sz)                  \
     if (dblk.type == CONSTANT) goto finish;             \
-    memcpy(val, pval, sz * sizeof(float));          \
+    memcpy(val, pval, sz * sizeof(double));          \
     pval += sz
 
 static long splitPvs(aSubRecord *pasub)
 {
-    float *pval = (float *)pasub->a;
+    double *pval = (double *)pasub->a;
 
-    fprintf(stderr, "%d %f %f %f\n", pasub->noa, pval[0], pval[1], pval[2]);
+ #ifndef NDEBUG
+    fprintf(stderr, "%s [%d] %f %f %f\n",
+            pasub->name,
+            pasub->noa, pval[0], pval[1], pval[2]);
+ #endif
+
     /*
     if (pasub->inpa.type == CONSTANT) goto finish;
-    memcpy(pval, pasub->a, pasub->noa * sizeof(float));
+    memcpy(pval, pasub->a, pasub->noa * sizeof(double));
     pval += pasub->noa;
     */
     SPLIT_INP(pval, pasub->outa, pasub->vala, pasub->nova);
@@ -124,11 +129,13 @@ static long splitPvs(aSubRecord *pasub)
     SPLIT_INP(pval, pasub->outu, pasub->valu, pasub->novu);
 
 finish:
-    fprintf(stderr, "%d: %f %f %f\n", pasub->nova, ((float*)pasub->vala)[0],
-            ((float*)pasub->vala)[1], ((float*)pasub->vala)[2]);
+ #ifndef NDEBUG
+    fprintf(stderr, "%d: %f %f %f\n", pasub->nova, ((double*)pasub->vala)[0],
+            ((double*)pasub->vala)[1], ((double*)pasub->vala)[2]);
 
-    fprintf(stderr, "%d: %f\n", pasub->novb, *(float*)pasub->valb);
-    fprintf(stderr, "%d: %f\n", pasub->novc, *(float*)pasub->valc);
+    fprintf(stderr, "%d: %f\n", pasub->novb, *(double*)pasub->valb);
+    fprintf(stderr, "%d: %f\n", pasub->novc, *(double*)pasub->valc);
+ #endif
     return 0;
 }
 
