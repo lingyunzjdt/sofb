@@ -1,0 +1,208 @@
+# 198*180 = 35640
+# 198*180*4 = 142560
+# 180*180*4 = 129600
+# 198*198*4 = 156816
+
+record(waveform, "SR:APHLA:SOFB{ORM}Mfull") {
+    field(NELM, "142560")
+    field(FTVL, "DOUBLE")
+    field(FLNK, "SR:APHLA:SOFB{ORM}svd_asub_")
+}
+
+record(bo, "SR:APHLA:SOFB{ORM}SVD-Run") {
+   field(FLNK, "SR:APHLA:SOFB{ORM}svd_asub_")
+}
+
+record(waveform, "SR:APHLA:SOFB{ORM}M") {
+    field(NELM, "142560")
+    field(FTVL, "DOUBLE")
+    #field(FTVL, "FLOAT")
+}
+
+# double check
+record(waveform, "SR:APHLA:SOFB{ORM}M1") {
+    field(NELM, "142560")
+    field(FTVL, "DOUBLE")
+}
+
+record(waveform, "SR:APHLA:SOFB{ORM}U") {
+    field(NELM, "142560")
+    field(FTVL, "DOUBLE")
+}
+
+record(waveform, "SR:APHLA:SOFB{ORM}V") {
+    field(NELM, "142560")
+    field(FTVL, "DOUBLE")
+}
+
+record(waveform, "SR:APHLA:SOFB{BPM}Sel-I") {
+    field(NELM, "396")
+    field(FTVL, "CHAR")
+}
+
+record(waveform, "SR:APHLA:SOFB{COR}Sel-I") {
+    field(NELM, "360")
+    field(FTVL, "CHAR")
+}
+
+record(aSub, "SR:APHLA:SOFB{BPM}Sel-I_asub_") {
+   field(FTA, "CHAR")
+   field(FTB, "CHAR")
+   field(FTVA, "CHAR")
+   field(INPA, "SR:APHLA:SOFB{BPM}XSel-I")
+   field(INPB, "SR:APHLA:SOFB{BPM}YSel-I")
+   field(NOA, "198")
+   field(NOB, "198")
+   field(NOVA, "396")
+   field(OUTA, "SR:APHLA:SOFB{BPM}Sel-I PP")
+   field(SNAM, "mergePvs")
+   #field(FLNK, "SR:APHLA:SOFB{ORM}svd_asub_")
+}
+
+record(aSub, "SR:APHLA:SOFB{COR}Sel-I_asub_") {
+   field(FTA, "CHAR")
+   field(FTB, "CHAR")
+   field(FTVA, "CHAR")
+   field(INPA, "SR:APHLA:SOFB{COR}XSel-I")
+   field(INPB, "SR:APHLA:SOFB{COR}YSel-I")
+   field(NOA, "180")
+   field(NOB, "180")
+   field(NOVA, "360")
+   field(OUTA, "SR:APHLA:SOFB{COR}Sel-I PP")
+   field(SNAM, "mergePvs")
+   #field(FLNK, "SR:APHLA:SOFB{ORM}svd_asub_")
+}
+
+# min(m, n)
+record(waveform, "SR:APHLA:SOFB{ORM}S") {
+    field(NELM, "360")
+    field(FTVL, "DOUBLE")
+    #field(FTVL, "FLOAT")
+}
+
+record(longout, "SR:APHLA:SOFB{ORM}Sn") {
+    field(VAL, "360")
+    field(DESC, "cut smaller singular values")
+}
+
+record(waveform, "SR:APHLA:SOFB{ORM}Minv") {
+    field(NELM, "142560")
+    field(FTVL, "DOUBLE")
+    #field(FTVL, "FLOAT")
+}
+
+#record(longin, "SR:APHLA:SOFB{ORM}NBPM-full") {
+#    field(VAL, "396")
+#}
+#
+#record(longin, "SR:APHLA:SOFB{ORM}NCOR-full") {
+#    field(VAL, "360")
+#}
+
+record(longin, "SR:APHLA:SOFB{ORM}NBPM") {
+    field(VAL, "396")
+}
+
+record(longin, "SR:APHLA:SOFB{ORM}NCOR") {
+    field(VAL, "360")
+}
+
+record(ao, "SR:APHLA:SOFB{ORM}Kp") {
+    field(VAL, "0.2")
+}
+
+record(ao, "SR:APHLA:SOFB{ORM}Ki") {
+    field(VAL, "0.0")
+}
+
+record(ao, "SR:APHLA:SOFB{ORM}Kd") {
+    field(VAL, "0.0")
+}
+
+record(ao, "SR:APHLA:SOFB{ORM}Ta") {
+    field(VAL, "0.0")
+    field(DESC, "Tikhonov Regularization alpha")
+}
+
+record(waveform, "SR:APHLA:SOFB{ORM}KpidTa-I") {
+    field(NELM, "4")
+    field(FTVL, "DOUBLE")
+}
+
+record(aSub, "SR:APHLA:SOFB{ORM}KpidTa_asub_") {
+   field(FTA, "DOUBLE")
+   field(FTB, "DOUBLE")
+   field(FTC, "DOUBLE")
+   field(FTD, "DOUBLE")
+   field(FTVA, "DOUBLE")
+   field(INPA, "SR:APHLA:SOFB{ORM}Kp")
+   field(INPB, "SR:APHLA:SOFB{ORM}Ki")
+   field(INPC, "SR:APHLA:SOFB{ORM}Kd")
+   field(INPD, "SR:APHLA:SOFB{ORM}Ta")
+   field(NOA, "1")
+   field(NOB, "1")
+   field(NOC, "1")
+   field(NOD, "1")
+   field(NOVA, "4")
+   field(OUTA, "SR:APHLA:SOFB{ORM}KpidTa-I PP")
+   field(SNAM, "mergePvs")
+}
+
+record(aSub, "SR:APHLA:SOFB{ORM}svd_asub_") {
+   #field(PINI, "YES")
+   field(SNAM, "solveSVD")
+
+   field(INPA, "SR:APHLA:SOFB{ORM}Mfull")
+   field(NOA,  "142560")
+   field(FTA, "DOUBLE")
+
+   field(INPB, "SR:APHLA:SOFB{BPM}Sel-I")
+   field(NOB, "396")
+   field(FTB, "CHAR")
+
+   field(INPC, "SR:APHLA:SOFB{COR}Sel-I")
+   field(NOC, "360")
+   field(FTC, "CHAR")
+
+   field(INPD, "SR:APHLA:SOFB{ORM}Sn")
+   field(NOD,  "1")
+   field(FTD,  "LONG")
+
+   field(INPE, "SR:APHLA:SOFB{ORM}KpidTa-I")
+   field(NOE, "4")
+   field(FTE, "DOUBLE")
+
+   field(OUTA, "SR:APHLA:SOFB{ORM}M PP")
+   field(NOVA, "142560")
+   field(FTVA, "DOUBLE")
+
+   field(OUTB, "SR:APHLA:SOFB{ORM}Minv PP")
+   field(NOVB, "142560")
+   field(FTVB, "DOUBLE")
+
+   field(OUTC, "SR:APHLA:SOFB{ORM}S PP")
+   field(NOVC, "360")
+   field(FTVC, "DOUBLE")
+
+   field(OUTD, "SR:APHLA:SOFB{ORM}NBPM PP")
+   field(NOVD, "1")
+   field(FTVD, "LONG")
+
+   field(OUTE, "SR:APHLA:SOFB{ORM}NCOR PP")
+   field(NOVE, "1")
+   field(FTVE, "LONG")
+
+   field(OUTF, "SR:APHLA:SOFB{ORM}U PP")
+   field(NOVF, "142560")
+   field(FTVF, "DOUBLE")
+
+   field(OUTG, "SR:APHLA:SOFB{ORM}V PP")
+   field(NOVG, "142560")
+   field(FTVG, "DOUBLE")
+
+   field(OUTH, "SR:APHLA:SOFB{ORM}M1 PP")
+   field(NOVH, "142560")
+   field(FTVH, "DOUBLE")
+
+   #field(SCAN, "1 second")
+}
