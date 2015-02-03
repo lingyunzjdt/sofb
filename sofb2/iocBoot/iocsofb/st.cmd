@@ -5,6 +5,8 @@
 
 < /epics/iocs/srSOFB2/sofb2/iocBoot/iocsofb/envPaths
 
+epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "30000000")
+
 cd ${TOP}
 cd /direct/phy_iocs/srSOFB2/sofb2
 
@@ -19,15 +21,15 @@ dbLoadRecords("db/bpmx.db", "")
 dbLoadRecords("db/bpmy0.db", "")
 dbLoadRecords("db/bpmy.db", "")
 
-dbLoadRecords("db/bpmx_sel.db", "")
-dbLoadRecords("db/bpmy_sel.db", "")
+dbLoadRecords("db/bpm_sel.db", "XSel=XSel")
+dbLoadRecords("db/bpm_sel.db", "XSel=YSel")
 
 dbLoadRecords("db/corx_sp_merge.db", "")
 dbLoadRecords("db/cory_sp_merge.db", "")
 dbLoadRecords("db/corx_rb_merge.db", "")
 dbLoadRecords("db/cory_rb_merge.db", "")
-dbLoadRecords("db/corx_sel.db", "")
-dbLoadRecords("db/cory_sel.db", "")
+dbLoadRecords("db/cor_sel.db", "XSel=XSel")
+dbLoadRecords("db/cor_sel.db", "XSel=YSel")
 dbLoadRecords("db/corx_sp_split.db", "")
 dbLoadRecords("db/cory_sp_split.db", "")
 

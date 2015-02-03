@@ -10,12 +10,12 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------------------
 # Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
-DB += bpmx0.db bpmy0.db bpmx.db bpmy.db bpmx_sel.db bpmy_sel.db
+DB += bpmx0.db bpmy0.db bpmx.db bpmy.db bpm_sel.db
 
 # correctors
 DB += corx_sp_merge.db cory_sp_merge.db
 DB += corx_rb_merge.db cory_rb_merge.db
-DB += corx_sel.db cory_sel.db
+DB += cor_sel.db
 DB += corx_sp_split.db cory_sp_split.db
 DB += orm.db
 

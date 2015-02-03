@@ -1,5 +1,4 @@
 epicsEnvSet("ARCH","linux-x86_64")
 epicsEnvSet("IOC","iocsofb")
-epicsEnvSet("TOP","/direct/phyioc/srSOFB2/sofb2")
+epicsEnvSet("TOP","/direct/phy_iocs/srSOFB2/sofb2")
 epicsEnvSet("EPICS_BASE","/usr/lib/epics")
-epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "1500000")
