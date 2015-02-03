@@ -147,35 +147,38 @@ finish:
 static long correctOrbit(aSubRecord *pasub)
 {
     /* solve Ax = b, A = U*S*V^T */
-    /* a: full matrix */
-    double *pA = (double *)pasub->vala;
-    /* b,c: X/Y orbit residual */
-    double *pb = (double *)pasub->valb;
-    /* d,e: X/Y target orbit */
+    /* a: matrix inversed */
+    double *pMinv = (double *)pasub->a;
+    /* b: X/Y orbit residual */
+    double *pb = (double *)pasub->b;
+
+    /* c: X/Y target orbit */
     /* f,g: active/inactive X/Y BPM */
     /* h,i: X/Y cor setpoint */
     /* j,k: X/Y cor readback */
     /* l,m: active/inactive X/Y Cor */
     /* n,o,p: U, S, V */
     /* r: Kp, Ki, Kd, alpha */
-    const int m = pasub->nob;
-    const int n = pasub->noa / pasub->nob;
-    int i = 0;
+    /* output */
+    double *px = (double *)pasub->vala;
+
+    const int m = 396;
+    const int n = 360;
+    int i = 0, j = 0, k = 0;
     double s1 = 0.0;
     double s2 = 0.0;
     double xmin = DBL_MAX;
     double xmax = DBL_MIN;
     double xstd = 0.0, xvar = 0.0, xrms = 0.0;
     /*    */
-    gsl_matrix_view A = gsl_matrix_view_array(pA, m, n);
-    gsl_matrix *V = NULL;
-    gsl_vector *S = NULL;
-    gsl_vector_view b = gsl_vector_view_array_with_stride(pb, 1, n);
-    gsl_vector *x = NULL;
-    /* SVD(A), where A is (m,n) and m >= n */
-    gsl_linalg_SV_decomp_jacobi (&(A.matrix), V, S);
-    /* solving Ax=b */
-    gsl_linalg_SV_solve (&(A.matrix), V, S, &(b.vector), x);
+    /* fprintf(stderr, "Orbit: %g %g %g %g\n", pb[0], pb[1], pb[2], pb[3]); */
+    for (i = 0; i < 360; ++i) {
+        double s = 0.0;
+        for (j = 0; j < 396; ++j) {
+            s += pMinv[i*396+j] * pb[j];
+        }
+        px[i] = s;
+    }
 
     return 0;
 }

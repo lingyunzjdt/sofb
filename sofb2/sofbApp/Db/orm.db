@@ -206,3 +206,93 @@ record(aSub, "SR:APHLA:SOFB{ORM}svd_asub_") {
 
    #field(SCAN, "1 second")
 }
+
+record(waveform, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "396")
+}
+
+#
+#
+record(aSub, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc_asub_") {
+   field(FTA, "DOUBLE")
+   field(FTB, "DOUBLE")
+   field(FTVA, "DOUBLE")
+   field(INPA, "SR:APHLA:SOFB{BPM}XwUsrOff-Calc")
+   field(INPB, "SR:APHLA:SOFB{BPM}YwUsrOff-Calc")
+   field(NOA, "198")
+   field(NOB, "198")
+   field(NOVA, "396")
+   field(NOVB, "1")
+   field(NOVC, "1")
+   field(NOVD, "1")
+   field(NOVE, "1")
+   field(NOVF, "1")
+   field(NOVG, "1")
+   field(OUTA, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc PP")
+   field(OUTB, "SR:APHLA:SOFB{BPM}OrbUsrOffavg-Calc PP")
+   field(OUTC, "SR:APHLA:SOFB{BPM}OrbUsrOffrms-Calc PP")
+   field(OUTD, "SR:APHLA:SOFB{BPM}OrbUsrOffmin-Calc PP")
+   field(OUTE, "SR:APHLA:SOFB{BPM}OrbUsrOffmax-Calc PP")
+   field(OUTF, "SR:APHLA:SOFB{BPM}OrbUsrOffstd-Calc PP")
+   field(OUTG, "SR:APHLA:SOFB{BPM}OrbUsrOffvar-Calc PP")
+   field(SNAM, "mergePvs")
+   field(SCAN, "2 second")
+}
+
+record(ao, "SR:APHLA:SOFB{BPM}OrbUsrOffavg-Calc") {
+}
+
+record(ao, "SR:APHLA:SOFB{BPM}OrbUsrOffrms-Calc") {
+}
+
+record(ao, "SR:APHLA:SOFB{BPM}OrbUsrOffmin-Calc") {
+}
+
+record(ao, "SR:APHLA:SOFB{BPM}OrbUsrOffmax-Calc") {
+}
+
+record(ao, "SR:APHLA:SOFB{BPM}OrbUsrOffstd-Calc") {
+}
+
+record(ao, "SR:APHLA:SOFB{BPM}OrbUsrOffvar-Calc") {
+}
+
+record(waveform, "SR:APHLA:SOFB{COR}delta-SP") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "360")
+}
+
+record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
+   field(SNAM, "correctOrbit")
+
+   field(INPA, "SR:APHLA:SOFB{ORM}Minv")
+   field(NOA,  "142560")
+   field(FTA, "DOUBLE")
+
+   field(INPB, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc")
+   field(NOB, "396")
+   field(FTB, "DOUBLE")
+
+   field(INPD, "SR:APHLA:SOFB{BPM}Sel-I")
+   field(NOD, "396")
+   field(FTD, "CHAR")
+
+   field(INPE, "SR:APHLA:SOFB{COR}Sel-I")
+   field(NOE, "360")
+   field(FTE, "CHAR")
+
+   field(INPF, "SR:APHLA:SOFB{ORM}NBPM PP")
+   field(NOF, "1")
+   field(FTF, "LONG")
+
+   field(INPG, "SR:APHLA:SOFB{ORM}NCOR PP")
+   field(NOG, "1")
+   field(FTG, "LONG")
+
+   field(OUTA, "SR:APHLA:SOFB{COR}delta-SP PP")
+   field(NOVA, "360")
+   field(FTVA, "DOUBLE")
+
+   field(SCAN, "2 second")
+}
