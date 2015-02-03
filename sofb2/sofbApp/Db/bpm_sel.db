@@ -4,7 +4,7 @@
 record(waveform, "SR:APHLA:SOFB{BPM}$(XSel)-I") {
    field(FTVL, "CHAR")
    field(NELM, "198")
-   field(FLNK, "SR:APHLA:SOFB{ORM}svd_asub_")
+   # field(FLNK, "SR:APHLA:SOFB{ORM}svd_asub_")
 }
 
 record(aSub, "SR:APHLA:SOFB{BPM}$(XSel)-I_2_0_asub_") {
