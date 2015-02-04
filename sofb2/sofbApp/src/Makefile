@@ -17,6 +17,7 @@ sofb_DBD += base.dbd
 
 # Include dbd files from all support applications:
 sofb_DBD += aSubMergeSplit.dbd orbitCor.dbd
+sofb_DBD += sofbLocalBump.dbd
 
 sofb_DIR += /usr/lib
 # Add all the support libraries needed by this IOC
@@ -25,7 +26,8 @@ sofb_SYS_LIBS += gsl gslcblas
 
 # sofb_registerRecordDeviceDriver.cpp derives from sofb.dbd
 sofb_SRCS += sofb_registerRecordDeviceDriver.cpp
-sofb_SRCS += aSubMergeSplit.c orbitCor.c
+sofb_SRCS += aSubMergeSplit.c orbitCor.c 
+sofb_SRCS += sofbLocalBump.c
 
 # Build the main IOC entry point on workstation OSs.
 sofb_SRCS_DEFAULT += sofbMain.cpp

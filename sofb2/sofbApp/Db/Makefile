@@ -19,6 +19,8 @@ DB += cor_sel.db
 DB += corx_sp_split.db cory_sp_split.db
 DB += orm.db
 
+DB += localbump.db
+
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_template = <templatename>
