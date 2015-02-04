@@ -13,10 +13,10 @@ include $(TOP)/configure/CONFIG
 DB += bpmx0.db bpmy0.db bpmx.db bpmy.db bpm_sel.db
 
 # correctors
-DB += corx_sp_merge.db cory_sp_merge.db
-DB += corx_rb_merge.db cory_rb_merge.db
+#DB += corx_sp_merge.db cory_sp_merge.db
+DB += cor_sp_merge.db cor_rb_merge.db
 DB += cor_sel.db
-DB += corx_sp_split.db cory_sp_split.db
+DB += cor_sp_split.db
 DB += orm.db
 
 DB += localbump.db

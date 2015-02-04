@@ -127,11 +127,9 @@ static long splitPvs(aSubRecord *pasub)
 {
     double *pval = (double *)pasub->a;
 
- #ifndef NDEBUG
     fprintf(stderr, "%s [%d] %f %f %f\n",
             pasub->name,
             pasub->noa, pval[0], pval[1], pval[2]);
- #endif
 
     /*
     if (pasub->inpa.type == CONSTANT) goto finish;

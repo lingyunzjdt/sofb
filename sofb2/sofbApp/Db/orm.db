@@ -272,7 +272,7 @@ record(aSub, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc_asub_") {
    field(OUTF, "SR:APHLA:SOFB{BPM}OrbUsrOffstd-Calc PP")
    field(OUTG, "SR:APHLA:SOFB{BPM}OrbUsrOffvar-Calc PP")
    field(SNAM, "mergePvs")
-   field(SCAN, "2 second")
+   field(SCAN, ".2 second")
 }
 
 record(ao, "SR:APHLA:SOFB{BPM}OrbUsrOffavg-Calc") {
@@ -313,23 +313,59 @@ record(ao, "SR:APHLA:SOFB{COR}dImin") {
    field(VAL, "0.01")
 }
 
-record(waveform, "SR:APHLA:SOFB{COR}-SP") {
+# merge two planes of SP
+record(waveform, "SR:APHLA:SOFB{COR}XY-SP") {
    field(FTVL, "DOUBLE")
    field(NELM, "360")
-   field(FLNK, "SR:APHLA:SOFB{COR}-SP-Calc_asub")
 }
 
-record(aSub, "SR:APHLA:SOFB{COR}_asub_") {
+record(aSub, "SR:APHLA:SOFB{COR}XY-SP_asub_") {
    field(FTA, "DOUBLE")
    field(FTB, "DOUBLE")
    field(FTVA, "DOUBLE")
-   field(INPA, "SR:APHLA:SOFB{HCOR}X-SP")
-   field(INPB, "SR:APHLA:SOFB{VCOR}Y-SP")
+   field(INPA, "SR:APHLA:SOFB{COR}X-SP")
+   field(INPB, "SR:APHLA:SOFB{COR}Y-SP")
    field(NOA, "180")
    field(NOB, "180")
    field(NOVA, "360")
-   field(OUTA, "SR:APHLA:SOFB{COR}-SP PP")
+   field(OUTA, "SR:APHLA:SOFB{COR}XY-SP PP")
    field(SNAM, "mergePvs")
+   field(SCAN, ".2 second")
+}
+
+# merge two planes of I
+record(waveform, "SR:APHLA:SOFB{COR}XY-I") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "360")
+}
+
+record(aSub, "SR:APHLA:SOFB{COR}XY-I_asub_") {
+   field(FTA, "DOUBLE")
+   field(FTB, "DOUBLE")
+   field(FTVA, "DOUBLE")
+   field(INPA, "SR:APHLA:SOFB{COR}X-I")
+   field(INPB, "SR:APHLA:SOFB{COR}Y-I")
+   field(NOA, "180")
+   field(NOB, "180")
+   field(NOVA, "360")
+   field(OUTA, "SR:APHLA:SOFB{COR}XY-I PP")
+   field(SNAM, "mergePvs")
+   field(SCAN, "1 second")
+}
+
+record(bo, "SR:APHLA:SOFB{ORM}corr:status") {
+   field(ONAM, "Running")
+   field(VAL, "0")
+   field(ZNAM, "Idle")
+}
+
+record(calcout, "SR:APHLA:SOFB{ORM}corr:timer_") {
+   field(CALC, "A>0?1:0")
+   field(DOPT, "Use CALC")
+   field(INPA, "SR:APHLA:SOFB{ORM}corr:status")
+   field(OOPT, "When Non-zero")
+   field(OUT, "SR:APHLA:SOFB{ORM}corr_asub_ PP")
+   field(SCAN, "2 second")
 }
 
 record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
@@ -343,7 +379,7 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(NOB, "396")
    field(FTB, "DOUBLE")
 
-   field(INPC, "SR:APHLA:SOFB{COR}-SP")
+   field(INPC, "SR:APHLA:SOFB{COR}XY-SP")
    field(NOC,  "360")
    field(FTC, "DOUBLE")
 
@@ -379,23 +415,33 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(NOVB, "360")
    field(FTVB, "DOUBLE")
 
-   field(SCAN, "2 second")
+   #field(OUTC, "SR:APHLA:SOFB{COR}XY-Calc PP")
+   #field(NOVC, "360")
+   #field(FTVC, "DOUBLE")
+
+   #field(SCAN, "1 second")
 }
 
 
-record(aSub, "SR:APHLA:SOFB{COR}-SP-Calc_asub") {
+record(waveform, "SR:APHLA:SOFB{COR}XY-Calc") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "360")
+   field(FLNK, "SR:APHLA:SOFB{COR}XY-Calc_asub")
+}
+
+record(aSub, "SR:APHLA:SOFB{COR}XY-Calc_asub") {
    field(FTA, "DOUBLE")
    field(NOA, "360")
-   field(INPA, "SR:APHLA:SOFB{COR}-SP")
+   field(INPA, "SR:APHLA:SOFB{COR}XY-Calc")
 
-   field(OUTA, "SR:APHLA:SOFB{HCOR}X-SP-Calc")
+   field(OUTA, "SR:APHLA:SOFB{COR}X-Calc PP")
    field(FTVA, "DOUBLE")
    field(NOVA, "180")
    
-   field(OUTB, "SR:APHLA:SOFB{VCOR}Y-SP-Calc")
+   field(OUTB, "SR:APHLA:SOFB{COR}Y-Calc PP")
    field(FTVB, "DOUBLE")
    field(NOVB, "180")
 
-   field(FLNK, "SR:APHLA:SOFB{HCOR}X-SP-Calc_2_0_asub")
    field(SNAM, "splitPvs")
 }
+

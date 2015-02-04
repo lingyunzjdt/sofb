@@ -24,14 +24,22 @@ dbLoadRecords("db/bpmy.db", "")
 dbLoadRecords("db/bpm_sel.db", "XSel=XSel,T=CHAR")
 dbLoadRecords("db/bpm_sel.db", "XSel=YSel,T=CHAR")
 
-dbLoadRecords("db/corx_sp_merge.db", "")
-dbLoadRecords("db/cory_sp_merge.db", "")
-dbLoadRecords("db/corx_rb_merge.db", "")
-dbLoadRecords("db/cory_rb_merge.db", "")
+#dbLoadRecords("db/corx_sp_merge.db", "")
+#dbLoadRecords("db/cory_sp_merge.db", "")
+dbLoadRecords("db/cor_sp_merge.db", "PLN=X,SPi=Sp1")
+dbLoadRecords("db/cor_sp_merge.db", "PLN=Y,SPi=Sp2")
+#dbLoadRecords("db/corx_rb_merge.db", "")
+#dbLoadRecords("db/cory_rb_merge.db", "")
+dbLoadRecords("db/cor_rb_merge.db", "PLN=X,PSi=Ps1")
+dbLoadRecords("db/cor_rb_merge.db", "PLN=Y,PSi=Ps2")
 dbLoadRecords("db/cor_sel.db", "XSel=XSel,T=CHAR")
 dbLoadRecords("db/cor_sel.db", "XSel=YSel,T=CHAR")
 #dbLoadRecords("db/corx_sp_split.db", "")
 #dbLoadRecords("db/cory_sp_split.db", "")
+
+dbLoadRecords("db/cor_sp_split.db", "PLN=X,SPi=Sp1")
+dbLoadRecords("db/cor_sp_split.db", "PLN=Y,SPi=Sp2")
+
 
 dbLoadRecords("db/orm.db", "")
 

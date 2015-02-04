@@ -163,8 +163,8 @@ static long correctOrbit(aSubRecord *pasub)
     /* b: X/Y orbit residual */
     double *pb = (double *)pasub->b;
     
-    /* c: X/Y target orbit */
-    /* f,g: active/inactive X/Y BPM */
+    /* c: COR X/Y SP*/
+    /* d,e: BPM/COR sel */
     /* h,i: X/Y cor setpoint */
     const double dImax = *(double*) pasub->h;
     const double dImin = *(double*) pasub->i;
@@ -192,7 +192,8 @@ static long correctOrbit(aSubRecord *pasub)
         for (j = 0; j < 396; ++j) {
             s += pMinv[i*396+j] * pb[j];
         }
-        px0[i] = px[i] = s;
+        /* take a negative */
+        px0[i] = px[i] = -s;
         if(fabs(s) > xmax)  xmax = fabs(s);
     }
 
@@ -203,7 +204,17 @@ static long correctOrbit(aSubRecord *pasub)
             px[i] /= xmax / dImax;
         }
     }
-
+    if (pasub->outc.type != CONSTANT) {
+        /* final SP */
+        double *pxc = (double*)pasub->valc;
+        double *c0 = (double*) pasub->c; /* input SP */
+        const char *bpmsel = (const char*) pasub->d;
+        const char *corsel = (const char*) pasub->e;
+        for (i = 0; i < pasub->noc; ++i) {
+            if (corsel[i] == 0) continue;
+            pxc[i] = px[i] + c0[i];
+        }
+    }
     return 0;
 }
 
