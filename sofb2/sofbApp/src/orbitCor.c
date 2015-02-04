@@ -67,6 +67,21 @@ static long solveSVD(aSubRecord *pasub)
     /* gsl_linalg_SV_decomp_jacobi (&(Av.matrix), V, S); */
     gsl_linalg_SV_decomp_jacobi (A, V, S);
 
+    /* output c: S */
+    double *pS = (double*)pasub->valc;
+    double *pSfull = (double*) pasub->vali;
+    /* double *pSlog = (double*) pasub->valj; */
+    /* double *pSflog = (double*) pasub->valk; */
+    for(i = 0; i < pasub->novc; ++i) {
+        pSfull[i] = i < S->size ? gsl_vector_get(S, i) : 0.0;
+        pS[i] = (i < S->size && i < sn) ? gsl_vector_get(S, i) : 0.0;
+        /* pSlog[i]  = pS[i] > 0.0 ? log(pS[i]) : 0.0; */
+        /* pSflog[i] = pSfull[i] > 0.0 ? log(pSfull[i]) : 0.0; */
+    }
+    pasub->nevi = S->size < pasub->novi ? S->size : pasub->novi; 
+    pasub->nevc = sn < pasub->nevi ? sn : pasub->nevi;
+
+    /* set U and V */
     buf = (double*) pasub->valf;
     for (i = 0; i < A->size1; ++i) {
         for (j = 0; j < A->size2; ++j) {
@@ -113,7 +128,8 @@ static long solveSVD(aSubRecord *pasub)
               s += gsl_matrix_get(V, i, k) * gsl_matrix_get(S, k, j);
               } 
             */
-            s = gsl_matrix_get(V, i, j) / gsl_vector_get(S, j);
+            /* s = gsl_matrix_get(V, i, j) / gsl_vector_get(S, j); */
+            s = j < sn ? gsl_matrix_get(V, i, j) / gsl_vector_get(S, j) : 0.0;
             tmp[i*A->size2 + j] = s;
         }
     }
@@ -128,11 +144,6 @@ static long solveSVD(aSubRecord *pasub)
     }
 
 
-    /* output c: S */
-    buf = (double*)pasub->valc;
-    for(i = 0; i < pasub->novc; ++i) {
-        buf[i] = (i < S->size && i < sn) ? gsl_vector_get(S, i) : 0.0;
-    }
 
     free(tmp);
 
@@ -151,16 +162,20 @@ static long correctOrbit(aSubRecord *pasub)
     double *pMinv = (double *)pasub->a;
     /* b: X/Y orbit residual */
     double *pb = (double *)pasub->b;
-
+    
     /* c: X/Y target orbit */
     /* f,g: active/inactive X/Y BPM */
     /* h,i: X/Y cor setpoint */
+    const double dImax = *(double*) pasub->h;
+    const double dImin = *(double*) pasub->i;
+
     /* j,k: X/Y cor readback */
     /* l,m: active/inactive X/Y Cor */
     /* n,o,p: U, S, V */
     /* r: Kp, Ki, Kd, alpha */
     /* output */
-    double *px = (double *)pasub->vala;
+    double *px  = (double *)pasub->vala;
+    double *px0 = (double *)pasub->valb;
 
     const int m = 396;
     const int n = 360;
@@ -177,7 +192,16 @@ static long correctOrbit(aSubRecord *pasub)
         for (j = 0; j < 396; ++j) {
             s += pMinv[i*396+j] * pb[j];
         }
-        px[i] = s;
+        px0[i] = px[i] = s;
+        if(fabs(s) > xmax)  xmax = fabs(s);
+    }
+
+    if (xmax < dImin) {
+        for (i = 0; i < pasub->nova; ++i) px[i] = 0.0;
+    } else {
+        for (i = 0; i < pasub->nova; ++i) {
+            px[i] /= xmax / dImax;
+        }
     }
 
     return 0;

@@ -16,6 +16,7 @@ DBD += sofb.dbd
 sofb_DBD += base.dbd
 
 # Include dbd files from all support applications:
+sofb_DBD += asSupport.dbd
 sofb_DBD += aSubMergeSplit.dbd orbitCor.dbd
 sofb_DBD += sofbLocalBump.dbd
 
@@ -37,6 +38,7 @@ sofb_SRCS_vxWorks += -nil-
 #sofb_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
 # Finally link to the EPICS Base libraries
+sofb_LIBS += autosave
 sofb_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 #===========================

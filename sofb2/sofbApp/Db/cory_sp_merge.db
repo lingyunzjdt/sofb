@@ -38,6 +38,7 @@ record(aSub, "SR:APHLA:SOFB{VCOR}Y-SP_2_0_asub_") {
    field(NOVA, "180")
    field(OUTA, "SR:APHLA:SOFB{VCOR}Y-SP PP")
    field(SNAM, "mergePvs")
+   field(FLNK, "SR:APHLA:SOFB{COR}_asub_")
 }
 
 record(waveform, "SR:APHLA:SOFB{VCOR}Y-SP_1_8_wfm_") {

@@ -14,6 +14,8 @@
 #include<math.h>
 #include<float.h>
 
+#define NDEBUG
+
 #define MERGE_INP(pval, dblk, val, sz)                  \
     if (dblk.type == CONSTANT) goto stats;              \
     memcpy(pval, val, sz);                              \

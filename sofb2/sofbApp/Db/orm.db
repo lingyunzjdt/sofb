@@ -4,12 +4,17 @@
 # 198*198*4 = 156816
 
 record(waveform, "SR:APHLA:SOFB{ORM}Mfull") {
+    field(PINI, "1")
     field(NELM, "142560")
     field(FTVL, "DOUBLE")
+    info(autosaveFields_pass1, "VAL")
     field(FLNK, "SR:APHLA:SOFB{ORM}svd_asub_")
 }
 
-record(bo, "SR:APHLA:SOFB{ORM}SVD-Run") {
+record(bo, "SR:APHLA:SOFB{ORM}SVD-Cmd") {
+   field(VAL, 0)
+   #field(OUT, "SR:APHLA:SOFB{ORM}svd_asub_")
+   #field(HIGH, "1.0")
    field(FLNK, "SR:APHLA:SOFB{ORM}svd_asub_")
 }
 
@@ -79,6 +84,24 @@ record(waveform, "SR:APHLA:SOFB{ORM}S") {
     field(FTVL, "DOUBLE")
     #field(FTVL, "FLOAT")
 }
+
+record(waveform, "SR:APHLA:SOFB{ORM}Sfull") {
+    field(NELM, "360")
+    field(FTVL, "DOUBLE")
+    #field(FTVL, "FLOAT")
+}
+
+#record(waveform, "SR:APHLA:SOFB{ORM}Slog") {
+#    field(NELM, "360")
+#    field(FTVL, "DOUBLE")
+#    #field(FTVL, "FLOAT")
+#}
+
+#record(waveform, "SR:APHLA:SOFB{ORM}Sflog") {
+#    field(NELM, "360")
+#    field(FTVL, "DOUBLE")
+#    #field(FTVL, "FLOAT")
+#}
 
 record(longout, "SR:APHLA:SOFB{ORM}Sn") {
     field(VAL, "360")
@@ -204,16 +227,28 @@ record(aSub, "SR:APHLA:SOFB{ORM}svd_asub_") {
    field(NOVH, "142560")
    field(FTVH, "DOUBLE")
 
+   field(OUTI, "SR:APHLA:SOFB{ORM}Sfull PP")
+   field(NOVI, "360")
+   field(FTVI, "DOUBLE")
+
+   #field(OUTJ, "SR:APHLA:SOFB{ORM}Slog PP")
+   #field(NOVJ, "360")
+   #field(FTVJ, "DOUBLE")
+
+   #field(OUTK, "SR:APHLA:SOFB{ORM}Sflog PP")
+   #field(NOVK, "360")
+   #field(FTVK, "DOUBLE")
+
    #field(SCAN, "1 second")
 }
 
+#
+#
 record(waveform, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc") {
    field(FTVL, "DOUBLE")
    field(NELM, "396")
 }
 
-#
-#
 record(aSub, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc_asub_") {
    field(FTA, "DOUBLE")
    field(FTB, "DOUBLE")
@@ -258,9 +293,43 @@ record(ao, "SR:APHLA:SOFB{BPM}OrbUsrOffstd-Calc") {
 record(ao, "SR:APHLA:SOFB{BPM}OrbUsrOffvar-Calc") {
 }
 
+#
+#
 record(waveform, "SR:APHLA:SOFB{COR}delta-SP") {
    field(FTVL, "DOUBLE")
    field(NELM, "360")
+}
+
+record(waveform, "SR:APHLA:SOFB{COR}delta0-SP") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "360")
+}
+
+record(ao, "SR:APHLA:SOFB{COR}dImax") {
+   field(VAL, "0.1")
+}
+
+record(ao, "SR:APHLA:SOFB{COR}dImin") {
+   field(VAL, "0.01")
+}
+
+record(waveform, "SR:APHLA:SOFB{COR}-SP") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "360")
+   field(FLNK, "SR:APHLA:SOFB{COR}-SP-Calc_asub")
+}
+
+record(aSub, "SR:APHLA:SOFB{COR}_asub_") {
+   field(FTA, "DOUBLE")
+   field(FTB, "DOUBLE")
+   field(FTVA, "DOUBLE")
+   field(INPA, "SR:APHLA:SOFB{HCOR}X-SP")
+   field(INPB, "SR:APHLA:SOFB{VCOR}Y-SP")
+   field(NOA, "180")
+   field(NOB, "180")
+   field(NOVA, "360")
+   field(OUTA, "SR:APHLA:SOFB{COR}-SP PP")
+   field(SNAM, "mergePvs")
 }
 
 record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
@@ -273,6 +342,10 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(INPB, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc")
    field(NOB, "396")
    field(FTB, "DOUBLE")
+
+   field(INPC, "SR:APHLA:SOFB{COR}-SP")
+   field(NOC,  "360")
+   field(FTC, "DOUBLE")
 
    field(INPD, "SR:APHLA:SOFB{BPM}Sel-I")
    field(NOD, "396")
@@ -290,9 +363,39 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(NOG, "1")
    field(FTG, "LONG")
 
+   field(INPH, "SR:APHLA:SOFB{COR}dImax")
+   field(NOH, "1")
+   field(FTH, "DOUBLE")
+
+   field(INPI, "SR:APHLA:SOFB{COR}dImin")
+   field(NOI, "1")
+   field(FTI, "DOUBLE")
+
    field(OUTA, "SR:APHLA:SOFB{COR}delta-SP PP")
    field(NOVA, "360")
    field(FTVA, "DOUBLE")
 
+   field(OUTB, "SR:APHLA:SOFB{COR}delta0-SP PP")
+   field(NOVB, "360")
+   field(FTVB, "DOUBLE")
+
    field(SCAN, "2 second")
+}
+
+
+record(aSub, "SR:APHLA:SOFB{COR}-SP-Calc_asub") {
+   field(FTA, "DOUBLE")
+   field(NOA, "360")
+   field(INPA, "SR:APHLA:SOFB{COR}-SP")
+
+   field(OUTA, "SR:APHLA:SOFB{HCOR}X-SP-Calc")
+   field(FTVA, "DOUBLE")
+   field(NOVA, "180")
+   
+   field(OUTB, "SR:APHLA:SOFB{VCOR}Y-SP-Calc")
+   field(FTVB, "DOUBLE")
+   field(NOVB, "180")
+
+   field(FLNK, "SR:APHLA:SOFB{HCOR}X-SP-Calc_2_0_asub")
+   field(SNAM, "splitPvs")
 }
