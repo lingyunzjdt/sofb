@@ -1,0 +1,166 @@
+record(bo, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)-Cmd") {
+   field(VAL, "0")
+   field(ZNAM, "Idle")
+   field(ONAM, "Setting")
+   field(HIGH, "1")
+   field(FLNK, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)_asub_")
+}
+
+record(ao, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)angle-SP") {
+   field(VAL, "0.0")
+   field(EGU, "mrad")
+   field(PREC, "3")
+}
+
+record(ao, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)offset-SP") {
+   field(VAL, "0.0")
+   field(EGU, "mm")
+   field(PREC, "3")
+}
+
+# angle/offset based on BPM x
+record(ai, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)angle-I") {
+   field(VAL, "0.0")
+   field(PREC, "5")
+   field(EGU, "mrad")
+}
+
+record(ai, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)offset-I") {
+   field(VAL, "0.0")
+   field(PREC, "5")
+   field(EGU, "mm")
+}
+
+record(calcout, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)angle-I_calc") {
+   field(INPA, "$(X1)")
+   field(INPB, "$(X2)")
+   field(INPC, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)L")
+   field(INPD, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)mmscale")
+   field(CALC, "C>0.0 ? (B-A)*D/C : 0.0")
+   field(DOPT, "Use CALC")
+   field(OUT, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)angle-I PP")
+   field(SCAN, "1 second")
+}
+
+record(calcout, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)offset-I_calc") {
+   field(INPA, "$(X1)")
+   field(INPB, "$(X2)")
+   field(INPC, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)L")
+   field(INPD, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)mmscale")
+   field(CALC, "(B+A)*D/2.0")
+   field(DOPT, "Use CALC")
+   field(OUT, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)offset-I PP")
+   field(SCAN, "1 second")
+}
+
+
+record(ai, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)angle0-I") {
+   field(VAL, "0.0")
+   field(PREC, "5")
+   field(EGU, "mrad")
+}
+
+record(ai, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)offset0-I") {
+   field(VAL, "0.0")
+   field(PREC, "5")
+   field(EGU, "mm")
+}
+
+record(calcout, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)angle0-I_calc") {
+   field(INPA, "$(X01)")
+   field(INPB, "$(X02)")
+   field(INPC, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)L")
+   field(INPD, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)mmscale")
+   field(CALC, "C>0.0 ? (B-A)*D/C : 0.0")
+   field(DOPT, "Use CALC")
+   field(OUT, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)angle0-I PP")
+   field(SCAN, "1 second")
+}
+
+record(calcout, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)offset0-I_calc") {
+   field(INPA, "$(X01)")
+   field(INPB, "$(X02)")
+   field(INPC, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)L")
+   field(INPD, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)mmscale")
+   field(CALC, "(B+A)*D/2.0")
+   field(DOPT, "Use CALC")
+   field(OUT, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)offset0-I PP")
+   field(SCAN, "1 second")
+}
+
+# 
+record(ao, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)L") {
+   field(VAL, "$(L)")
+   field(DESC, "BPM-BPM distance")
+   field(FLNK, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)_asub_")
+   field(EGU, "m")
+}
+
+record(ao, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)mmscale") {
+   field(VAL,  "1.0")
+   field(DESC, "Scale BPM readings to mm")
+   field(FLNK, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)_asub_")
+}
+
+record(longout, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)op") {
+   field(VAL,  "0")
+   field(DESC, "operation code")
+   #field(FLNK, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)_asub_")
+}
+
+record(aSub, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)_asub_") {
+   field(INPA, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)angle-SP")
+   field(FTA,  "DOUBLE")
+   field(NOA,  "1")
+
+   field(INPB, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)offset-SP")
+   field(FTB,  "DOUBLE")
+   field(NOB,  "1")
+
+   field(INPC, "$(OFST1L)")
+   field(FTC,  "DOUBLE")
+   field(NOC,  "1")
+
+   field(INPD, "$(OFST1R)")
+   field(FTD,  "DOUBLE")
+   field(NOD,  "1")
+
+   field(INPE, "$(OFST2L)")
+   field(FTE,  "DOUBLE")
+   field(NOE,  "1")
+
+   field(INPF, "$(OFST2R)")
+   field(FTF,  "DOUBLE")
+   field(NOF,  "1")
+
+   field(INPG, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)L")
+   field(FTG,  "DOUBLE")
+   field(NOG,  "1")
+
+   field(INPH, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)mmscale")
+   field(FTH,  "DOUBLE")
+   field(NOH,  "1")
+
+   field(INPI, "SR:APHLA:SOFB{BUMP:$(ID)}$(PL)op")
+   field(FTI,  "LONG")
+   field(NOI,  "1")
+
+   field(OUTA, "$(OFST1L) PP")
+   field(FTVA, "DOUBLE")
+   field(NOVA, "1")
+
+   field(OUTB, "$(OFST1R) PP")
+   field(FTVB, "DOUBLE")
+   field(NOVB, "1")
+
+   field(OUTC, "$(OFST2L) PP")
+   field(FTVC, "DOUBLE")
+   field(NOVC, "1")
+
+   field(OUTD, "$(OFST2R) PP")
+   field(FTVD, "DOUBLE")
+   field(NOVD, "1")
+
+   field(SNAM, "sofbLocalBump")
+   #field(SCAN, "1 second")
+}
