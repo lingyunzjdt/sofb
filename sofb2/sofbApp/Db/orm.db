@@ -306,7 +306,7 @@ record(waveform, "SR:APHLA:SOFB{COR}delta0-SP") {
 }
 
 record(ao, "SR:APHLA:SOFB{COR}dImax") {
-   field(VAL, "0.1")
+   field(VAL, "0.05")
 }
 
 record(ao, "SR:APHLA:SOFB{COR}dImin") {
@@ -350,7 +350,7 @@ record(aSub, "SR:APHLA:SOFB{COR}XY-I_asub_") {
    field(NOVA, "360")
    field(OUTA, "SR:APHLA:SOFB{COR}XY-I PP")
    field(SNAM, "mergePvs")
-   field(SCAN, "1 second")
+   field(SCAN, ".5 second")
 }
 
 record(bo, "SR:APHLA:SOFB{ORM}corr:status") {
@@ -365,7 +365,7 @@ record(calcout, "SR:APHLA:SOFB{ORM}corr:timer_") {
    field(INPA, "SR:APHLA:SOFB{ORM}corr:status")
    field(OOPT, "When Non-zero")
    field(OUT, "SR:APHLA:SOFB{ORM}corr_asub_ PP")
-   field(SCAN, "2 second")
+   field(SCAN, ".2 second")
 }
 
 record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
@@ -415,9 +415,9 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(NOVB, "360")
    field(FTVB, "DOUBLE")
 
-   #field(OUTC, "SR:APHLA:SOFB{COR}XY-Calc PP")
-   #field(NOVC, "360")
-   #field(FTVC, "DOUBLE")
+   field(OUTC, "SR:APHLA:SOFB{COR}XY-Calc PP")
+   field(NOVC, "360")
+   field(FTVC, "DOUBLE")
 
    #field(SCAN, "1 second")
 }

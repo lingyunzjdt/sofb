@@ -143,8 +143,6 @@ static long solveSVD(aSubRecord *pasub)
         }
     }
 
-
-
     free(tmp);
 
 finish:

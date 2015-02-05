@@ -127,9 +127,9 @@ static long splitPvs(aSubRecord *pasub)
 {
     double *pval = (double *)pasub->a;
 
-    fprintf(stderr, "%s [%d] %f %f %f\n",
-            pasub->name,
-            pasub->noa, pval[0], pval[1], pval[2]);
+    /* fprintf(stderr, "%s [%d] %f %f %f\n", */
+    /*         pasub->name, */
+    /*         pasub->noa, pval[0], pval[1], pval[2]); */
 
     /*
     if (pasub->inpa.type == CONSTANT) goto finish;
