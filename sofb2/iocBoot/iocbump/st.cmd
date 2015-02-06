@@ -20,7 +20,7 @@ bump_registerRecordDeviceDriver(pdbbase)
 ## Load record instances
 #dbLoadRecords("db/bump.db","user=lyyang")
 
-dbLoadRecords("db/localbump.db", "ID=ISX,PL=X,L=7.928,OFST1L=SR:C10-BI{BPM:7}Pos:Href-SP,OFST1R=SR:C10-BI{BPM:8}Pos:Href-SP,OFST2L=SR:C10-BI{BPM:7}Pos:UsrXoffset-SP,OFST2R=SR:C10-BI{BPM:8}Pos:UsrXoffset-SP,X1=SR:C10-BI{BPM:7}Pos:XwUsrOff-Calc,X2=SR:C10-BI{BPM:8}Pos:XwUsrOff-Calc,X01=SR:C10-BI{BPM:7}Pos:X-I,X02=SR:C10-BI{BPM:8}Pos:X-I")
+dbLoadRecords("db/localbump.db", "ID=ISX,XY=X,HV=H,C1=10,I1=7,C2=10,I2=8,S1=-3.899,S2=0,S3=4.029")
 
 iocInit()
 
