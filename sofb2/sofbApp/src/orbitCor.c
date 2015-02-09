@@ -149,6 +149,12 @@ static long solveSVD(aSubRecord *pasub)
 
     free(tmp);
 
+    /* set bsel and csel */
+    pasub->novj = pasub->nob;
+    for (i = 0; i < pasub->nob; ++i) ((char*)pasub->valj)[i] = bsel[i];
+    pasub->novk = pasub->noc;
+    for (i = 0; i < pasub->noc; ++i) ((char*)pasub->valk)[i] = csel[i];
+    
 finish:
     gsl_matrix_free(A);
     gsl_matrix_free(V);

@@ -142,11 +142,21 @@ record(waveform, "SR:APHLA:SOFB{ORM}Minv") {
 #    field(VAL, "360")
 #}
 
-record(longin, "SR:APHLA:SOFB{ORM}NBPM") {
+record(waveform, "SR:APHLA:SOFB{ORM}BPM:Sel-I") {
+    field(NELM, "396")
+    field(FTVL, "CHAR")
+}
+
+record(waveform, "SR:APHLA:SOFB{ORM}COR:Sel-I") {
+    field(NELM, "360")
+    field(FTVL, "CHAR")
+}
+
+record(longin, "SR:APHLA:SOFB{ORM}BPM:N") {
     field(VAL, "396")
 }
 
-record(longin, "SR:APHLA:SOFB{ORM}NCOR") {
+record(longin, "SR:APHLA:SOFB{ORM}COR:N") {
     field(VAL, "360")
 }
 
@@ -231,11 +241,11 @@ record(aSub, "SR:APHLA:SOFB{ORM}svd_asub_") {
    field(NOVC, "360")
    field(FTVC, "DOUBLE")
 
-   field(OUTD, "SR:APHLA:SOFB{ORM}NBPM PP")
+   field(OUTD, "SR:APHLA:SOFB{ORM}BPM:N PP")
    field(NOVD, "1")
    field(FTVD, "LONG")
 
-   field(OUTE, "SR:APHLA:SOFB{ORM}NCOR PP")
+   field(OUTE, "SR:APHLA:SOFB{ORM}COR:N PP")
    field(NOVE, "1")
    field(FTVE, "LONG")
 
@@ -255,6 +265,14 @@ record(aSub, "SR:APHLA:SOFB{ORM}svd_asub_") {
    field(NOVI, "360")
    field(FTVI, "DOUBLE")
 
+   field(INPJ, "SR:APHLA:SOFB{ORM}BPM:Sel-I PP")
+   field(NOJ,  "396")
+   field(FTJ, "CHAR")
+
+   field(INPK, "SR:APHLA:SOFB{ORM}COR:Sel-I PP")
+   field(NOK,  "360")
+   field(FTK,  "CHAR")
+
    #field(OUTJ, "SR:APHLA:SOFB{ORM}Slog PP")
    #field(NOVJ, "360")
    #field(FTVJ, "DOUBLE")
@@ -263,6 +281,7 @@ record(aSub, "SR:APHLA:SOFB{ORM}svd_asub_") {
    #field(NOVK, "360")
    #field(FTVK, "DOUBLE")
 
+   
    #field(SCAN, "1 second")
 }
 
@@ -407,19 +426,19 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(NOC,  "360")
    field(FTC, "DOUBLE")
 
-   field(INPD, "SR:APHLA:SOFB{BPM}Sel-I")
+   field(INPD, "SR:APHLA:SOFB{ORM}BPM:Sel-I")
    field(NOD, "396")
    field(FTD, "CHAR")
 
-   field(INPE, "SR:APHLA:SOFB{COR}Sel-I")
+   field(INPE, "SR:APHLA:SOFB{ORM}COR:Sel-I")
    field(NOE, "360")
    field(FTE, "CHAR")
 
-   field(INPF, "SR:APHLA:SOFB{ORM}NBPM PP")
+   field(INPF, "SR:APHLA:SOFB{ORM}BPM:N PP")
    field(NOF, "1")
    field(FTF, "LONG")
 
-   field(INPG, "SR:APHLA:SOFB{ORM}NCOR PP")
+   field(INPG, "SR:APHLA:SOFB{ORM}COR:N PP")
    field(NOG, "1")
    field(FTG, "LONG")
 
