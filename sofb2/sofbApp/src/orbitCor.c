@@ -29,7 +29,9 @@ static long solveSVD(aSubRecord *pasub)
     char *csel = (int *)pasub->c;
     /* d: keep n sv */
     int sn = *(long*)pasub->d;
-
+    /* f: weight of BPMS */
+    double *pw = (double*)pasub->f;
+    
     /* output: */
     /* a,b,c: M, Minv, S */
     /* int m = pasub->nob + pasub->noc; */
@@ -38,9 +40,11 @@ static long solveSVD(aSubRecord *pasub)
     double *pM = (double*) pasub->vala;
     k1 = k2 = 0;
     for (i = 0; i < pasub->nob; ++i) {
+        /* skip some BPMs */
         if (!bsel[i]) continue;
         ++m;
         for (j = 0; j < pasub->noc; ++j) {
+            /* skip some correctors */
             if (!csel[j]) continue;
             k2 = i * (pasub->noc) + j;
             pM[k1++] = pA[k2];
@@ -167,6 +171,9 @@ static long correctOrbit(aSubRecord *pasub)
     const double dImax = *(double*) pasub->h;
     const double dImin = *(double*) pasub->i;
 
+    /* j: BPM weight */
+    const double *pw = (double*) pasub->j;
+    
     /* j,k: X/Y cor readback */
     /* l,m: active/inactive X/Y Cor */
     /* n,o,p: U, S, V */

@@ -64,6 +64,26 @@ record(aSub, "SR:APHLA:SOFB{BPM}Sel-I_asub_") {
    #field(FLNK, "SR:APHLA:SOFB{ORM}svd_asub_")
 }
 
+# merge two planes of BPM weight
+record(waveform, "SR:APHLA:SOFB{BPM}XYWeight-I") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "396")
+}
+
+record(aSub, "SR:APHLA:SOFB{BPM}XYWeight-I_asub_") {
+   field(FTA, "DOUBLE")
+   field(FTB, "DOUBLE")
+   field(FTVA, "DOUBLE")
+   field(INPA, "SR:APHLA:SOFB{BPM}XWeight-I")
+   field(INPB, "SR:APHLA:SOFB{BPM}YWeight-I")
+   field(NOA, "198")
+   field(NOB, "198")
+   field(NOVA, "396")
+   field(OUTA, "SR:APHLA:SOFB{BPM}XYWeight-I PP")
+   field(SNAM, "mergePvs")
+   field(SCAN, ".5 second")
+}
+
 record(aSub, "SR:APHLA:SOFB{COR}Sel-I_asub_") {
    field(FTA, "CHAR")
    field(FTB, "CHAR")
@@ -194,6 +214,10 @@ record(aSub, "SR:APHLA:SOFB{ORM}svd_asub_") {
    field(INPE, "SR:APHLA:SOFB{ORM}KpidTa-I")
    field(NOE, "4")
    field(FTE, "DOUBLE")
+
+   field(INPF, "SR:APHLA:SOFB{BPM}XYWeight-I")
+   field(NOF, "396")
+   field(FTF, "DOUBLE")
 
    field(OUTA, "SR:APHLA:SOFB{ORM}M PP")
    field(NOVA, "142560")
@@ -365,7 +389,7 @@ record(calcout, "SR:APHLA:SOFB{ORM}corr:timer_") {
    field(INPA, "SR:APHLA:SOFB{ORM}corr:status")
    field(OOPT, "When Non-zero")
    field(OUT, "SR:APHLA:SOFB{ORM}corr_asub_ PP")
-   field(SCAN, ".2 second")
+   field(SCAN, ".5 second")
 }
 
 record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
@@ -406,6 +430,10 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(INPI, "SR:APHLA:SOFB{COR}dImin")
    field(NOI, "1")
    field(FTI, "DOUBLE")
+
+   field(INPJ, "SR:APHLA:SOFB{BPM}XYWeight-I")
+   field(NOJ, "396")
+   field(FTJ, "DOUBLE")
 
    field(OUTA, "SR:APHLA:SOFB{COR}delta-SP PP")
    field(NOVA, "360")

@@ -37,22 +37,34 @@ static long sofbLocalBump(aSubRecord *pasub)
     /* x = x0 - Href */
     /* keep x fixed at zero, Href changes same as required x0 */
 
-    fprintf(stderr, "new pos: %g %g op= %ld\n", x1, x2, op);
-
+    fprintf(stderr, "----------\n");
+    fprintf(stderr, "initial pos: %g %g op= %ld\n", x1, x2, op);
+    fprintf(stderr, "initial ref: %g %g op= %ld\n", xrf1, xrf2, op);
+    fprintf(stderr, "initial offset/angle: %g %g op= %ld\n", offst0, angle0, op);
+    fprintf(stderr, "calculated pos: %g %g op= %ld\n", x1c, x2c, op);
+    
     switch(op) {
     case 0:
         fprintf(stderr, "NOTING is DONE for op=0\n");
         break;
     case 1: /* ABS: use bpm set 1 */
         /* save to set 1 */
-        *(double*) pasub->vala = xrf1 + (x1c - x1);
-        *(double*) pasub->valb = xrf2 + (x2c - x2);
+        /* *(double*) pasub->vala = xrf1 + (x1c - x1); */
+        /* *(double*) pasub->valb = xrf2 + (x2c - x2); */
+        *(double*) pasub->vala = x1c - x1;
+        *(double*) pasub->valb = x2c - x2;
         break;
     case 2: 
         break;
     default:
         fprintf(stderr, "Undefined code: %d\n", op);
     }
+
+    fprintf(stderr, "set H/V ref to : %g %g op= %ld\n",
+            *(double*) pasub->vala,
+            *(double*) pasub->valb,
+            x1c, x2c, op);
+
     return 0;
 }
 

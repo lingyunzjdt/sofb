@@ -12,7 +12,7 @@ cd /direct/phy_iocs/srSOFB2/sofb2
 
 ## Register all support components
 dbLoadDatabase("dbd/sofb.dbd",0,0)
-sofb_registerRecordDeviceDriver(pdbbase) 
+sofb_registerRecordDeviceDriver(pdbbase)
 
 ## Load record instances
 dbLoadRecords("db/sofb.db","user=lyyang")
@@ -23,6 +23,9 @@ dbLoadRecords("db/bpmy.db", "")
 
 dbLoadRecords("db/bpm_sel.db", "XSel=XSel,T=CHAR")
 dbLoadRecords("db/bpm_sel.db", "XSel=YSel,T=CHAR")
+
+dbLoadRecords("db/bpm_weight.db", "XWeight=XWeight,T=DOUBLE")
+dbLoadRecords("db/bpm_weight.db", "XWeight=YWeight,T=DOUBLE")
 
 #dbLoadRecords("db/corx_sp_merge.db", "")
 #dbLoadRecords("db/cory_sp_merge.db", "")
