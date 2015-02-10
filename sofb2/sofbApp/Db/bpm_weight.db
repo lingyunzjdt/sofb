@@ -924,14 +924,14 @@ record(ao, "SR:C02-BI{BPM:6}$(XWeight)-SP") {
 }
 
 record(ao, "SR:C03-BI{BPM:7}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_0_asub_")
 }
 
 record(ao, "SR:C03-BI{BPM:8}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_0_asub_")
@@ -1022,21 +1022,21 @@ record(ao, "SR:C04-BI{BPM:6}$(XWeight)-SP") {
 }
 
 record(ao, "SR:C05-BI{BPM:7}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_1_asub_")
 }
 
 record(ao, "SR:C05-BI{BPM:8}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_1_asub_")
 }
 
 record(ao, "SR:C05-BI{BPM:9}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_1_asub_")
@@ -1169,14 +1169,14 @@ record(ao, "SR:C07-BI{BPM:6}$(XWeight)-SP") {
 }
 
 record(ao, "SR:C08-BI{BPM:7}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_2_asub_")
 }
 
 record(ao, "SR:C08-BI{BPM:8}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_2_asub_")
@@ -1267,14 +1267,14 @@ record(ao, "SR:C09-BI{BPM:6}$(XWeight)-SP") {
 }
 
 record(ao, "SR:C10-BI{BPM:7}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_3_asub_")
 }
 
 record(ao, "SR:C10-BI{BPM:8}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_3_asub_")
@@ -1323,14 +1323,14 @@ record(ao, "SR:C10-BI{BPM:6}$(XWeight)-SP") {
 }
 
 record(ao, "SR:C11-BI{BPM:7}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_3_asub_")
 }
 
 record(ao, "SR:C11-BI{BPM:8}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_3_asub_")
@@ -1631,14 +1631,14 @@ record(ao, "SR:C17-BI{BPM:6}$(XWeight)-SP") {
 }
 
 record(ao, "SR:C18-BI{BPM:7}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_5_asub_")
 }
 
 record(ao, "SR:C18-BI{BPM:8}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_6_asub_")
@@ -1855,21 +1855,21 @@ record(ao, "SR:C22-BI{BPM:6}$(XWeight)-SP") {
 }
 
 record(ao, "SR:C23-BI{BPM:7}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_7_asub_")
 }
 
 record(ao, "SR:C23-BI{BPM:8}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_7_asub_")
 }
 
 record(ao, "SR:C23-BI{BPM:9}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_7_asub_")
@@ -2086,14 +2086,14 @@ record(ao, "SR:C27-BI{BPM:6}$(XWeight)-SP") {
 }
 
 record(ao, "SR:C28-BI{BPM:7}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_9_asub_")
 }
 
 record(ao, "SR:C28-BI{BPM:8}$(XWeight)-SP") {
-   field(VAL, "1")
+   field(VAL, "2")
    field(DRVH, "50.0")
    field(DRVL, "0.1")
    field(FLNK, "SR:APHLA:SOFB{BPM}$(XWeight)-I_1_9_asub_")

@@ -16,6 +16,8 @@
 #include <gsl/gsl_matrix.h>
 #include <gsl/gsl_linalg.h>
 
+#define DEBUG
+
 static long solveSVD(aSubRecord *pasub)
 {
     int i, j, k, k1, k2;
@@ -38,6 +40,7 @@ static long solveSVD(aSubRecord *pasub)
     int m = 0, n = 0;
     for (j = 0; j < pasub->noc; ++j) n += csel[j];
     double *pM = (double*) pasub->vala;
+    pasub->neva = 0;
     k1 = k2 = 0;
     for (i = 0; i < pasub->nob; ++i) {
         /* skip some BPMs */
@@ -47,15 +50,28 @@ static long solveSVD(aSubRecord *pasub)
             /* skip some correctors */
             if (!csel[j]) continue;
             k2 = i * (pasub->noc) + j;
-            pM[k1++] = pA[k2];
+            pM[k1++] = pA[k2] * pw[i]; /* with weight */
+            ++(pasub->neva);
         }
     }
     /* output d, e: nbpm, ncor */
     *(long *)pasub->vald = m;
     *(long *)pasub->vale = n;
 
+ #ifdef DEBUG
     fprintf(stderr, "M size: %d %d\n", m, n);
-    if (m == 0 || n == 0)  return 0;
+    for(i = 0; i < pasub->nof; ++i) fprintf(stderr, " %g", pw[i]);
+    fprintf(stderr, "\n");
+ #endif
+    
+    if (m == 0 || n == 0)  {
+     #ifdef DEBUG
+        fprintf(stderr, "No BPM (%d) or COR (%d) are selected, quit\n", m, n);
+     #endif
+        
+        return 0;
+    }
+    
     int nrow = m > n ? m : n;
     int ncol = n < m ? n : m;
     gsl_matrix_view Av = gsl_matrix_view_array(pM, m, n);
@@ -106,7 +122,8 @@ static long solveSVD(aSubRecord *pasub)
     for (i = 0; i < A->size1; ++i) {
         for (j = 0; j < S->size; ++j) {
             double s = 0.0;
-            /* for (k = 0; k < S->size; ++k) s += gsl_matrix_get(A, i, k) * gsl_vector_get(S, k, j); */
+            /* for (k = 0; k < S->size; ++k)
+               s += gsl_matrix_get(A, i, k) * gsl_vector_get(S, k, j); */
             s = gsl_matrix_get(A, i, j) * gsl_vector_get(S, j);
             tmp[i*S->size + j] = s;
         }
@@ -146,7 +163,9 @@ static long solveSVD(aSubRecord *pasub)
             pMinv[i*A->size1 + j] = s;
         }
     }
-
+    pasub->nevb = A->size2 * A->size1;
+    fprintf(stderr, "Minv size: %d %d (%d)\n", A->size2, A->size1, pasub->nevb);
+    
     free(tmp);
 
     /* set bsel and csel */
@@ -154,6 +173,7 @@ static long solveSVD(aSubRecord *pasub)
     for (i = 0; i < pasub->nob; ++i) ((char*)pasub->valj)[i] = bsel[i];
     pasub->novk = pasub->noc;
     for (i = 0; i < pasub->noc; ++i) ((char*)pasub->valk)[i] = csel[i];
+    for (buf = (double*)pasub->vall, i = 0; i < pasub->nof; ++i) buf[i] = pw[i];
     
 finish:
     gsl_matrix_free(A);
@@ -165,24 +185,34 @@ finish:
 
 static long correctOrbit(aSubRecord *pasub)
 {
+    const int NBPM = 396;
+    const int NCOR = 360;
     /* solve Ax = b, A = U*S*V^T */
     /* a: matrix inversed */
     double *pMinv = (double *)pasub->a;
     /* b: X/Y orbit residual */
     double *pb = (double *)pasub->b;
-    
     /* c: COR X/Y SP*/
     /* d,e: BPM/COR sel */
+    const char *bpmsel = (char*)pasub->d;
+    const char *corsel = (char*)pasub->e;
+
+    /* row(bpm)/col(cor) of M, transpose for Minv */
+    const long nvbpm = *(long*)pasub->f; 
+    const long nvcor = *(long*)pasub->g;
+    
     /* h,i: X/Y cor setpoint */
     const double dImax = *(double*) pasub->h;
     const double dImin = *(double*) pasub->i;
 
     /* j: BPM weight */
     const double *pw = (double*) pasub->j;
+
+    const long active = *(long*) pasub->k;
+
+    /* fprintf(stderr, "Enabled: %d\n", active); */
+    /* if (!status) return 0; */
     
-    /* j,k: X/Y cor readback */
-    /* l,m: active/inactive X/Y Cor */
-    /* n,o,p: U, S, V */
     /* r: Kp, Ki, Kd, alpha */
     /* output */
     double *px  = (double *)pasub->vala;
@@ -190,37 +220,46 @@ static long correctOrbit(aSubRecord *pasub)
 
     const int m = 396;
     const int n = 360;
-    int i = 0, j = 0, k = 0;
+    int i = 0, j = 0, k = 0, iv = 0, jv = 0;
     double s1 = 0.0;
     double s2 = 0.0;
     double xmin = DBL_MAX;
     double xmax = DBL_MIN;
     double xstd = 0.0, xvar = 0.0, xrms = 0.0;
     /*    */
-    /* fprintf(stderr, "Orbit: %g %g %g %g\n", pb[0], pb[1], pb[2], pb[3]); */
-    for (i = 0; i < 360; ++i) {
+    /* update weight */
+    for (i = 0; i < NBPM; ++i) {
+        if (bpmsel[i]) pb[i] *= pw[i];
+    }
+    
+    /* fprintf(stderr, "MinvShape: %d %d (%d == %d, %d)\n", */
+    /*         nvcor, nvbpm, nvcor*nvbpm, pasub->nea, pasub->noa); */
+    
+    for (iv = 0, i = 0; i < NCOR; ++i) {
+        if (!corsel[i]) continue;
         double s = 0.0;
-        for (j = 0; j < 396; ++j) {
-            s += pMinv[i*396+j] * pb[j];
+        for (jv = 0, j = 0; j < NBPM; ++j) {
+            if (!bpmsel[j]) continue;
+            s += pMinv[iv*NBPM+jv] * pb[j];
+            ++jv;
         }
         /* take a negative */
         px0[i] = px[i] = -s;
         if(fabs(s) > xmax)  xmax = fabs(s);
+        ++iv;
     }
 
-    if (xmax < dImin) {
+    if (xmax < dImin || !active) {
         for (i = 0; i < pasub->nova; ++i) px[i] = 0.0;
     } else {
         for (i = 0; i < pasub->nova; ++i) {
             px[i] /= xmax / dImax;
         }
     }
-    if (pasub->outc.type != CONSTANT) {
+    if (active && pasub->outc.type != CONSTANT) {
         /* final SP */
         double *pxc = (double*)pasub->valc;
         double *c0 = (double*) pasub->c; /* input SP */
-        const char *bpmsel = (const char*) pasub->d;
-        const char *corsel = (const char*) pasub->e;
         for (i = 0; i < pasub->noc; ++i) {
             if (corsel[i] == 0) continue;
             pxc[i] = px[i] + c0[i];
