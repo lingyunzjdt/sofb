@@ -15,7 +15,7 @@ dbLoadDatabase("dbd/sofb.dbd",0,0)
 sofb_registerRecordDeviceDriver(pdbbase)
 
 ## Load record instances
-dbLoadRecords("db/sofb.db","user=lyyang")
+#dbLoadRecords("db/sofb.db","user=lyyang")
 dbLoadRecords("db/bpmx0.db", "")
 dbLoadRecords("db/bpmx.db", "")
 dbLoadRecords("db/bpmy0.db", "")

@@ -201,15 +201,16 @@ static long correctOrbit(aSubRecord *pasub)
     const long nvbpm = *(long*)pasub->f; 
     const long nvcor = *(long*)pasub->g;
     
-    /* h,i: X/Y cor setpoint */
+    /* h,i: cor I setpoint */
     const double dImax = *(double*) pasub->h;
     const double dImin = *(double*) pasub->i;
 
     /* j: BPM weight */
     const double *pw = (double*) pasub->j;
-
+    /* k: active status */
     const long active = *(long*) pasub->k;
-
+    /* l: COR readback */
+    const double *pcrb = (double*) pasub->l;
     /* fprintf(stderr, "Enabled: %d\n", active); */
     /* if (!status) return 0; */
     
@@ -227,7 +228,10 @@ static long correctOrbit(aSubRecord *pasub)
     double xmax = DBL_MIN;
     double xstd = 0.0, xvar = 0.0, xrms = 0.0;
     /*    */
-    /* update weight */
+    double *pcdiff = (double*)pasub->vald;
+    for (i = 0; i < pasub->nob; ++i) pcdiff[i] = pcrb[i] - pb[i];
+
+             /* update weight */
     for (i = 0; i < NBPM; ++i) {
         if (bpmsel[i]) pb[i] *= pw[i];
     }
@@ -256,8 +260,8 @@ static long correctOrbit(aSubRecord *pasub)
             px[i] /= xmax / dImax;
         }
     }
-    if (active && pasub->outc.type != CONSTANT) {
-        /* final SP */
+    if (pasub->outc.type != CONSTANT) {
+        /* final SP, even dI=0.0 */
         double *pxc = (double*)pasub->valc;
         double *c0 = (double*) pasub->c; /* input SP */
         for (i = 0; i < pasub->noc; ++i) {
@@ -265,6 +269,7 @@ static long correctOrbit(aSubRecord *pasub)
             pxc[i] = px[i] + c0[i];
         }
     }
+
     return 0;
 }
 

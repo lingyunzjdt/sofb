@@ -166,6 +166,11 @@ record(longin, "SR:APHLA:SOFB{ORM}COR:N") {
     field(VAL, "360")
 }
 
+record(longin, "SR:APHLA:SOFB{ORM}COR:diff") {
+    field(VAL, "360")
+    field(DESC, "RB-SP")
+}
+
 record(ao, "SR:APHLA:SOFB{ORM}Kp") {
     field(VAL, "0.2")
 }
@@ -408,11 +413,11 @@ record(waveform, "SR:APHLA:SOFB{COR}delta0-SP") {
 }
 
 record(ao, "SR:APHLA:SOFB{COR}dImax") {
-   field(VAL, "0.05")
+   field(VAL, "0.02")
 }
 
 record(ao, "SR:APHLA:SOFB{COR}dImin") {
-   field(VAL, "0.01")
+   field(VAL, "0.005")
 }
 
 # merge two planes of SP
@@ -461,14 +466,14 @@ record(bo, "SR:APHLA:SOFB{ORM}corr:status") {
    field(ZNAM, "Idle")
 }
 
-#record(calcout, "SR:APHLA:SOFB{ORM}corr:timer_") {
-#   field(CALC, "A>0?1:0")
-#   field(DOPT, "Use CALC")
-#   field(INPA, "SR:APHLA:SOFB{ORM}corr:status")
-#   field(OOPT, "When Non-zero")
-#   field(OUT, "SR:APHLA:SOFB{ORM}corr_asub_ PP")
-#   field(SCAN, ".5 second")
-#}
+record(calcout, "SR:APHLA:SOFB{ORM}corr:timer_") {
+   field(CALC, "A>0?1:0")
+   field(DOPT, "Use CALC")
+   field(INPA, "SR:APHLA:SOFB{ORM}corr:status")
+   field(OOPT, "When Non-zero")
+   field(OUT, "SR:APHLA:SOFB{ORM}corr_asub_ PP")
+   field(SCAN, ".5 second")
+}
 
 record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(SNAM, "correctOrbit")
@@ -517,6 +522,10 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(NOK,  "1")
    field(FTK,  "LONG")
 
+   field(INPL, "SR:APHLA:SOFB{COR}XY-I")
+   field(NOL,  "360")
+   field(FTL,  "DOUBLE")
+
    field(OUTA, "SR:APHLA:SOFB{COR}delta-SP PP")
    field(NOVA, "360")
    field(FTVA, "DOUBLE")
@@ -529,7 +538,11 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(NOVC, "360")
    field(FTVC, "DOUBLE")
 
-   field(SCAN, ".5 second")
+   field(OUTD, "SR:APHLA:SOFB{ORM}COR:diff PP")
+   field(NOVD, "360")
+   field(FTVD, "DOUBLE")
+
+   #field(SCAN, ".5 second")
 }
 
 
