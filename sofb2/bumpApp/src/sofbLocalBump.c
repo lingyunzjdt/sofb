@@ -38,6 +38,8 @@ static long sofbLocalBump(aSubRecord *pasub)
     /* keep x fixed at zero, Href changes same as required x0 */
 
     fprintf(stderr, "----------\n");
+    fprintf(stderr, "input: angle= %g offset= %g xfac= %g, op= %ld\n", angle, offst, xfac, op);
+    fprintf(stderr, "s: %g %g %g, op= %ld\n", s1, s2, s3, op);
     fprintf(stderr, "initial pos: %g %g op= %ld\n", x1, x2, op);
     fprintf(stderr, "initial ref: %g %g op= %ld\n", xrf1, xrf2, op);
     fprintf(stderr, "initial offset/angle: %g %g op= %ld\n", offst0, angle0, op);
@@ -51,8 +53,10 @@ static long sofbLocalBump(aSubRecord *pasub)
         /* save to set 1 */
         /* *(double*) pasub->vala = xrf1 + (x1c - x1); */
         /* *(double*) pasub->valb = xrf2 + (x2c - x2); */
-        *(double*) pasub->vala = x1c - x1;
-        *(double*) pasub->valb = x2c - x2;
+        /* *(double*) pasub->vala = x1c - x1; */
+        /* *(double*) pasub->valb = x2c - x2; */
+        *(double*) pasub->vala = x1c;
+        *(double*) pasub->valb = x2c;
         break;
     case 2: 
         break;

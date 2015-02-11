@@ -166,8 +166,9 @@ record(longin, "SR:APHLA:SOFB{ORM}COR:N") {
     field(VAL, "360")
 }
 
-record(longin, "SR:APHLA:SOFB{ORM}COR:diff") {
-    field(VAL, "360")
+record(waveform, "SR:APHLA:SOFB{ORM}COR:diff") {
+    field(NELM, "360")
+    field(FTVL, "DOUBLE")
     field(DESC, "RB-SP")
 }
 
@@ -302,9 +303,17 @@ record(aSub, "SR:APHLA:SOFB{ORM}svd_asub_") {
 
 #
 #
-record(waveform, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc") {
+record(waveform, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc_") {
    field(FTVL, "DOUBLE")
    field(NELM, "396")
+   field(FLNK, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc")
+}
+
+record(compress, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc") {
+   field(INP, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc_")
+   field(ALG, "Average")
+   field(NSAM, "396")
+   field(N, "10")
 }
 
 record(aSub, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc_asub_") {
@@ -322,7 +331,7 @@ record(aSub, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc_asub_") {
    field(NOVE, "1")
    field(NOVF, "1")
    field(NOVG, "1")
-   field(OUTA, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc PP")
+   field(OUTA, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc_ PP")
    field(OUTB, "SR:APHLA:SOFB{BPM}OrbUsrOffavg-Calc PP")
    field(OUTC, "SR:APHLA:SOFB{BPM}OrbUsrOffrms-Calc PP")
    field(OUTD, "SR:APHLA:SOFB{BPM}OrbUsrOffmin-Calc PP")
@@ -361,7 +370,7 @@ record(aSub, "SR:APHLA:SOFB{BPM}XY0-I_asub_") {
    field(FTB, "DOUBLE")
    field(FTVA, "DOUBLE")
    field(INPA, "SR:APHLA:SOFB{BPM}X0-I")
-   field(INPB, "SR:APHLA:SOFB{BPM}X0-I")
+   field(INPB, "SR:APHLA:SOFB{BPM}Y0-I")
    field(NOA, "198")
    field(NOB, "198")
    field(NOVA, "396")
@@ -413,7 +422,7 @@ record(waveform, "SR:APHLA:SOFB{COR}delta0-SP") {
 }
 
 record(ao, "SR:APHLA:SOFB{COR}dImax") {
-   field(VAL, "0.02")
+   field(VAL, "0.05")
 }
 
 record(ao, "SR:APHLA:SOFB{COR}dImin") {
@@ -460,7 +469,8 @@ record(aSub, "SR:APHLA:SOFB{COR}XY-I_asub_") {
    field(SCAN, ".5 second")
 }
 
-record(bo, "SR:APHLA:SOFB{ORM}corr:status") {
+record(bo, "SR:APHLA:SOFB{ORM}corr:on") {
+   field(PINI, "1")
    field(ONAM, "Running")
    field(VAL, "0")
    field(ZNAM, "Idle")
@@ -469,10 +479,16 @@ record(bo, "SR:APHLA:SOFB{ORM}corr:status") {
 record(calcout, "SR:APHLA:SOFB{ORM}corr:timer_") {
    field(CALC, "A>0?1:0")
    field(DOPT, "Use CALC")
-   field(INPA, "SR:APHLA:SOFB{ORM}corr:status")
+   field(INPA, "SR:APHLA:SOFB{ORM}corr:on")
    field(OOPT, "When Non-zero")
    field(OUT, "SR:APHLA:SOFB{ORM}corr_asub_ PP")
-   field(SCAN, ".5 second")
+   #field(SCAN, ".5 second")
+}
+
+# statistics: avg, rms, min, max, std, var
+record(waveform, "SR:APHLA:SOFB{ORM}BPM:stat") {
+   field(NELM, "6")
+   field(FTVL, "DOUBLE")
 }
 
 record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
@@ -518,7 +534,7 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(NOJ, "396")
    field(FTJ, "DOUBLE")
 
-   field(INPK, "SR:APHLA:SOFB{ORM}corr:status")
+   field(INPK, "SR:APHLA:SOFB{ORM}corr:on")
    field(NOK,  "1")
    field(FTK,  "LONG")
 
@@ -534,15 +550,19 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(NOVB, "360")
    field(FTVB, "DOUBLE")
 
-   field(OUTC, "SR:APHLA:SOFB{COR}XY-Calc PP")
-   field(NOVC, "360")
-   field(FTVC, "DOUBLE")
+   #field(OUTC, "SR:APHLA:SOFB{COR}XY-Calc PP")
+   #field(NOVC, "360")
+   #field(FTVC, "DOUBLE")
 
    field(OUTD, "SR:APHLA:SOFB{ORM}COR:diff PP")
    field(NOVD, "360")
    field(FTVD, "DOUBLE")
 
-   #field(SCAN, ".5 second")
+   field(OUTE, "SR:APHLA:SOFB{ORM}BPM:stat PP")
+   field(NOVE, "6")
+   field(FTVE, "DOUBLE")
+
+   field(SCAN, "1 second")
 }
 
 
@@ -569,7 +589,7 @@ record(aSub, "SR:APHLA:SOFB{COR}XY-Calc_asub") {
 }
 
 # some 1Hz data for display 
-record(compress, "SR:APHLA:SOFB{BPM}XY0-I-Cmprs") {
+record(compress, "SR:APHLA:SOFB{BPM}XY0-Cmprs") {
    field(INP, "SR:APHLA:SOFB{BPM}XY0-I")
    field(ALG, "Average")
    field(NSAM, "396")
@@ -578,7 +598,7 @@ record(compress, "SR:APHLA:SOFB{BPM}XY0-I-Cmprs") {
 }
 
 record(compress, "SR:APHLA:SOFB{BPM}OrbUsrOff-Cmprs") {
-   field(INP, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc")
+   field(INP, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc_")
    field(ALG, "Average")
    field(NSAM, "396")
    field(N, "10")
@@ -593,14 +613,28 @@ record(compress, "SR:APHLA:SOFB{COR}XY-I-Cmprs") {
    field(SCAN, ".1 second")
 }
 
+# statistics: avg, rms, min, max, std, var
+#record(compress, "SR:APHLA:SOFB{ORM}BPM:stat") {
+#   field(INP, "SR:APHLA:SOFB{ORM}BPM:stat_")
+#   field(ALG, "Average")
+#   field(NSAM, "6")
+#   field(N, "5")
+#   field(SCAN, ".2 second")
+#}
+
 record(waveform, "SR:APHLA:SOFB{BPM}Offset") {
    field(NELM, "396")
+   field(FTVL, "DOUBLE")
+}
+
+record(waveform, "SR:APHLA:SOFB{ORM}test_") {
+   field(NELM, "360")
    field(FTVL, "DOUBLE")
 }
    
 record(acalcout, "SR:APHLA:SOFB{BPM}Offset_acalc_") {
    field(INAA, "SR:APHLA:SOFB{BPM}OrbUsrOff-Cmprs")
-   field(INBB, "SR:APHLA:SOFB{BPM}XY0-I-Cmprs")
+   field(INBB, "SR:APHLA:SOFB{BPM}XY0-Cmprs")
    field(NELM, "396")
    field(OUT, "SR:APHLA:SOFB{BPM}Offset PP")
    field(CALC, "AA-BB")
@@ -608,3 +642,18 @@ record(acalcout, "SR:APHLA:SOFB{BPM}Offset_acalc_") {
    field(OOPT, "Every Time")
    field(SCAN, "1 second")
 }
+
+record(acalcout, "SR:APHLA:SOFB{ORM}corr-Cmd_") {
+   field(INPA, "SR:APHLA:SOFB{ORM}corr:on")
+   field(INAA, "SR:APHLA:SOFB{COR}XY-SP")
+   field(INBB, "SR:APHLA:SOFB{COR}delta-SP")
+   field(NELM, "360")
+   field(OOPT, "When Non-zero")
+   field(CALC, "A>0?1:0")
+   field(OCAL, "AA+BB")
+   field(DOPT, "Use OCAL")
+   field(OUT,  "SR:APHLA:SOFB{COR}XY-Calc PP")
+   #field(OUT,  "SR:APHLA:SOFB{ORM}test_ PP")
+   field(SCAN, "1 second")
+}
+

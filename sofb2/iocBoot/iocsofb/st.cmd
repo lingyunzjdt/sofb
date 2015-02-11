@@ -16,10 +16,10 @@ sofb_registerRecordDeviceDriver(pdbbase)
 
 ## Load record instances
 #dbLoadRecords("db/sofb.db","user=lyyang")
-dbLoadRecords("db/bpmx0.db", "")
-dbLoadRecords("db/bpmx.db", "")
-dbLoadRecords("db/bpmy0.db", "")
-dbLoadRecords("db/bpmy.db", "")
+dbLoadRecords("db/bpm_rb0.db", "XY=X")
+dbLoadRecords("db/bpm_rb0.db", "XY=Y")
+dbLoadRecords("db/bpm_rb.db", "XY=X")
+dbLoadRecords("db/bpm_rb.db", "XY=Y")
 
 dbLoadRecords("db/bpm_sel.db", "XSel=XSel,T=CHAR")
 dbLoadRecords("db/bpm_sel.db", "XSel=YSel,T=CHAR")

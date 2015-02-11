@@ -193,6 +193,7 @@ static long correctOrbit(aSubRecord *pasub)
     /* b: X/Y orbit residual */
     double *pb = (double *)pasub->b;
     /* c: COR X/Y SP*/
+    double *pcsp = (double*) pasub->c;
     /* d,e: BPM/COR sel */
     const char *bpmsel = (char*)pasub->d;
     const char *corsel = (char*)pasub->e;
@@ -208,7 +209,7 @@ static long correctOrbit(aSubRecord *pasub)
     /* j: BPM weight */
     const double *pw = (double*) pasub->j;
     /* k: active status */
-    const long active = *(long*) pasub->k;
+    long active = *(long*) pasub->k;
     /* l: COR readback */
     const double *pcrb = (double*) pasub->l;
     /* fprintf(stderr, "Enabled: %d\n", active); */
@@ -219,8 +220,8 @@ static long correctOrbit(aSubRecord *pasub)
     double *px  = (double *)pasub->vala;
     double *px0 = (double *)pasub->valb;
 
-    const int m = 396;
-    const int n = 360;
+    int m = 0;
+    /* const int n = 360; */
     int i = 0, j = 0, k = 0, iv = 0, jv = 0;
     double s1 = 0.0;
     double s2 = 0.0;
@@ -229,22 +230,39 @@ static long correctOrbit(aSubRecord *pasub)
     double xstd = 0.0, xvar = 0.0, xrms = 0.0;
     /*    */
     double *pcdiff = (double*)pasub->vald;
-    for (i = 0; i < pasub->nob; ++i) pcdiff[i] = pcrb[i] - pb[i];
-
-             /* update weight */
-    for (i = 0; i < NBPM; ++i) {
-        if (bpmsel[i]) pb[i] *= pw[i];
+    for (i = 0; i < pasub->nob; ++i) {
+        pcdiff[i] = pcrb[i] - pcsp[i];
+        if (fabs(pcdiff[i]) > 0.015 && corsel[i]) active = 0;
     }
+
+    /* update weight */
+    for (m = 0, i = 0; i < NBPM; ++i) {
+        if (!bpmsel[i]) continue;
+        ++m;
+        pb[i] *= pw[i];
+        if (pb[i] < xmin) xmin = pb[i];
+        if (pb[i] > xmax) xmax = pb[i];
+        s1 += pb[i];
+        s2 += pb[i] * pb[i];
+    }
+    s1 /= m;
+    s2 /= m;
+    ((double*)pasub->vale)[0] = s1;
+    ((double*)pasub->vale)[1] = sqrt(s2);
+    ((double*)pasub->vale)[2] = xmin;
+    ((double*)pasub->vale)[3] = xmax;
+    ((double*)pasub->vale)[4] = s2 - s1 * s1;
+    ((double*)pasub->vale)[5] = sqrt(s2 - s1*s1);
     
     /* fprintf(stderr, "MinvShape: %d %d (%d == %d, %d)\n", */
     /*         nvcor, nvbpm, nvcor*nvbpm, pasub->nea, pasub->noa); */
     
-    for (iv = 0, i = 0; i < NCOR; ++i) {
+    for (xmax = DBL_MIN, iv = 0, i = 0; i < NCOR; ++i) {
         if (!corsel[i]) continue;
         double s = 0.0;
         for (jv = 0, j = 0; j < NBPM; ++j) {
             if (!bpmsel[j]) continue;
-            s += pMinv[iv*NBPM+jv] * pb[j];
+            s += pMinv[iv*nvbpm+jv] * pb[j];
             ++jv;
         }
         /* take a negative */
