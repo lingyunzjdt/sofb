@@ -21,24 +21,33 @@ bump_registerRecordDeviceDriver(pdbbase)
 #dbLoadRecords("db/bump.db","user=lyyang")
 
 dbLoadRecords("db/localbump.db", "ID=C03-HXN,XY=X,HV=H,C1=03,I1=7,C2=03,I2=8,S1=-2.543,S2=0,S3=2.679")
+dbLoadRecords("db/localbump.db", "ID=C03-HXN,XY=Y,HV=V,C1=03,I1=7,C2=03,I2=8,S1=-2.543,S2=0,S3=2.679")
 
 dbLoadRecords("db/localbump.db", "ID=C05u-SRX,XY=X,HV=H,C1=05,I1=7,C2=05,I2=8,S1=-1.304,S2=0,S3=1.304")
+dbLoadRecords("db/localbump.db", "ID=C05u-SRX,XY=Y,HV=V,C1=05,I1=7,C2=05,I2=8,S1=-1.304,S2=0,S3=1.304")
 
 dbLoadRecords("db/localbump.db", "ID=C05d-SRX,XY=X,HV=H,C1=05,I1=8,C2=05,I2=9,S1=-1.453,S2=0,S3=1.453")
+dbLoadRecords("db/localbump.db", "ID=C05d-SRX,XY=Y,HV=V,C1=05,I1=8,C2=05,I2=9,S1=-1.453,S2=0,S3=1.453")
 
-#dbLoadRecords("db/localbump.db", "ID=C08-XPD,XY=X,HV=H,C1=10,I1=7,C2=10,I2=8,S1=-1.453,S2=0,S3=1.453")
+dbLoadRecords("db/localbump.db", "ID=C08-XPD,XY=X,HV=H,C1=08,I1=7,C2=08,I2=8,S1=-1.453,S2=0,S3=1.453")
+dbLoadRecords("db/localbump.db", "ID=C08-XPD,XY=Y,HV=V,C1=08,I1=7,C2=08,I2=8,S1=-1.453,S2=0,S3=1.453")
 
 dbLoadRecords("db/localbump.db", "ID=C10-IXS,XY=X,HV=H,C1=10,I1=7,C2=10,I2=8,S1=-3.898,S2=0,S3=4.029")
+dbLoadRecords("db/localbump.db", "ID=C10-IXS,XY=Y,HV=V,C1=10,I1=7,C2=10,I2=8,S1=-3.898,S2=0,S3=4.029")
 
 dbLoadRecords("db/localbump.db", "ID=C11-CHX,XY=X,HV=H,C1=11,I1=7,C2=11,I2=8,S1=-2.543,S2=0,S3=2.679")
+dbLoadRecords("db/localbump.db", "ID=C11-CHX,XY=Y,HV=V,C1=11,I1=7,C2=11,I2=8,S1=-2.543,S2=0,S3=2.679")
 
 #dbLoadRecords("db/localbump.db", "ID=C18-XPD,XY=X,HV=H,C1=18,I1=7,C2=18,I2=8,S1=-2.553,S2=0,S3=1.238")
 
 dbLoadRecords("db/localbump.db", "ID=C23u-CSX,XY=X,HV=H,C1=23,I1=7,C2=23,I2=8,S1=-2.553,S2=0,S3=1.238")
+dbLoadRecords("db/localbump.db", "ID=C23u-CSX,XY=Y,HV=V,C1=23,I1=7,C2=23,I2=8,S1=-2.553,S2=0,S3=1.238")
 
 dbLoadRecords("db/localbump.db", "ID=C23d-CSX,XY=X,HV=H,C1=23,I1=8,C2=23,I2=9,S1=-1.102,S2=0,S3=1.102")
+dbLoadRecords("db/localbump.db", "ID=C23d-CSX,XY=Y,HV=V,C1=23,I1=8,C2=23,I2=9,S1=-1.102,S2=0,S3=1.102")
 
 dbLoadRecords("db/localbump.db", "ID=C28-XPD,XY=X,HV=H,C1=28,I1=7,C2=28,I2=8,S1=-3.662,S2=0,S3=3.678")
+dbLoadRecords("db/localbump.db", "ID=C28-XPD,XY=Y,HV=V,C1=28,I1=7,C2=28,I2=8,S1=-3.662,S2=0,S3=3.678")
 
 #dbLoadRecords("db/localbump.db", "ID=C10-ISX,XY=X,HV=H,C1=10,I1=7,C2=10,I2=8,S1=-3.899,S2=0,S3=4.029")
 

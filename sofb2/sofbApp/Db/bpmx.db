@@ -1,7 +1,7 @@
 ## Generated from List of PVs.
 ## Lingyun Yang <lyyang@bnl.gov>, 01-29-2015 12:05:32
 ##
-record(waveform, "SR:APHLA:SOFB{BPM}XwUsrOff-Calc") {
+record(waveform, "SR:APHLA:SOFB{BPM}XwUsrOff-Calc_") {
    field(FTVL, "DOUBLE")
    field(NELM, "198")
 }
@@ -51,13 +51,13 @@ record(aSub, "SR:APHLA:SOFB{BPM}XwUsrOff-Calc_2_0_asub_") {
    field(NOVE, "1")
    field(NOVF, "1")
    field(NOVG, "1")
-   field(OUTA, "SR:APHLA:SOFB{BPM}XwUsrOff-Calc PP")
-   field(OUTB, "SR:APHLA:SOFB{BPM}XwUsrOffavg-Calc PP")
-   field(OUTC, "SR:APHLA:SOFB{BPM}XwUsrOffrms-Calc PP")
-   field(OUTD, "SR:APHLA:SOFB{BPM}XwUsrOffmin-Calc PP")
-   field(OUTE, "SR:APHLA:SOFB{BPM}XwUsrOffmax-Calc PP")
-   field(OUTF, "SR:APHLA:SOFB{BPM}XwUsrOffstd-Calc PP")
-   field(OUTG, "SR:APHLA:SOFB{BPM}XwUsrOffvar-Calc PP")
+   field(OUTA, "SR:APHLA:SOFB{BPM}XwUsrOff-Calc_ PP")
+   field(OUTB, "SR:APHLA:SOFB{BPM}XwUsrOffavg-Calc_ PP")
+   field(OUTC, "SR:APHLA:SOFB{BPM}XwUsrOffrms-Calc_ PP")
+   field(OUTD, "SR:APHLA:SOFB{BPM}XwUsrOffmin-Calc_ PP")
+   field(OUTE, "SR:APHLA:SOFB{BPM}XwUsrOffmax-Calc_ PP")
+   field(OUTF, "SR:APHLA:SOFB{BPM}XwUsrOffstd-Calc_ PP")
+   field(OUTG, "SR:APHLA:SOFB{BPM}XwUsrOffvar-Calc_ PP")
    field(SNAM, "mergePvs")
 }
 
@@ -785,22 +785,22 @@ record(aSub, "SR:APHLA:SOFB{BPM}XwUsrOff-Calc_1_0_asub_") {
    field(SNAM, "mergePvs")
 }
 
-record(ao, "SR:APHLA:SOFB{BPM}XwUsrOffavg-Calc") {
+record(ao, "SR:APHLA:SOFB{BPM}XwUsrOffavg-Calc_") {
 }
 
-record(ao, "SR:APHLA:SOFB{BPM}XwUsrOffrms-Calc") {
+record(ao, "SR:APHLA:SOFB{BPM}XwUsrOffrms-Calc_") {
 }
 
-record(ao, "SR:APHLA:SOFB{BPM}XwUsrOffmin-Calc") {
+record(ao, "SR:APHLA:SOFB{BPM}XwUsrOffmin-Calc_") {
 }
 
-record(ao, "SR:APHLA:SOFB{BPM}XwUsrOffmax-Calc") {
+record(ao, "SR:APHLA:SOFB{BPM}XwUsrOffmax-Calc_") {
 }
 
-record(ao, "SR:APHLA:SOFB{BPM}XwUsrOffstd-Calc") {
+record(ao, "SR:APHLA:SOFB{BPM}XwUsrOffstd-Calc_") {
 }
 
-record(ao, "SR:APHLA:SOFB{BPM}XwUsrOffvar-Calc") {
+record(ao, "SR:APHLA:SOFB{BPM}XwUsrOffvar-Calc_") {
 }
 
 record(bo, "SR:APHLA:SOFB{BPM}XwUsrOff-Calc:status") {
