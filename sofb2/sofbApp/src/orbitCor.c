@@ -16,7 +16,7 @@
 #include <gsl/gsl_matrix.h>
 #include <gsl/gsl_linalg.h>
 
-#define DEBUG
+#define NDEBUG
 
 static long solveSVD(aSubRecord *pasub)
 {
@@ -209,17 +209,22 @@ static long correctOrbit(aSubRecord *pasub)
     /* j: BPM weight */
     const double *pw = (double*) pasub->j;
     /* k: active status */
-    long active = *(long*) pasub->k;
+    char active = *(char*) pasub->k;
     /* l: COR readback */
     const double *pcrb = (double*) pasub->l;
     /* fprintf(stderr, "Enabled: %d\n", active); */
     /* if (!status) return 0; */
+    const double obtXYmin = *(double*) pasub->m;
     
     /* r: Kp, Ki, Kd, alpha */
     /* output */
     double *px  = (double *)pasub->vala;
     double *px0 = (double *)pasub->valb;
 
+ #ifndef NDEBUG
+    fprintf(stderr, "enabled: %d\n", (int)active);
+ #endif
+    
     int m = 0;
     /* const int n = 360; */
     int i = 0, j = 0, k = 0, iv = 0, jv = 0;
@@ -232,7 +237,8 @@ static long correctOrbit(aSubRecord *pasub)
     double *pcdiff = (double*)pasub->vald;
     for (i = 0; i < pasub->nob; ++i) {
         pcdiff[i] = pcrb[i] - pcsp[i];
-        if (fabs(pcdiff[i]) > 0.015 && corsel[i]) active = 0;
+        /* this will disable SOFB if one corr is broken */
+        /* if (fabs(pcdiff[i]) > 0.015 && corsel[i]) active = 0; */
     }
 
     /* update weight */
@@ -247,18 +253,26 @@ static long correctOrbit(aSubRecord *pasub)
     }
     s1 /= m;
     s2 /= m;
+    /* average, rms, min, max, std, var*/
     ((double*)pasub->vale)[0] = s1;
     ((double*)pasub->vale)[1] = sqrt(s2);
     ((double*)pasub->vale)[2] = xmin;
     ((double*)pasub->vale)[3] = xmax;
-    ((double*)pasub->vale)[4] = s2 - s1 * s1;
-    ((double*)pasub->vale)[5] = sqrt(s2 - s1*s1);
+    ((double*)pasub->vale)[4] = sqrt(s2 - s1*s1);
+    ((double*)pasub->vale)[5] = s2 - s1 * s1;
+
+    /* no correction is the maximum orbit residual is small enough */
+    if (xmax < obtXYmin) active = 0;
     
     /* fprintf(stderr, "MinvShape: %d %d (%d == %d, %d)\n", */
     /*         nvcor, nvbpm, nvcor*nvbpm, pasub->nea, pasub->noa); */
     
     for (xmax = DBL_MIN, iv = 0, i = 0; i < NCOR; ++i) {
-        if (!corsel[i]) continue;
+        if (!corsel[i]) {
+            px[i] = 0.0;
+            continue;
+        }
+        
         double s = 0.0;
         for (jv = 0, j = 0; j < NBPM; ++j) {
             if (!bpmsel[j]) continue;
@@ -270,22 +284,55 @@ static long correctOrbit(aSubRecord *pasub)
         if(fabs(s) > xmax)  xmax = fabs(s);
         ++iv;
     }
-
+    /* active = 0; */
     if (xmax < dImin || !active) {
         for (i = 0; i < pasub->nova; ++i) px[i] = 0.0;
     } else {
         for (i = 0; i < pasub->nova; ++i) {
-            px[i] /= xmax / dImax;
+            /* px[i] /= xmax / dImax; */
+            if (fabs(px[i]) > dImax) px[i] *= dImax / fabs(px[i]);
         }
     }
+
+ #ifndef NDEBUG
+    fprintf(stderr, "active= %ld obtstd= %g\n", active, sqrt(s2 - s1*s1));
+    for (i = 0; i < pasub->nova; ++i) fprintf(stderr, " %g", px[i]);
+    fprintf(stderr, "\n");
+ #endif
+    
     if (pasub->outc.type != CONSTANT) {
+        double s1 = 0.0;
+        double s2 = 0.0;
+        double xmin = DBL_MAX;
+        double xmax = DBL_MIN;
+        double xstd = 0.0, xvar = 0.0, xrms = 0.0;
+        int m = 0;
         /* final SP, even dI=0.0 */
         double *pxc = (double*)pasub->valc;
         double *c0 = (double*) pasub->c; /* input SP */
         for (i = 0; i < pasub->noc; ++i) {
             if (corsel[i] == 0) continue;
             pxc[i] = px[i] + c0[i];
+
+            /* statistics */
+            if (pxc[i] < xmin) xmin = pxc[i];
+            if (pxc[i] > xmax) xmax = pxc[i];
+            s1 += pxc[i];
+            s2 += pxc[i] * pxc[i];
+            ++m;
         }
+        s1 /= m;
+        s2 /= m;
+        /* average, rms, min, max, std, var*/
+        ((double*)pasub->valf)[0] = s1;
+        ((double*)pasub->valf)[1] = sqrt(s2);
+        ((double*)pasub->valf)[2] = xmin;
+        ((double*)pasub->valf)[3] = xmax;
+        ((double*)pasub->valf)[4] = sqrt(s2 - s1*s1);
+        ((double*)pasub->valf)[5] = s2 - s1 * s1;
+        /* fprintf(stderr, "average: %g, std: %g\n", s1, sqrt(s2)); */
+    } else {
+        /* fprintf(stderr, "COR SP is not connected\n"); */
     }
 
     return 0;

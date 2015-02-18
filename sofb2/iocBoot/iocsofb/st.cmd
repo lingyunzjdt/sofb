@@ -27,6 +27,11 @@ dbLoadRecords("db/bpm_sel.db", "XSel=YSel,T=CHAR")
 dbLoadRecords("db/bpm_weight.db", "XWeight=XWeight,T=DOUBLE")
 dbLoadRecords("db/bpm_weight.db", "XWeight=YWeight,T=DOUBLE")
 
+dbLoadRecords("db/bpm_ref.db", "WFM=Href,PFX=Pos:Href-SP")
+dbLoadRecords("db/bpm_ref.db", "WFM=Vref,PFX=Pos:Vref-SP")
+dbLoadRecords("db/bpm_ref.db", "WFM=UsrXref,PFX=Pos:UsrXoffset-SP")
+dbLoadRecords("db/bpm_ref.db", "WFM=UsrYref,PFX=Pos:UsrYoffset-SP")
+
 #dbLoadRecords("db/corx_sp_merge.db", "")
 #dbLoadRecords("db/cory_sp_merge.db", "")
 dbLoadRecords("db/cor_sp_merge.db", "PLN=X,SPi=Sp1")

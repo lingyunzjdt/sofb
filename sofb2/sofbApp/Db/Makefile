@@ -10,7 +10,7 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------------------
 # Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
-DB += bpm_rb0.db bpm_rb.db bpm_sel.db bpm_weight.db
+DB += bpm_rb0.db bpm_rb.db bpm_sel.db bpm_weight.db bpm_ref.db
 
 # correctors
 #DB += corx_sp_merge.db cory_sp_merge.db

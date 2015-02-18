@@ -436,11 +436,21 @@ record(waveform, "SR:APHLA:SOFB{COR}delta0-SP") {
 }
 
 record(ao, "SR:APHLA:SOFB{COR}dImax") {
-   field(VAL, "0.3")
+   field(VAL, "0.05")
+   field(DRVH, "0.1")
+   field(DRVL, "0.0001")
 }
 
 record(ao, "SR:APHLA:SOFB{COR}dImin") {
    field(VAL, "0.01")
+}
+
+record(ao, "SR:APHLA:SOFB{ORM}corr:XYmin") {
+   field(VAL, "0.1")
+   field(DRVL, "0.001")
+   field(PREC, "3")
+   field(DESC, "no correction if orbit is below")
+   info(autosaveFields_pass1, "VAL")
 }
 
 # merge two planes of SP
@@ -505,6 +515,11 @@ record(waveform, "SR:APHLA:SOFB{ORM}BPM:stat") {
    field(FTVL, "DOUBLE")
 }
 
+record(waveform, "SR:APHLA:SOFB{ORM}COR:stat") {
+   field(NELM, "6")
+   field(FTVL, "DOUBLE")
+}
+
 record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(SNAM, "correctOrbit")
 
@@ -550,11 +565,15 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
 
    field(INPK, "SR:APHLA:SOFB{ORM}corr:on")
    field(NOK,  "1")
-   field(FTK,  "LONG")
+   field(FTK,  "CHAR")
 
    field(INPL, "SR:APHLA:SOFB{COR}XY-I")
    field(NOL,  "360")
    field(FTL,  "DOUBLE")
+
+   field(INPM, "SR:APHLA:SOFB{ORM}corr:XYmin")
+   field(NOM,  "1")
+   field(FTM,  "DOUBLE")
 
    field(OUTA, "SR:APHLA:SOFB{COR}delta-SP PP")
    field(NOVA, "360")
@@ -564,6 +583,7 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(NOVB, "360")
    field(FTVB, "DOUBLE")
 
+   # use calcout to put XY-Calc
    #field(OUTC, "SR:APHLA:SOFB{COR}XY-Calc PP")
    #field(NOVC, "360")
    #field(FTVC, "DOUBLE")
@@ -576,7 +596,11 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(NOVE, "6")
    field(FTVE, "DOUBLE")
 
-   field(SCAN, "1 second")
+   field(OUTF, "SR:APHLA:SOFB{ORM}COR:stat PP")
+   field(NOVF, "6")
+   field(FTVF, "DOUBLE")
+
+   field(SCAN, "2 second")
 }
 
 
@@ -652,6 +676,106 @@ record(acalcout, "SR:APHLA:SOFB{ORM}corr-Cmd_") {
    field(DOPT, "Use OCAL")
    field(OUT,  "SR:APHLA:SOFB{COR}XY-Calc PP")
    #field(OUT,  "SR:APHLA:SOFB{ORM}test_ PP")
-   field(SCAN, "1 second")
+   field(SCAN, "2 second")
+}
+
+
+#
+record(waveform, "SR:APHLA:SOFB:zeros_198_") {
+    field(NELM, "198")
+    field(FTVL, "DOUBLE")
+    info(autosaveFields_pass1, "VAL")
+}
+
+record(waveform, "SR:APHLA:SOFB:zeros_396_") {
+    field(NELM, "396")
+    field(FTVL, "DOUBLE")
+    info(autosaveFields_pass1, "VAL")
+}
+
+record(waveform, "SR:APHLA:SOFB:zeros_180_") {
+    field(NELM, "180")
+    field(FTVL, "DOUBLE")
+    info(autosaveFields_pass1, "VAL")
+}
+
+record(waveform, "SR:APHLA:SOFB{BPM}HVref-SP") {
+    field(NELM, "396")
+    field(FTVL, "DOUBLE")
+    #info(autosaveFields_pass1, "VAL")
+}
+
+record(aSub, "SR:APHLA:SOFB{BPM}HVref-Calc_asub") {
+   field(FTA, "DOUBLE")
+   field(NOA, "396")
+   field(INPA, "SR:APHLA:SOFB{BPM}HVref-SP")
+
+   field(OUTA, "SR:APHLA:SOFB{BPM}Href-SP PP")
+   field(FTVA, "DOUBLE")
+   field(NOVA, "198")
+   
+   field(OUTB, "SR:APHLA:SOFB{BPM}Vref-SP PP")
+   field(FTVB, "DOUBLE")
+   field(NOVB, "198")
+
+   field(SNAM, "splitPvs")
+}
+
+record(acalcout, "SR:APHLA:SOFB{BPM}HVref-Clear") {
+   field(INAA, "SR:APHLA:SOFB:zeros_396_")
+   field(INBB, "SR:APHLA:SOFB{BPM}XY0-I")
+   field(NELM, "396")
+   field(OUT, "SR:APHLA:SOFB{BPM}HVref-SP PP")
+   field(CALC, "AA")
+   field(DOPT, "Use CALC")
+   field(FLNK, "SR:APHLA:SOFB{BPM}HVref-Calc_asub")
+   #field(OOPT, "Every Time")
+}
+
+record(waveform, "SR:APHLA:SOFB{BPM}UsrXYref-SP") {
+    field(NELM, "396")
+    field(FTVL, "DOUBLE")
+    info(autosaveFields_pass1, "VAL")
+}
+
+record(aSub, "SR:APHLA:SOFB{BPM}UsrXYref-Calc_asub") {
+   field(FTA, "DOUBLE")
+   field(NOA, "396")
+   field(INPA, "SR:APHLA:SOFB{BPM}UsrXYref-SP")
+
+   field(OUTA, "SR:APHLA:SOFB{BPM}UsrXref-SP PP")
+   field(FTVA, "DOUBLE")
+   field(NOVA, "198")
+   
+   field(OUTB, "SR:APHLA:SOFB{BPM}UsrYref-SP PP")
+   field(FTVB, "DOUBLE")
+   field(NOVB, "198")
+
+   field(SNAM, "splitPvs")
+}
+
+record(acalcout, "SR:APHLA:SOFB{BPM}UsrXYref-Clear") {
+   field(INAA, "SR:APHLA:SOFB:zeros_396_")
+   field(INBB, "SR:APHLA:SOFB{BPM}XY0-I")
+   field(NELM, "396")
+   field(OUT, "SR:APHLA:SOFB{BPM}UsrXYref-SP PP")
+   field(CALC, "AA")
+   field(DOPT, "Use CALC")
+   field(FLNK, "SR:APHLA:SOFB{BPM}UsrXYref-Calc_asub")
+   #field(OOPT, "Every Time")
+}
+
+#
+record(acalcout, "SR:APHLA:SOFB{BPM}Obt-SetGolden") {
+   field(INAA, "SR:APHLA:SOFB:zeros_396_")
+   field(INBB, "SR:APHLA:SOFB{BPM}XY0-I")
+   field(INCC, "SR:APHLA:SOFB{BPM}OrbUsrOff-Calc")
+   field(INDD, "SR:APHLA:SOFB{BPM}HVref-SP")
+   field(NELM, "396")
+   field(OUT, "SR:APHLA:SOFB{BPM}HVref-SP PP")
+   field(CALC, "DD + CC")
+   field(DOPT, "Use CALC")
+   field(FLNK, "SR:APHLA:SOFB{BPM}HVref-Calc_asub")
+   #field(OOPT, "Every Time")
 }
 
