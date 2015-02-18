@@ -600,7 +600,7 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(NOVF, "6")
    field(FTVF, "DOUBLE")
 
-   field(SCAN, "2 second")
+   field(SCAN, "1 second")
 }
 
 
@@ -765,7 +765,7 @@ record(acalcout, "SR:APHLA:SOFB{BPM}UsrXYref-Clear") {
    #field(OOPT, "Every Time")
 }
 
-#
+# Save orbit and look at drift
 record(acalcout, "SR:APHLA:SOFB{BPM}Obt-SetGolden") {
    field(INAA, "SR:APHLA:SOFB:zeros_396_")
    field(INBB, "SR:APHLA:SOFB{BPM}XY0-I")
@@ -779,3 +779,59 @@ record(acalcout, "SR:APHLA:SOFB{BPM}Obt-SetGolden") {
    #field(OOPT, "Every Time")
 }
 
+record(waveform, "SR:APHLA:SOFB{BPM}Obt:Saved1") {
+    field(INP, "SR:APHLA:SOFB{BPM}XY0-I")
+    field(NELM, "396")
+    field(FTVL, "DOUBLE")
+    info(autosaveFields_pass1, "VAL")
+}
+
+record(waveform, "SR:APHLA:SOFB{BPM}Obt:Saved1-diff") {
+    field(NELM, "396")
+    field(FTVL, "DOUBLE")
+}
+
+record(acalcout, "SR:APHLA:SOFB{BPM}Obt:Saved1-diff-calc_") {
+   field(INAA, "SR:APHLA:SOFB{BPM}XY0-I")
+   field(INBB, "SR:APHLA:SOFB{BPM}Obt:Saved1")
+   field(NELM, "396")
+   field(OUT, "SR:APHLA:SOFB{BPM}Obt:Saved1-diff PP")
+   field(CALC, "AA - BB")
+   field(DOPT, "Use CALC")
+   #field(OOPT, "Every Time")
+   field(SCAN, "1 second")
+}
+
+# save corrector
+record(waveform, "SR:APHLA:SOFB{COR}XY:Saved1") {
+    field(INP, "SR:APHLA:SOFB{COR}XY-SP")
+    field(NELM, "360")
+    field(FTVL, "DOUBLE")
+    info(autosaveFields_pass1, "VAL")
+}
+
+record(waveform, "SR:APHLA:SOFB{COR}XY:Saved1-diff") {
+    field(NELM, "360")
+    field(FTVL, "DOUBLE")
+}
+
+record(acalcout, "SR:APHLA:SOFB{COR}XY:Saved1-diff-calc_") {
+   field(INAA, "SR:APHLA:SOFB{COR}XY-SP")
+   field(INBB, "SR:APHLA:SOFB{COR}XY:Saved1")
+   field(NELM, "360")
+   #field(OUT,  "SR:APHLA:SOFB{COR}XY-Calc PP")
+   field(OUT, "SR:APHLA:SOFB{COR}XY:Saved1-diff PP")
+   field(CALC, "AA - BB")
+   field(DOPT, "Use CALC")
+   #field(OOPT, "Every Time")
+   field(SCAN, "1 second")
+}
+
+record(acalcout, "SR:APHLA:SOFB{COR}XY:Saved1-restore") {
+   field(INAA, "SR:APHLA:SOFB{COR}XY:Saved1")
+   field(NELM, "360")
+   field(OUT,  "SR:APHLA:SOFB{COR}XY-Calc PP")
+   field(CALC, "AA")
+   field(DOPT, "Use CALC")
+   #field(OOPT, "Every Time")
+}
