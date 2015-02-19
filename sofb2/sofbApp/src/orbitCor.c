@@ -16,7 +16,7 @@
 #include <gsl/gsl_matrix.h>
 #include <gsl/gsl_linalg.h>
 
-#define NDEBUG
+/* #define NDEBUG */
 
 static long solveSVD(aSubRecord *pasub)
 {
@@ -268,11 +268,6 @@ static long correctOrbit(aSubRecord *pasub)
     /*         nvcor, nvbpm, nvcor*nvbpm, pasub->nea, pasub->noa); */
     
     for (xmax = DBL_MIN, iv = 0, i = 0; i < NCOR; ++i) {
-        if (!corsel[i]) {
-            px[i] = 0.0;
-            continue;
-        }
-        
         double s = 0.0;
         for (jv = 0, j = 0; j < NBPM; ++j) {
             if (!bpmsel[j]) continue;
@@ -281,21 +276,30 @@ static long correctOrbit(aSubRecord *pasub)
         }
         /* take a negative */
         px0[i] = px[i] = -s;
-        if(fabs(s) > xmax)  xmax = fabs(s);
+
+        if (!corsel[i]) {
+            px[i] = 0.0;
+            continue;
+        }
+        /* inc good bpm/cor */
         ++iv;
+        if(fabs(s) > xmax)  xmax = fabs(s);
     }
     /* active = 0; */
     if (xmax < dImin || !active) {
         for (i = 0; i < pasub->nova; ++i) px[i] = 0.0;
     } else {
         for (i = 0; i < pasub->nova; ++i) {
-            /* px[i] /= xmax / dImax; */
-            if (fabs(px[i]) > dImax) px[i] *= dImax / fabs(px[i]);
+            px[i] /= xmax / dImax;
+            /* if (fabs(px[i]) > dImax) px[i] *= dImax / fabs(px[i]); */
         }
     }
 
  #ifndef NDEBUG
     fprintf(stderr, "active= %ld obtstd= %g\n", active, sqrt(s2 - s1*s1));
+    fprintf(stderr, "calc dI= %g (max)", xmax);
+    for (i = 0; i < pasub->nova; ++i) fprintf(stderr, " %g", px0[i]);
+    fprintf(stderr, "\nscaled dI= ");
     for (i = 0; i < pasub->nova; ++i) fprintf(stderr, " %g", px[i]);
     fprintf(stderr, "\n");
  #endif

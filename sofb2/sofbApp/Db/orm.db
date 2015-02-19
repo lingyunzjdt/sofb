@@ -437,7 +437,7 @@ record(waveform, "SR:APHLA:SOFB{COR}delta0-SP") {
 
 record(ao, "SR:APHLA:SOFB{COR}dImax") {
    field(VAL, "0.05")
-   field(DRVH, "0.1")
+   field(DRVH, "1.0")
    field(DRVL, "0.0001")
 }
 
@@ -446,7 +446,7 @@ record(ao, "SR:APHLA:SOFB{COR}dImin") {
 }
 
 record(ao, "SR:APHLA:SOFB{ORM}corr:XYmin") {
-   field(VAL, "0.1")
+   field(VAL, "0.05")
    field(DRVL, "0.001")
    field(PREC, "3")
    field(DESC, "no correction if orbit is below")
@@ -600,7 +600,7 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(NOVF, "6")
    field(FTVF, "DOUBLE")
 
-   field(SCAN, "1 second")
+   field(SCAN, "2 second")
 }
 
 
@@ -667,7 +667,7 @@ record(acalcout, "SR:APHLA:SOFB{BPM}Offset_acalc_") {
 
 record(acalcout, "SR:APHLA:SOFB{ORM}corr-Cmd_") {
    field(INPA, "SR:APHLA:SOFB{ORM}corr:on")
-   field(INAA, "SR:APHLA:SOFB{COR}XY-SP")
+   field(INAA, "SR:APHLA:SOFB{COR}XY-SP PP")
    field(INBB, "SR:APHLA:SOFB{COR}delta-SP")
    field(NELM, "360")
    field(OOPT, "When Non-zero")
@@ -676,7 +676,7 @@ record(acalcout, "SR:APHLA:SOFB{ORM}corr-Cmd_") {
    field(DOPT, "Use OCAL")
    field(OUT,  "SR:APHLA:SOFB{COR}XY-Calc PP")
    #field(OUT,  "SR:APHLA:SOFB{ORM}test_ PP")
-   field(SCAN, "2 second")
+   #field(SCAN, "2 second")
 }
 
 
@@ -819,7 +819,6 @@ record(acalcout, "SR:APHLA:SOFB{COR}XY:Saved1-diff-calc_") {
    field(INAA, "SR:APHLA:SOFB{COR}XY-SP")
    field(INBB, "SR:APHLA:SOFB{COR}XY:Saved1")
    field(NELM, "360")
-   #field(OUT,  "SR:APHLA:SOFB{COR}XY-Calc PP")
    field(OUT, "SR:APHLA:SOFB{COR}XY:Saved1-diff PP")
    field(CALC, "AA - BB")
    field(DOPT, "Use CALC")
