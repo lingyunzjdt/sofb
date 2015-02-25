@@ -600,7 +600,7 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(NOVF, "6")
    field(FTVF, "DOUBLE")
 
-   field(SCAN, "2 second")
+   field(SCAN, "1 second")
 }
 
 
@@ -676,7 +676,7 @@ record(acalcout, "SR:APHLA:SOFB{ORM}corr-Cmd_") {
    field(DOPT, "Use OCAL")
    field(OUT,  "SR:APHLA:SOFB{COR}XY-Calc PP")
    #field(OUT,  "SR:APHLA:SOFB{ORM}test_ PP")
-   #field(SCAN, "2 second")
+   field(SCAN, "2 second")
 }
 
 

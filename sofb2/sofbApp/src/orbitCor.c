@@ -26,9 +26,9 @@ static long solveSVD(aSubRecord *pasub)
     /* a: full matrix */
     double *pA = (double *)pasub->a;
     /* b: active/inactive X/Y BPM */
-    char *bsel = (int *)pasub->b;
+    char *bsel = (char *)pasub->b;
     /* c: active/inactive X/Y Cor */
-    char *csel = (int *)pasub->c;
+    char *csel = (char *)pasub->c;
     /* d: keep n sv */
     int sn = *(long*)pasub->d;
     /* f: weight of BPMS */
@@ -83,9 +83,11 @@ static long solveSVD(aSubRecord *pasub)
     }
     gsl_matrix *V = gsl_matrix_alloc(A->size2, A->size2);
     gsl_vector *S = gsl_vector_alloc(A->size2);
+    gsl_vector *work = gsl_vector_alloc(A->size2);
     /* SVD(A), where A is (m,n) and m >= n */
     /* gsl_linalg_SV_decomp_jacobi (&(Av.matrix), V, S); */
-    gsl_linalg_SV_decomp_jacobi (A, V, S);
+    /* gsl_linalg_SV_decomp_jacobi (A, V, S); */
+    gsl_linalg_SV_decomp(A, V, S, work);
 
     /* output c: S */
     double *pS = (double*)pasub->valc;
@@ -164,7 +166,7 @@ static long solveSVD(aSubRecord *pasub)
         }
     }
     pasub->nevb = A->size2 * A->size1;
-    fprintf(stderr, "Minv size: %d %d (%d)\n", A->size2, A->size1, pasub->nevb);
+    fprintf(stderr, "Minv size: %ld %ld (%d)\n", A->size2, A->size1, pasub->nevb);
     
     free(tmp);
 
@@ -179,7 +181,7 @@ finish:
     gsl_matrix_free(A);
     gsl_matrix_free(V);
     gsl_vector_free(S);
-
+    gsl_vector_free(work);
     return 0;
 }
 
@@ -237,8 +239,8 @@ static long correctOrbit(aSubRecord *pasub)
     double *pcdiff = (double*)pasub->vald;
     for (i = 0; i < pasub->nob; ++i) {
         pcdiff[i] = pcrb[i] - pcsp[i];
-        /* this will disable SOFB if one corr is broken */
-        /* if (fabs(pcdiff[i]) > 0.015 && corsel[i]) active = 0; */
+        /* this will disable SOFB if the broken corr is not diabled */
+        if (fabs(pcdiff[i]) > 0.01 && corsel[i]) active = 0;
     }
 
     /* update weight */
@@ -288,7 +290,7 @@ static long correctOrbit(aSubRecord *pasub)
     /* active = 0; */
     if (xmax < dImin || !active) {
         for (i = 0; i < pasub->nova; ++i) px[i] = 0.0;
-    } else {
+    } else if (xmax > dImax) {
         for (i = 0; i < pasub->nova; ++i) {
             px[i] /= xmax / dImax;
             /* if (fabs(px[i]) > dImax) px[i] *= dImax / fabs(px[i]); */
@@ -296,7 +298,7 @@ static long correctOrbit(aSubRecord *pasub)
     }
 
  #ifndef NDEBUG
-    fprintf(stderr, "active= %ld obtstd= %g\n", active, sqrt(s2 - s1*s1));
+    fprintf(stderr, "active= %d obtstd= %g\n", active, sqrt(s2 - s1*s1));
     fprintf(stderr, "calc dI= %g (max)", xmax);
     for (i = 0; i < pasub->nova; ++i) fprintf(stderr, " %g", px0[i]);
     fprintf(stderr, "\nscaled dI= ");
