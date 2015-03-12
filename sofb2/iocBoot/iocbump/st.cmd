@@ -18,7 +18,7 @@ dbLoadDatabase("dbd/bump.dbd",0,0)
 bump_registerRecordDeviceDriver(pdbbase) 
 
 ## Load record instances
-#dbLoadRecords("db/bump.db","user=lyyang")
+dbLoadRecords("db/bump.db","ID=C03-HXN,XY=X")
 
 dbLoadRecords("db/localbump.db", "ID=C03-HXN,XY=X,HV=H,C1=03,I1=7,C2=03,I2=8,S1=-2.543,S2=0,S3=2.679")
 dbLoadRecords("db/localbump.db", "ID=C03-HXN,XY=Y,HV=V,C1=03,I1=7,C2=03,I2=8,S1=-2.543,S2=0,S3=2.679")

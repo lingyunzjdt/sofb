@@ -366,6 +366,12 @@ record(waveform, "SR:APHLA:SOFB{BPM}S-I") {
    info(autosaveFields_pass1, "VAL")
 }
 
+record(waveform, "SR:APHLA:SOFB{COR}S-I") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "180")
+   info(autosaveFields_pass1, "VAL")
+}
+
 record(waveform, "SR:APHLA:SOFB{BPM}XY0-I_") {
    field(FTVL, "DOUBLE")
    field(NELM, "396")
@@ -493,6 +499,12 @@ record(aSub, "SR:APHLA:SOFB{COR}XY-I_asub_") {
    field(SCAN, ".5 second")
 }
 
+# predicted
+record(waveform, "SR:APHLA:SOFB{ORM}Obt:Pred") {
+    field(NELM, "396")
+    field(FTVL, "DOUBLE")
+}
+
 record(bo, "SR:APHLA:SOFB{ORM}corr:on") {
    field(PINI, "1")
    field(ONAM, "Running")
@@ -575,6 +587,10 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(NOM,  "1")
    field(FTM,  "DOUBLE")
 
+   field(INPN, "SR:APHLA:SOFB{ORM}Mfull")
+   field(NON,  "142560")
+   field(FTN,  "DOUBLE")
+
    field(OUTA, "SR:APHLA:SOFB{COR}delta-SP PP")
    field(NOVA, "360")
    field(FTVA, "DOUBLE")
@@ -600,7 +616,11 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(NOVF, "6")
    field(FTVF, "DOUBLE")
 
-   field(SCAN, "1 second")
+   field(OUTG, "SR:APHLA:SOFB{ORM}Obt:Pred PP")
+   field(NOVG, "396")
+   field(FTVG, "DOUBLE")
+
+   field(SCAN, "2 second")
 }
 
 

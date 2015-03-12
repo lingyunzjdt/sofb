@@ -72,4 +72,62 @@ static long sofbLocalBump(aSubRecord *pasub)
     return 0;
 }
 
+int lower_bound_index(double s0, const double *sa, int sz)
+{
+    int i = 0, j = 0;
+    for (i = 0; i < sz - 1; ++i) {
+        if (s0 >= sa[i] && s0 < sa[i+1]) break;
+    }
+    return i;
+}
+
+int upper_bound_index(double s0, const double *sa, int sz)
+{
+    int i = 0, j = 0;
+    for (i = 1; i < sz; ++i) {
+        if (s0 > sa[i] && s0 < sa[i+1]) break;
+    }
+    return i;
+}
+
+static long setLocalBump(aSubRecord *pasub)
+{
+    const int NCOR = 2;
+    int i, j, k, i0, i1;
+    int ibpm[2];
+    int icor[NCOR*2];
+    double s0, s1;
+    /* sbpm, scor increasing order */
+    double *M = (double*) pasub->a;
+    double *sbpm = (double*) pasub->b;
+    double *scor = (double*) pasub->c;
+    double sid = *(double*) pasub->d;
+    fprintf(stderr, "BPMs %d: %f %f %f %f ...\n", pasub->nob,
+            sbpm[0], sbpm[1], sbpm[2], sbpm[3]);
+    /* s1-bpm, s2-ID, s3-bpm */
+    ibpm[0] = lower_bound_index(sid, sbpm, pasub->nob);
+    ibpm[1] = (ibpm[0]+1) % pasub->nob;
+    fprintf(stderr, "BPM loc: %d %d\n", ibpm[0], ibpm[1]);
+    
+    s0 = sbpm[ibpm[0]];
+    s1 = sbpm[ibpm[1]];
+    i0 = lower_bound_index(s0, scor, pasub->noc);
+    i1 = lower_bound_index(s1, scor, pasub->noc);
+    if (i1 == i0) ++i1;
+    for (j = 0; j < NCOR; ++j) {
+        icor[NCOR-1-j] = (i0-j+pasub->noc) % pasub->noc;
+        icor[NCOR+j] = (i1+j) % pasub->noc;
+    }
+    /* x = x0 - Href */
+    /* keep x fixed at zero, Href changes same as required x0 */
+
+    fprintf(stderr, "ID @ %f\n", sid);
+    fprintf(stderr, "BPM: %f %f\n", sbpm[ibpm[0]], sbpm[ibpm[1]]);
+    fprintf(stderr, "COR: %f %f %f %f\n", scor[icor[0]], scor[icor[1]],
+            scor[icor[2]], scor[icor[3]]);
+    
+    return 0;
+}
+
 epicsRegisterFunction(sofbLocalBump);
+epicsRegisterFunction(setLocalBump);

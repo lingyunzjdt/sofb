@@ -16,7 +16,7 @@
 #include <gsl/gsl_matrix.h>
 #include <gsl/gsl_linalg.h>
 
-/* #define NDEBUG */
+#define NDEBUG
 
 static long solveSVD(aSubRecord *pasub)
 {
@@ -162,11 +162,15 @@ static long solveSVD(aSubRecord *pasub)
             for (k = 0; k < A->size2; ++k) {
                 s += tmp[i*A->size2+k] * gsl_matrix_get(A, j, k);
             } 
-            pMinv[i*A->size1 + j] = s;
+            if(m < n) {
+                pMinv[j*A->size2 + i] = s;
+            } else {
+                pMinv[i*A->size1 + j] = s;
+            }
         }
     }
     pasub->nevb = A->size2 * A->size1;
-    fprintf(stderr, "Minv size: %ld %ld (%d)\n", A->size2, A->size1, pasub->nevb);
+    /* fprintf(stderr, "Minv size: %ld %ld (%d)\n", A->size2, A->size1, pasub->nevb); */
     
     free(tmp);
 
@@ -192,6 +196,7 @@ static long correctOrbit(aSubRecord *pasub)
     /* solve Ax = b, A = U*S*V^T */
     /* a: matrix inversed */
     double *pMinv = (double *)pasub->a;
+    double *pM = (double *)pasub->n;
     /* b: X/Y orbit residual */
     double *pb = (double *)pasub->b;
     /* c: COR X/Y SP*/
@@ -220,8 +225,8 @@ static long correctOrbit(aSubRecord *pasub)
     
     /* r: Kp, Ki, Kd, alpha */
     /* output */
-    double *px  = (double *)pasub->vala;
-    double *px0 = (double *)pasub->valb;
+    double *px  = (double *)pasub->vala;        /* delta */
+    double *px0 = (double *)pasub->valb;        /* delta0 */
 
  #ifndef NDEBUG
     fprintf(stderr, "enabled: %d\n", (int)active);
@@ -239,6 +244,8 @@ static long correctOrbit(aSubRecord *pasub)
     double *pcdiff = (double*)pasub->vald;
     for (i = 0; i < pasub->nob; ++i) {
         pcdiff[i] = pcrb[i] - pcsp[i];
+        /* skip checking the following */
+        if (i == 347) continue;
         /* this will disable SOFB if the broken corr is not diabled */
         if (fabs(pcdiff[i]) > 0.01 && corsel[i]) active = 0;
     }
@@ -280,13 +287,24 @@ static long correctOrbit(aSubRecord *pasub)
         px0[i] = px[i] = -s;
 
         if (!corsel[i]) {
-            px[i] = 0.0;
+            px0[i] = px[i] = 0.0;
             continue;
         }
         /* inc good bpm/cor */
         ++iv;
         if(fabs(s) > xmax)  xmax = fabs(s);
     }
+
+    /* calculate the prediction */
+    for (i = 0; i < NBPM; ++i) {
+        double s = 0.0;
+        for (j = k = 0; j < NCOR; ++j) {
+            if (corsel[j] == 0) continue;
+            s += px[k++] * dImax / xmax * pM[i*NCOR+j];
+        }
+        ((double*)pasub->valg)[i] = s;
+    }
+
     /* active = 0; */
     if (xmax < dImin || !active) {
         for (i = 0; i < pasub->nova; ++i) px[i] = 0.0;
@@ -305,6 +323,7 @@ static long correctOrbit(aSubRecord *pasub)
     for (i = 0; i < pasub->nova; ++i) fprintf(stderr, " %g", px[i]);
     fprintf(stderr, "\n");
  #endif
+    
     
     if (pasub->outc.type != CONSTANT) {
         double s1 = 0.0;
