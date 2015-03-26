@@ -8,6 +8,8 @@
 < /epics/iocs/srSOFB2/sofb2/iocBoot/iocbump/envPaths
 
 epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "30000000")
+epicsEnvSet("PYTHONPATH", "/epics/op/apps/aphla/lib/python")
+epicsEnvSet("APHLA_CONFIG_DIR", "/epics/data/aphla/apconf")
 
 #cd ${TOP}
 #cd /direct/phy_iocs/srSOFB2/sofb2
@@ -18,7 +20,7 @@ dbLoadDatabase("dbd/bump.dbd",0,0)
 bump_registerRecordDeviceDriver(pdbbase) 
 
 ## Load record instances
-dbLoadRecords("db/bump.db","ID=C03-HXN,XY=X")
+dbLoadRecords("db/bump.db","")
 
 dbLoadRecords("db/localbump.db", "ID=C03-HXN,XY=X,HV=H,C1=03,I1=7,C2=03,I2=8,S1=-2.543,S2=0,S3=2.679")
 dbLoadRecords("db/localbump.db", "ID=C03-HXN,XY=Y,HV=V,C1=03,I1=7,C2=03,I2=8,S1=-2.543,S2=0,S3=2.679")
@@ -51,7 +53,22 @@ dbLoadRecords("db/localbump.db", "ID=C28-XPD,XY=Y,HV=V,C1=28,I1=7,C2=28,I2=8,S1=
 
 #dbLoadRecords("db/localbump.db", "ID=C10-ISX,XY=X,HV=H,C1=10,I1=7,C2=10,I2=8,S1=-3.899,S2=0,S3=4.029")
 
+
+set_savefile_path("/epics/iocs/srSOFB2/sofb2/as/bump","/save")
+set_requestfile_path("/epics/iocs/srSOFB2/sofb2/as/bump","/req")
+set_pass1_restoreFile("ioc_settings.sav")
+
+asSetFilename("/cf-update/acf/default.acf")
+ 
 iocInit()
+
+caPutLogInit("ioclog.cs.nsls2.local:7004", 1)
+
+makeAutosaveFileFromDbInfo("as/bump/req/ioc_settings.req", "autosaveFields_pass1")
+create_monitor_set("ioc_settings.req", 30, "")
 
 ## Start any sequence programs
 #seq sncbump,"user=lyyang"
+
+system("python idlocalbump.py")
+

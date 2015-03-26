@@ -13,7 +13,7 @@ PROD_IOC = bump
 DBD += bump.dbd
 
 # bump.dbd will be made up from these files:
-bump_DBD += base.dbd
+bump_DBD += base.dbd system.dbd asSupport.dbd caPutLog.dbd
 
 # Include dbd files from all support applications:
 #bump_DBD += xxx.dbd
@@ -35,6 +35,7 @@ bump_SRCS_vxWorks += -nil-
 #bump_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
 # Finally link to the EPICS Base libraries
+bump_LIBS += autosave calc caPutLog
 bump_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 #===========================
