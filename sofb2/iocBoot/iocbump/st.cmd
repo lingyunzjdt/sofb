@@ -40,7 +40,8 @@ dbLoadRecords("db/localbump.db", "ID=C10-IXS,XY=Y,HV=V,C1=10,I1=7,C2=10,I2=8,S1=
 dbLoadRecords("db/localbump.db", "ID=C11-CHX,XY=X,HV=H,C1=11,I1=7,C2=11,I2=8,S1=-2.543,S2=0,S3=2.679")
 dbLoadRecords("db/localbump.db", "ID=C11-CHX,XY=Y,HV=V,C1=11,I1=7,C2=11,I2=8,S1=-2.543,S2=0,S3=2.679")
 
-#dbLoadRecords("db/localbump.db", "ID=C18-XPD,XY=X,HV=H,C1=18,I1=7,C2=18,I2=8,S1=-2.553,S2=0,S3=1.238")
+dbLoadRecords("db/localbump.db", "ID=C18-XPD,XY=X,HV=H,C1=18,I1=7,C2=18,I2=8,S1=-3.6615,S2=0,S3=3.6775")
+dbLoadRecords("db/localbump.db", "ID=C18-XPD,XY=Y,HV=V,C1=18,I1=7,C2=18,I2=8,S1=-3.6615,S2=0,S3=3.6775")
 
 dbLoadRecords("db/localbump.db", "ID=C23u-CSX,XY=X,HV=H,C1=23,I1=7,C2=23,I2=8,S1=-2.553,S2=0,S3=1.238")
 dbLoadRecords("db/localbump.db", "ID=C23u-CSX,XY=Y,HV=V,C1=23,I1=7,C2=23,I2=8,S1=-2.553,S2=0,S3=1.238")

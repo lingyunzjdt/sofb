@@ -245,7 +245,8 @@ static long correctOrbit(aSubRecord *pasub)
     for (i = 0; i < pasub->nob; ++i) {
         pcdiff[i] = pcrb[i] - pcsp[i];
         /* skip checking the following */
-        if (i == 347) continue;
+        /* if (i == 347) continue; */
+        if (i == 329) continue;
         /* this will disable SOFB if the broken corr is not diabled */
         if (fabs(pcdiff[i]) > 0.01 && corsel[i]) active = 0;
     }
