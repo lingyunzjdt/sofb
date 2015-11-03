@@ -60,3 +60,25 @@ record(compress,"$(user):compressExample")
 	field(EGU,"Counts")
 }
 
+record(waveform, "$(user):w1") {
+    field(NELM, "3")
+    field(FTVL, "DOUBLE")
+}
+
+record(waveform, "$(user):w2") {
+    field(NELM, "3")
+    field(FTVL, "DOUBLE")
+}
+
+record(compress,"$(user):cw1")
+{
+        field(DESC, "Circular buffer")
+        field(INP,  "$(user):w1.VAL CP NMS")
+        #field(ALG,  "Circular Buffer")
+        field(ALG,  "N to 1 Average")
+	field(N,    "2")
+        field(NSAM, "3")
+        field(HOPR, "10")
+        field(EGU,  "Counts")
+}
+

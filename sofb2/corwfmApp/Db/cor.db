@@ -1,0 +1,14 @@
+#
+record(aSub, "$(p)SR:APHLA:SOFB{COR}Sel-I_asub_") {
+   field(FTA, "CHAR")
+   field(FTB, "CHAR")
+   field(FTVA, "CHAR")
+   field(INPA, "$(p)SR:APHLA:SOFB{COR}XSel-I")
+   field(INPB, "$(p)SR:APHLA:SOFB{COR}YSel-I")
+   field(NOA, "180")
+   field(NOB, "180")
+   field(NOVA, "360")
+   field(OUTA, "$(p)SR:APHLA:SOFB{COR}Sel-I PP")
+   field(SNAM, "mergePvs")
+   #field(FLNK, "$(p)SR:APHLA:SOFB{ORM}svd_asub_")
+}

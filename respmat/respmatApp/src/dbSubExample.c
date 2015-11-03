@@ -21,6 +21,8 @@ static long mySubProcess(subRecord *precord)
     if (mySubDebug)
         printf("Record %s called mySubProcess(%p)\n",
                precord->name, (void*) precord);
+    printf("dpvt= %p\n", precord->dpvt);
+
     return 0;
 }
 

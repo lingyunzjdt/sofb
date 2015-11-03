@@ -1,0 +1,1988 @@
+## Generated from List of PVs.
+## Lingyun Yang <lyyang@bnl.gov>, 01-29-2015 14:06:25
+##
+record(waveform, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I") {
+   field(FTVL, "$(T)")
+   field(NELM, "180")
+   # field(FLNK, "$(p)SR:APHLA:SOFB{ORM}svd_asub_")
+}
+
+record(aSub, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_2_0_asub_") {
+   field(FTA, "$(T)")
+   field(FTB, "$(T)")
+   field(FTC, "$(T)")
+   field(FTD, "$(T)")
+   field(FTE, "$(T)")
+   field(FTF, "$(T)")
+   field(FTG, "$(T)")
+   field(FTH, "$(T)")
+   field(FTI, "$(T)")
+   field(FTVA, "$(T)")
+   field(INPA, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_wfm_")
+   field(INPB, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_wfm_")
+   field(INPC, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_wfm_")
+   field(INPD, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_wfm_")
+   field(INPE, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_wfm_")
+   field(INPF, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_wfm_")
+   field(INPG, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_wfm_")
+   field(INPH, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_wfm_")
+   field(INPI, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_wfm_")
+   field(NOA, "20")
+   field(NOB, "20")
+   field(NOC, "20")
+   field(NOD, "20")
+   field(NOE, "20")
+   field(NOF, "20")
+   field(NOG, "20")
+   field(NOH, "20")
+   field(NOI, "20")
+   field(NOVA, "180")
+   field(OUTA, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I PP")
+   field(SNAM, "mergePvs")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}Sel-I_asub_")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_wfm_") {
+   field(FTVL, "$(T)")
+   field(NELM, "20")
+}
+
+record(aSub, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_") {
+   field(PINI, "YES")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_2_0_asub_")
+   field(FTA, "$(T)")
+   field(FTB, "$(T)")
+   field(FTC, "$(T)")
+   field(FTD, "$(T)")
+   field(FTE, "$(T)")
+   field(FTF, "$(T)")
+   field(FTG, "$(T)")
+   field(FTH, "$(T)")
+   field(FTI, "$(T)")
+   field(FTJ, "$(T)")
+   field(FTK, "$(T)")
+   field(FTL, "$(T)")
+   field(FTM, "$(T)")
+   field(FTN, "$(T)")
+   field(FTO, "$(T)")
+   field(FTP, "$(T)")
+   field(FTQ, "$(T)")
+   field(FTR, "$(T)")
+   field(FTS, "$(T)")
+   field(FTT, "$(T)")
+   field(FTVA, "$(T)")
+   field(INPA, "$(p)SR:APHLA:C26-MG{PS:CL2B}$(XSel)-SP")
+   field(INPB, "$(p)SR:APHLA:C26-MG{PS:CL1B}$(XSel)-SP")
+   field(INPC, "$(p)SR:APHLA:C27-MG{PS:CL1A}$(XSel)-SP")
+   field(INPD, "$(p)SR:APHLA:C27-MG{PS:CL2A}$(XSel)-SP")
+   field(INPE, "$(p)SR:APHLA:C27-MG{PS:CM1A}$(XSel)-SP")
+   field(INPF, "$(p)SR:APHLA:C27-MG{PS:CM1B}$(XSel)-SP")
+   field(INPG, "$(p)SR:APHLA:C27-MG{PS:CH2B}$(XSel)-SP")
+   field(INPH, "$(p)SR:APHLA:C27-MG{PS:CH1B}$(XSel)-SP")
+   field(INPI, "$(p)SR:APHLA:C28-MG{PS:CH1A}$(XSel)-SP")
+   field(INPJ, "$(p)SR:APHLA:C28-MG{PS:CH2A}$(XSel)-SP")
+   field(INPK, "$(p)SR:APHLA:C28-MG{PS:CM1A}$(XSel)-SP")
+   field(INPL, "$(p)SR:APHLA:C28-MG{PS:CM1B}$(XSel)-SP")
+   field(INPM, "$(p)SR:APHLA:C28-MG{PS:CL2B}$(XSel)-SP")
+   field(INPN, "$(p)SR:APHLA:C28-MG{PS:CL1B}$(XSel)-SP")
+   field(INPO, "$(p)SR:APHLA:C29-MG{PS:CL1A}$(XSel)-SP")
+   field(INPP, "$(p)SR:APHLA:C29-MG{PS:CL2A}$(XSel)-SP")
+   field(INPQ, "$(p)SR:APHLA:C29-MG{PS:CM1A}$(XSel)-SP")
+   field(INPR, "$(p)SR:APHLA:C29-MG{PS:CM1B}$(XSel)-SP")
+   field(INPS, "$(p)SR:APHLA:C29-MG{PS:CH2B}$(XSel)-SP")
+   field(INPT, "$(p)SR:APHLA:C29-MG{PS:CH1B}$(XSel)-SP")
+   field(NOA, "1")
+   field(NOB, "1")
+   field(NOC, "1")
+   field(NOD, "1")
+   field(NOE, "1")
+   field(NOF, "1")
+   field(NOG, "1")
+   field(NOH, "1")
+   field(NOI, "1")
+   field(NOJ, "1")
+   field(NOK, "1")
+   field(NOL, "1")
+   field(NOM, "1")
+   field(NON, "1")
+   field(NOO, "1")
+   field(NOP, "1")
+   field(NOQ, "1")
+   field(NOR, "1")
+   field(NOS, "1")
+   field(NOT, "1")
+   field(NOVA, "20")
+   field(OUTA, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_wfm_ PP")
+   field(SNAM, "mergePvs")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_wfm_") {
+   field(FTVL, "$(T)")
+   field(NELM, "20")
+}
+
+record(aSub, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_") {
+   field(PINI, "YES")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_2_0_asub_")
+   field(FTA, "$(T)")
+   field(FTB, "$(T)")
+   field(FTC, "$(T)")
+   field(FTD, "$(T)")
+   field(FTE, "$(T)")
+   field(FTF, "$(T)")
+   field(FTG, "$(T)")
+   field(FTH, "$(T)")
+   field(FTI, "$(T)")
+   field(FTJ, "$(T)")
+   field(FTK, "$(T)")
+   field(FTL, "$(T)")
+   field(FTM, "$(T)")
+   field(FTN, "$(T)")
+   field(FTO, "$(T)")
+   field(FTP, "$(T)")
+   field(FTQ, "$(T)")
+   field(FTR, "$(T)")
+   field(FTS, "$(T)")
+   field(FTT, "$(T)")
+   field(FTVA, "$(T)")
+   field(INPA, "$(p)SR:APHLA:C23-MG{PS:CM1A}$(XSel)-SP")
+   field(INPB, "$(p)SR:APHLA:C23-MG{PS:CM1B}$(XSel)-SP")
+   field(INPC, "$(p)SR:APHLA:C23-MG{PS:CH2B}$(XSel)-SP")
+   field(INPD, "$(p)SR:APHLA:C23-MG{PS:CH1B}$(XSel)-SP")
+   field(INPE, "$(p)SR:APHLA:C24-MG{PS:CH1A}$(XSel)-SP")
+   field(INPF, "$(p)SR:APHLA:C24-MG{PS:CH2A}$(XSel)-SP")
+   field(INPG, "$(p)SR:APHLA:C24-MG{PS:CM1A}$(XSel)-SP")
+   field(INPH, "$(p)SR:APHLA:C24-MG{PS:CM1B}$(XSel)-SP")
+   field(INPI, "$(p)SR:APHLA:C24-MG{PS:CL2B}$(XSel)-SP")
+   field(INPJ, "$(p)SR:APHLA:C24-MG{PS:CL1B}$(XSel)-SP")
+   field(INPK, "$(p)SR:APHLA:C25-MG{PS:CL1A}$(XSel)-SP")
+   field(INPL, "$(p)SR:APHLA:C25-MG{PS:CL2A}$(XSel)-SP")
+   field(INPM, "$(p)SR:APHLA:C25-MG{PS:CM1A}$(XSel)-SP")
+   field(INPN, "$(p)SR:APHLA:C25-MG{PS:CM1B}$(XSel)-SP")
+   field(INPO, "$(p)SR:APHLA:C25-MG{PS:CH2B}$(XSel)-SP")
+   field(INPP, "$(p)SR:APHLA:C25-MG{PS:CH1B}$(XSel)-SP")
+   field(INPQ, "$(p)SR:APHLA:C26-MG{PS:CH1A}$(XSel)-SP")
+   field(INPR, "$(p)SR:APHLA:C26-MG{PS:CH2A}$(XSel)-SP")
+   field(INPS, "$(p)SR:APHLA:C26-MG{PS:CM1A}$(XSel)-SP")
+   field(INPT, "$(p)SR:APHLA:C26-MG{PS:CM1B}$(XSel)-SP")
+   field(NOA, "1")
+   field(NOB, "1")
+   field(NOC, "1")
+   field(NOD, "1")
+   field(NOE, "1")
+   field(NOF, "1")
+   field(NOG, "1")
+   field(NOH, "1")
+   field(NOI, "1")
+   field(NOJ, "1")
+   field(NOK, "1")
+   field(NOL, "1")
+   field(NOM, "1")
+   field(NON, "1")
+   field(NOO, "1")
+   field(NOP, "1")
+   field(NOQ, "1")
+   field(NOR, "1")
+   field(NOS, "1")
+   field(NOT, "1")
+   field(NOVA, "20")
+   field(OUTA, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_wfm_ PP")
+   field(SNAM, "mergePvs")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_wfm_") {
+   field(FTVL, "$(T)")
+   field(NELM, "20")
+}
+
+record(aSub, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_") {
+   field(PINI, "YES")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_2_0_asub_")
+   field(FTA, "$(T)")
+   field(FTB, "$(T)")
+   field(FTC, "$(T)")
+   field(FTD, "$(T)")
+   field(FTE, "$(T)")
+   field(FTF, "$(T)")
+   field(FTG, "$(T)")
+   field(FTH, "$(T)")
+   field(FTI, "$(T)")
+   field(FTJ, "$(T)")
+   field(FTK, "$(T)")
+   field(FTL, "$(T)")
+   field(FTM, "$(T)")
+   field(FTN, "$(T)")
+   field(FTO, "$(T)")
+   field(FTP, "$(T)")
+   field(FTQ, "$(T)")
+   field(FTR, "$(T)")
+   field(FTS, "$(T)")
+   field(FTT, "$(T)")
+   field(FTVA, "$(T)")
+   field(INPA, "$(p)SR:APHLA:C20-MG{PS:CH1A}$(XSel)-SP")
+   field(INPB, "$(p)SR:APHLA:C20-MG{PS:CH2A}$(XSel)-SP")
+   field(INPC, "$(p)SR:APHLA:C20-MG{PS:CM1A}$(XSel)-SP")
+   field(INPD, "$(p)SR:APHLA:C20-MG{PS:CM1B}$(XSel)-SP")
+   field(INPE, "$(p)SR:APHLA:C20-MG{PS:CL2B}$(XSel)-SP")
+   field(INPF, "$(p)SR:APHLA:C20-MG{PS:CL1B}$(XSel)-SP")
+   field(INPG, "$(p)SR:APHLA:C21-MG{PS:CL1A}$(XSel)-SP")
+   field(INPH, "$(p)SR:APHLA:C21-MG{PS:CL2A}$(XSel)-SP")
+   field(INPI, "$(p)SR:APHLA:C21-MG{PS:CM1A}$(XSel)-SP")
+   field(INPJ, "$(p)SR:APHLA:C21-MG{PS:CM1B}$(XSel)-SP")
+   field(INPK, "$(p)SR:APHLA:C21-MG{PS:CH2B}$(XSel)-SP")
+   field(INPL, "$(p)SR:APHLA:C21-MG{PS:CH1B}$(XSel)-SP")
+   field(INPM, "$(p)SR:APHLA:C22-MG{PS:CH1A}$(XSel)-SP")
+   field(INPN, "$(p)SR:APHLA:C22-MG{PS:CH2A}$(XSel)-SP")
+   field(INPO, "$(p)SR:APHLA:C22-MG{PS:CM1A}$(XSel)-SP")
+   field(INPP, "$(p)SR:APHLA:C22-MG{PS:CM1B}$(XSel)-SP")
+   field(INPQ, "$(p)SR:APHLA:C22-MG{PS:CL2B}$(XSel)-SP")
+   field(INPR, "$(p)SR:APHLA:C22-MG{PS:CL1B}$(XSel)-SP")
+   field(INPS, "$(p)SR:APHLA:C23-MG{PS:CL1A}$(XSel)-SP")
+   field(INPT, "$(p)SR:APHLA:C23-MG{PS:CL2A}$(XSel)-SP")
+   field(NOA, "1")
+   field(NOB, "1")
+   field(NOC, "1")
+   field(NOD, "1")
+   field(NOE, "1")
+   field(NOF, "1")
+   field(NOG, "1")
+   field(NOH, "1")
+   field(NOI, "1")
+   field(NOJ, "1")
+   field(NOK, "1")
+   field(NOL, "1")
+   field(NOM, "1")
+   field(NON, "1")
+   field(NOO, "1")
+   field(NOP, "1")
+   field(NOQ, "1")
+   field(NOR, "1")
+   field(NOS, "1")
+   field(NOT, "1")
+   field(NOVA, "20")
+   field(OUTA, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_wfm_ PP")
+   field(SNAM, "mergePvs")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_wfm_") {
+   field(FTVL, "$(T)")
+   field(NELM, "20")
+}
+
+record(aSub, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_") {
+   field(PINI, "YES")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_2_0_asub_")
+   field(FTA, "$(T)")
+   field(FTB, "$(T)")
+   field(FTC, "$(T)")
+   field(FTD, "$(T)")
+   field(FTE, "$(T)")
+   field(FTF, "$(T)")
+   field(FTG, "$(T)")
+   field(FTH, "$(T)")
+   field(FTI, "$(T)")
+   field(FTJ, "$(T)")
+   field(FTK, "$(T)")
+   field(FTL, "$(T)")
+   field(FTM, "$(T)")
+   field(FTN, "$(T)")
+   field(FTO, "$(T)")
+   field(FTP, "$(T)")
+   field(FTQ, "$(T)")
+   field(FTR, "$(T)")
+   field(FTS, "$(T)")
+   field(FTT, "$(T)")
+   field(FTVA, "$(T)")
+   field(INPA, "$(p)SR:APHLA:C16-MG{PS:CL2B}$(XSel)-SP")
+   field(INPB, "$(p)SR:APHLA:C16-MG{PS:CL1B}$(XSel)-SP")
+   field(INPC, "$(p)SR:APHLA:C17-MG{PS:CL1A}$(XSel)-SP")
+   field(INPD, "$(p)SR:APHLA:C17-MG{PS:CL2A}$(XSel)-SP")
+   field(INPE, "$(p)SR:APHLA:C17-MG{PS:CM1A}$(XSel)-SP")
+   field(INPF, "$(p)SR:APHLA:C17-MG{PS:CM1B}$(XSel)-SP")
+   field(INPG, "$(p)SR:APHLA:C17-MG{PS:CH2B}$(XSel)-SP")
+   field(INPH, "$(p)SR:APHLA:C17-MG{PS:CH1B}$(XSel)-SP")
+   field(INPI, "$(p)SR:APHLA:C18-MG{PS:CH1A}$(XSel)-SP")
+   field(INPJ, "$(p)SR:APHLA:C18-MG{PS:CH2A}$(XSel)-SP")
+   field(INPK, "$(p)SR:APHLA:C18-MG{PS:CM1A}$(XSel)-SP")
+   field(INPL, "$(p)SR:APHLA:C18-MG{PS:CM1B}$(XSel)-SP")
+   field(INPM, "$(p)SR:APHLA:C18-MG{PS:CL2B}$(XSel)-SP")
+   field(INPN, "$(p)SR:APHLA:C18-MG{PS:CL1B}$(XSel)-SP")
+   field(INPO, "$(p)SR:APHLA:C19-MG{PS:CL1A}$(XSel)-SP")
+   field(INPP, "$(p)SR:APHLA:C19-MG{PS:CL2A}$(XSel)-SP")
+   field(INPQ, "$(p)SR:APHLA:C19-MG{PS:CM1A}$(XSel)-SP")
+   field(INPR, "$(p)SR:APHLA:C19-MG{PS:CM1B}$(XSel)-SP")
+   field(INPS, "$(p)SR:APHLA:C19-MG{PS:CH2B}$(XSel)-SP")
+   field(INPT, "$(p)SR:APHLA:C19-MG{PS:CH1B}$(XSel)-SP")
+   field(NOA, "1")
+   field(NOB, "1")
+   field(NOC, "1")
+   field(NOD, "1")
+   field(NOE, "1")
+   field(NOF, "1")
+   field(NOG, "1")
+   field(NOH, "1")
+   field(NOI, "1")
+   field(NOJ, "1")
+   field(NOK, "1")
+   field(NOL, "1")
+   field(NOM, "1")
+   field(NON, "1")
+   field(NOO, "1")
+   field(NOP, "1")
+   field(NOQ, "1")
+   field(NOR, "1")
+   field(NOS, "1")
+   field(NOT, "1")
+   field(NOVA, "20")
+   field(OUTA, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_wfm_ PP")
+   field(SNAM, "mergePvs")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_wfm_") {
+   field(FTVL, "$(T)")
+   field(NELM, "20")
+}
+
+record(aSub, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_") {
+   field(PINI, "YES")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_2_0_asub_")
+   field(FTA, "$(T)")
+   field(FTB, "$(T)")
+   field(FTC, "$(T)")
+   field(FTD, "$(T)")
+   field(FTE, "$(T)")
+   field(FTF, "$(T)")
+   field(FTG, "$(T)")
+   field(FTH, "$(T)")
+   field(FTI, "$(T)")
+   field(FTJ, "$(T)")
+   field(FTK, "$(T)")
+   field(FTL, "$(T)")
+   field(FTM, "$(T)")
+   field(FTN, "$(T)")
+   field(FTO, "$(T)")
+   field(FTP, "$(T)")
+   field(FTQ, "$(T)")
+   field(FTR, "$(T)")
+   field(FTS, "$(T)")
+   field(FTT, "$(T)")
+   field(FTVA, "$(T)")
+   field(INPA, "$(p)SR:APHLA:C13-MG{PS:CM1A}$(XSel)-SP")
+   field(INPB, "$(p)SR:APHLA:C13-MG{PS:CM1B}$(XSel)-SP")
+   field(INPC, "$(p)SR:APHLA:C13-MG{PS:CH2B}$(XSel)-SP")
+   field(INPD, "$(p)SR:APHLA:C13-MG{PS:CH1B}$(XSel)-SP")
+   field(INPE, "$(p)SR:APHLA:C14-MG{PS:CH1A}$(XSel)-SP")
+   field(INPF, "$(p)SR:APHLA:C14-MG{PS:CH2A}$(XSel)-SP")
+   field(INPG, "$(p)SR:APHLA:C14-MG{PS:CM1A}$(XSel)-SP")
+   field(INPH, "$(p)SR:APHLA:C14-MG{PS:CM1B}$(XSel)-SP")
+   field(INPI, "$(p)SR:APHLA:C14-MG{PS:CL2B}$(XSel)-SP")
+   field(INPJ, "$(p)SR:APHLA:C14-MG{PS:CL1B}$(XSel)-SP")
+   field(INPK, "$(p)SR:APHLA:C15-MG{PS:CL1A}$(XSel)-SP")
+   field(INPL, "$(p)SR:APHLA:C15-MG{PS:CL2A}$(XSel)-SP")
+   field(INPM, "$(p)SR:APHLA:C15-MG{PS:CM1A}$(XSel)-SP")
+   field(INPN, "$(p)SR:APHLA:C15-MG{PS:CM1B}$(XSel)-SP")
+   field(INPO, "$(p)SR:APHLA:C15-MG{PS:CH2B}$(XSel)-SP")
+   field(INPP, "$(p)SR:APHLA:C15-MG{PS:CH1B}$(XSel)-SP")
+   field(INPQ, "$(p)SR:APHLA:C16-MG{PS:CH1A}$(XSel)-SP")
+   field(INPR, "$(p)SR:APHLA:C16-MG{PS:CH2A}$(XSel)-SP")
+   field(INPS, "$(p)SR:APHLA:C16-MG{PS:CM1A}$(XSel)-SP")
+   field(INPT, "$(p)SR:APHLA:C16-MG{PS:CM1B}$(XSel)-SP")
+   field(NOA, "1")
+   field(NOB, "1")
+   field(NOC, "1")
+   field(NOD, "1")
+   field(NOE, "1")
+   field(NOF, "1")
+   field(NOG, "1")
+   field(NOH, "1")
+   field(NOI, "1")
+   field(NOJ, "1")
+   field(NOK, "1")
+   field(NOL, "1")
+   field(NOM, "1")
+   field(NON, "1")
+   field(NOO, "1")
+   field(NOP, "1")
+   field(NOQ, "1")
+   field(NOR, "1")
+   field(NOS, "1")
+   field(NOT, "1")
+   field(NOVA, "20")
+   field(OUTA, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_wfm_ PP")
+   field(SNAM, "mergePvs")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_wfm_") {
+   field(FTVL, "$(T)")
+   field(NELM, "20")
+}
+
+record(aSub, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_") {
+   field(PINI, "YES")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_2_0_asub_")
+   field(FTA, "$(T)")
+   field(FTB, "$(T)")
+   field(FTC, "$(T)")
+   field(FTD, "$(T)")
+   field(FTE, "$(T)")
+   field(FTF, "$(T)")
+   field(FTG, "$(T)")
+   field(FTH, "$(T)")
+   field(FTI, "$(T)")
+   field(FTJ, "$(T)")
+   field(FTK, "$(T)")
+   field(FTL, "$(T)")
+   field(FTM, "$(T)")
+   field(FTN, "$(T)")
+   field(FTO, "$(T)")
+   field(FTP, "$(T)")
+   field(FTQ, "$(T)")
+   field(FTR, "$(T)")
+   field(FTS, "$(T)")
+   field(FTT, "$(T)")
+   field(FTVA, "$(T)")
+   field(INPA, "$(p)SR:APHLA:C10-MG{PS:CH1A}$(XSel)-SP")
+   field(INPB, "$(p)SR:APHLA:C10-MG{PS:CH2A}$(XSel)-SP")
+   field(INPC, "$(p)SR:APHLA:C10-MG{PS:CM1A}$(XSel)-SP")
+   field(INPD, "$(p)SR:APHLA:C10-MG{PS:CM1B}$(XSel)-SP")
+   field(INPE, "$(p)SR:APHLA:C10-MG{PS:CL2B}$(XSel)-SP")
+   field(INPF, "$(p)SR:APHLA:C10-MG{PS:CL1B}$(XSel)-SP")
+   field(INPG, "$(p)SR:APHLA:C11-MG{PS:CL1A}$(XSel)-SP")
+   field(INPH, "$(p)SR:APHLA:C11-MG{PS:CL2A}$(XSel)-SP")
+   field(INPI, "$(p)SR:APHLA:C11-MG{PS:CM1A}$(XSel)-SP")
+   field(INPJ, "$(p)SR:APHLA:C11-MG{PS:CM1B}$(XSel)-SP")
+   field(INPK, "$(p)SR:APHLA:C11-MG{PS:CH2B}$(XSel)-SP")
+   field(INPL, "$(p)SR:APHLA:C11-MG{PS:CH1B}$(XSel)-SP")
+   field(INPM, "$(p)SR:APHLA:C12-MG{PS:CH1A}$(XSel)-SP")
+   field(INPN, "$(p)SR:APHLA:C12-MG{PS:CH2A}$(XSel)-SP")
+   field(INPO, "$(p)SR:APHLA:C12-MG{PS:CM1A}$(XSel)-SP")
+   field(INPP, "$(p)SR:APHLA:C12-MG{PS:CM1B}$(XSel)-SP")
+   field(INPQ, "$(p)SR:APHLA:C12-MG{PS:CL2B}$(XSel)-SP")
+   field(INPR, "$(p)SR:APHLA:C12-MG{PS:CL1B}$(XSel)-SP")
+   field(INPS, "$(p)SR:APHLA:C13-MG{PS:CL1A}$(XSel)-SP")
+   field(INPT, "$(p)SR:APHLA:C13-MG{PS:CL2A}$(XSel)-SP")
+   field(NOA, "1")
+   field(NOB, "1")
+   field(NOC, "1")
+   field(NOD, "1")
+   field(NOE, "1")
+   field(NOF, "1")
+   field(NOG, "1")
+   field(NOH, "1")
+   field(NOI, "1")
+   field(NOJ, "1")
+   field(NOK, "1")
+   field(NOL, "1")
+   field(NOM, "1")
+   field(NON, "1")
+   field(NOO, "1")
+   field(NOP, "1")
+   field(NOQ, "1")
+   field(NOR, "1")
+   field(NOS, "1")
+   field(NOT, "1")
+   field(NOVA, "20")
+   field(OUTA, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_wfm_ PP")
+   field(SNAM, "mergePvs")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_wfm_") {
+   field(FTVL, "$(T)")
+   field(NELM, "20")
+}
+
+record(aSub, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_") {
+   field(PINI, "YES")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_2_0_asub_")
+   field(FTA, "$(T)")
+   field(FTB, "$(T)")
+   field(FTC, "$(T)")
+   field(FTD, "$(T)")
+   field(FTE, "$(T)")
+   field(FTF, "$(T)")
+   field(FTG, "$(T)")
+   field(FTH, "$(T)")
+   field(FTI, "$(T)")
+   field(FTJ, "$(T)")
+   field(FTK, "$(T)")
+   field(FTL, "$(T)")
+   field(FTM, "$(T)")
+   field(FTN, "$(T)")
+   field(FTO, "$(T)")
+   field(FTP, "$(T)")
+   field(FTQ, "$(T)")
+   field(FTR, "$(T)")
+   field(FTS, "$(T)")
+   field(FTT, "$(T)")
+   field(FTVA, "$(T)")
+   field(INPA, "$(p)SR:APHLA:C06-MG{PS:CL2B}$(XSel)-SP")
+   field(INPB, "$(p)SR:APHLA:C06-MG{PS:CL1B}$(XSel)-SP")
+   field(INPC, "$(p)SR:APHLA:C07-MG{PS:CL1A}$(XSel)-SP")
+   field(INPD, "$(p)SR:APHLA:C07-MG{PS:CL2A}$(XSel)-SP")
+   field(INPE, "$(p)SR:APHLA:C07-MG{PS:CM1A}$(XSel)-SP")
+   field(INPF, "$(p)SR:APHLA:C07-MG{PS:CM1B}$(XSel)-SP")
+   field(INPG, "$(p)SR:APHLA:C07-MG{PS:CH2B}$(XSel)-SP")
+   field(INPH, "$(p)SR:APHLA:C07-MG{PS:CH1B}$(XSel)-SP")
+   field(INPI, "$(p)SR:APHLA:C08-MG{PS:CH1A}$(XSel)-SP")
+   field(INPJ, "$(p)SR:APHLA:C08-MG{PS:CH2A}$(XSel)-SP")
+   field(INPK, "$(p)SR:APHLA:C08-MG{PS:CM1A}$(XSel)-SP")
+   field(INPL, "$(p)SR:APHLA:C08-MG{PS:CM1B}$(XSel)-SP")
+   field(INPM, "$(p)SR:APHLA:C08-MG{PS:CL2B}$(XSel)-SP")
+   field(INPN, "$(p)SR:APHLA:C08-MG{PS:CL1B}$(XSel)-SP")
+   field(INPO, "$(p)SR:APHLA:C09-MG{PS:CL1A}$(XSel)-SP")
+   field(INPP, "$(p)SR:APHLA:C09-MG{PS:CL2A}$(XSel)-SP")
+   field(INPQ, "$(p)SR:APHLA:C09-MG{PS:CM1A}$(XSel)-SP")
+   field(INPR, "$(p)SR:APHLA:C09-MG{PS:CM1B}$(XSel)-SP")
+   field(INPS, "$(p)SR:APHLA:C09-MG{PS:CH2B}$(XSel)-SP")
+   field(INPT, "$(p)SR:APHLA:C09-MG{PS:CH1B}$(XSel)-SP")
+   field(NOA, "1")
+   field(NOB, "1")
+   field(NOC, "1")
+   field(NOD, "1")
+   field(NOE, "1")
+   field(NOF, "1")
+   field(NOG, "1")
+   field(NOH, "1")
+   field(NOI, "1")
+   field(NOJ, "1")
+   field(NOK, "1")
+   field(NOL, "1")
+   field(NOM, "1")
+   field(NON, "1")
+   field(NOO, "1")
+   field(NOP, "1")
+   field(NOQ, "1")
+   field(NOR, "1")
+   field(NOS, "1")
+   field(NOT, "1")
+   field(NOVA, "20")
+   field(OUTA, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_wfm_ PP")
+   field(SNAM, "mergePvs")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_wfm_") {
+   field(FTVL, "$(T)")
+   field(NELM, "20")
+}
+
+record(aSub, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_") {
+   field(PINI, "YES")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_2_0_asub_")
+   field(FTA, "$(T)")
+   field(FTB, "$(T)")
+   field(FTC, "$(T)")
+   field(FTD, "$(T)")
+   field(FTE, "$(T)")
+   field(FTF, "$(T)")
+   field(FTG, "$(T)")
+   field(FTH, "$(T)")
+   field(FTI, "$(T)")
+   field(FTJ, "$(T)")
+   field(FTK, "$(T)")
+   field(FTL, "$(T)")
+   field(FTM, "$(T)")
+   field(FTN, "$(T)")
+   field(FTO, "$(T)")
+   field(FTP, "$(T)")
+   field(FTQ, "$(T)")
+   field(FTR, "$(T)")
+   field(FTS, "$(T)")
+   field(FTT, "$(T)")
+   field(FTVA, "$(T)")
+   field(INPA, "$(p)SR:APHLA:C03-MG{PS:CM1A}$(XSel)-SP")
+   field(INPB, "$(p)SR:APHLA:C03-MG{PS:CM1B}$(XSel)-SP")
+   field(INPC, "$(p)SR:APHLA:C03-MG{PS:CH2B}$(XSel)-SP")
+   field(INPD, "$(p)SR:APHLA:C03-MG{PS:CH1B}$(XSel)-SP")
+   field(INPE, "$(p)SR:APHLA:C04-MG{PS:CH1A}$(XSel)-SP")
+   field(INPF, "$(p)SR:APHLA:C04-MG{PS:CH2A}$(XSel)-SP")
+   field(INPG, "$(p)SR:APHLA:C04-MG{PS:CM1A}$(XSel)-SP")
+   field(INPH, "$(p)SR:APHLA:C04-MG{PS:CM1B}$(XSel)-SP")
+   field(INPI, "$(p)SR:APHLA:C04-MG{PS:CL2B}$(XSel)-SP")
+   field(INPJ, "$(p)SR:APHLA:C04-MG{PS:CL1B}$(XSel)-SP")
+   field(INPK, "$(p)SR:APHLA:C05-MG{PS:CL1A}$(XSel)-SP")
+   field(INPL, "$(p)SR:APHLA:C05-MG{PS:CL2A}$(XSel)-SP")
+   field(INPM, "$(p)SR:APHLA:C05-MG{PS:CM1A}$(XSel)-SP")
+   field(INPN, "$(p)SR:APHLA:C05-MG{PS:CM1B}$(XSel)-SP")
+   field(INPO, "$(p)SR:APHLA:C05-MG{PS:CH2B}$(XSel)-SP")
+   field(INPP, "$(p)SR:APHLA:C05-MG{PS:CH1B}$(XSel)-SP")
+   field(INPQ, "$(p)SR:APHLA:C06-MG{PS:CH1A}$(XSel)-SP")
+   field(INPR, "$(p)SR:APHLA:C06-MG{PS:CH2A}$(XSel)-SP")
+   field(INPS, "$(p)SR:APHLA:C06-MG{PS:CM1A}$(XSel)-SP")
+   field(INPT, "$(p)SR:APHLA:C06-MG{PS:CM1B}$(XSel)-SP")
+   field(NOA, "1")
+   field(NOB, "1")
+   field(NOC, "1")
+   field(NOD, "1")
+   field(NOE, "1")
+   field(NOF, "1")
+   field(NOG, "1")
+   field(NOH, "1")
+   field(NOI, "1")
+   field(NOJ, "1")
+   field(NOK, "1")
+   field(NOL, "1")
+   field(NOM, "1")
+   field(NON, "1")
+   field(NOO, "1")
+   field(NOP, "1")
+   field(NOQ, "1")
+   field(NOR, "1")
+   field(NOS, "1")
+   field(NOT, "1")
+   field(NOVA, "20")
+   field(OUTA, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_wfm_ PP")
+   field(SNAM, "mergePvs")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_wfm_") {
+   field(FTVL, "$(T)")
+   field(NELM, "20")
+}
+
+record(aSub, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_") {
+   field(PINI, "YES")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_2_0_asub_")
+   field(FTA, "$(T)")
+   field(FTB, "$(T)")
+   field(FTC, "$(T)")
+   field(FTD, "$(T)")
+   field(FTE, "$(T)")
+   field(FTF, "$(T)")
+   field(FTG, "$(T)")
+   field(FTH, "$(T)")
+   field(FTI, "$(T)")
+   field(FTJ, "$(T)")
+   field(FTK, "$(T)")
+   field(FTL, "$(T)")
+   field(FTM, "$(T)")
+   field(FTN, "$(T)")
+   field(FTO, "$(T)")
+   field(FTP, "$(T)")
+   field(FTQ, "$(T)")
+   field(FTR, "$(T)")
+   field(FTS, "$(T)")
+   field(FTT, "$(T)")
+   field(FTVA, "$(T)")
+   field(INPA, "$(p)SR:APHLA:C30-MG{PS:CH1A}$(XSel)-SP")
+   field(INPB, "$(p)SR:APHLA:C30-MG{PS:CH2A}$(XSel)-SP")
+   field(INPC, "$(p)SR:APHLA:C30-MG{PS:CM1A}$(XSel)-SP")
+   field(INPD, "$(p)SR:APHLA:C30-MG{PS:CM1B}$(XSel)-SP")
+   field(INPE, "$(p)SR:APHLA:C30-MG{PS:CL2B}$(XSel)-SP")
+   field(INPF, "$(p)SR:APHLA:C30-MG{PS:CL1B}$(XSel)-SP")
+   field(INPG, "$(p)SR:APHLA:C01-MG{PS:CL1A}$(XSel)-SP")
+   field(INPH, "$(p)SR:APHLA:C01-MG{PS:CL2A}$(XSel)-SP")
+   field(INPI, "$(p)SR:APHLA:C01-MG{PS:CM1A}$(XSel)-SP")
+   field(INPJ, "$(p)SR:APHLA:C01-MG{PS:CM1B}$(XSel)-SP")
+   field(INPK, "$(p)SR:APHLA:C01-MG{PS:CH2B}$(XSel)-SP")
+   field(INPL, "$(p)SR:APHLA:C01-MG{PS:CH1B}$(XSel)-SP")
+   field(INPM, "$(p)SR:APHLA:C02-MG{PS:CH1A}$(XSel)-SP")
+   field(INPN, "$(p)SR:APHLA:C02-MG{PS:CH2A}$(XSel)-SP")
+   field(INPO, "$(p)SR:APHLA:C02-MG{PS:CM1A}$(XSel)-SP")
+   field(INPP, "$(p)SR:APHLA:C02-MG{PS:CM1B}$(XSel)-SP")
+   field(INPQ, "$(p)SR:APHLA:C02-MG{PS:CL2B}$(XSel)-SP")
+   field(INPR, "$(p)SR:APHLA:C02-MG{PS:CL1B}$(XSel)-SP")
+   field(INPS, "$(p)SR:APHLA:C03-MG{PS:CL1A}$(XSel)-SP")
+   field(INPT, "$(p)SR:APHLA:C03-MG{PS:CL2A}$(XSel)-SP")
+   field(NOA, "1")
+   field(NOB, "1")
+   field(NOC, "1")
+   field(NOD, "1")
+   field(NOE, "1")
+   field(NOF, "1")
+   field(NOG, "1")
+   field(NOH, "1")
+   field(NOI, "1")
+   field(NOJ, "1")
+   field(NOK, "1")
+   field(NOL, "1")
+   field(NOM, "1")
+   field(NON, "1")
+   field(NOO, "1")
+   field(NOP, "1")
+   field(NOQ, "1")
+   field(NOR, "1")
+   field(NOS, "1")
+   field(NOT, "1")
+   field(NOVA, "20")
+   field(OUTA, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_wfm_ PP")
+   field(SNAM, "mergePvs")
+}
+
+#record(bo, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I:status") {
+#   field(ONAM, "Running")
+#   field(VAL, "1")
+#   field(ZNAM, "Idle")
+#}
+
+#record(calcout, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I:timer_") {
+#   field(CALC, "A>0?1:0")
+#   field(DOPT, "Use CALC")
+#   field(INPA, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I:status")
+#   field(OOPT, "When Non-zero")
+#   field(OUT, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_ PP")
+#   field(SCAN, "1 second")
+#}
+
+## Generated from List of PVs.
+## Lingyun Yang <lyyang@bnl.gov>, 01-29-2015 14:06:25
+##
+record(bo, "$(p)SR:APHLA:C30-MG{PS:CH1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C30-MG{PS:CH2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C30-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C30-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C30-MG{PS:CL2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C30-MG{PS:CL1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C01-MG{PS:CL1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C01-MG{PS:CL2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C01-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C01-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C01-MG{PS:CH2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C01-MG{PS:CH1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C02-MG{PS:CH1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C02-MG{PS:CH2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C02-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C02-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C02-MG{PS:CL2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C02-MG{PS:CL1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C03-MG{PS:CL1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C03-MG{PS:CL2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C03-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C03-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C03-MG{PS:CH2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C03-MG{PS:CH1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C04-MG{PS:CH1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C04-MG{PS:CH2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C04-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C04-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C04-MG{PS:CL2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C04-MG{PS:CL1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C05-MG{PS:CL1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C05-MG{PS:CL2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C05-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C05-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C05-MG{PS:CH2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C05-MG{PS:CH1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C06-MG{PS:CH1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C06-MG{PS:CH2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C06-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C06-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C06-MG{PS:CL2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C06-MG{PS:CL1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C07-MG{PS:CL1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C07-MG{PS:CL2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C07-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C07-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C07-MG{PS:CH2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C07-MG{PS:CH1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C08-MG{PS:CH1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C08-MG{PS:CH2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C08-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C08-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C08-MG{PS:CL2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C08-MG{PS:CL1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C09-MG{PS:CL1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C09-MG{PS:CL2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C09-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C09-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C09-MG{PS:CH2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C09-MG{PS:CH1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C10-MG{PS:CH1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C10-MG{PS:CH2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C10-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C10-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C10-MG{PS:CL2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C10-MG{PS:CL1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C11-MG{PS:CL1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C11-MG{PS:CL2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C11-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C11-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C11-MG{PS:CH2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C11-MG{PS:CH1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C12-MG{PS:CH1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C12-MG{PS:CH2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C12-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C12-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C12-MG{PS:CL2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C12-MG{PS:CL1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C13-MG{PS:CL1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C13-MG{PS:CL2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_3_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C13-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C13-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C13-MG{PS:CH2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C13-MG{PS:CH1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C14-MG{PS:CH1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C14-MG{PS:CH2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C14-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C14-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C14-MG{PS:CL2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C14-MG{PS:CL1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C15-MG{PS:CL1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C15-MG{PS:CL2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C15-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C15-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C15-MG{PS:CH2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C15-MG{PS:CH1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C16-MG{PS:CH1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C16-MG{PS:CH2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C16-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C16-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_4_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C16-MG{PS:CL2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C16-MG{PS:CL1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C17-MG{PS:CL1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C17-MG{PS:CL2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C17-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C17-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C17-MG{PS:CH2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C17-MG{PS:CH1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C18-MG{PS:CH1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C18-MG{PS:CH2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C18-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C18-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C18-MG{PS:CL2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C18-MG{PS:CL1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C19-MG{PS:CL1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C19-MG{PS:CL2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C19-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C19-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C19-MG{PS:CH2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C19-MG{PS:CH1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_5_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C20-MG{PS:CH1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C20-MG{PS:CH2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C20-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C20-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C20-MG{PS:CL2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C20-MG{PS:CL1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C21-MG{PS:CL1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C21-MG{PS:CL2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C21-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C21-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C21-MG{PS:CH2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C21-MG{PS:CH1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C22-MG{PS:CH1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C22-MG{PS:CH2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C22-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C22-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C22-MG{PS:CL2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C22-MG{PS:CL1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C23-MG{PS:CL1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C23-MG{PS:CL2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_6_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C23-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C23-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C23-MG{PS:CH2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C23-MG{PS:CH1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C24-MG{PS:CH1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C24-MG{PS:CH2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C24-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C24-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C24-MG{PS:CL2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C24-MG{PS:CL1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C25-MG{PS:CL1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C25-MG{PS:CL2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C25-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C25-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C25-MG{PS:CH2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C25-MG{PS:CH1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C26-MG{PS:CH1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C26-MG{PS:CH2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C26-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C26-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_7_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C26-MG{PS:CL2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C26-MG{PS:CL1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C27-MG{PS:CL1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C27-MG{PS:CL2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C27-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C27-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C27-MG{PS:CH2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C27-MG{PS:CH1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C28-MG{PS:CH1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C28-MG{PS:CH2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C28-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C28-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C28-MG{PS:CL2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C28-MG{PS:CL1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C29-MG{PS:CL1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C29-MG{PS:CL2A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C29-MG{PS:CM1A}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C29-MG{PS:CM1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C29-MG{PS:CH2B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
+record(bo, "$(p)SR:APHLA:C29-MG{PS:CH1B}$(XSel)-SP") {
+   field(ONAM, "Used in aphla")
+   field(VAL, "1")
+   field(ZNAM, "Not used in aphla")
+   field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_8_asub_")
+}
+
