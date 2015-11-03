@@ -30,6 +30,9 @@ dbLoadRecords("db/bump.db","")
 dbLoadRecords("db/localbump.db", "ID=C03-HXN,XY=X,HV=H,C1=03,I1=7,C2=03,I2=8,S1=-2.543,S2=0,S3=2.679")
 dbLoadRecords("db/localbump.db", "ID=C03-HXN,XY=Y,HV=V,C1=03,I1=7,C2=03,I2=8,S1=-2.543,S2=0,S3=2.679")
 
+dbLoadRecords("db/localbump.db", "ID=C04-ISR,XY=X,HV=H,C1=03,I1=6,C2=04,I2=1,S1=-2.25,S2=0,S3=7.6")
+dbLoadRecords("db/localbump.db", "ID=C04-ISR,XY=Y,HV=V,C1=03,I1=6,C2=04,I2=1,S1=-2.25,S2=0,S3=7.6")
+
 dbLoadRecords("db/localbump.db", "ID=C05u-SRX,XY=X,HV=H,C1=05,I1=7,C2=05,I2=8,S1=-1.304,S2=0,S3=1.304")
 dbLoadRecords("db/localbump.db", "ID=C05u-SRX,XY=Y,HV=V,C1=05,I1=7,C2=05,I2=8,S1=-1.304,S2=0,S3=1.304")
 
