@@ -1,0 +1,19 @@
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}Index") {
+   field(FTVL, "SHORT")
+   field(NELM, "5")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}Index_") {
+   field(FTVL, "SHORT")
+   field(NELM, "5")
+}
+
+record(aSub, "$(p)SR:APHLA:SOFB{BPM}_shuffle_asub_") {
+   field(FTA, "SHORT")
+   field(FTVA, "SHORT")
+   field(INPA, "$(p)SR:APHLA:SOFB{BPM}Index")
+   field(NOA, "5")
+   field(NOVA, "5")
+   field(OUTA, "$(p)SR:APHLA:SOFB{BPM}Index_ PP")
+   field(SNAM, "shuffleWaveforms")
+}
