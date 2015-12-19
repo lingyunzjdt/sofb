@@ -1,3 +1,5 @@
+/* -*- mode: C; fill-column: 75; -*- */
+
 #include<string.h>
 #include<stdio.h>
 #include<stdlib.h>
@@ -14,7 +16,7 @@
 #include<math.h>
 #include<float.h>
 
-#define NDEBUG
+#define NDEBUG 1
 
 #define MERGE_INP(pval, dblk, val, sz)                  \
     if (dblk.type == CONSTANT) goto stats;              \
@@ -169,33 +171,113 @@ finish:
     return 0;
 }
 
-static long shuffleWaveforms(aSubRecord *pasub)
+static long compressIndices(aSubRecord *pasub)
 {
-    fprintf(stderr, "in shuffleWaveforms");
-    if (pasub->inpa.type == CONSTANT)  goto finish;
+    fprintf(stderr, "checking fta: %d\n", pasub->fta);
+    fprintf(stderr, "checking ftb: %d\n", pasub->ftb);
+    fprintf(stderr, "  %d != %d (epicsInt8T)\n", pasub->fta, epicsInt8T);
+    fprintf(stderr, "  %d != %d (epicsUInt8T)\n", pasub->fta, epicsUInt8T);
+    fprintf(stderr, "  %d != %d (epicsInt16T)\n", pasub->fta, epicsInt16T);
+    fprintf(stderr, "  %d != %d (epicsUInt16T)\n", pasub->fta, epicsUInt16T);
+    fprintf(stderr, "  %d != %d (epicsInt32T)\n", pasub->fta, epicsInt32T);
+    fprintf(stderr, "  %d != %d (epicsUInt32T)\n", pasub->fta, epicsUInt32T);
 
-    fprintf(stderr, "checking ftva: %d\n", pasub->ftva);
-    if (pasub->ftva != epicsInt8T && pasub->ftva != epicsUInt8T &&
-        pasub->ftva != epicsInt16T && pasub->ftva != epicsUInt16T &&
-        pasub->ftva != epicsInt32T && pasub->ftva != epicsUInt32T) {
-        fprintf(stderr, "  %d != %d (epicsInt8T)\n", pasub->ftva, epicsInt8T);
-        fprintf(stderr, "  %d != %d (epicsUInt8T)\n", pasub->ftva, epicsUInt8T);
-        goto finish;
-    }
-    int i = 0;
-    epicsInt16 *idx = (epicsInt16*) pasub->a;
-    epicsInt16 *oidx = (epicsInt16*) pasub->vala;
-    /* did not check if noa == nova */
-    /* if nova < noa, all idx[*] are from [0,nova) ? */
-    fprintf(stderr, "processing index data:\n");
+    epicsInt16 *idx = (epicsInt16*) pasub->a;   /* i -> a[i] (SHORT) */
+    epicsInt8  *sel = (epicsInt8*)  pasub->b;   /* enabled or not (CHAR)*/
+
+    /* if sel[i] == 0, a[i] is skipped, anyone after a[i] shift left */
+
+    epicsInt16 *dst = (epicsInt16*) pasub->vala;
+
+    /*
+    assert(pasub->fta  == epicsInt16T);
+    assert(pasub->ftva == epicsInt16T);
+    assert(pasub->ftvb == epicsInt8T);
+    assert(pasub->noa <= pasub->nova);
+    */
+    
+    int i = 0, j = 0;
     for (i = 0; i < pasub->noa; ++i) {
-        oidx[idx[i]] = i;
+        dst[idx[i]] = sel[i] ? i : -1;
+	fprintf(stderr, "save i = %d to %d\n", dst[idx[i]], idx[i]); 
+    }
+    i = j = 0;
+    epicsInt16 tmp;
+    while(j < pasub->noa) {
+        if (dst[j] >= 0) {
+            /* swap(dst[i++], dst[j]); */
+            tmp = dst[i];
+            dst[i] = dst[j];
+            dst[j] = tmp;
+            ++i;
+        }
+        ++j;
+    }
+    pasub->neva = i;
+    fprintf(stderr, "the new length: %d\n", pasub->neva);
+    return 0;
+}
+
+static long shuffleData(void *pdst, int n, short *idx, void *psrc, int dtype)
+{
+  fprintf(stderr, "%d, %d %d %d\n", n, idx[0], idx[1], idx[2]);
+  int i = 0;
+  if (dtype == epicsInt8T) {
+    fprintf(stderr, "shuffle int8 data\n");
+    epicsInt8 *src = (epicsInt8*) psrc;
+    epicsInt8 *dst = (epicsInt8*) pdst;
+    for (i = 0; i < n; ++i) {
+      dst[i] = src[idx[i]];
+    }
+  } else if (dtype == epicsFloat64T) {
+    fprintf(stderr, "shuffle float64 data\n");
+    epicsFloat64 *src = (epicsFloat64*) psrc;
+    epicsFloat64 *dst = (epicsFloat64*) pdst;
+    for (i = 0; i < n; ++i) {
+      fprintf(stderr, "  move %d -> %d\n", i, idx[i]);
+      dst[i] = src[idx[i]];
     }
     
-finish:
+  } else {
+    fprintf(stderr, "invalid data type: %d\n", dtype);
+  }
+
+  return 0;
+}
+
+static long shuffleWaveforms(aSubRecord *pasub)
+{
+    fprintf(stderr, "in shuffleWaveforms:\n");
+    if (pasub->inpa.type == CONSTANT)  goto finish;
+
+    fprintf(stderr, "checking ftva: %d\n", pasub->fta);
+    fprintf(stderr, "  %d != %d (epicsInt8T)\n", pasub->fta, epicsInt8T);
+    fprintf(stderr, "  %d != %d (epicsUInt8T)\n", pasub->fta, epicsUInt8T);
+    fprintf(stderr, "  %d != %d (epicsInt16T)\n", pasub->fta, epicsInt16T);
+    fprintf(stderr, "  %d != %d (epicsUInt16T)\n", pasub->fta, epicsUInt16T);
+    fprintf(stderr, "  %d != %d (epicsInt32T)\n", pasub->fta, epicsInt32T);
+    fprintf(stderr, "  %d != %d (epicsUInt32T)\n", pasub->fta, epicsUInt32T);
+    if (pasub->fta != epicsInt8T && pasub->fta != epicsUInt8T &&
+        pasub->fta != epicsInt16T && pasub->fta != epicsUInt16T &&
+        pasub->fta != epicsInt32T && pasub->fta != epicsUInt32T) {
+        goto finish;
+    }
+    fprintf(stderr, "checking ftvb: %d\n", pasub->ftvb);
+    int i = 0, j = 0;
+    epicsInt16 *idx = (epicsInt16*) pasub->a;   /* new position [0, noa) */
+    /* did not check if noa == nova */
+    fprintf(stderr, "processing index data: %d\n", pasub->noa);
+
+    if (pasub->outb.type != CONSTANT) {
+        shuffleData(pasub->valb, pasub->nea, idx, pasub->b, pasub->ftvb);
+	pasub->nevb = pasub->nea;
+    }
+
+ finish:
     return 0;
 }
 
 epicsRegisterFunction(mergePvs);
 epicsRegisterFunction(splitPvs);
 epicsRegisterFunction(shuffleWaveforms);
+epicsRegisterFunction(compressIndices);

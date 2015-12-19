@@ -3,17 +3,48 @@ record(waveform, "$(p)SR:APHLA:SOFB{BPM}Index") {
    field(NELM, "5")
 }
 
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}Sel") {
+   field(FTVL, "CHAR")
+   field(NELM, "5")
+}
+
 record(waveform, "$(p)SR:APHLA:SOFB{BPM}Index_") {
    field(FTVL, "SHORT")
    field(NELM, "5")
 }
 
-record(aSub, "$(p)SR:APHLA:SOFB{BPM}_shuffle_asub_") {
-   field(FTA, "SHORT")
-   field(FTVA, "SHORT")
+record(aSub, "$(p)SR:APHLA:SOFB{BPM}_index_asub_") {
    field(INPA, "$(p)SR:APHLA:SOFB{BPM}Index")
+   field(FTA, "SHORT")
    field(NOA, "5")
-   field(NOVA, "5")
+   field(INPB, "$(p)SR:APHLA:SOFB{BPM}Sel")
+   field(FTB, "CHAR")
+   field(NOB, "5")
    field(OUTA, "$(p)SR:APHLA:SOFB{BPM}Index_ PP")
+   field(FTVA, "SHORT")
+   field(NOVA, "5")
+   field(SNAM, "compressIndices")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}X_") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}X") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+
+record(aSub, "$(p)SR:APHLA:SOFB{BPM}_shuffle_asub_") {
+   field(INPA, "$(p)SR:APHLA:SOFB{BPM}Index_")
+   field(NOA, "5")
+   field(FTA, "SHORT")
+   field(FTB, "DOUBLE")
+   field(FTVB, "DOUBLE")
+   field(INPB, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(NOB, "5")
+   field(NOVB, "5")
+   field(OUTB, "$(p)SR:APHLA:SOFB{BPM}X PP")
    field(SNAM, "shuffleWaveforms")
 }
