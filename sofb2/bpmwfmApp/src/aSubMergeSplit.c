@@ -187,7 +187,7 @@ static long compressIndices(aSubRecord *pasub)
 
     /* if sel[i] == 0, a[i] is skipped, anyone after a[i] shift left */
 
-    epicsInt16 *dst = (epicsInt16*) pasub->vala;
+    epicsInt16 *dst = (epicsInt16*) pasub->vala; /* i <- a[i] */
 
     /*
     assert(pasub->fta  == epicsInt16T);

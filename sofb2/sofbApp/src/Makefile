@@ -19,7 +19,7 @@ sofb_DBD += base.dbd
 sofb_DBD += asSupport.dbd # autosave
 sofb_DBD += calcSupport.dbd
 sofb_DBD += caPutLog.dbd # put logging
-sofb_DBD += aSubMergeSplit.dbd orbitCor.dbd
+sofb_DBD += aSubMergeSplit.dbd orbitCor.dbd devIocStats.dbd
 #sofb_DBD += sofbLocalBump.dbd
 
 sofb_DIR += /usr/lib
@@ -40,7 +40,7 @@ sofb_SRCS_vxWorks += -nil-
 #sofb_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
 # Finally link to the EPICS Base libraries
-sofb_LIBS += autosave calc caPutLog
+sofb_LIBS += autosave calc caPutLog devIocStats
 sofb_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 #===========================
