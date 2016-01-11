@@ -14,6 +14,7 @@ cd /direct/phy_iocs/srSOFB2/sofb2
 dbLoadDatabase("dbd/sofb.dbd",0,0)
 sofb_registerRecordDeviceDriver(pdbbase)
 
+dbLoadRecords("db/iocAdminSoft.db", "IOC=OP-APHLA{IOC:SOFB2}")
 ## Load record instances
 #dbLoadRecords("db/sofb.db","user=lyyang")
 dbLoadRecords("db/bpm_rb0.db", "XY=X")
@@ -34,19 +35,19 @@ dbLoadRecords("db/bpm_ref.db", "WFM=UsrYref,PFX=Pos:UsrYoffset-SP")
 
 #dbLoadRecords("db/corx_sp_merge.db", "")
 #dbLoadRecords("db/cory_sp_merge.db", "")
-#dbLoadRecords("db/cor_sp_merge.db", "PLN=X,SPi=Sp1")
-#dbLoadRecords("db/cor_sp_merge.db", "PLN=Y,SPi=Sp2")
+dbLoadRecords("db/cor_sp_merge.db", "PLN=X,SPi=Sp1,p=")
+dbLoadRecords("db/cor_sp_merge.db", "PLN=Y,SPi=Sp2,p=")
 #dbLoadRecords("db/corx_rb_merge.db", "")
 #dbLoadRecords("db/cory_rb_merge.db", "")
-#dbLoadRecords("db/cor_rb_merge.db", "PLN=X,PSi=Ps1")
-#dbLoadRecords("db/cor_rb_merge.db", "PLN=Y,PSi=Ps2")
-#dbLoadRecords("db/cor_sel.db", "XSel=XSel,T=CHAR")
-#dbLoadRecords("db/cor_sel.db", "XSel=YSel,T=CHAR")
+dbLoadRecords("db/cor_rb_merge.db", "PLN=X,PSi=Ps1,p=")
+dbLoadRecords("db/cor_rb_merge.db", "PLN=Y,PSi=Ps2,p=")
+dbLoadRecords("db/cor_sel.db", "XSel=XSel,T=CHAR,p=")
+dbLoadRecords("db/cor_sel.db", "XSel=YSel,T=CHAR,p=")
 #dbLoadRecords("db/corx_sp_split.db", "")
 #dbLoadRecords("db/cory_sp_split.db", "")
 
-#dbLoadRecords("db/cor_sp_split.db", "PLN=X,SPi=Sp1")
-#dbLoadRecords("db/cor_sp_split.db", "PLN=Y,SPi=Sp2")
+dbLoadRecords("db/cor_sp_split.db", "PLN=X,SPi=Sp1,p=")
+dbLoadRecords("db/cor_sp_split.db", "PLN=Y,SPi=Sp2,p=")
 
 
 dbLoadRecords("db/orm.db", "")

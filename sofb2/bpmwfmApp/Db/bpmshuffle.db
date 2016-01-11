@@ -36,15 +36,253 @@ record(waveform, "$(p)SR:APHLA:SOFB{BPM}X") {
    field(NELM, "5")
 }
 
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XB") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XC") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XD") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XE") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XF") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XG") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XH") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XI") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XJ") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XK") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XL") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XM") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XN") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XO") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XP") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XQ") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XR") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XS") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XT") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XU") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "5")
+}
+
 record(aSub, "$(p)SR:APHLA:SOFB{BPM}_shuffle_asub_") {
    field(INPA, "$(p)SR:APHLA:SOFB{BPM}Index_")
    field(NOA, "5")
    field(FTA, "SHORT")
-   field(FTB, "DOUBLE")
-   field(FTVB, "DOUBLE")
+
    field(INPB, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTB, "DOUBLE")
    field(NOB, "5")
+
+   field(OUTB, "$(p)SR:APHLA:SOFB{BPM}XB PP")
+   field(FTVB, "DOUBLE")
    field(NOVB, "5")
-   field(OUTB, "$(p)SR:APHLA:SOFB{BPM}X PP")
+
+   field(INPC, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTC, "DOUBLE")
+   field(NOC, "5")
+
+   field(OUTC, "$(p)SR:APHLA:SOFB{BPM}XC PP")
+   field(FTVC, "DOUBLE")
+   field(NOVC, "5")
+
+   field(INPD, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTD, "DOUBLE")
+   field(NOD, "5")
+
+   field(OUTD, "$(p)SR:APHLA:SOFB{BPM}XD PP")
+   field(FTVD, "DOUBLE")
+   field(NOVD, "5")
+
+   field(INPE, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTE, "DOUBLE")
+   field(NOE, "5")
+
+   field(OUTE, "$(p)SR:APHLA:SOFB{BPM}XE PP")
+   field(FTVE, "DOUBLE")
+   field(NOVE, "5")
+
+   field(INPF, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTF, "DOUBLE")
+   field(NOF, "5")
+
+   field(OUTF, "$(p)SR:APHLA:SOFB{BPM}XF PP")
+   field(FTVF, "DOUBLE")
+   field(NOVF, "5")
+
+   field(INPG, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTG, "DOUBLE")
+   field(NOG, "5")
+
+   field(OUTG, "$(p)SR:APHLA:SOFB{BPM}XG PP")
+   field(FTVG, "DOUBLE")
+   field(NOVG, "5")
+
+   field(INPH, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTH, "DOUBLE")
+   field(NOH, "5")
+
+   field(OUTH, "$(p)SR:APHLA:SOFB{BPM}XH PP")
+   field(FTVH, "DOUBLE")
+   field(NOVH, "5")
+
+   field(INPI, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTI, "DOUBLE")
+   field(NOI, "5")
+
+   field(OUTI, "$(p)SR:APHLA:SOFB{BPM}XI PP")
+   field(FTVI, "DOUBLE")
+   field(NOVI, "5")
+
+   field(INPJ, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTJ, "DOUBLE")
+   field(NOJ, "5")
+
+   field(OUTJ, "$(p)SR:APHLA:SOFB{BPM}XJ PP")
+   field(FTVJ, "DOUBLE")
+   field(NOVJ, "5")
+
+   field(INPK, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTK, "DOUBLE")
+   field(NOK, "5")
+
+   field(OUTK, "$(p)SR:APHLA:SOFB{BPM}XK PP")
+   field(FTVK, "DOUBLE")
+   field(NOVK, "5")
+
+   field(INPL, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTL, "DOUBLE")
+   field(NOL, "5")
+
+   field(OUTL, "$(p)SR:APHLA:SOFB{BPM}XL PP")
+   field(FTVL, "DOUBLE")
+   field(NOVL, "5")
+
+   field(INPM, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTM, "DOUBLE")
+   field(NOM, "5")
+
+   field(OUTM, "$(p)SR:APHLA:SOFB{BPM}XM PP")
+   field(FTVM, "DOUBLE")
+   field(NOVM, "5")
+
+   field(INPN, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTN, "DOUBLE")
+   field(NON, "5")
+
+   field(OUTN, "$(p)SR:APHLA:SOFB{BPM}XN PP")
+   field(FTVN, "DOUBLE")
+   field(NOVN, "5")
+
+   field(INPO, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTO, "DOUBLE")
+   field(NOO, "5")
+
+   field(OUTO, "$(p)SR:APHLA:SOFB{BPM}XO PP")
+   field(FTVO, "DOUBLE")
+   field(NOVO, "5")
+
+   field(INPP, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTP, "DOUBLE")
+   field(NOP, "5")
+
+   field(OUTP, "$(p)SR:APHLA:SOFB{BPM}XP PP")
+   field(FTVP, "DOUBLE")
+   field(NOVP, "5")
+
+   field(INPQ, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTQ, "DOUBLE")
+   field(NOQ, "5")
+
+   field(OUTQ, "$(p)SR:APHLA:SOFB{BPM}XQ PP")
+   field(FTVQ, "DOUBLE")
+   field(NOVQ, "5")
+
+   field(INPR, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTR, "DOUBLE")
+   field(NOR, "5")
+
+   field(OUTR, "$(p)SR:APHLA:SOFB{BPM}XR PP")
+   field(FTVR, "DOUBLE")
+   field(NOVR, "5")
+
+   field(INPS, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTS, "DOUBLE")
+   field(NOS, "5")
+
+   field(OUTS, "$(p)SR:APHLA:SOFB{BPM}XS PP")
+   field(FTVS, "DOUBLE")
+   field(NOVS, "5")
+
+   field(INPT, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTT, "DOUBLE")
+   field(NOT, "5")
+
+   field(OUTT, "$(p)SR:APHLA:SOFB{BPM}XT PP")
+   field(FTVT, "DOUBLE")
+   field(NOVT, "5")
+
+   field(INPU, "$(p)SR:APHLA:SOFB{BPM}X_")
+   field(FTU, "DOUBLE")
+   field(NOU, "5")
+
+   field(OUTU, "$(p)SR:APHLA:SOFB{BPM}XU PP")
+   field(FTVU, "DOUBLE")
+   field(NOVU, "5")
+
    field(SNAM, "shuffleWaveforms")
 }

@@ -173,6 +173,7 @@ finish:
 
 static long compressIndices(aSubRecord *pasub)
 {
+    /*
     fprintf(stderr, "checking fta: %d\n", pasub->fta);
     fprintf(stderr, "checking ftb: %d\n", pasub->ftb);
     fprintf(stderr, "  %d != %d (epicsInt8T)\n", pasub->fta, epicsInt8T);
@@ -181,13 +182,15 @@ static long compressIndices(aSubRecord *pasub)
     fprintf(stderr, "  %d != %d (epicsUInt16T)\n", pasub->fta, epicsUInt16T);
     fprintf(stderr, "  %d != %d (epicsInt32T)\n", pasub->fta, epicsInt32T);
     fprintf(stderr, "  %d != %d (epicsUInt32T)\n", pasub->fta, epicsUInt32T);
+    */
 
-    epicsInt16 *idx = (epicsInt16*) pasub->a;   /* i -> a[i] (SHORT) */
+    epicsInt16 *idx = (epicsInt16*) pasub->a;   /* i <- a[i] (SHORT) */
     epicsInt8  *sel = (epicsInt8*)  pasub->b;   /* enabled or not (CHAR)*/
+    int NMAX = pasub->nob;
 
     /* if sel[i] == 0, a[i] is skipped, anyone after a[i] shift left */
 
-    epicsInt16 *dst = (epicsInt16*) pasub->vala; /* i <- a[i] */
+    epicsInt16 *dst = (epicsInt16*) pasub->vala; /* compressed i <- a[i] */
 
     /*
     assert(pasub->fta  == epicsInt16T);
@@ -195,46 +198,34 @@ static long compressIndices(aSubRecord *pasub)
     assert(pasub->ftvb == epicsInt8T);
     assert(pasub->noa <= pasub->nova);
     */
-    
+
     int i = 0, j = 0;
     for (i = 0; i < pasub->noa; ++i) {
-        dst[idx[i]] = sel[i] ? i : -1;
-	fprintf(stderr, "save i = %d to %d\n", dst[idx[i]], idx[i]); 
+        if (idx[i] < NMAX && sel[idx[i]]) dst[j++] = idx[i];
+	/* fprintf(stderr, "save i = %d to %d\n", dst[idx[i]], idx[i]);  */
     }
-    i = j = 0;
-    epicsInt16 tmp;
-    while(j < pasub->noa) {
-        if (dst[j] >= 0) {
-            /* swap(dst[i++], dst[j]); */
-            tmp = dst[i];
-            dst[i] = dst[j];
-            dst[j] = tmp;
-            ++i;
-        }
-        ++j;
-    }
-    pasub->neva = i;
-    fprintf(stderr, "the new length: %d\n", pasub->neva);
+    pasub->neva = j;
+    /* fprintf(stderr, "the new length: %d\n", pasub->neva); */
     return 0;
 }
 
 static long shuffleData(void *pdst, int n, short *idx, void *psrc, int dtype)
 {
-  fprintf(stderr, "%d, %d %d %d\n", n, idx[0], idx[1], idx[2]);
+  /* fprintf(stderr, "%d, %d %d %d\n", n, idx[0], idx[1], idx[2]); */
   int i = 0;
   if (dtype == epicsInt8T) {
-    fprintf(stderr, "shuffle int8 data\n");
+    /* fprintf(stderr, "shuffle int8 data\n"); */
     epicsInt8 *src = (epicsInt8*) psrc;
     epicsInt8 *dst = (epicsInt8*) pdst;
     for (i = 0; i < n; ++i) {
       dst[i] = src[idx[i]];
     }
   } else if (dtype == epicsFloat64T) {
-    fprintf(stderr, "shuffle float64 data\n");
+    /* fprintf(stderr, "shuffle float64 data\n"); */
     epicsFloat64 *src = (epicsFloat64*) psrc;
     epicsFloat64 *dst = (epicsFloat64*) pdst;
     for (i = 0; i < n; ++i) {
-      fprintf(stderr, "  move %d -> %d\n", i, idx[i]);
+      /* fprintf(stderr, "  move %d -> %d\n", i, idx[i]); */
       dst[i] = src[idx[i]];
     }
     
@@ -245,11 +236,19 @@ static long shuffleData(void *pdst, int n, short *idx, void *psrc, int dtype)
   return 0;
 }
 
+
+#define SHUFFLE_WFM(INP, INPOUT, INPVAL, INPFTV, INPNEV) \
+    if (INPOUT.type != CONSTANT) { \
+        shuffleData(INPVAL, pasub->nea, idx, INP, INPFTV); \
+        INPNEV = pasub->nea; \
+    }
+
 static long shuffleWaveforms(aSubRecord *pasub)
 {
-    fprintf(stderr, "in shuffleWaveforms:\n");
+    /* fprintf(stderr, "in shuffleWaveforms:\n"); */
     if (pasub->inpa.type == CONSTANT)  goto finish;
 
+    /*
     fprintf(stderr, "checking ftva: %d\n", pasub->fta);
     fprintf(stderr, "  %d != %d (epicsInt8T)\n", pasub->fta, epicsInt8T);
     fprintf(stderr, "  %d != %d (epicsUInt8T)\n", pasub->fta, epicsUInt8T);
@@ -257,21 +256,44 @@ static long shuffleWaveforms(aSubRecord *pasub)
     fprintf(stderr, "  %d != %d (epicsUInt16T)\n", pasub->fta, epicsUInt16T);
     fprintf(stderr, "  %d != %d (epicsInt32T)\n", pasub->fta, epicsInt32T);
     fprintf(stderr, "  %d != %d (epicsUInt32T)\n", pasub->fta, epicsUInt32T);
+    */
     if (pasub->fta != epicsInt8T && pasub->fta != epicsUInt8T &&
         pasub->fta != epicsInt16T && pasub->fta != epicsUInt16T &&
         pasub->fta != epicsInt32T && pasub->fta != epicsUInt32T) {
         goto finish;
     }
-    fprintf(stderr, "checking ftvb: %d\n", pasub->ftvb);
+    /* fprintf(stderr, "checking ftvb: %d\n", pasub->ftvb); */
     int i = 0, j = 0;
     epicsInt16 *idx = (epicsInt16*) pasub->a;   /* new position [0, noa) */
     /* did not check if noa == nova */
-    fprintf(stderr, "processing index data: %d\n", pasub->noa);
+    /* fprintf(stderr, "processing index data: %d\n", pasub->noa); */
 
+/*
     if (pasub->outb.type != CONSTANT) {
         shuffleData(pasub->valb, pasub->nea, idx, pasub->b, pasub->ftvb);
 	pasub->nevb = pasub->nea;
     }
+*/
+    SHUFFLE_WFM(pasub->b, pasub->outb, pasub->valb, pasub->ftvb, pasub->nevb);
+    SHUFFLE_WFM(pasub->c, pasub->outc, pasub->valc, pasub->ftvc, pasub->nevc);
+    SHUFFLE_WFM(pasub->d, pasub->outd, pasub->vald, pasub->ftvd, pasub->nevd);
+    SHUFFLE_WFM(pasub->e, pasub->oute, pasub->vale, pasub->ftve, pasub->neve);
+    SHUFFLE_WFM(pasub->f, pasub->outf, pasub->valf, pasub->ftvf, pasub->nevf);
+    SHUFFLE_WFM(pasub->g, pasub->outg, pasub->valg, pasub->ftvg, pasub->nevg);
+    SHUFFLE_WFM(pasub->h, pasub->outh, pasub->valh, pasub->ftvh, pasub->nevh);
+    SHUFFLE_WFM(pasub->i, pasub->outi, pasub->vali, pasub->ftvi, pasub->nevi);
+    SHUFFLE_WFM(pasub->j, pasub->outj, pasub->valj, pasub->ftvj, pasub->nevj);
+    SHUFFLE_WFM(pasub->k, pasub->outk, pasub->valk, pasub->ftvk, pasub->nevk);
+    SHUFFLE_WFM(pasub->l, pasub->outl, pasub->vall, pasub->ftvl, pasub->nevl);
+    SHUFFLE_WFM(pasub->m, pasub->outm, pasub->valm, pasub->ftvm, pasub->nevm);
+    SHUFFLE_WFM(pasub->n, pasub->outn, pasub->valn, pasub->ftvn, pasub->nevn);
+    SHUFFLE_WFM(pasub->o, pasub->outo, pasub->valo, pasub->ftvo, pasub->nevo);
+    SHUFFLE_WFM(pasub->p, pasub->outp, pasub->valp, pasub->ftvp, pasub->nevp);
+    SHUFFLE_WFM(pasub->q, pasub->outq, pasub->valq, pasub->ftvq, pasub->nevq);
+    SHUFFLE_WFM(pasub->r, pasub->outr, pasub->valr, pasub->ftvr, pasub->nevr);
+    SHUFFLE_WFM(pasub->s, pasub->outs, pasub->vals, pasub->ftvs, pasub->nevs);
+    SHUFFLE_WFM(pasub->t, pasub->outt, pasub->valt, pasub->ftvt, pasub->nevt);
+    SHUFFLE_WFM(pasub->u, pasub->outu, pasub->valu, pasub->ftvu, pasub->nevu);
 
  finish:
     return 0;

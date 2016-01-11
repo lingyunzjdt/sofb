@@ -21,6 +21,9 @@ DB += orm.db
 
 DB += localbump.db
 
+# can not be after RULES
+DB_INSTALLS += $(EPICS_BASE)/db/iocAdminSoft.db
+
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_template = <templatename>
