@@ -17,26 +17,6 @@ record(aSub, "$(p)SR:APHLA:SOFB{COR}Sel-I_asub_") {
    field(OUTA, "$(p)SR:APHLA:SOFB{COR}Sel-I PP")
    field(SNAM, "mergePvs")
    #field(FLNK, "$(p)SR:APHLA:SOFB{ORM}svd_asub_")
-}
-
-record(bo, "$(p)SR:APHLA:SOFB{COR}Sel-I:status") {
-   field(ONAM, "Running")
-   field(VAL, "1")
-   field(ZNAM, "Idle")
-}
-
-record(fanout, "$(p)SR:APHLA:SOFB{COR}Sel-I:trig") {
-   field(LNK1, "$(p)SR:APHLA:SOFB{COR}XSel-I:trig")
-   field(LNK2, "$(p)SR:APHLA:SOFB{COR}YSel-I:trig")
-   field(LNK3, "$(p)SR:APHLA:SOFB{COR}Sel-I_asub_")
-}
-
-record(calcout, "$(p)SR:APHLA:SOFB{COR}Sel-I:timer_") {
-   field(CALC, "A>0?1:0")
-   field(DOPT, "Use CALC")
-   field(INPA, "$(p)SR:APHLA:SOFB{COR}Sel-I:status")
-   field(OOPT, "When Non-zero")
-   field(OUT, "$(p)SR:APHLA:SOFB{COR}Sel-I:trig PP")
    field(SCAN, "1 second")
 }
 

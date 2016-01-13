@@ -705,14 +705,15 @@ record(aSub, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_") {
    field(NOVA, "20")
    field(OUTA, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_wfm_ PP")
    field(SNAM, "mergePvs")
+   field(SCAN, "1 second")
 }
 
-record(bo, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I:trig") {
-    field(ONAM, "Running")
-    field(ZNAM, "Idle")
-    field(VAL, "0")
-    field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_ PP")
-}
+#record(bo, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I:trig") {
+#    field(ONAM, "Running")
+#    field(ZNAM, "Idle")
+#    field(VAL, "0")
+#    field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_ PP")
+#}
 
 #record(bo, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I:status") {
 #   field(ONAM, "Running")
