@@ -3,9 +3,10 @@
 ## You may have to change bpmwfm to something else
 ## everywhere it appears in this file
 
+epicsEnvSet("ENGINEER","lyyang x4692")
+
 #< envPaths
 
-cd ${TOP}
 cd /epics/iocs/srSOFB2/sofb2
 
 ## Register all support components
@@ -15,8 +16,8 @@ bpmwfm_registerRecordDeviceDriver(pdbbase)
 dbLoadRecords("db/iocAdminSoft.db", "IOC=OP-APHLA{IOC:bpmwfm}")
 
 ## Load record instances
-dbLoadRecords("db/bpmwfm.db","p=l:,XY=X,SIGNAL=wUsrOff-Calc")
-dbLoadRecords("db/bpmshuffle.db","p=l:,XY=X,SIGNAL=wUsrOff-Calc")
+dbLoadRecords("db/bpmwfm.db","p=l:,SIGNAL=Pos:XwUsrOff-Calc")
+dbLoadRecords("db/bpmshuffle.db","p=l:,SIGNAL=Pos:XwUsrOff-Calc")
 
 iocInit()
 

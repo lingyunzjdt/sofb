@@ -30,8 +30,10 @@ class TestCorSel(unittest.TestCase):
         x1 = [1 - x for x in x0]
         caput(pvjl, x1)
         time.sleep(1.5)
+        x2 = caget(pvjl)
         x2wfm = caget(P + "SR:APHLA:SOFB{COR}XSel-I")
         for i,j in enumerate(jl):
-            self.assertEqual(x1[i], x2wfm[j])
+            self.assertNotEqual(x2[i], x0[i])
+            self.assertEqual(x2[i], x2wfm[j])
         caput(pvjl, x0)
 

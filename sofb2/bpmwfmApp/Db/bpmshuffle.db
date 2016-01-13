@@ -1,16 +1,6 @@
 record(waveform, "$(p)SR:APHLA:SOFB{BPM}Index") {
    field(FTVL, "SHORT")
-   field(NELM, "5")
-}
-
-record(waveform, "$(p)SR:APHLA:SOFB{BPM}Sel") {
-   field(FTVL, "CHAR")
-   field(NELM, "5")
-}
-
-record(waveform, "$(p)SR:APHLA:SOFB{BPM}Index_") {
-   field(FTVL, "SHORT")
-   field(NELM, "5")
+   field(NELM, "198")
 }
 
 record(aSub, "$(p)SR:APHLA:SOFB{BPM}_index_asub_") {
