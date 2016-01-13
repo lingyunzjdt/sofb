@@ -11,9 +11,10 @@ include $(TOP)/configure/CONFIG
 # Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
 #DB += xxx.db
-DB += cor_sp_merge.db cor_rb_merge.db
-DB += cor_sel.db
-DB += cor_sp_split.db
+DB += cor_wfm_merge.db
+#DB += cor_sp_merge.db cor_rb_merge.db
+#DB += cor_sel.db
+#DB += cor_sp_split.db
 DB += cor.db
 
 ifneq ($(DEVIOCSTATS),)

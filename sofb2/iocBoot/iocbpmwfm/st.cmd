@@ -7,7 +7,8 @@ epicsEnvSet("ENGINEER","lyyang x4692")
 
 #< envPaths
 
-cd /epics/iocs/srSOFB2/sofb2
+#cd /epics/iocs/srSOFB2/sofb2
+cd /home/lyyang/sofb/sofb2
 
 ## Register all support components
 dbLoadDatabase("dbd/bpmwfm.dbd",0,0)

@@ -6,6 +6,29 @@ record(waveform, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I") {
    # field(FLNK, "$(p)SR:APHLA:SOFB{ORM}svd_asub_")
 }
 
+record(ao, "$(p)SR:APHLA:SOFB{COR}$(XSel)Sum-I") {
+   field(VAL, "0.0")
+}
+record(ao, "$(p)SR:APHLA:SOFB{COR}$(XSel)Avg-I") {
+   field(VAL, "0.0")
+}
+record(ao, "$(p)SR:APHLA:SOFB{COR}$(XSel)Rms-I") {
+   field(VAL, "0.0")
+}
+record(ao, "$(p)SR:APHLA:SOFB{COR}$(XSel)Min-I") {
+   field(VAL, "0.0")
+}
+record(ao, "$(p)SR:APHLA:SOFB{COR}$(XSel)Max-I") {
+   field(VAL, "0.0")
+}
+record(ao, "$(p)SR:APHLA:SOFB{COR}$(XSel)Std-I") {
+   field(VAL, "0.0")
+}
+record(ao, "$(p)SR:APHLA:SOFB{COR}$(XSel)Var-I") {
+   field(VAL, "0.0")
+}
+
+
 record(aSub, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_2_0_asub_") {
    field(FTA, "$(T)")
    field(FTB, "$(T)")
@@ -17,6 +40,13 @@ record(aSub, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_2_0_asub_") {
    field(FTH, "$(T)")
    field(FTI, "$(T)")
    field(FTVA, "$(T)")
+   field(FTVB, "DOUBLE")
+   field(FTVC, "DOUBLE")
+   field(FTVD, "DOUBLE")
+   field(FTVE, "DOUBLE")
+   field(FTVF, "DOUBLE")
+   field(FTVG, "DOUBLE")
+   field(FTVH, "DOUBLE")
    field(INPA, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_wfm_")
    field(INPB, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_1_wfm_")
    field(INPC, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_2_wfm_")
@@ -37,6 +67,13 @@ record(aSub, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_2_0_asub_") {
    field(NOI, "20")
    field(NOVA, "180")
    field(OUTA, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I PP")
+   field(OUTB, "$(p)SR:APHLA:SOFB{COR}$(XSel)Sum-I PP")
+   field(OUTC, "$(p)SR:APHLA:SOFB{COR}$(XSel)Avg-I PP")
+   field(OUTD, "$(p)SR:APHLA:SOFB{COR}$(XSel)Rms-I PP")
+   field(OUTE, "$(p)SR:APHLA:SOFB{COR}$(XSel)Min-I PP")
+   field(OUTF, "$(p)SR:APHLA:SOFB{COR}$(XSel)Max-I PP")
+   field(OUTG, "$(p)SR:APHLA:SOFB{COR}$(XSel)Std-I PP")
+   field(OUTH, "$(p)SR:APHLA:SOFB{COR}$(XSel)Var-I PP")
    field(SNAM, "mergePvs")
    #field(FLNK, "$(p)SR:APHLA:SOFB{COR}Sel-I_asub_")
 }
@@ -707,6 +744,7 @@ record(aSub, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I_1_0_asub_") {
    field(SNAM, "mergePvs")
    field(SCAN, "1 second")
 }
+
 
 #record(bo, "$(p)SR:APHLA:SOFB{COR}$(XSel)-I:trig") {
 #    field(ONAM, "Running")

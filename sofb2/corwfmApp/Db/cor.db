@@ -20,3 +20,31 @@ record(aSub, "$(p)SR:APHLA:SOFB{COR}Sel-I_asub_") {
    field(SCAN, "1 second")
 }
 
+record(acalcout, "$(p)SR:APHLA:SOFB{COR}XSel-Sum-I") {
+   field(INAA, "$(p)SR:APHLA:SOFB{COR}XSel-I")
+   field(NELM, "180")
+   field(CALC, "SUM(AA)")
+   field(SCAN, "1 second")
+   field(OOPT, "Every Time")
+}
+
+record(acalcout, "$(p)SR:APHLA:SOFB{COR}YSel-Sum-I") {
+   field(INAA, "$(p)SR:APHLA:SOFB{COR}Sel-I")
+   field(NELM, "180")
+   field(CALC, "SUM(AA)")
+   field(SCAN, "1 second")
+   field(OOPT, "Every Time")
+}
+
+record(acalcout, "$(p)SR:APHLA:SOFB{COR}Sel-Sum-I") {
+   field(INAA, "$(p)SR:APHLA:SOFB{COR}Sel-I")
+   field(NELM, "360")
+   #field(OCAL, "SUM(AA)")
+   field(CALC, "SUM(AA)")
+   #field(DOPT, "Use OCAL")
+   #field(OUT,  "$(p)SR:APHLA:SOFB{COR}Sel-Sum-I PP")
+   #field(OUT,  "SR:APHLA:SOFB{ORM}test_ PP")
+   field(SCAN, "1 second")
+   field(OOPT, "Every Time")
+}
+

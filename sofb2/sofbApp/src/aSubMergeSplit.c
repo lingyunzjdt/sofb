@@ -87,6 +87,10 @@ static long mergePvs(aSubRecord *pasub)
     MERGE_INP(pval, pasub->inpu, pasub->u, pasub->nou*szi);
 
 stats:
+    /*
+    fprintf(stderr, "ftva: %d (%d %d %d %d)\n", pasub->ftva,
+             epicsInt8T, epicsInt16T, epicsFloat32T, epicsFloat64T);
+    */
     if (pasub->ftva == epicsFloat64T) {
         double *pdval = (double*) pasub->vala;
         for (i = 0; i < pasub->nova; ++i) {
@@ -103,28 +107,41 @@ stats:
             if (pfval[i] < xmin) xmin = pfval[i];
             if (pfval[i] > xmax) xmax = pfval[i];
         }
+    } else if (pasub->ftva == epicsUInt8T) {
+        epicsUInt8 *pfval = (epicsUInt8*) pasub->vala;
+        for (i = 0; i < pasub->nova; ++i) {
+            s1 += pfval[i];
+            s2 += pfval[i] * pfval[i];
+            if (pfval[i] < xmin) xmin = pfval[i];
+            if (pfval[i] > xmax) xmax = pfval[i];
+        }
     } else {
+        fprintf(stderr, "Unknow ftva: %d (%d %d %d %d)\n", pasub->ftva,
+                epicsUInt8T, epicsInt8T,
+                epicsUInt16T, epicsInt16T);
         goto finish;
     }
-        
+    double ss = s1;
     s2 /= pasub->nova;
     s1 /= pasub->nova;
     xrms = sqrt(s2);
     xvar = s2 - s1 * s1;
     xstd = sqrt(xvar);
-    /* avg, rms, min, max, std, var */
+    /* sum, avg, rms, min, max, std, var */
     if (pasub->outb.type == CONSTANT) goto finish;
-    memcpy(pasub->valb, &s1, sizeof(double));
+    *((double*)pasub->valb) = ss;
     if (pasub->outc.type == CONSTANT) goto finish;
-    memcpy(pasub->valc, &xrms, sizeof(double));
+    memcpy(pasub->valc, &s1, sizeof(double));
     if (pasub->outd.type == CONSTANT) goto finish;
-    memcpy(pasub->vald, &xmin, sizeof(double));
+    memcpy(pasub->vald, &xrms, sizeof(double));
     if (pasub->oute.type == CONSTANT) goto finish;
-    memcpy(pasub->vale, &xmax, sizeof(double));
+    memcpy(pasub->vale, &xmin, sizeof(double));
     if (pasub->outf.type == CONSTANT) goto finish;
-    memcpy(pasub->valf, &xstd, sizeof(double));
+    memcpy(pasub->valf, &xmax, sizeof(double));
     if (pasub->outg.type == CONSTANT) goto finish;
-    memcpy(pasub->valg, &xvar, sizeof(double));
+    memcpy(pasub->valg, &xstd, sizeof(double));
+    if (pasub->outh.type == CONSTANT) goto finish;
+    memcpy(pasub->valh, &xvar, sizeof(double));
 
 finish:
     return 0;
