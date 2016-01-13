@@ -12,6 +12,16 @@ include $(TOP)/configure/CONFIG
 # databases, templates, substitutions like this
 DB += bpmwfm.db bpmshuffle.db
 
+#ifneq ($(DEVIOCSTATS),)
+## see /usr/lib/epics/db/iocAdminSoft.db
+#DB_INSTALLS += $(DEVIOCSTATS)/db/iocAdminSoft.db
+#endif
+
+#ifneq ($(AUTOSAVE),)
+#DB_INSTALLS += $(AUTOSAVE)/db/save_restoreStatus.db
+#endif
+
+
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_template = <templatename>

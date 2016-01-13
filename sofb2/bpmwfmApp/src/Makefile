@@ -20,6 +20,7 @@ bpmwfm_DBD += asSupport.dbd
 bpmwfm_DBD += calcSupport.dbd
 bpmwfm_DBD += caPutLog.dbd # put logging
 bpmwfm_DBD += aSubMergeSplit.dbd
+bpmwfm_DBD += iocAdmin.dbd
 
 # Add all the support libraries needed by this IOC
 #bpmwfm_LIBS += xxx
@@ -37,7 +38,7 @@ bpmwfm_SRCS_vxWorks += -nil-
 #bpmwfm_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
 # Finally link to the EPICS Base libraries
-bpmwfm_LIBS += autosave calc caPutLog
+bpmwfm_LIBS += autosave calc caPutLog devIocStats
 bpmwfm_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 #===========================

@@ -15,7 +15,7 @@ DB += bpm_rb0.db bpm_rb.db bpm_sel.db bpm_weight.db bpm_ref.db
 # correctors
 #DB += corx_sp_merge.db cory_sp_merge.db
 DB += cor_sp_merge.db cor_rb_merge.db
-DB += cor_sel.db
+#DB += cor_sel.db
 DB += cor_sp_split.db
 DB += orm.db
 

@@ -14,7 +14,7 @@
 #include<math.h>
 #include<float.h>
 
-#define NDEBUG
+/* #define NDEBUG */
 
 #define MERGE_INP(pval, dblk, val, sz)                  \
     if (dblk.type == CONSTANT) goto stats;              \
@@ -38,21 +38,33 @@ static long mergePvs(aSubRecord *pasub)
     pval += pasub->noa;
     */
     if (pasub->inpa.type == CONSTANT)  goto finish;
+    
     /* kind of hard coded */
+    /*
     switch(pasub->ftva) {
-    case epicsInt8T:
-    case epicsUInt8T: szi = sizeof(epicsInt8); break;
+    case epicsInt8T: szi = sizeof(epicsInt8); break;
+    case epicsUInt8T: szi = sizeof(epicsUInt8); break;
+    case epicsInt16T: szi = sizeof(epicsInt16); break;
+    case epicsUInt16T: szi = sizeof(epicsUInt16); break;
+    case epicsEnum16T: szi = sizeof(epicsEnum16); break;
     case epicsFloat64T: szi = sizeof(epicsFloat64); break;
     case epicsFloat32T: szi = sizeof(epicsFloat32); break;
     default:
-        fprintf(stderr, "not supported: %d\n", pasub->ftva);
+        fprintf(stderr, "not supported: %d, size=%d\n", pasub->ftva, dbValueSize(pasub->ftva));
     }
-        
+    */
+    /* fprintf(stderr, "INPA: %s (%d)\n", pasub->inpa.value.pv_link.pvname, pasub->inpa.type); */
+    /* fprintf(stderr, "INPA: %s (%d)\n", pasub->inpa.value.pv_link.precord->name, pasub->inpa.type); */
+
+    /* fprintf(stderr, "INPB: %s (%d)\n", pasub->inpb.value.pv_link.pvname, pasub->inpb.type); */
+
+    /* fprintf(stderr, "not supported: %d, size=%d\n", pasub->ftva, dbValueSize(pasub->ftva)); */
+    assert(dbValueSize(pasub->ftva) == dbValueSize(pasub->fta));
+    szi = dbValueSize(pasub->ftva);
+    /* fprintf(stderr, "OUTA: %s\n", pasub->outa.value.pv_link.pvname); */
+    /* fprintf(stderr, "OUTB: %s\n", pasub->outb.value.pv_link.pvname); */
+
     MERGE_INP(pval, pasub->inpa, pasub->a, pasub->noa*szi);
-    /* #ifdef epicsTypesGLOBAL */
-    /* fprintf(stderr, "FTVA: %d, %d, %s\n", pasub->ftva, epicsFloat64T, epicsTypeCodeNames[pasub->ftva]); */
-    /* fprintf(stderr, "FTVA: %d\n", epicsTypeSizes[0]); */
-    /* #endif */
     MERGE_INP(pval, pasub->inpb, pasub->b, pasub->nob*szi);
     MERGE_INP(pval, pasub->inpc, pasub->c, pasub->noc*szi);
     MERGE_INP(pval, pasub->inpd, pasub->d, pasub->nod*szi);
