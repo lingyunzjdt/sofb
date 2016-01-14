@@ -25,9 +25,13 @@ corwfm_DBD += iocAdmin.dbd
 # Add all the support libraries needed by this IOC
 #corwfm_LIBS += xxx
 
+# add aSub from lib
+SRC_DIRS += $(TOP)/src
+corwfm_SRCS += aSubLib.c
+
 # corwfm_registerRecordDeviceDriver.cpp derives from corwfm.dbd
 corwfm_SRCS += corwfm_registerRecordDeviceDriver.cpp
-corwfm_SRCS += aSubMergeSplit.c
+##corwfm_SRCS += aSubMergeSplit.c
 
 # Build the main IOC entry point on workstation OSs.
 corwfm_SRCS_DEFAULT += corwfmMain.cpp

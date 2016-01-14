@@ -26,9 +26,12 @@ bpmwfm_DBD += iocAdmin.dbd
 #bpmwfm_LIBS += xxx
 bpmwfm_SYS_LIBS += gsl gslcblas
 
+SRC_DIRS += $(TOP)/src
+bpmwfm_SRCS += aSubLib.c
+
 # bpmwfm_registerRecordDeviceDriver.cpp derives from bpmwfm.dbd
 bpmwfm_SRCS += bpmwfm_registerRecordDeviceDriver.cpp
-bpmwfm_SRCS += aSubMergeSplit.c
+#bpmwfm_SRCS += aSubMergeSplit.c
 
 # Build the main IOC entry point on workstation OSs.
 bpmwfm_SRCS_DEFAULT += bpmwfmMain.cpp

@@ -1,6 +1,6 @@
 epicsEnvSet("ARCH","linux-x86_64")
 epicsEnvSet("IOC","iocbump")
-epicsEnvSet("TOP","/direct/phy_iocs/srSOFB2/sofb2")
+epicsEnvSet("TOP","/home/lyyang/sofb/sofb2")
 epicsEnvSet("EPICS_BASE","/usr/lib/epics")
 epicsEnvSet("DEVIOCSTATS","/usr/lib/epics")
 epicsEnvSet("AUTOSAVE","/usr/lib/epics")
