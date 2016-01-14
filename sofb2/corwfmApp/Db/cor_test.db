@@ -1,0 +1,540 @@
+record(ao, "$(pt)SR:C30-MG{PS:CH1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C30-MG{PS:CH2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C30-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C30-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C30-MG{PS:CL2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C30-MG{PS:CL1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C01-MG{PS:CL1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C01-MG{PS:CL2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C01-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C01-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C01-MG{PS:CH2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C01-MG{PS:CH1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C02-MG{PS:CH1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C02-MG{PS:CH2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C02-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C02-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C02-MG{PS:CL2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C02-MG{PS:CL1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C03-MG{PS:CL1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C03-MG{PS:CL2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C03-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C03-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C03-MG{PS:CH2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C03-MG{PS:CH1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C04-MG{PS:CH1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C04-MG{PS:CH2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C04-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C04-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C04-MG{PS:CL2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C04-MG{PS:CL1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C05-MG{PS:CL1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C05-MG{PS:CL2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C05-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C05-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C05-MG{PS:CH2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C05-MG{PS:CH1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C06-MG{PS:CH1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C06-MG{PS:CH2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C06-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C06-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C06-MG{PS:CL2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C06-MG{PS:CL1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C07-MG{PS:CL1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C07-MG{PS:CL2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C07-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C07-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C07-MG{PS:CH2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C07-MG{PS:CH1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C08-MG{PS:CH1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C08-MG{PS:CH2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C08-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C08-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C08-MG{PS:CL2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C08-MG{PS:CL1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C09-MG{PS:CL1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C09-MG{PS:CL2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C09-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C09-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C09-MG{PS:CH2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C09-MG{PS:CH1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C10-MG{PS:CH1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C10-MG{PS:CH2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C10-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C10-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C10-MG{PS:CL2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C10-MG{PS:CL1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C11-MG{PS:CL1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C11-MG{PS:CL2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C11-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C11-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C11-MG{PS:CH2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C11-MG{PS:CH1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C12-MG{PS:CH1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C12-MG{PS:CH2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C12-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C12-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C12-MG{PS:CL2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C12-MG{PS:CL1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C13-MG{PS:CL1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C13-MG{PS:CL2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C13-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C13-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C13-MG{PS:CH2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C13-MG{PS:CH1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C14-MG{PS:CH1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C14-MG{PS:CH2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C14-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C14-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C14-MG{PS:CL2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C14-MG{PS:CL1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C15-MG{PS:CL1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C15-MG{PS:CL2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C15-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C15-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C15-MG{PS:CH2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C15-MG{PS:CH1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C16-MG{PS:CH1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C16-MG{PS:CH2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C16-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C16-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C16-MG{PS:CL2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C16-MG{PS:CL1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C17-MG{PS:CL1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C17-MG{PS:CL2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C17-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C17-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C17-MG{PS:CH2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C17-MG{PS:CH1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C18-MG{PS:CH1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C18-MG{PS:CH2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C18-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C18-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C18-MG{PS:CL2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C18-MG{PS:CL1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C19-MG{PS:CL1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C19-MG{PS:CL2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C19-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C19-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C19-MG{PS:CH2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C19-MG{PS:CH1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C20-MG{PS:CH1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C20-MG{PS:CH2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C20-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C20-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C20-MG{PS:CL2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C20-MG{PS:CL1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C21-MG{PS:CL1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C21-MG{PS:CL2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C21-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C21-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C21-MG{PS:CH2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C21-MG{PS:CH1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C22-MG{PS:CH1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C22-MG{PS:CH2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C22-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C22-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C22-MG{PS:CL2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C22-MG{PS:CL1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C23-MG{PS:CL1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C23-MG{PS:CL2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C23-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C23-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C23-MG{PS:CH2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C23-MG{PS:CH1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C24-MG{PS:CH1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C24-MG{PS:CH2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C24-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C24-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C24-MG{PS:CL2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C24-MG{PS:CL1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C25-MG{PS:CL1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C25-MG{PS:CL2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C25-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C25-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C25-MG{PS:CH2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C25-MG{PS:CH1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C26-MG{PS:CH1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C26-MG{PS:CH2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C26-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C26-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C26-MG{PS:CL2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C26-MG{PS:CL1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C27-MG{PS:CL1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C27-MG{PS:CL2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C27-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C27-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C27-MG{PS:CH2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C27-MG{PS:CH1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C28-MG{PS:CH1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C28-MG{PS:CH2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C28-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C28-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C28-MG{PS:CL2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C28-MG{PS:CL1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C29-MG{PS:CL1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C29-MG{PS:CL2A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C29-MG{PS:CM1A}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C29-MG{PS:CM1B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C29-MG{PS:CH2B}$(SGNL)") {
+    field(VAL, 0)
+}
+record(ao, "$(pt)SR:C29-MG{PS:CH1B}$(SGNL)") {
+    field(VAL, 0)
+}

@@ -14,7 +14,7 @@
 #include<math.h>
 #include<float.h>
 
-/* #define NDEBUG */
+#define NDEBUG
 
 #define MERGE_INP(pval, dblk, val, sz)                  \
     if (dblk.type == CONSTANT) goto stats;              \
@@ -198,5 +198,58 @@ finish:
     return 0;
 }
 
+static long splitMarkedVals(aSubRecord *prec)
+{
+    int i = 0, j = 0, k = 0;
+    double *src = (double *)prec->a;
+
+    const int NUM_ARGS = 21;
+    /* Check Output Links */
+    for (i = 0; i < NUM_ARGS; ++i) {
+        /* (&prec->noa)[i], (&prec->inpa)[i], (&prec->a)[i] */
+        struct link *plink = &(&prec->outa)[i];
+        if (plink->type == CONSTANT) {
+         #ifndef NDEBUG
+            fprintf(stderr, "CONSTANT link: %d\n", i);
+         #endif
+            continue;
+        }
+        double *dst = (double*) (&prec->vala)[i];
+        const int NOV = (&prec->nova)[i];
+     #ifndef NDEBUG
+        fprintf(stderr, "  capacity of link %d: [%d], ", i, NOV);
+     #endif
+        int k = 0;
+        while (k < NOV && j < prec->nea) {
+            dst[k++] = src[j++];
+        }
+        if (NOV > 1 || (NOV == 1 && j < prec->nea && src[j] > 0.0)) {
+            dbPutLink(&(&prec->outa)[i], (&prec->ftva)[i],
+                       (&prec->vala)[i], (&prec->neva)[i]);
+        } else {
+         #ifndef NDEBUG
+            fprintf(stderr, "NOV= %d, j= %d, src[j]= %f\n", NOV, j, src[j]);
+         #endif
+        }
+     #ifndef NDEBUG
+        fprintf(stderr, "  link %d  j= %d, realsize= %d\n", i, j, k);
+     #endif
+        (&prec->neva)[i] = k;
+        if (j % 2 == 1) ++j;
+    }
+
+finish:
+    if (&(prec->outa) != CONSTANT && j < prec->nea) {
+        memcpy(prec->vala, (double*) prec->a + j, (prec->nea - j)*sizeof(double));
+        memcpy(prec->valb, (short*) prec->b + j, (prec->nea - j)*sizeof(short));
+    }
+ #ifndef NDEBUG
+    fprintf(stderr, "RETURN\n");
+ #endif
+
+    return -1;
+}
+
 epicsRegisterFunction(mergePvs);
 epicsRegisterFunction(splitPvs);
+epicsRegisterFunction(splitMarkedVals);

@@ -26,20 +26,28 @@ dbLoadRecords("db/iocAdminSoft.db", "IOC=OP-APHLA{IOC:corwfm}")
 dbLoadRecords("db/cor_wfm_merge.db", "p=l:,SYS=SR,FLD=I:Ps1DCCT1-I,XSel=Ps1DCCT1,T=DOUBLE")
 dbLoadRecords("db/cor_wfm_merge.db", "p=l:,SYS=SR,FLD=I:Ps2DCCT1-I,XSel=Ps2DCCT1,T=DOUBLE")
 
-#dbLoadRecords("db/cor_sp_merge.db", "p=l:,PLN=X,SPi=Sp1")
-#dbLoadRecords("db/cor_sp_merge.db", "p=l:,PLN=Y,SPi=Sp2")
+##dbLoadRecords("db/cor_sp_merge.db", "p=l:,PLN=X,SPi=Sp1")
+##dbLoadRecords("db/cor_sp_merge.db", "p=l:,PLN=Y,SPi=Sp2")
+dbLoadRecords("db/cor_wfm_merge.db", "p=l:,SYS=SR,FLD=I:Sp1-SP,XSel=Sp1,T=DOUBLE")
+dbLoadRecords("db/cor_wfm_merge.db", "p=l:,SYS=SR,FLD=I:Sp2-SP,XSel=Sp2,T=DOUBLE")
 
 dbLoadRecords("db/cor_wfm_merge.db", "p=l:,SYS=SR,FLD=Enbl:Ps1OC-Cmd,XSel=XSel,T=CHAR")
 dbLoadRecords("db/cor_wfm_merge.db", "p=l:,SYS=SR,FLD=Enbl:Ps2OC-Cmd,XSel=YSel,T=CHAR")
 
 #dbLoadRecords("db/cor_sp_split.db", "p=l:,PLN=X,SPi=Sp1")
 #dbLoadRecords("db/cor_sp_split.db", "p=l:,PLN=Y,SPi=Sp2")
+dbLoadRecords("db/cor_wfm_split.db", "p=l:,FLD=I:Sp1-SP,OSGNL=Sp1-Calc,T=DOUBLE")
+dbLoadRecords("db/cor_wfm_split.db", "p=l:,FLD=I:Sp2-SP,OSGNL=Sp2-Calc,T=DOUBLE")
 
+dbLoadRecords("db/cor_test.db", "p=l:,pt=l:,SGNL=Sp1")
+dbLoadRecords("db/cor_test.db", "p=l:,pt=l:,SGNL=Sp2")
 
-dbLoadRecords("db/cor.db", "p=l:,T=CHAR")
+dbLoadRecords("db/cor_masp_split.db", "p=l:,pt=l:,SGNL=Sp1,FLD=Sp1")
 
-set_savefile_path("/epics/iocs/srSOFB2/sofb2/as/corwfm","/save")
-set_requestfile_path("/epics/iocs/srSOFB2/sofb2/as/corwfm","/req")
+#dbLoadRecords("db/cor.db", "p=l:,T=CHAR")
+
+set_savefile_path("as/corwfm","/save")
+set_requestfile_path("as/corwfm","/req")
 set_pass1_restoreFile("ioc_settings.sav")
 
 asSetFilename("/cf-update/acf/default.acf")
