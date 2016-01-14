@@ -1,3 +1,5 @@
+/* -*- mode: C; fill-column: 75; -*- */
+
 #include<string.h>
 #include<stdio.h>
 #include<stdlib.h>
@@ -39,26 +41,6 @@ static long mergePvs(aSubRecord *pasub)
     */
     if (pasub->inpa.type == CONSTANT)  goto finish;
     
-    /* kind of hard coded */
-    /*
-    switch(pasub->ftva) {
-    case epicsInt8T: szi = sizeof(epicsInt8); break;
-    case epicsUInt8T: szi = sizeof(epicsUInt8); break;
-    case epicsInt16T: szi = sizeof(epicsInt16); break;
-    case epicsUInt16T: szi = sizeof(epicsUInt16); break;
-    case epicsEnum16T: szi = sizeof(epicsEnum16); break;
-    case epicsFloat64T: szi = sizeof(epicsFloat64); break;
-    case epicsFloat32T: szi = sizeof(epicsFloat32); break;
-    default:
-        fprintf(stderr, "not supported: %d, size=%d\n", pasub->ftva, dbValueSize(pasub->ftva));
-    }
-    */
-    /* fprintf(stderr, "INPA: %s (%d)\n", pasub->inpa.value.pv_link.pvname, pasub->inpa.type); */
-    /* fprintf(stderr, "INPA: %s (%d)\n", pasub->inpa.value.pv_link.precord->name, pasub->inpa.type); */
-
-    /* fprintf(stderr, "INPB: %s (%d)\n", pasub->inpb.value.pv_link.pvname, pasub->inpb.type); */
-
-    /* fprintf(stderr, "not supported: %d, size=%d\n", pasub->ftva, dbValueSize(pasub->ftva)); */
     assert(dbValueSize(pasub->ftva) == dbValueSize(pasub->fta));
     szi = dbValueSize(pasub->ftva);
     /* fprintf(stderr, "OUTA: %s\n", pasub->outa.value.pv_link.pvname); */
@@ -87,10 +69,6 @@ static long mergePvs(aSubRecord *pasub)
     MERGE_INP(pval, pasub->inpu, pasub->u, pasub->nou*szi);
 
 stats:
-    /*
-    fprintf(stderr, "ftva: %d (%d %d %d %d)\n", pasub->ftva,
-             epicsInt8T, epicsInt16T, epicsFloat32T, epicsFloat64T);
-    */
     if (pasub->ftva == epicsFloat64T) {
         double *pdval = (double*) pasub->vala;
         for (i = 0; i < pasub->nova; ++i) {

@@ -60,12 +60,13 @@ record(aSub, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)_2_0_asub_") {
    field(NOVF, "1")
    field(NOVG, "1")
    field(OUTA, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)_ PP")
-   field(OUTB, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-avg_ PP")
-   field(OUTC, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-rms_ PP")
-   field(OUTD, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-min_ PP")
-   field(OUTE, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-max_ PP")
-   field(OUTF, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-std_ PP")
-   field(OUTG, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-var_ PP")
+   field(OUTB, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Sum_ PP")
+   field(OUTC, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Avg_ PP")
+   field(OUTD, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Rms_ PP")
+   field(OUTE, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Min_ PP")
+   field(OUTF, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Max_ PP")
+   field(OUTG, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Std_ PP")
+   field(OUTH, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Var_ PP")
    field(SNAM, "mergePvs")
 }
 
@@ -794,77 +795,90 @@ record(aSub, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)_1_0_asub_") {
 }
 
 
-record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-avg_") {
+record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Sum_") {
    field(VAL, "0.0")
-   field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-avg")
+   field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Sum")
 }
 
-record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-rms_") {
+record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Avg_") {
    field(VAL, "0.0")
-   field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-rms")
+   field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Avg")
 }
 
-record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-min_") {
+record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Rms_") {
    field(VAL, "0.0")
-   field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-min")
+   field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Rms")
 }
 
-record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-max_") {
+record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Min_") {
    field(VAL, "0.0")
-   field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-max")
+   field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Min")
 }
 
-record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-std_") {
+record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Max_") {
    field(VAL, "0.0")
-   field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-std")
+   field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Max")
 }
 
-record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-var_") {
+record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Std_") {
    field(VAL, "0.0")
-   field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-var")
+   field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Std")
 }
 
-record(compress, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-avg") {
-   field(INP, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-avg_")
+record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Var_") {
+   field(VAL, "0.0")
+   field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Var")
+}
+
+record(compress, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Sum") {
+   field(INP, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Sum_")
    field(ALG, "Average")
    field(NSAM, "1")
    field(N, "10")
    field(EGU, "mm")
 }
 
-record(compress, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-rms") {
-   field(INP, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-rms_")
-   field(ALG, "Average")
-   field(NSAM, "1")
-   field(N, "10")
-}
-
-record(compress, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-min") {
-   field(INP, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-min_")
+record(compress, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Avg") {
+   field(INP, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Avg_")
    field(ALG, "Average")
    field(NSAM, "1")
    field(N, "10")
    field(EGU, "mm")
 }
 
-record(compress, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-max") {
-   field(INP, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-max_")
+record(compress, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Rms") {
+   field(INP, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Rms_")
+   field(ALG, "Average")
+   field(NSAM, "1")
+   field(N, "10")
+}
+
+record(compress, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Min") {
+   field(INP, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Min_")
    field(ALG, "Average")
    field(NSAM, "1")
    field(N, "10")
    field(EGU, "mm")
 }
 
-record(compress, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-std") {
-   field(INP, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-std_")
+record(compress, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Max") {
+   field(INP, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Max_")
    field(ALG, "Average")
    field(NSAM, "1")
    field(N, "10")
    field(EGU, "mm")
 }
 
-record(compress, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-var") {
-   field(INP, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)-var_")
+record(compress, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Std") {
+   field(INP, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Std_")
+   field(ALG, "Average")
+   field(NSAM, "1")
+   field(N, "10")
+   field(EGU, "mm")
+}
+
+record(compress, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Var") {
+   field(INP, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Var_")
    field(ALG, "Average")
    field(NSAM, "1")
    field(N, "10")

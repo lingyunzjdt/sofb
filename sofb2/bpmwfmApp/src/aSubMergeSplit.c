@@ -40,21 +40,13 @@ static long mergePvs(aSubRecord *pasub)
     pval += pasub->noa;
     */
     if (pasub->inpa.type == CONSTANT)  goto finish;
-    /* kind of hard coded */
-    switch(pasub->ftva) {
-    case epicsInt8T:
-    case epicsUInt8T: szi = sizeof(epicsInt8); break;
-    case epicsFloat64T: szi = sizeof(epicsFloat64); break;
-    case epicsFloat32T: szi = sizeof(epicsFloat32); break;
-    default:
-        fprintf(stderr, "not supported: %d\n", pasub->ftva);
-    }
         
+    assert(dbValueSize(pasub->ftva) == dbValueSize(pasub->fta));
+    szi = dbValueSize(pasub->ftva);
+    /* fprintf(stderr, "OUTA: %s\n", pasub->outa.value.pv_link.pvname); */
+    /* fprintf(stderr, "OUTB: %s\n", pasub->outb.value.pv_link.pvname); */
+
     MERGE_INP(pval, pasub->inpa, pasub->a, pasub->noa*szi);
-    /* #ifdef epicsTypesGLOBAL */
-    /* fprintf(stderr, "FTVA: %d, %d, %s\n", pasub->ftva, epicsFloat64T, epicsTypeCodeNames[pasub->ftva]); */
-    /* fprintf(stderr, "FTVA: %d\n", epicsTypeSizes[0]); */
-    /* #endif */
     MERGE_INP(pval, pasub->inpb, pasub->b, pasub->nob*szi);
     MERGE_INP(pval, pasub->inpc, pasub->c, pasub->noc*szi);
     MERGE_INP(pval, pasub->inpd, pasub->d, pasub->nod*szi);
@@ -93,28 +85,41 @@ stats:
             if (pfval[i] < xmin) xmin = pfval[i];
             if (pfval[i] > xmax) xmax = pfval[i];
         }
+    } else if (pasub->ftva == epicsUInt8T) {
+        epicsUInt8 *pfval = (epicsUInt8*) pasub->vala;
+        for (i = 0; i < pasub->nova; ++i) {
+            s1 += pfval[i];
+            s2 += pfval[i] * pfval[i];
+            if (pfval[i] < xmin) xmin = pfval[i];
+            if (pfval[i] > xmax) xmax = pfval[i];
+        }
     } else {
+        fprintf(stderr, "Unknow ftva: %d (%d %d %d %d)\n", pasub->ftva,
+                epicsUInt8T, epicsInt8T,
+                epicsUInt16T, epicsInt16T);
         goto finish;
     }
-        
+    double ss = s1;
     s2 /= pasub->nova;
     s1 /= pasub->nova;
     xrms = sqrt(s2);
     xvar = s2 - s1 * s1;
     xstd = sqrt(xvar);
-    /* avg, rms, min, max, std, var */
+    /* sum, avg, rms, min, max, std, var */
     if (pasub->outb.type == CONSTANT) goto finish;
-    memcpy(pasub->valb, &s1, sizeof(double));
+    *((double*)pasub->valb) = ss;
     if (pasub->outc.type == CONSTANT) goto finish;
-    memcpy(pasub->valc, &xrms, sizeof(double));
+    memcpy(pasub->valc, &s1, sizeof(double));
     if (pasub->outd.type == CONSTANT) goto finish;
-    memcpy(pasub->vald, &xmin, sizeof(double));
+    memcpy(pasub->vald, &xrms, sizeof(double));
     if (pasub->oute.type == CONSTANT) goto finish;
-    memcpy(pasub->vale, &xmax, sizeof(double));
+    memcpy(pasub->vale, &xmin, sizeof(double));
     if (pasub->outf.type == CONSTANT) goto finish;
-    memcpy(pasub->valf, &xstd, sizeof(double));
+    memcpy(pasub->valf, &xmax, sizeof(double));
     if (pasub->outg.type == CONSTANT) goto finish;
-    memcpy(pasub->valg, &xvar, sizeof(double));
+    memcpy(pasub->valg, &xstd, sizeof(double));
+    if (pasub->outh.type == CONSTANT) goto finish;
+    memcpy(pasub->valh, &xvar, sizeof(double));
 
 finish:
     return 0;
