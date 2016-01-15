@@ -250,7 +250,7 @@ record(aSub, "$(p)SR:APHLA:SOFB{COR}$(FLD)Mark_asub_3_") {
    field(FTVR, "DOUBLE")
    field(FTVS, "DOUBLE")
    field(FTVT, "DOUBLE")
-   field(INPA, "$(p)SR:APHLA:SOFB{COR}$(FLD)Mark_wfm_1_3_")
+   field(INPA, "$(p)SR:APHLA:SOFB{COR}$(FLD)Mark_wfm_3_")
    field(NOA, "20")
    field(NOVA, "1")
    field(NOVB, "1")
@@ -593,7 +593,7 @@ record(waveform, "$(p)SR:APHLA:SOFB{COR}$(FLD)Mark_wfm_8_") {
 }
 
 record(aSub, "$(p)SR:APHLA:SOFB{COR}$(FLD)Mark_asub_8_") {
-   #field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(FLD)Mark_asub_1_7_")
+   #field(FLNK, "$(p)SR:APHLA:SOFB{COR}$(FLD)Mark_asub_1_9_")
    field(FTA, "DOUBLE")
    field(FTVA, "DOUBLE")
    field(FTVB, "DOUBLE")

@@ -1,3 +1,5 @@
+#!/home/lyyang/sofb/sofb2/bin/linux-x86_64/bpmwfm
+
 #!/epics/iocs/srSOFB2/sofb2/bin/linux-x86_64/bpmwfm
 
 ## You may have to change bpmwfm to something else
