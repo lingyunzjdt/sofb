@@ -23,6 +23,18 @@ record(waveform, "$(p)SR:APHLA:SOFB{BPM}Pos:XwUsrOff-Calc") {
    field(NELM, "211")
 }
 
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}SPos") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "211")
+   info(autosaveFields_pass1, "VAL")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}SPos_") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "211")
+   info(autosaveFields_pass1, "VAL")
+}
+
 record(waveform, "$(p)test:range:inp_") {
    field(FTVL, "SHORT")
    field(NELM, "211")
@@ -44,12 +56,19 @@ record(aSub, "$(p)SR:APHLA:SOFB{BPM}_shuffle_asub_") {
    field(FTVB, "DOUBLE")
    field(NOVB, "211")
 
-   field(INPC, "$(p)test:range:inp_")
+   field(INPC, "$(p)SR:APHLA:SOFB{BPM}SPos_")
    field(FTC, "DOUBLE")
    field(NOC, "211")
-   field(OUTC, "$(p)test:range:out_")
+   field(OUTC, "$(p)SR:APHLA:SOFB{BPM}SPos PP")
    field(FTVC, "DOUBLE")
    field(NOVC, "211")
+
+   field(INPU, "$(p)test:range:inp_")
+   field(FTU, "DOUBLE")
+   field(NOU, "211")
+   field(OUTU, "$(p)test:range:out_")
+   field(FTVU, "DOUBLE")
+   field(NOVU, "211")
 
    field(SNAM, "shuffleWaveforms")
 }

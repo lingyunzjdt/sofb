@@ -327,7 +327,9 @@ static long shuffleWaveforms(aSubRecord *prec)
         const unsigned char *src = (&prec->a)[i];
         unsigned char *dst = (&prec->vala)[i];
         int szi = dbValueSize((&prec->fta)[i]);
+     #ifndef NDEBUG
         fprintf(stderr, "data %d size= %d [%d]\n", i, szi, prec->nea);
+     #endif
         for (j = 0; j < prec->nea; ++j) {
             /* copy src[idx[j]] to dst[j] */
             /* fprintf(stderr, "COPY %d <- %d, ", j, idx[j]); */
