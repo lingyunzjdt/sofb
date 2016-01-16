@@ -37,8 +37,9 @@ dbLoadRecords("db/sofb2_cor_sp_merge.db", "PLN=X,SPi=Sp1,p=")
 dbLoadRecords("db/sofb2_cor_sp_merge.db", "PLN=Y,SPi=Sp2,p=")
 dbLoadRecords("db/sofb2_cor_rb_merge.db", "PLN=X,PSi=Ps1,p=")
 dbLoadRecords("db/sofb2_cor_rb_merge.db", "PLN=Y,PSi=Ps2,p=")
-dbLoadRecords("db/sofb2_cor_sel.db", "XSel=XSel,T=CHAR,p=")
-dbLoadRecords("db/sofb2_cor_sel.db", "XSel=YSel,T=CHAR,p=")
+
+dbLoadRecords("db/sofb2_cor_sel.db", "XSel=XSel,T=CHAR,Psi=Ps1,p=")
+dbLoadRecords("db/sofb2_cor_sel.db", "XSel=YSel,T=CHAR,Psi=Ps2,p=")
 
 dbLoadRecords("db/sofb2_cor_sp_split.db", "PLN=X,SPi=Sp1,p=")
 dbLoadRecords("db/sofb2_cor_sp_split.db", "PLN=Y,SPi=Sp2,p=")

@@ -74,6 +74,7 @@ record(waveform, "SR:APHLA:SOFB{BPM}XYWeight-I") {
 record(waveform, "SR:APHLA:SOFB{ORM}XYWeight-I") {
    field(FTVL, "DOUBLE")
    field(NELM, "396")
+   info(autosaveFields_pass1, "VAL")
 }
 
 record(aSub, "SR:APHLA:SOFB{BPM}XYWeight-I_asub_") {
@@ -623,6 +624,12 @@ record(aSub, "SR:APHLA:SOFB{ORM}corr_asub_") {
    field(SCAN, "2 second")
 }
 
+
+record(fanout, "SR:APHLA:SOFB{COR}XY-Calc_asub") {
+   field(LNK1, "SR:APHLA:SOFB{COR}X-Calc_2_0_asub")
+   field(LNK1, "SR:APHLA:SOFB{COR}Y-Calc_2_0_asub")
+   field(SELM, "All")
+}
 
 record(waveform, "SR:APHLA:SOFB{COR}XY-Calc") {
    field(FTVL, "DOUBLE")
