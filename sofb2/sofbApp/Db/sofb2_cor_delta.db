@@ -1,0 +1,3600 @@
+
+record(ao, "SR:C30-MG{PS:CH1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C30-MG{PS:CH1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C30-MG{PS:CH1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C30-MG{PS:CH1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C30-MG{PS:CH1A}I:$(Spi)-SP")
+    field(INPB, "SR:C30-MG{PS:CH1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C30-MG{PS:CH1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C30-MG{PS:CH2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C30-MG{PS:CH2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C30-MG{PS:CH2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C30-MG{PS:CH2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C30-MG{PS:CH2A}I:$(Spi)-SP")
+    field(INPB, "SR:C30-MG{PS:CH2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C30-MG{PS:CH2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C30-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C30-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C30-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C30-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C30-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C30-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C30-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C30-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C30-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C30-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C30-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C30-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C30-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C30-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C30-MG{PS:CL2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C30-MG{PS:CL2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C30-MG{PS:CL2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C30-MG{PS:CL2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C30-MG{PS:CL2B}I:$(Spi)-SP")
+    field(INPB, "SR:C30-MG{PS:CL2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C30-MG{PS:CL2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C30-MG{PS:CL1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C30-MG{PS:CL1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C30-MG{PS:CL1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C30-MG{PS:CL1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C30-MG{PS:CL1B}I:$(Spi)-SP")
+    field(INPB, "SR:C30-MG{PS:CL1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C30-MG{PS:CL1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C01-MG{PS:CL1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C01-MG{PS:CL1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C01-MG{PS:CL1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C01-MG{PS:CL1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C01-MG{PS:CL1A}I:$(Spi)-SP")
+    field(INPB, "SR:C01-MG{PS:CL1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C01-MG{PS:CL1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C01-MG{PS:CL2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C01-MG{PS:CL2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C01-MG{PS:CL2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C01-MG{PS:CL2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C01-MG{PS:CL2A}I:$(Spi)-SP")
+    field(INPB, "SR:C01-MG{PS:CL2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C01-MG{PS:CL2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C01-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C01-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C01-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C01-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C01-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C01-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C01-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C01-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C01-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C01-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C01-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C01-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C01-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C01-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C01-MG{PS:CH2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C01-MG{PS:CH2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C01-MG{PS:CH2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C01-MG{PS:CH2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C01-MG{PS:CH2B}I:$(Spi)-SP")
+    field(INPB, "SR:C01-MG{PS:CH2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C01-MG{PS:CH2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C01-MG{PS:CH1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C01-MG{PS:CH1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C01-MG{PS:CH1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C01-MG{PS:CH1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C01-MG{PS:CH1B}I:$(Spi)-SP")
+    field(INPB, "SR:C01-MG{PS:CH1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C01-MG{PS:CH1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C02-MG{PS:CH1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C02-MG{PS:CH1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C02-MG{PS:CH1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C02-MG{PS:CH1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C02-MG{PS:CH1A}I:$(Spi)-SP")
+    field(INPB, "SR:C02-MG{PS:CH1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C02-MG{PS:CH1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C02-MG{PS:CH2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C02-MG{PS:CH2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C02-MG{PS:CH2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C02-MG{PS:CH2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C02-MG{PS:CH2A}I:$(Spi)-SP")
+    field(INPB, "SR:C02-MG{PS:CH2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C02-MG{PS:CH2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C02-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C02-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C02-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C02-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C02-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C02-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C02-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C02-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C02-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C02-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C02-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C02-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C02-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C02-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C02-MG{PS:CL2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C02-MG{PS:CL2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C02-MG{PS:CL2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C02-MG{PS:CL2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C02-MG{PS:CL2B}I:$(Spi)-SP")
+    field(INPB, "SR:C02-MG{PS:CL2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C02-MG{PS:CL2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C02-MG{PS:CL1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C02-MG{PS:CL1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C02-MG{PS:CL1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C02-MG{PS:CL1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C02-MG{PS:CL1B}I:$(Spi)-SP")
+    field(INPB, "SR:C02-MG{PS:CL1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C02-MG{PS:CL1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C03-MG{PS:CL1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C03-MG{PS:CL1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C03-MG{PS:CL1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C03-MG{PS:CL1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C03-MG{PS:CL1A}I:$(Spi)-SP")
+    field(INPB, "SR:C03-MG{PS:CL1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C03-MG{PS:CL1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C03-MG{PS:CL2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C03-MG{PS:CL2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C03-MG{PS:CL2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C03-MG{PS:CL2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C03-MG{PS:CL2A}I:$(Spi)-SP")
+    field(INPB, "SR:C03-MG{PS:CL2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C03-MG{PS:CL2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C03-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C03-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C03-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C03-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C03-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C03-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C03-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C03-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C03-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C03-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C03-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C03-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C03-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C03-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C03-MG{PS:CH2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C03-MG{PS:CH2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C03-MG{PS:CH2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C03-MG{PS:CH2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C03-MG{PS:CH2B}I:$(Spi)-SP")
+    field(INPB, "SR:C03-MG{PS:CH2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C03-MG{PS:CH2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C03-MG{PS:CH1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C03-MG{PS:CH1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C03-MG{PS:CH1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C03-MG{PS:CH1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C03-MG{PS:CH1B}I:$(Spi)-SP")
+    field(INPB, "SR:C03-MG{PS:CH1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C03-MG{PS:CH1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C04-MG{PS:CH1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C04-MG{PS:CH1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C04-MG{PS:CH1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C04-MG{PS:CH1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C04-MG{PS:CH1A}I:$(Spi)-SP")
+    field(INPB, "SR:C04-MG{PS:CH1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C04-MG{PS:CH1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C04-MG{PS:CH2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C04-MG{PS:CH2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C04-MG{PS:CH2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C04-MG{PS:CH2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C04-MG{PS:CH2A}I:$(Spi)-SP")
+    field(INPB, "SR:C04-MG{PS:CH2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C04-MG{PS:CH2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C04-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C04-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C04-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C04-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C04-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C04-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C04-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C04-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C04-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C04-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C04-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C04-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C04-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C04-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C04-MG{PS:CL2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C04-MG{PS:CL2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C04-MG{PS:CL2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C04-MG{PS:CL2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C04-MG{PS:CL2B}I:$(Spi)-SP")
+    field(INPB, "SR:C04-MG{PS:CL2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C04-MG{PS:CL2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C04-MG{PS:CL1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C04-MG{PS:CL1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C04-MG{PS:CL1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C04-MG{PS:CL1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C04-MG{PS:CL1B}I:$(Spi)-SP")
+    field(INPB, "SR:C04-MG{PS:CL1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C04-MG{PS:CL1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C05-MG{PS:CL1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C05-MG{PS:CL1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C05-MG{PS:CL1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C05-MG{PS:CL1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C05-MG{PS:CL1A}I:$(Spi)-SP")
+    field(INPB, "SR:C05-MG{PS:CL1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C05-MG{PS:CL1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C05-MG{PS:CL2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C05-MG{PS:CL2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C05-MG{PS:CL2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C05-MG{PS:CL2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C05-MG{PS:CL2A}I:$(Spi)-SP")
+    field(INPB, "SR:C05-MG{PS:CL2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C05-MG{PS:CL2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C05-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C05-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C05-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C05-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C05-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C05-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C05-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C05-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C05-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C05-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C05-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C05-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C05-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C05-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C05-MG{PS:CH2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C05-MG{PS:CH2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C05-MG{PS:CH2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C05-MG{PS:CH2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C05-MG{PS:CH2B}I:$(Spi)-SP")
+    field(INPB, "SR:C05-MG{PS:CH2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C05-MG{PS:CH2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C05-MG{PS:CH1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C05-MG{PS:CH1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C05-MG{PS:CH1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C05-MG{PS:CH1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C05-MG{PS:CH1B}I:$(Spi)-SP")
+    field(INPB, "SR:C05-MG{PS:CH1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C05-MG{PS:CH1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C06-MG{PS:CH1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C06-MG{PS:CH1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C06-MG{PS:CH1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C06-MG{PS:CH1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C06-MG{PS:CH1A}I:$(Spi)-SP")
+    field(INPB, "SR:C06-MG{PS:CH1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C06-MG{PS:CH1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C06-MG{PS:CH2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C06-MG{PS:CH2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C06-MG{PS:CH2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C06-MG{PS:CH2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C06-MG{PS:CH2A}I:$(Spi)-SP")
+    field(INPB, "SR:C06-MG{PS:CH2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C06-MG{PS:CH2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C06-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C06-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C06-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C06-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C06-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C06-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C06-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C06-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C06-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C06-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C06-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C06-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C06-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C06-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C06-MG{PS:CL2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C06-MG{PS:CL2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C06-MG{PS:CL2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C06-MG{PS:CL2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C06-MG{PS:CL2B}I:$(Spi)-SP")
+    field(INPB, "SR:C06-MG{PS:CL2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C06-MG{PS:CL2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C06-MG{PS:CL1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C06-MG{PS:CL1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C06-MG{PS:CL1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C06-MG{PS:CL1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C06-MG{PS:CL1B}I:$(Spi)-SP")
+    field(INPB, "SR:C06-MG{PS:CL1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C06-MG{PS:CL1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C07-MG{PS:CL1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C07-MG{PS:CL1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C07-MG{PS:CL1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C07-MG{PS:CL1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C07-MG{PS:CL1A}I:$(Spi)-SP")
+    field(INPB, "SR:C07-MG{PS:CL1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C07-MG{PS:CL1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C07-MG{PS:CL2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C07-MG{PS:CL2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C07-MG{PS:CL2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C07-MG{PS:CL2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C07-MG{PS:CL2A}I:$(Spi)-SP")
+    field(INPB, "SR:C07-MG{PS:CL2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C07-MG{PS:CL2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C07-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C07-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C07-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C07-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C07-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C07-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C07-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C07-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C07-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C07-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C07-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C07-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C07-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C07-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C07-MG{PS:CH2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C07-MG{PS:CH2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C07-MG{PS:CH2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C07-MG{PS:CH2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C07-MG{PS:CH2B}I:$(Spi)-SP")
+    field(INPB, "SR:C07-MG{PS:CH2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C07-MG{PS:CH2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C07-MG{PS:CH1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C07-MG{PS:CH1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C07-MG{PS:CH1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C07-MG{PS:CH1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C07-MG{PS:CH1B}I:$(Spi)-SP")
+    field(INPB, "SR:C07-MG{PS:CH1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C07-MG{PS:CH1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C08-MG{PS:CH1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C08-MG{PS:CH1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C08-MG{PS:CH1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C08-MG{PS:CH1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C08-MG{PS:CH1A}I:$(Spi)-SP")
+    field(INPB, "SR:C08-MG{PS:CH1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C08-MG{PS:CH1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C08-MG{PS:CH2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C08-MG{PS:CH2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C08-MG{PS:CH2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C08-MG{PS:CH2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C08-MG{PS:CH2A}I:$(Spi)-SP")
+    field(INPB, "SR:C08-MG{PS:CH2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C08-MG{PS:CH2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C08-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C08-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C08-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C08-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C08-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C08-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C08-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C08-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C08-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C08-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C08-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C08-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C08-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C08-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C08-MG{PS:CL2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C08-MG{PS:CL2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C08-MG{PS:CL2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C08-MG{PS:CL2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C08-MG{PS:CL2B}I:$(Spi)-SP")
+    field(INPB, "SR:C08-MG{PS:CL2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C08-MG{PS:CL2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C08-MG{PS:CL1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C08-MG{PS:CL1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C08-MG{PS:CL1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C08-MG{PS:CL1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C08-MG{PS:CL1B}I:$(Spi)-SP")
+    field(INPB, "SR:C08-MG{PS:CL1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C08-MG{PS:CL1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C09-MG{PS:CL1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C09-MG{PS:CL1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C09-MG{PS:CL1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C09-MG{PS:CL1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C09-MG{PS:CL1A}I:$(Spi)-SP")
+    field(INPB, "SR:C09-MG{PS:CL1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C09-MG{PS:CL1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C09-MG{PS:CL2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C09-MG{PS:CL2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C09-MG{PS:CL2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C09-MG{PS:CL2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C09-MG{PS:CL2A}I:$(Spi)-SP")
+    field(INPB, "SR:C09-MG{PS:CL2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C09-MG{PS:CL2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C09-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C09-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C09-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C09-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C09-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C09-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C09-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C09-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C09-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C09-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C09-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C09-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C09-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C09-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C09-MG{PS:CH2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C09-MG{PS:CH2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C09-MG{PS:CH2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C09-MG{PS:CH2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C09-MG{PS:CH2B}I:$(Spi)-SP")
+    field(INPB, "SR:C09-MG{PS:CH2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C09-MG{PS:CH2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C09-MG{PS:CH1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C09-MG{PS:CH1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C09-MG{PS:CH1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C09-MG{PS:CH1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C09-MG{PS:CH1B}I:$(Spi)-SP")
+    field(INPB, "SR:C09-MG{PS:CH1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C09-MG{PS:CH1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C10-MG{PS:CH1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C10-MG{PS:CH1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C10-MG{PS:CH1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C10-MG{PS:CH1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C10-MG{PS:CH1A}I:$(Spi)-SP")
+    field(INPB, "SR:C10-MG{PS:CH1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C10-MG{PS:CH1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C10-MG{PS:CH2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C10-MG{PS:CH2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C10-MG{PS:CH2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C10-MG{PS:CH2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C10-MG{PS:CH2A}I:$(Spi)-SP")
+    field(INPB, "SR:C10-MG{PS:CH2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C10-MG{PS:CH2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C10-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C10-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C10-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C10-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C10-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C10-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C10-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C10-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C10-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C10-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C10-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C10-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C10-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C10-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C10-MG{PS:CL2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C10-MG{PS:CL2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C10-MG{PS:CL2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C10-MG{PS:CL2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C10-MG{PS:CL2B}I:$(Spi)-SP")
+    field(INPB, "SR:C10-MG{PS:CL2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C10-MG{PS:CL2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C10-MG{PS:CL1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C10-MG{PS:CL1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C10-MG{PS:CL1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C10-MG{PS:CL1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C10-MG{PS:CL1B}I:$(Spi)-SP")
+    field(INPB, "SR:C10-MG{PS:CL1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C10-MG{PS:CL1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C11-MG{PS:CL1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C11-MG{PS:CL1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C11-MG{PS:CL1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C11-MG{PS:CL1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C11-MG{PS:CL1A}I:$(Spi)-SP")
+    field(INPB, "SR:C11-MG{PS:CL1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C11-MG{PS:CL1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C11-MG{PS:CL2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C11-MG{PS:CL2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C11-MG{PS:CL2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C11-MG{PS:CL2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C11-MG{PS:CL2A}I:$(Spi)-SP")
+    field(INPB, "SR:C11-MG{PS:CL2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C11-MG{PS:CL2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C11-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C11-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C11-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C11-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C11-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C11-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C11-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C11-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C11-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C11-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C11-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C11-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C11-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C11-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C11-MG{PS:CH2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C11-MG{PS:CH2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C11-MG{PS:CH2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C11-MG{PS:CH2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C11-MG{PS:CH2B}I:$(Spi)-SP")
+    field(INPB, "SR:C11-MG{PS:CH2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C11-MG{PS:CH2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C11-MG{PS:CH1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C11-MG{PS:CH1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C11-MG{PS:CH1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C11-MG{PS:CH1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C11-MG{PS:CH1B}I:$(Spi)-SP")
+    field(INPB, "SR:C11-MG{PS:CH1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C11-MG{PS:CH1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C12-MG{PS:CH1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C12-MG{PS:CH1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C12-MG{PS:CH1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C12-MG{PS:CH1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C12-MG{PS:CH1A}I:$(Spi)-SP")
+    field(INPB, "SR:C12-MG{PS:CH1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C12-MG{PS:CH1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C12-MG{PS:CH2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C12-MG{PS:CH2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C12-MG{PS:CH2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C12-MG{PS:CH2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C12-MG{PS:CH2A}I:$(Spi)-SP")
+    field(INPB, "SR:C12-MG{PS:CH2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C12-MG{PS:CH2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C12-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C12-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C12-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C12-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C12-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C12-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C12-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C12-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C12-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C12-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C12-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C12-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C12-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C12-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C12-MG{PS:CL2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C12-MG{PS:CL2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C12-MG{PS:CL2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C12-MG{PS:CL2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C12-MG{PS:CL2B}I:$(Spi)-SP")
+    field(INPB, "SR:C12-MG{PS:CL2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C12-MG{PS:CL2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C12-MG{PS:CL1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C12-MG{PS:CL1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C12-MG{PS:CL1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C12-MG{PS:CL1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C12-MG{PS:CL1B}I:$(Spi)-SP")
+    field(INPB, "SR:C12-MG{PS:CL1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C12-MG{PS:CL1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C13-MG{PS:CL1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C13-MG{PS:CL1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C13-MG{PS:CL1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C13-MG{PS:CL1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C13-MG{PS:CL1A}I:$(Spi)-SP")
+    field(INPB, "SR:C13-MG{PS:CL1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C13-MG{PS:CL1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C13-MG{PS:CL2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C13-MG{PS:CL2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C13-MG{PS:CL2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C13-MG{PS:CL2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C13-MG{PS:CL2A}I:$(Spi)-SP")
+    field(INPB, "SR:C13-MG{PS:CL2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C13-MG{PS:CL2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C13-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C13-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C13-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C13-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C13-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C13-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C13-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C13-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C13-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C13-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C13-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C13-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C13-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C13-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C13-MG{PS:CH2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C13-MG{PS:CH2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C13-MG{PS:CH2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C13-MG{PS:CH2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C13-MG{PS:CH2B}I:$(Spi)-SP")
+    field(INPB, "SR:C13-MG{PS:CH2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C13-MG{PS:CH2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C13-MG{PS:CH1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C13-MG{PS:CH1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C13-MG{PS:CH1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C13-MG{PS:CH1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C13-MG{PS:CH1B}I:$(Spi)-SP")
+    field(INPB, "SR:C13-MG{PS:CH1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C13-MG{PS:CH1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C14-MG{PS:CH1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C14-MG{PS:CH1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C14-MG{PS:CH1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C14-MG{PS:CH1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C14-MG{PS:CH1A}I:$(Spi)-SP")
+    field(INPB, "SR:C14-MG{PS:CH1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C14-MG{PS:CH1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C14-MG{PS:CH2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C14-MG{PS:CH2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C14-MG{PS:CH2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C14-MG{PS:CH2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C14-MG{PS:CH2A}I:$(Spi)-SP")
+    field(INPB, "SR:C14-MG{PS:CH2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C14-MG{PS:CH2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C14-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C14-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C14-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C14-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C14-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C14-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C14-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C14-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C14-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C14-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C14-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C14-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C14-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C14-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C14-MG{PS:CL2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C14-MG{PS:CL2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C14-MG{PS:CL2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C14-MG{PS:CL2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C14-MG{PS:CL2B}I:$(Spi)-SP")
+    field(INPB, "SR:C14-MG{PS:CL2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C14-MG{PS:CL2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C14-MG{PS:CL1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C14-MG{PS:CL1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C14-MG{PS:CL1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C14-MG{PS:CL1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C14-MG{PS:CL1B}I:$(Spi)-SP")
+    field(INPB, "SR:C14-MG{PS:CL1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C14-MG{PS:CL1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C15-MG{PS:CL1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C15-MG{PS:CL1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C15-MG{PS:CL1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C15-MG{PS:CL1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C15-MG{PS:CL1A}I:$(Spi)-SP")
+    field(INPB, "SR:C15-MG{PS:CL1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C15-MG{PS:CL1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C15-MG{PS:CL2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C15-MG{PS:CL2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C15-MG{PS:CL2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C15-MG{PS:CL2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C15-MG{PS:CL2A}I:$(Spi)-SP")
+    field(INPB, "SR:C15-MG{PS:CL2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C15-MG{PS:CL2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C15-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C15-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C15-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C15-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C15-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C15-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C15-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C15-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C15-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C15-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C15-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C15-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C15-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C15-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C15-MG{PS:CH2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C15-MG{PS:CH2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C15-MG{PS:CH2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C15-MG{PS:CH2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C15-MG{PS:CH2B}I:$(Spi)-SP")
+    field(INPB, "SR:C15-MG{PS:CH2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C15-MG{PS:CH2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C15-MG{PS:CH1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C15-MG{PS:CH1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C15-MG{PS:CH1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C15-MG{PS:CH1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C15-MG{PS:CH1B}I:$(Spi)-SP")
+    field(INPB, "SR:C15-MG{PS:CH1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C15-MG{PS:CH1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C16-MG{PS:CH1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C16-MG{PS:CH1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C16-MG{PS:CH1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C16-MG{PS:CH1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C16-MG{PS:CH1A}I:$(Spi)-SP")
+    field(INPB, "SR:C16-MG{PS:CH1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C16-MG{PS:CH1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C16-MG{PS:CH2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C16-MG{PS:CH2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C16-MG{PS:CH2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C16-MG{PS:CH2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C16-MG{PS:CH2A}I:$(Spi)-SP")
+    field(INPB, "SR:C16-MG{PS:CH2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C16-MG{PS:CH2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C16-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C16-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C16-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C16-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C16-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C16-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C16-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C16-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C16-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C16-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C16-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C16-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C16-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C16-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C16-MG{PS:CL2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C16-MG{PS:CL2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C16-MG{PS:CL2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C16-MG{PS:CL2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C16-MG{PS:CL2B}I:$(Spi)-SP")
+    field(INPB, "SR:C16-MG{PS:CL2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C16-MG{PS:CL2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C16-MG{PS:CL1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C16-MG{PS:CL1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C16-MG{PS:CL1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C16-MG{PS:CL1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C16-MG{PS:CL1B}I:$(Spi)-SP")
+    field(INPB, "SR:C16-MG{PS:CL1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C16-MG{PS:CL1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C17-MG{PS:CL1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C17-MG{PS:CL1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C17-MG{PS:CL1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C17-MG{PS:CL1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C17-MG{PS:CL1A}I:$(Spi)-SP")
+    field(INPB, "SR:C17-MG{PS:CL1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C17-MG{PS:CL1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C17-MG{PS:CL2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C17-MG{PS:CL2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C17-MG{PS:CL2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C17-MG{PS:CL2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C17-MG{PS:CL2A}I:$(Spi)-SP")
+    field(INPB, "SR:C17-MG{PS:CL2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C17-MG{PS:CL2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C17-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C17-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C17-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C17-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C17-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C17-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C17-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C17-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C17-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C17-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C17-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C17-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C17-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C17-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C17-MG{PS:CH2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C17-MG{PS:CH2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C17-MG{PS:CH2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C17-MG{PS:CH2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C17-MG{PS:CH2B}I:$(Spi)-SP")
+    field(INPB, "SR:C17-MG{PS:CH2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C17-MG{PS:CH2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C17-MG{PS:CH1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C17-MG{PS:CH1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C17-MG{PS:CH1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C17-MG{PS:CH1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C17-MG{PS:CH1B}I:$(Spi)-SP")
+    field(INPB, "SR:C17-MG{PS:CH1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C17-MG{PS:CH1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C18-MG{PS:CH1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C18-MG{PS:CH1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C18-MG{PS:CH1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C18-MG{PS:CH1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C18-MG{PS:CH1A}I:$(Spi)-SP")
+    field(INPB, "SR:C18-MG{PS:CH1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C18-MG{PS:CH1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C18-MG{PS:CH2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C18-MG{PS:CH2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C18-MG{PS:CH2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C18-MG{PS:CH2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C18-MG{PS:CH2A}I:$(Spi)-SP")
+    field(INPB, "SR:C18-MG{PS:CH2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C18-MG{PS:CH2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C18-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C18-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C18-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C18-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C18-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C18-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C18-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C18-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C18-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C18-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C18-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C18-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C18-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C18-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C18-MG{PS:CL2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C18-MG{PS:CL2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C18-MG{PS:CL2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C18-MG{PS:CL2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C18-MG{PS:CL2B}I:$(Spi)-SP")
+    field(INPB, "SR:C18-MG{PS:CL2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C18-MG{PS:CL2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C18-MG{PS:CL1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C18-MG{PS:CL1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C18-MG{PS:CL1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C18-MG{PS:CL1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C18-MG{PS:CL1B}I:$(Spi)-SP")
+    field(INPB, "SR:C18-MG{PS:CL1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C18-MG{PS:CL1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C19-MG{PS:CL1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C19-MG{PS:CL1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C19-MG{PS:CL1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C19-MG{PS:CL1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C19-MG{PS:CL1A}I:$(Spi)-SP")
+    field(INPB, "SR:C19-MG{PS:CL1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C19-MG{PS:CL1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C19-MG{PS:CL2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C19-MG{PS:CL2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C19-MG{PS:CL2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C19-MG{PS:CL2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C19-MG{PS:CL2A}I:$(Spi)-SP")
+    field(INPB, "SR:C19-MG{PS:CL2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C19-MG{PS:CL2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C19-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C19-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C19-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C19-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C19-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C19-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C19-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C19-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C19-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C19-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C19-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C19-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C19-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C19-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C19-MG{PS:CH2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C19-MG{PS:CH2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C19-MG{PS:CH2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C19-MG{PS:CH2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C19-MG{PS:CH2B}I:$(Spi)-SP")
+    field(INPB, "SR:C19-MG{PS:CH2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C19-MG{PS:CH2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C19-MG{PS:CH1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C19-MG{PS:CH1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C19-MG{PS:CH1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C19-MG{PS:CH1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C19-MG{PS:CH1B}I:$(Spi)-SP")
+    field(INPB, "SR:C19-MG{PS:CH1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C19-MG{PS:CH1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C20-MG{PS:CH1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C20-MG{PS:CH1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C20-MG{PS:CH1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C20-MG{PS:CH1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C20-MG{PS:CH1A}I:$(Spi)-SP")
+    field(INPB, "SR:C20-MG{PS:CH1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C20-MG{PS:CH1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C20-MG{PS:CH2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C20-MG{PS:CH2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C20-MG{PS:CH2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C20-MG{PS:CH2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C20-MG{PS:CH2A}I:$(Spi)-SP")
+    field(INPB, "SR:C20-MG{PS:CH2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C20-MG{PS:CH2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C20-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C20-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C20-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C20-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C20-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C20-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C20-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C20-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C20-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C20-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C20-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C20-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C20-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C20-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C20-MG{PS:CL2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C20-MG{PS:CL2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C20-MG{PS:CL2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C20-MG{PS:CL2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C20-MG{PS:CL2B}I:$(Spi)-SP")
+    field(INPB, "SR:C20-MG{PS:CL2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C20-MG{PS:CL2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C20-MG{PS:CL1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C20-MG{PS:CL1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C20-MG{PS:CL1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C20-MG{PS:CL1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C20-MG{PS:CL1B}I:$(Spi)-SP")
+    field(INPB, "SR:C20-MG{PS:CL1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C20-MG{PS:CL1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C21-MG{PS:CL1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C21-MG{PS:CL1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C21-MG{PS:CL1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C21-MG{PS:CL1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C21-MG{PS:CL1A}I:$(Spi)-SP")
+    field(INPB, "SR:C21-MG{PS:CL1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C21-MG{PS:CL1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C21-MG{PS:CL2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C21-MG{PS:CL2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C21-MG{PS:CL2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C21-MG{PS:CL2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C21-MG{PS:CL2A}I:$(Spi)-SP")
+    field(INPB, "SR:C21-MG{PS:CL2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C21-MG{PS:CL2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C21-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C21-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C21-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C21-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C21-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C21-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C21-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C21-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C21-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C21-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C21-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C21-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C21-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C21-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C21-MG{PS:CH2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C21-MG{PS:CH2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C21-MG{PS:CH2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C21-MG{PS:CH2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C21-MG{PS:CH2B}I:$(Spi)-SP")
+    field(INPB, "SR:C21-MG{PS:CH2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C21-MG{PS:CH2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C21-MG{PS:CH1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C21-MG{PS:CH1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C21-MG{PS:CH1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C21-MG{PS:CH1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C21-MG{PS:CH1B}I:$(Spi)-SP")
+    field(INPB, "SR:C21-MG{PS:CH1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C21-MG{PS:CH1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C22-MG{PS:CH1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C22-MG{PS:CH1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C22-MG{PS:CH1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C22-MG{PS:CH1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C22-MG{PS:CH1A}I:$(Spi)-SP")
+    field(INPB, "SR:C22-MG{PS:CH1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C22-MG{PS:CH1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C22-MG{PS:CH2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C22-MG{PS:CH2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C22-MG{PS:CH2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C22-MG{PS:CH2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C22-MG{PS:CH2A}I:$(Spi)-SP")
+    field(INPB, "SR:C22-MG{PS:CH2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C22-MG{PS:CH2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C22-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C22-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C22-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C22-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C22-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C22-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C22-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C22-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C22-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C22-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C22-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C22-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C22-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C22-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C22-MG{PS:CL2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C22-MG{PS:CL2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C22-MG{PS:CL2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C22-MG{PS:CL2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C22-MG{PS:CL2B}I:$(Spi)-SP")
+    field(INPB, "SR:C22-MG{PS:CL2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C22-MG{PS:CL2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C22-MG{PS:CL1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C22-MG{PS:CL1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C22-MG{PS:CL1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C22-MG{PS:CL1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C22-MG{PS:CL1B}I:$(Spi)-SP")
+    field(INPB, "SR:C22-MG{PS:CL1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C22-MG{PS:CL1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C23-MG{PS:CL1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C23-MG{PS:CL1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C23-MG{PS:CL1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C23-MG{PS:CL1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C23-MG{PS:CL1A}I:$(Spi)-SP")
+    field(INPB, "SR:C23-MG{PS:CL1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C23-MG{PS:CL1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C23-MG{PS:CL2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C23-MG{PS:CL2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C23-MG{PS:CL2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C23-MG{PS:CL2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C23-MG{PS:CL2A}I:$(Spi)-SP")
+    field(INPB, "SR:C23-MG{PS:CL2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C23-MG{PS:CL2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C23-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C23-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C23-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C23-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C23-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C23-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C23-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C23-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C23-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C23-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C23-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C23-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C23-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C23-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C23-MG{PS:CH2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C23-MG{PS:CH2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C23-MG{PS:CH2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C23-MG{PS:CH2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C23-MG{PS:CH2B}I:$(Spi)-SP")
+    field(INPB, "SR:C23-MG{PS:CH2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C23-MG{PS:CH2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C23-MG{PS:CH1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C23-MG{PS:CH1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C23-MG{PS:CH1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C23-MG{PS:CH1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C23-MG{PS:CH1B}I:$(Spi)-SP")
+    field(INPB, "SR:C23-MG{PS:CH1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C23-MG{PS:CH1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C24-MG{PS:CH1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C24-MG{PS:CH1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C24-MG{PS:CH1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C24-MG{PS:CH1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C24-MG{PS:CH1A}I:$(Spi)-SP")
+    field(INPB, "SR:C24-MG{PS:CH1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C24-MG{PS:CH1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C24-MG{PS:CH2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C24-MG{PS:CH2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C24-MG{PS:CH2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C24-MG{PS:CH2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C24-MG{PS:CH2A}I:$(Spi)-SP")
+    field(INPB, "SR:C24-MG{PS:CH2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C24-MG{PS:CH2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C24-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C24-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C24-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C24-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C24-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C24-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C24-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C24-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C24-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C24-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C24-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C24-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C24-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C24-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C24-MG{PS:CL2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C24-MG{PS:CL2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C24-MG{PS:CL2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C24-MG{PS:CL2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C24-MG{PS:CL2B}I:$(Spi)-SP")
+    field(INPB, "SR:C24-MG{PS:CL2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C24-MG{PS:CL2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C24-MG{PS:CL1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C24-MG{PS:CL1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C24-MG{PS:CL1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C24-MG{PS:CL1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C24-MG{PS:CL1B}I:$(Spi)-SP")
+    field(INPB, "SR:C24-MG{PS:CL1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C24-MG{PS:CL1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C25-MG{PS:CL1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C25-MG{PS:CL1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C25-MG{PS:CL1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C25-MG{PS:CL1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C25-MG{PS:CL1A}I:$(Spi)-SP")
+    field(INPB, "SR:C25-MG{PS:CL1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C25-MG{PS:CL1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C25-MG{PS:CL2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C25-MG{PS:CL2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C25-MG{PS:CL2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C25-MG{PS:CL2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C25-MG{PS:CL2A}I:$(Spi)-SP")
+    field(INPB, "SR:C25-MG{PS:CL2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C25-MG{PS:CL2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C25-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C25-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C25-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C25-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C25-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C25-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C25-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C25-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C25-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C25-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C25-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C25-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C25-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C25-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C25-MG{PS:CH2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C25-MG{PS:CH2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C25-MG{PS:CH2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C25-MG{PS:CH2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C25-MG{PS:CH2B}I:$(Spi)-SP")
+    field(INPB, "SR:C25-MG{PS:CH2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C25-MG{PS:CH2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C25-MG{PS:CH1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C25-MG{PS:CH1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C25-MG{PS:CH1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C25-MG{PS:CH1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C25-MG{PS:CH1B}I:$(Spi)-SP")
+    field(INPB, "SR:C25-MG{PS:CH1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C25-MG{PS:CH1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C26-MG{PS:CH1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C26-MG{PS:CH1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C26-MG{PS:CH1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C26-MG{PS:CH1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C26-MG{PS:CH1A}I:$(Spi)-SP")
+    field(INPB, "SR:C26-MG{PS:CH1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C26-MG{PS:CH1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C26-MG{PS:CH2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C26-MG{PS:CH2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C26-MG{PS:CH2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C26-MG{PS:CH2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C26-MG{PS:CH2A}I:$(Spi)-SP")
+    field(INPB, "SR:C26-MG{PS:CH2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C26-MG{PS:CH2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C26-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C26-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C26-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C26-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C26-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C26-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C26-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C26-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C26-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C26-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C26-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C26-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C26-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C26-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C26-MG{PS:CL2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C26-MG{PS:CL2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C26-MG{PS:CL2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C26-MG{PS:CL2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C26-MG{PS:CL2B}I:$(Spi)-SP")
+    field(INPB, "SR:C26-MG{PS:CL2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C26-MG{PS:CL2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C26-MG{PS:CL1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C26-MG{PS:CL1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C26-MG{PS:CL1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C26-MG{PS:CL1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C26-MG{PS:CL1B}I:$(Spi)-SP")
+    field(INPB, "SR:C26-MG{PS:CL1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C26-MG{PS:CL1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C27-MG{PS:CL1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C27-MG{PS:CL1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C27-MG{PS:CL1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C27-MG{PS:CL1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C27-MG{PS:CL1A}I:$(Spi)-SP")
+    field(INPB, "SR:C27-MG{PS:CL1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C27-MG{PS:CL1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C27-MG{PS:CL2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C27-MG{PS:CL2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C27-MG{PS:CL2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C27-MG{PS:CL2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C27-MG{PS:CL2A}I:$(Spi)-SP")
+    field(INPB, "SR:C27-MG{PS:CL2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C27-MG{PS:CL2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C27-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C27-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C27-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C27-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C27-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C27-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C27-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C27-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C27-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C27-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C27-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C27-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C27-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C27-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C27-MG{PS:CH2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C27-MG{PS:CH2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C27-MG{PS:CH2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C27-MG{PS:CH2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C27-MG{PS:CH2B}I:$(Spi)-SP")
+    field(INPB, "SR:C27-MG{PS:CH2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C27-MG{PS:CH2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C27-MG{PS:CH1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C27-MG{PS:CH1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C27-MG{PS:CH1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C27-MG{PS:CH1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C27-MG{PS:CH1B}I:$(Spi)-SP")
+    field(INPB, "SR:C27-MG{PS:CH1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C27-MG{PS:CH1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C28-MG{PS:CH1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C28-MG{PS:CH1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C28-MG{PS:CH1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C28-MG{PS:CH1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C28-MG{PS:CH1A}I:$(Spi)-SP")
+    field(INPB, "SR:C28-MG{PS:CH1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C28-MG{PS:CH1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C28-MG{PS:CH2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C28-MG{PS:CH2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C28-MG{PS:CH2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C28-MG{PS:CH2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C28-MG{PS:CH2A}I:$(Spi)-SP")
+    field(INPB, "SR:C28-MG{PS:CH2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C28-MG{PS:CH2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C28-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C28-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C28-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C28-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C28-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C28-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C28-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C28-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C28-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C28-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C28-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C28-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C28-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C28-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C28-MG{PS:CL2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C28-MG{PS:CL2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C28-MG{PS:CL2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C28-MG{PS:CL2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C28-MG{PS:CL2B}I:$(Spi)-SP")
+    field(INPB, "SR:C28-MG{PS:CL2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C28-MG{PS:CL2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C28-MG{PS:CL1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C28-MG{PS:CL1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C28-MG{PS:CL1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C28-MG{PS:CL1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C28-MG{PS:CL1B}I:$(Spi)-SP")
+    field(INPB, "SR:C28-MG{PS:CL1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C28-MG{PS:CL1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C29-MG{PS:CL1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C29-MG{PS:CL1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C29-MG{PS:CL1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C29-MG{PS:CL1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C29-MG{PS:CL1A}I:$(Spi)-SP")
+    field(INPB, "SR:C29-MG{PS:CL1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C29-MG{PS:CL1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C29-MG{PS:CL2A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C29-MG{PS:CL2A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C29-MG{PS:CL2A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C29-MG{PS:CL2A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C29-MG{PS:CL2A}I:$(Spi)-SP")
+    field(INPB, "SR:C29-MG{PS:CL2A}I:$(Spi)-dSP")
+    field(INPC, "SR:C29-MG{PS:CL2A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C29-MG{PS:CM1A}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C29-MG{PS:CM1A}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C29-MG{PS:CM1A}I:$(Spi)Inc_") {
+    field(OUT, "SR:C29-MG{PS:CM1A}I:$(Spi)-SP PP")
+    field(INPA, "SR:C29-MG{PS:CM1A}I:$(Spi)-SP")
+    field(INPB, "SR:C29-MG{PS:CM1A}I:$(Spi)-dSP")
+    field(INPC, "SR:C29-MG{PS:CM1A}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C29-MG{PS:CM1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C29-MG{PS:CM1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C29-MG{PS:CM1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C29-MG{PS:CM1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C29-MG{PS:CM1B}I:$(Spi)-SP")
+    field(INPB, "SR:C29-MG{PS:CM1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C29-MG{PS:CM1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C29-MG{PS:CH2B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C29-MG{PS:CH2B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C29-MG{PS:CH2B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C29-MG{PS:CH2B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C29-MG{PS:CH2B}I:$(Spi)-SP")
+    field(INPB, "SR:C29-MG{PS:CH2B}I:$(Spi)-dSP")
+    field(INPC, "SR:C29-MG{PS:CH2B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+
+
+record(ao, "SR:C29-MG{PS:CH1B}I:$(Spi)-dSP") {
+    field(VAL, "0.0")
+    field(FLNK, "SR:C29-MG{PS:CH1B}I:$(Spi)Inc_")
+}
+
+record(calcout, "SR:C29-MG{PS:CH1B}I:$(Spi)Inc_") {
+    field(OUT, "SR:C29-MG{PS:CH1B}I:$(Spi)-SP PP")
+    field(INPA, "SR:C29-MG{PS:CH1B}I:$(Spi)-SP")
+    field(INPB, "SR:C29-MG{PS:CH1B}I:$(Spi)-dSP")
+    field(INPC, "SR:C29-MG{PS:CH1B}Enbl:$(Psi)OC-Cmd")
+    field(INPD, "SR:APHLA:SOFB{ORM}SetCorSP:on")
+    field(CALC, "C > 0 && D > 0")
+    field(OCAL, "A+B")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OEVT, "1")
+}
+
+

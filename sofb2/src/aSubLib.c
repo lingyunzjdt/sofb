@@ -228,41 +228,41 @@ finish:
     return -1;
 }
 
-static long maskWaveforms(aSubRecord *pasub)
+static long maskWaveforms(aSubRecord *prec)
 {
-    /*
-    fprintf(stderr, "checking fta: %d\n", pasub->fta);
-    fprintf(stderr, "checking ftb: %d\n", pasub->ftb);
-    fprintf(stderr, "  %d != %d (epicsInt8T)\n", pasub->fta, epicsInt8T);
-    fprintf(stderr, "  %d != %d (epicsUInt8T)\n", pasub->fta, epicsUInt8T);
-    fprintf(stderr, "  %d != %d (epicsInt16T)\n", pasub->fta, epicsInt16T);
-    fprintf(stderr, "  %d != %d (epicsUInt16T)\n", pasub->fta, epicsUInt16T);
-    fprintf(stderr, "  %d != %d (epicsInt32T)\n", pasub->fta, epicsInt32T);
-    fprintf(stderr, "  %d != %d (epicsUInt32T)\n", pasub->fta, epicsUInt32T);
-    */
-
-    epicsInt16 *idx = (epicsInt16*) pasub->a;   /* i <- a[i] (SHORT) */
-    epicsInt8  *sel = (epicsInt8*)  pasub->b;   /* enabled or not (CHAR)*/
-    int NMAX = pasub->nob;
-
-    /* if sel[i] == 0, a[i] is skipped, anyone after a[i] shift left */
-
-    epicsInt16 *dst = (epicsInt16*) pasub->vala; /* compressed i <- a[i] */
-
-    /*
-    assert(pasub->fta  == epicsInt16T);
-    assert(pasub->ftva == epicsInt16T);
-    assert(pasub->ftvb == epicsInt8T);
-    assert(pasub->noa <= pasub->nova);
-    */
-
-    int i = 0, j = 0;
-    for (i = 0; i < pasub->noa; ++i) {
-        if (idx[i] < NMAX && sel[idx[i]]) dst[j++] = idx[i];
-	/* fprintf(stderr, "save i = %d to %d\n", dst[idx[i]], idx[i]);  */
+    short *sel = (short*) prec->a;   /* i <- a[i] (SHORT) */
+    int i = 0;
+    const int NUM_ARGS = 21;
+    /* Check Output Links */
+    for (i = 1; i < NUM_ARGS; ++i) {
+        /* (&prec->noa)[i], (&prec->inpa)[i], (&prec->a)[i] */
+        struct link *plink = &(&prec->outa)[i];
+        if (plink->type == CONSTANT) {
+            /*
+         #ifndef NDEBUG
+            fprintf(stderr, "CONSTANT link: %d\n", i);
+         #endif
+            */
+            continue;
+        }
+        double *src = (double*) (&prec->a)[i];
+        double *dst = (double*) (&prec->vala)[i];
+        const int NOV = (&prec->nova)[i];
+     #ifndef NDEBUG
+        fprintf(stderr, "  capacity of link %d: [%d], %d ", i, NOV, prec->nea);
+     #endif
+        int k = 0, j = 0;
+        while ( j < NOV && k < prec->noa) {
+            /* fprintf(stderr, "%d: %d\n", k, sel[k]);  */
+            if (sel[k] > 0) dst[j++] = src[k++];
+            else ++k;
+        }
+        /* #ifndef NDEBUG
+        fprintf(stderr, "  link %d  j= %d, k= %d\n", i, j, k);
+         #endif */
+        (&prec->neva)[i] = j;
     }
-    pasub->neva = j;
-    /* fprintf(stderr, "the new length: %d\n", pasub->neva); */
+
     return 0;
 }
 

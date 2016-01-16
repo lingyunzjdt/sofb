@@ -361,11 +361,11 @@ record(ao, "SR:APHLA:SOFB{BPM}OrbUsrOffstd-Calc") {
 record(ao, "SR:APHLA:SOFB{BPM}OrbUsrOffvar-Calc") {
 }
 
-record(waveform, "SR:APHLA:SOFB{BPM}S-I") {
-   field(FTVL, "DOUBLE")
-   field(NELM, "198")
-   info(autosaveFields_pass1, "VAL")
-}
+#record(waveform, "SR:APHLA:SOFB{BPM}S-I") {
+#   field(FTVL, "DOUBLE")
+#   field(NELM, "198")
+#   info(autosaveFields_pass1, "VAL")
+#}
 
 record(waveform, "SR:APHLA:SOFB{COR}S-I") {
    field(FTVL, "DOUBLE")
@@ -513,6 +513,14 @@ record(bo, "SR:APHLA:SOFB{ORM}corr:on") {
    field(ZNAM, "Idle")
 }
 
+record(bo, "SR:APHLA:SOFB{ORM}SetCorSP:on") {
+   field(PINI, "1")
+   field(ONAM, "Accept COR delta-SP")
+   field(VAL, "0")
+   field(ZNAM, "Ignore COR delta-SP")
+}
+
+
 record(calcout, "SR:APHLA:SOFB{ORM}corr:timer_") {
    field(CALC, "A>0?1:0")
    field(DOPT, "Use CALC")
@@ -634,10 +642,10 @@ record(fanout, "SR:APHLA:SOFB{COR}XY-Calc_asub") {
 record(waveform, "SR:APHLA:SOFB{COR}XY-Calc") {
    field(FTVL, "DOUBLE")
    field(NELM, "360")
-   field(FLNK, "SR:APHLA:SOFB{COR}XY-Calc_asub")
+   field(FLNK, "SR:APHLA:SOFB{COR}XY-Calc_asub_")
 }
 
-record(aSub, "SR:APHLA:SOFB{COR}XY-Calc_asub") {
+record(aSub, "SR:APHLA:SOFB{COR}XY-Calc_asub_") {
    field(FTA, "DOUBLE")
    field(NOA, "360")
    field(INPA, "SR:APHLA:SOFB{COR}XY-Calc")

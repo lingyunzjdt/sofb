@@ -16,7 +16,7 @@
 #include <gsl/gsl_matrix.h>
 #include <gsl/gsl_linalg.h>
 
-#define DEBUG
+#define NDEBUG
 
 static long solveSVD(aSubRecord *pasub)
 {
@@ -249,7 +249,9 @@ static long correctOrbit(aSubRecord *pasub)
         if (i == 329) continue;
         /* this will disable SOFB if the broken corr is not diabled */
         if (fabs(pcdiff[i]) > 0.01 && corsel[i]) {
+         #ifndef NDEBUG
             fprintf(stderr, "cor %d rb-sp= %g, skip SOFB\n", i, pcdiff[i]);
+         #endif
             active = 0;
         }
     }
@@ -274,7 +276,9 @@ static long correctOrbit(aSubRecord *pasub)
     ((double*)pasub->vale)[4] = sqrt(s2 - s1*s1);
     ((double*)pasub->vale)[5] = s2 - s1 * s1;
 
+ #ifndef NDEBUG
     fprintf(stderr, "xmax= %g, obtXYmin= %g\n", xmax, obtXYmin);
+ #endif
     /* no correction is the maximum orbit residual is small enough */
     if (xmax < obtXYmin) active = 0;
     
@@ -310,8 +314,9 @@ static long correctOrbit(aSubRecord *pasub)
         ((double*)pasub->valg)[i] = s;
     }
 
+ #ifndef NDEBUG
     fprintf(stderr, "xmax= %g, dImin= %g, active= %d\n", xmax, dImin, active);
-
+ #endif
     /* active = 0; */
     if (xmax < dImin || !active) {
         for (i = 0; i < pasub->nova; ++i) px[i] = 0.0;
@@ -322,14 +327,14 @@ static long correctOrbit(aSubRecord *pasub)
         }
     }
 
-    /* #ifndef NDEBUG */
+ #ifndef NDEBUG
     fprintf(stderr, "active= %d obtstd= %g\n", active, sqrt(s2 - s1*s1));
     fprintf(stderr, "calc dI= %g (max)", xmax);
     for (i = 0; i < pasub->nova; ++i) fprintf(stderr, " %g", px0[i]);
     fprintf(stderr, "\nscaled dI= ");
     for (i = 0; i < pasub->nova; ++i) fprintf(stderr, " %g", px[i]);
     fprintf(stderr, "\n");
-    /* #endif */
+ #endif
     
     
     if (pasub->outc.type != CONSTANT) {

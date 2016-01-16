@@ -5,3 +5,81 @@ record(waveform, "$(p)SR:APHLA:SOFB{BPM}SPos") {
    info(autosaveFields_pass1, "VAL")
 }
 
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}S-I") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "211")
+   #info(autosaveFields_pass1, "VAL")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}Visible") {
+   field(FTVL, "SHORT")
+   field(NELM, "211")
+   info(autosaveFields_pass1, "VAL")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}XwUsrOff-Calc") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "211")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}X0-I") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "211")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}YwUsrOff-Calc") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "211")
+}
+
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}Y0-I") {
+   field(FTVL, "DOUBLE")
+   field(NELM, "211")
+}
+
+record(aSub, "$(p)SR:APHLA:SOFB{BPM}OrbitVisible_") {
+   #field(FLNK, "$(p)SR:APHLA:SOFB{BPM}Visible")
+   field(FTA, "SHORT")
+   field(INPA, "$(p)SR:APHLA:SOFB{BPM}Visible PP")
+   field(NOA, "211")
+
+   field(INPB, "$(p)SR:APHLA:SOFB{BPM}SPos PP")
+   field(OUTB, "$(p)SR:APHLA:SOFB{BPM}S-I PP")
+
+   field(INPC, "$(p)SR:APHLA:SOFB{BPM}XwUsrOff-Calc_")
+   field(OUTC, "$(p)SR:APHLA:SOFB{BPM}XwUsrOff-Calc PP")
+
+   field(INPD, "$(p)SR:APHLA:SOFB{BPM}YwUsrOff-Calc_")
+   field(OUTD, "$(p)SR:APHLA:SOFB{BPM}YwUsrOff-Calc PP")
+
+
+   field(INPE, "$(p)SR:APHLA:SOFB{BPM}X0-I_")
+   field(OUTE, "$(p)SR:APHLA:SOFB{BPM}X0-I PP")
+
+   field(INPF, "$(p)SR:APHLA:SOFB{BPM}Y0-I_")
+   field(OUTF, "$(p)SR:APHLA:SOFB{BPM}Y0-I PP")
+
+   field(FTB, "DOUBLE")
+   field(FTC, "DOUBLE")
+   field(FTD, "DOUBLE")
+   field(FTE, "DOUBLE")
+   field(FTF, "DOUBLE")
+
+   field(FTVB, "DOUBLE")
+   field(FTVC, "DOUBLE")
+   field(FTVD, "DOUBLE")
+   field(FTVE, "DOUBLE")
+   field(FTVF, "DOUBLE")
+   field(NOB, "211")
+   field(NOC, "211")
+   field(NOD, "211")
+   field(NOE, "211")
+   field(NOF, "211")
+   field(NOVB, "211")
+   field(NOVC, "211")
+   field(NOVD, "211")
+   field(NOVE, "211")
+   field(NOVF, "211")
+   field(SNAM, "maskWaveforms")
+   field(SCAN, "1 second")
+}

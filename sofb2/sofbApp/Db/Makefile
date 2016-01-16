@@ -17,6 +17,7 @@ DB += sofb2_bpm_rb0.db sofb2_bpm_rb.db sofb2_bpm_sel.db sofb2_bpm_weight.db sofb
 DB += sofb2_cor_sp_merge.db sofb2_cor_rb_merge.db
 DB += sofb2_cor_sel.db
 DB += sofb2_cor_sp_split.db
+DB += sofb2_cor_delta.db
 DB += sofb2_orm.db
 
 DB += localbump.db

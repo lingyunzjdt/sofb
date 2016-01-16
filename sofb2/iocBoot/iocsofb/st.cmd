@@ -17,10 +17,10 @@ sofb_registerRecordDeviceDriver(pdbbase)
 dbLoadRecords("db/iocAdminSoft.db", "IOC=OP-APHLA{IOC:SOFB2}")
 ## Load record instances
 #dbLoadRecords("db/sofb.db","user=lyyang")
-dbLoadRecords("db/sofb2_bpm_rb0.db", "XY=X")
-dbLoadRecords("db/sofb2_bpm_rb0.db", "XY=Y")
-dbLoadRecords("db/sofb2_bpm_rb.db", "XY=X")
-dbLoadRecords("db/sofb2_bpm_rb.db", "XY=Y")
+#dbLoadRecords("db/sofb2_bpm_rb0.db", "XY=X")
+#dbLoadRecords("db/sofb2_bpm_rb0.db", "XY=Y")
+#dbLoadRecords("db/sofb2_bpm_rb.db", "XY=X")
+#dbLoadRecords("db/sofb2_bpm_rb.db", "XY=Y")
 
 dbLoadRecords("db/sofb2_bpm_sel.db", "XSel=XSel,T=CHAR")
 dbLoadRecords("db/sofb2_bpm_sel.db", "XSel=YSel,T=CHAR")
@@ -44,7 +44,8 @@ dbLoadRecords("db/sofb2_cor_sel.db", "XSel=YSel,T=CHAR,Psi=Ps2,p=")
 dbLoadRecords("db/sofb2_cor_sp_split.db", "PLN=X,SPi=Sp1,p=")
 dbLoadRecords("db/sofb2_cor_sp_split.db", "PLN=Y,SPi=Sp2,p=")
 
-
+dbLoadRecords("db/sofb2_cor_delta.db", "Spi=Sp1,Psi=Ps1")
+dbLoadRecords("db/sofb2_cor_delta.db", "Spi=Sp2,Psi=Ps2")
 dbLoadRecords("db/sofb2_orm.db", "")
 
 #dbLoadRecords("db/localbump.db", "ID=ISX,PL=X,L=7.928,OFST1L=SR:C10-BI{BPM:7}Pos:Href-SP,OFST1R=SR:C10-BI{BPM:8}Pos:Href-SP,OFST2L=SR:C10-BI{BPM:7}Pos:UsrXoffset-SP,OFST2R=SR:C10-BI{BPM:8}Pos:UsrXoffset-SP,X1=SR:C10-BI{BPM:7}Pos:XwUsrOff-Calc,X2=SR:C10-BI{BPM:8}Pos:XwUsrOff-Calc,X01=SR:C10-BI{BPM:7}Pos:X-I,X02=SR:C10-BI{BPM:8}Pos:X-I")
