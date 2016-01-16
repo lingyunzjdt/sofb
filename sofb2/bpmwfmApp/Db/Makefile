@@ -11,7 +11,7 @@ include $(TOP)/configure/CONFIG
 # Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
 DB += bpmwfm.db bpmshuffle.db
-DB += bpm_wfm_merge.db bpm_wfm_compress.db
+DB += bpmwfm_merge.db bpmwfm_compress.db
 
 #ifneq ($(DEVIOCSTATS),)
 ## see /usr/lib/epics/db/iocAdminSoft.db

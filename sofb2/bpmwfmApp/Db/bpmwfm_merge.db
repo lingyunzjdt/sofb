@@ -2,7 +2,7 @@
 ## Lingyun Yang <lyyang@bnl.gov>, 01-29-2015 12:05:32
 ##
 
-record(waveform, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)_") {
+record(waveform, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)") {
    field(FTVL, "DOUBLE")
    field(NELM, "211")
 }
@@ -55,14 +55,14 @@ record(aSub, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)_2_0_asub_") {
    field(NOVE, "1")
    field(NOVF, "1")
    field(NOVG, "1")
-   field(OUTA, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)_ PP")
-   field(OUTB, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Sum_ PP")
-   field(OUTC, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Avg_ PP")
-   field(OUTD, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Rms_ PP")
-   field(OUTE, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Min_ PP")
-   field(OUTF, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Max_ PP")
-   field(OUTG, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Std_ PP")
-   field(OUTH, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Var_ PP")
+   field(OUTA, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL) PP")
+   field(OUTB, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Sum PP")
+   field(OUTC, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Avg PP")
+   field(OUTD, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Rms PP")
+   field(OUTE, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Min PP")
+   field(OUTF, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Max PP")
+   field(OUTG, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Std PP")
+   field(OUTH, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Var PP")
    field(SNAM, "mergePvs")
 }
 
@@ -843,39 +843,32 @@ record(aSub, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)_1_0_asub_") {
    field(SCAN, "$(SCAN)")
 }
 
-record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Sum_") {
+record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Sum") {
    field(VAL, "0.0")
-   #field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Sum")
 }
 
-record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Avg_") {
+record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Avg") {
    field(VAL, "0.0")
-   #field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Avg")
 }
 
-record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Rms_") {
+record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Rms") {
    field(VAL, "0.0")
-   #field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Rms")
 }
 
-record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Min_") {
+record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Min") {
    field(VAL, "0.0")
-   #field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Min")
 }
 
-record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Max_") {
+record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Max") {
    field(VAL, "0.0")
-   #field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Max")
 }
 
-record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Std_") {
+record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Std") {
    field(VAL, "0.0")
-   #field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Std")
 }
 
-record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Var_") {
+record(ao, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Var") {
    field(VAL, "0.0")
-   #field(FLNK, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL)Var")
 }
 
 #record(bo, "$(p)SR:APHLA:SOFB{BPM}$(SIGNAL):status") {

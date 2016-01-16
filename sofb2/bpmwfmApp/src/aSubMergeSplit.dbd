@@ -1,4 +1,4 @@
 function(mergePvs)
 function(splitPvs)
 function(shuffleWaveforms)
-function(compressIndices)
+function(maskWaveforms)

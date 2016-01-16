@@ -228,7 +228,7 @@ finish:
     return -1;
 }
 
-static long compressIndices(aSubRecord *pasub)
+static long maskWaveforms(aSubRecord *pasub)
 {
     /*
     fprintf(stderr, "checking fta: %d\n", pasub->fta);
@@ -348,5 +348,5 @@ static long shuffleWaveforms(aSubRecord *prec)
 epicsRegisterFunction(mergePvs);
 epicsRegisterFunction(splitPvs);
 epicsRegisterFunction(shuffleWaveforms);
-epicsRegisterFunction(compressIndices);
+epicsRegisterFunction(maskWaveforms);
 epicsRegisterFunction(splitMarkedVals);

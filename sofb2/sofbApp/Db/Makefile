@@ -10,14 +10,14 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------------------
 # Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
-DB += bpm_rb0.db bpm_rb.db bpm_sel.db bpm_weight.db bpm_ref.db
+DB += sofb2_bpm_rb0.db sofb2_bpm_rb.db sofb2_bpm_sel.db sofb2_bpm_weight.db sofb2_bpm_ref.db
 
 # correctors
 #DB += corx_sp_merge.db cory_sp_merge.db
-DB += cor_sp_merge.db cor_rb_merge.db
+DB += sofb2_cor_sp_merge.db sofb2_cor_rb_merge.db
 #DB += cor_sel.db
-DB += cor_sp_split.db
-DB += orm.db
+DB += sofb2_cor_sp_split.db
+DB += sofb2_orm.db
 
 DB += localbump.db
 
