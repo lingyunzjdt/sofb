@@ -20,6 +20,8 @@ _tmpl = { "cmd": "SR:APHLA:SOFB{{BUMP:{ID}}}{XY}-Cmd",
           "usr2": "SR:C{C2}-BI{{BPM:{I2}}}Pos:Usr{XY}offset-SP", }
 
 _pvcmd = "SR:APHLA:SOFB{BUMP:ALL}cmd"
+_pvdIsingle = "SR:APHLA:SOFB{BUMP:ALL}Single-dImax-I"
+_pvdIall = "SR:APHLA:SOFB{BUMP:ALL}dImax-I"
 
 _id_macros = [
     {"idname": "ivu20g1c03c", "bpm1": "pu1g1c03a", "bpm2": "pu4g1c03a",
@@ -70,6 +72,14 @@ _id_macros = [
     {"idname": "ivu20g1c11c", "bpm1": "pu1g1c11a", "bpm2": "pu4g1c11a",
      "ID": "C11-CHX", "XY": "Y", "HV": "V", "C1": "11", "I1": "7",
      "C2": "11", "I2": "8", "S1": "-2.543", "S2": "0", "S3": "2.679"},
+
+    # C12
+    {"idname": "ivu23g1c12d", "bpm1": "pu3g1c12a", "bpm2": "pu4g1c12a",
+     "ID": "C12d-SMI", "XY": "X", "HV": "H", "C1": "12", "I1": "9",
+     "C2": "12", "I2": "10", "S1": "-1.9107", "S2": "0", "S3": "3.4461"},
+    {"idname": "ivu23g1c12c", "bpm1": "pu3g1c12a", "bpm2": "pu4g1c12a",
+     "ID": "C12d-SMI", "XY": "Y", "HV": "V", "C1": "12", "I1": "9",
+     "C2": "12", "I2": "10", "S1": "-1.9107", "S2": "0", "S3": "3.4461"},
 
     # C16
     {"idname": "ivu23g1c16c", "bpm1": "pu1g1c16a", "bpm2": "pu4g1c16a",
@@ -137,8 +147,9 @@ def run_single_bumps(pvmaps):
         xc, xangle = ap.caget([pvm["offset"], pvm["angle"]])
         plane = pvm["XY"].lower()
         print ename, xc, xangle, plane
+        dImax = ap.caget("SR:APHLA:SOFB{BUMP:ALL}Single-dImax-I")
         norm0, norm1, norm2, corvals = ap.setIdBump(
-            ename, xc, xangle, plane=plane, check=False, ncor=4, dImax=0.5,
+            ename, xc, xangle, plane=plane, check=False, ncor=4, dImax=dImax,
             bbpms=[pvm["bpm1"], pvm["bpm2"]])
         #norm0, norm1, norm2, corvals = ap.setIdBump(
         #    ename, xc, xangle, plane=plane, check=False, ncor=6, dImax=0.5)
@@ -184,8 +195,9 @@ if __name__ == "__main__":
             xc, xangle = ap.caget([pvm["offset"], pvm["angle"]])
             plane = pvm["XY"].lower()
             print ename, xc, xangle, plane
+            dImax = ap.caget("SR:APHLA:SOFB{BUMP:ALL}dImax-I")
             norm0, norm1, norm2, corvals = ap.setIdBump(
-                ename, xc, xangle, plane=plane, check=False, ncor=6, dImax=0.5,
+                ename, xc, xangle, plane=plane, check=False, ncor=6, dImax=dImax,
                 bbpms=[pvm["bpm1"], pvm["bpm2"]])
             #norm0, norm1, norm2, corvals = ap.setIdBump(
             #    ename, xc, xangle, plane=plane, check=False, ncor=6, dImax=0.5)

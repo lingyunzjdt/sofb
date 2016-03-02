@@ -10,6 +10,7 @@
 epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "30000000")
 epicsEnvSet("PYTHONPATH", "/epics/op/apps/aphla/lib/python")
 epicsEnvSet("APHLA_CONFIG_DIR", "/epics/data/aphla/apconf")
+epicsEnvSet("ENGINEER", "lyyang x4692")
 
 #cd ${TOP}
 #cd /direct/phy_iocs/srSOFB2/sofb2
@@ -18,6 +19,8 @@ cd /epics/iocs/srSOFB2/sofb2
 ## Register all support components
 dbLoadDatabase("dbd/bump.dbd",0,0)
 bump_registerRecordDeviceDriver(pdbbase) 
+
+dbLoadRecords("db/iocAdminSoft.db", "IOC=OP-APHLA{IOC:sofbbump}")
 
 ## Load record instances
 dbLoadRecords("db/bump.db","")
@@ -48,6 +51,8 @@ dbLoadRecords("db/localbump.db", "ID=C10-IXS,XY=Y,HV=V,C1=10,I1=7,C2=10,I2=8,S1=
 dbLoadRecords("db/localbump.db", "ID=C11-CHX,XY=X,HV=H,C1=11,I1=7,C2=11,I2=8,S1=-2.543,S2=0,S3=2.679")
 dbLoadRecords("db/localbump.db", "ID=C11-CHX,XY=Y,HV=V,C1=11,I1=7,C2=11,I2=8,S1=-2.543,S2=0,S3=2.679")
 
+dbLoadRecords("db/localbump.db", "ID=C12d-SMI,XY=X,HV=H,C1=12,I1=9,C2=12,I2=10,S1=-1.9107,S2=0,S3=3.4461")
+dbLoadRecords("db/localbump.db", "ID=C12d-SMI,XY=Y,HV=V,C1=12,I1=9,C2=12,I2=10,S1=-1.9107,S2=0,S3=3.4461")
 
 dbLoadRecords("db/localbump.db", "ID=C16-LIX,XY=X,HV=H,C1=16,I1=7,C2=16,I2=8,S1=-2.071,S2=0,S3=2.071")
 dbLoadRecords("db/localbump.db", "ID=C16-LIX,XY=Y,HV=V,C1=16,I1=7,C2=16,I2=8,S1=-2.071,S2=0,S3=2.071")
